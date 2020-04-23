@@ -1,0 +1,27 @@
+I0218 11:09:41.968690 139708005558144 wide_deep_run_loop.py:116] Results at epoch 50 / 50
+INFO:tensorflow:------------------------------------------------------------
+I0218 11:09:41.968822 139708005558144 wide_deep_run_loop.py:117] ------------------------------------------------------------
+INFO:tensorflow:average_loss: 110974.32
+I0218 11:09:41.968887 139708005558144 wide_deep_run_loop.py:120] average_loss: 110974.32
+INFO:tensorflow:global_step: 600
+I0218 11:09:41.968946 139708005558144 wide_deep_run_loop.py:120] global_step: 600
+INFO:tensorflow:label/mean: 293.6207
+I0218 11:09:41.968998 139708005558144 wide_deep_run_loop.py:120] label/mean: 293.6207
+INFO:tensorflow:loss: 112953.73
+I0218 11:09:41.969047 139708005558144 wide_deep_run_loop.py:120] loss: 112953.73
+INFO:tensorflow:prediction/mean: 47.38819
+I0218 11:09:41.969095 139708005558144 wide_deep_run_loop.py:120] prediction/mean: 47.38819
+INFO:tensorflow:Benchmark metric: {'name': 'average_loss', 'value': 110974.3203125, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969172Z', 'extras': []}
+I0218 11:09:41.969197 139708005558144 logger.py:147] Benchmark metric: {'name': 'average_loss', 'value': 110974.3203125, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969172Z', 'extras': []}
+INFO:tensorflow:Benchmark metric: {'name': 'label/mean', 'value': 293.6206970214844, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969289Z', 'extras': []}
+I0218 11:09:41.969303 139708005558144 logger.py:147] Benchmark metric: {'name': 'label/mean', 'value': 293.6206970214844, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969289Z', 'extras': []}
+INFO:tensorflow:Benchmark metric: {'name': 'loss', 'value': 112953.7265625, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969367Z', 'extras': []}
+I0218 11:09:41.969378 139708005558144 logger.py:147] Benchmark metric: {'name': 'loss', 'value': 112953.7265625, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969367Z', 'extras': []}
+INFO:tensorflow:Benchmark metric: {'name': 'prediction/mean', 'value': 47.38819122314453, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969491Z', 'extras': []}
+I0218 11:09:41.969507 139708005558144 logger.py:147] Benchmark metric: {'name': 'prediction/mean', 'value': 47.38819122314453, 'unit': None, 'global_step': 600, 'timestamp': '2020-02-18T11:09:41.969491Z', 'extras': []}
+
+
+average:  [59843.844, 57099.406, 55632.797, 54979.043, 54751.836]
+label:  [290.91473, 290.91473, 290.91473, 290.91473, 290.91473]
+loss:  [61341.19, 58499.69, 56954.582, 56242.527, 55977.027]
+prediction:  [219.08452, 241.7713, 260.11755, 273.7473, 282.6957]

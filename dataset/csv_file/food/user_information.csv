@@ -1,0 +1,1001 @@
+user_id,user_gender,user_age,user_hobbies,user_health
+0,0,người lớn,,bệnh tiểu đường
+1,0,người già,,bệnh dạ dày
+2,0,người lớn,,bệnh tiểu đường
+3,1,người lớn,,bệnh dạ dày
+4,1,người già,,bệnh dạ dày
+5,1,người già,,bệnh tiểu đường
+6,0,trẻ em,,
+7,0,trẻ em,,
+8,1,trẻ em,,
+9,0,người lớn,,bệnh tim mạch
+10,0,trẻ em,,
+11,0,trẻ em,,
+12,0,người lớn,,bệnh huyết áp cao
+13,1,người già,,bệnh huyết áp cao
+14,1,người lớn,,bệnh tim mạch
+15,1,trẻ em,,
+16,1,người già,,bệnh tiểu đường
+17,0,người lớn,,bệnh huyết áp cao
+18,0,trẻ em,,
+19,1,trẻ em,,
+20,1,người lớn,,bệnh dạ dày
+21,1,trẻ em,,
+22,1,người lớn,,bệnh tiểu đường
+23,0,người lớn,,bệnh tiểu đường
+24,0,người già,,bệnh dạ dày
+25,1,trẻ em,,
+26,0,người lớn,,bệnh huyết áp cao
+27,1,trẻ em,,
+28,0,trẻ em,,
+29,0,người già,,bệnh huyết áp cao
+30,1,người già,,bệnh dạ dày
+31,1,người lớn,,phụ nữ mang thai
+32,1,trẻ em,,
+33,1,người già,,
+34,1,người lớn,,phụ nữ mang thai
+35,0,người già,,
+36,0,người lớn,,
+37,0,người lớn,,
+38,1,người lớn,,phụ nữ mang thai
+39,0,người lớn,,
+40,1,người già,,
+41,1,người lớn,,phụ nữ mang thai
+42,0,người lớn,,
+43,0,người lớn,,
+44,1,người lớn,,phụ nữ mang thai
+45,1,trẻ em,,
+46,0,người già,,
+47,1,người già,,
+48,0,người lớn,,
+49,0,người già,gà|xôi|cháo,
+50,1,trẻ em,mì|bún|quả,
+51,0,người già,mì|quả|gà,
+52,0,trẻ em,gà|lợn|củ,
+53,0,người lớn,phở|vịt|rau,
+54,1,người lớn,phở|lợn|súp,phụ nữ mang thai
+55,1,trẻ em,bò|bò|phở,
+56,1,người già,tôm|vịt|bò,
+57,0,người già,bánh mì|xôi|bò,
+58,0,người già,bò|mì|tôm,
+59,0,trẻ em,phở|rau|vịt,
+60,0,trẻ em,củ|mì|lẩu,
+61,1,người già,bánh mì|xôi|mì,
+62,1,trẻ em,bún|súp|mì,
+63,0,người lớn,cháo|cá|gà,
+64,0,trẻ em,xôi|cá|cháo,
+65,0,trẻ em,bò|củ|cháo,
+66,0,người già,rau|gà|xôi,
+67,0,trẻ em,tôm|cháo|tôm,
+68,0,người già,rau|bò|phở,
+69,1,người già,cháo|bò|rau,
+70,0,người già,tôm|củ|mì,
+71,1,người lớn,vịt|bún|bò,phụ nữ mang thai
+72,1,người lớn,phở|súp|lẩu,phụ nữ mang thai
+73,1,người lớn,cá|xôi|vịt,phụ nữ mang thai
+74,0,người già,lẩu|tôm|củ,
+75,1,người già,lẩu|vịt|mì,
+76,1,người lớn,rau|bánh mì|củ,phụ nữ mang thai
+77,1,người lớn,rau|cháo|bò,phụ nữ mang thai
+78,1,người lớn,bò|phở|bò,phụ nữ mang thai
+79,1,người già,vịt|cháo|lẩu,
+80,1,trẻ em,bò|bánh mì|củ,
+81,0,người già,lẩu|súp|gà,
+82,1,trẻ em,lợn|mì|quả,
+83,1,người già,củ|mì|vịt,
+84,1,trẻ em,bò|xôi|bánh mì,
+85,0,người già,mì|cá|bánh mì,
+86,1,người lớn,lẩu|tôm|súp,phụ nữ mang thai
+87,0,người lớn,mì|củ|lẩu,
+88,0,người lớn,củ|xôi|gà,
+89,0,người lớn,củ|tôm|gà,
+90,1,người già,cá|cháo|bò,
+91,0,người lớn,súp|súp|lẩu,
+92,0,người lớn,súp|lợn|súp,
+93,0,người lớn,vịt|phở|phở,
+94,0,người lớn,mì|phở|bò,
+95,0,người lớn,tôm|gà|củ,
+96,0,trẻ em,quả|bánh mì|lẩu,
+97,1,trẻ em,mì|bánh mì|phở,
+98,0,người già,cá|quả|xôi,
+99,1,trẻ em,bún|cháo|lẩu,
+100,1,trẻ em,vịt|phở|rau,
+101,1,người già,vịt|gà|bún,
+102,0,người già,vịt|bún|gà,
+103,1,trẻ em,cá|tôm|cháo,
+104,1,người lớn,tôm|cá|bún,phụ nữ mang thai
+105,0,người già,bún|cá|bánh mì,
+106,0,người lớn,lẩu|cháo|bánh mì,
+107,1,trẻ em,súp|củ|tôm,
+108,0,trẻ em,cháo|củ|cháo,
+109,0,người già,xôi|phở|rau,
+110,0,trẻ em,bò|lợn|lợn,
+111,1,trẻ em,lợn|mì|vịt,
+112,0,trẻ em,xôi|mì|mì,
+113,1,trẻ em,quả|phở|rau,
+114,1,người lớn,củ|củ|gà,phụ nữ mang thai
+115,0,trẻ em,củ|quả|phở,
+116,0,trẻ em,mì|cá|bò,
+117,0,người lớn,quả|lợn|vịt,
+118,1,người lớn,lẩu|gà|phở,phụ nữ mang thai
+119,1,người lớn,xôi|rau|bò,phụ nữ mang thai
+120,1,người lớn,củ|bò|mì,phụ nữ mang thai
+121,1,người lớn,gà|rau|mì,phụ nữ mang thai
+122,0,người già,bún|quả|tôm,
+123,1,người già,phở|bún|xôi,
+124,1,người lớn,cá|quả|xôi,phụ nữ mang thai
+125,1,người già,súp|bánh mì|súp,
+126,0,trẻ em,cá|tôm|mì,
+127,1,người lớn,cháo|bánh mì|gà,phụ nữ mang thai
+128,0,người già,lẩu|củ|vịt,
+129,1,người lớn,phở|lẩu|phở,phụ nữ mang thai
+130,0,trẻ em,củ|tôm|xôi,
+131,0,trẻ em,bún|phở|xôi,
+132,0,người già,quả|bún|lợn,
+133,1,trẻ em,rau|phở|phở,
+134,1,người già,bún|bánh mì|bò,
+135,0,trẻ em,súp|củ|cháo,
+136,1,trẻ em,bò|lợn|tôm,
+137,0,người lớn,lợn|bò|quả,
+138,0,người già,xôi|lợn|mì,
+139,0,trẻ em,phở|mì|bánh mì,
+140,1,người lớn,vịt|bún|cháo,phụ nữ mang thai
+141,0,trẻ em,gà|củ|bò,
+142,0,trẻ em,cá|bò|lẩu,
+143,0,người già,xôi|cá|súp,
+144,0,người lớn,vịt|củ|lẩu,
+145,0,người già,xôi|bánh mì|rau,
+146,1,trẻ em,súp|củ|xôi,
+147,0,người già,bò|củ|quả,
+148,1,người già,cá|rau|xôi,
+149,0,người lớn,tôm|lợn|vịt,
+150,0,trẻ em,súp|gà|rau,
+151,1,người lớn,xôi|lẩu|súp,phụ nữ mang thai
+152,0,người lớn,quả|bánh mì|bò,
+153,1,trẻ em,súp|bún|gà,
+154,1,người già,củ|rau|tôm,
+155,1,người lớn,bún|rau|gà,phụ nữ mang thai
+156,1,người già,quả|xôi|tôm,
+157,0,người già,lẩu|bún|củ,
+158,0,người lớn,vịt|rau|súp,
+159,1,trẻ em,lợn|bò|tôm,
+160,1,người lớn,vịt|lợn|gà,phụ nữ mang thai
+161,0,người già,bún|cháo|bò,
+162,0,trẻ em,gà|rau|tôm,
+163,1,người lớn,quả|súp|lẩu,phụ nữ mang thai
+164,0,người lớn,quả|lẩu|bò,
+165,1,người già,quả|bò|bún,
+166,1,người già,cá|rau|bò,
+167,0,người lớn,cá|cá|gà,
+168,0,người lớn,tôm|lẩu|phở,
+169,1,trẻ em,xôi|xôi|bánh mì,
+170,0,người lớn,bánh mì|mì|tôm,
+171,1,người lớn,xôi|bún|lẩu,phụ nữ mang thai
+172,0,người lớn,lẩu|tôm|mì,
+173,0,người lớn,súp|vịt|mì,
+174,0,người già,súp|xôi|lợn,
+175,0,người lớn,củ|rau|cá,
+176,0,người lớn,rau|bánh mì|cá,
+177,1,người già,quả|súp|quả,
+178,0,người già,xôi|lợn|xôi,
+179,0,người già,xôi|gà|cá,
+180,0,người lớn,bánh mì|phở|bò,
+181,1,người già,bún|súp|lẩu,
+182,0,người già,tôm|phở|gà,
+183,1,trẻ em,gà|súp|phở,
+184,1,người già,bún|bánh mì|quả,
+185,1,người già,bò|cháo|gà,
+186,0,người lớn,bánh mì|củ|súp,
+187,1,người lớn,mì|vịt|quả,phụ nữ mang thai
+188,0,trẻ em,bánh mì|rau|rau,
+189,0,người già,cháo|gà|quả,
+190,1,người già,bò|bánh mì|cá,
+191,1,trẻ em,cá|bún|rau,
+192,1,trẻ em,cháo|mì|củ,
+193,0,người già,mì|lợn|củ,
+194,0,người già,lợn|cá|xôi,
+195,0,trẻ em,lợn|bánh mì|xôi,
+196,1,người già,vịt|súp|bánh mì,
+197,1,người già,củ|lẩu|xôi,
+198,0,người lớn,cá|lẩu|lẩu,
+199,0,trẻ em,rau|bún|súp,
+200,1,người già,lợn|quả|củ,
+201,1,người lớn,lợn|cá|bò,phụ nữ mang thai
+202,0,người già,vịt|quả|vịt,
+203,1,người lớn,bún|gà|bánh mì,phụ nữ mang thai
+204,1,trẻ em,lợn|gà|gà,
+205,1,trẻ em,cá|rau|lẩu,
+206,0,người lớn,cá|tôm|quả,
+207,1,trẻ em,vịt|quả|vịt,
+208,0,người già,củ|xôi|xôi,
+209,1,người già,cá|tôm|gà,
+210,0,người lớn,bò|phở|rau,
+211,1,người lớn,cháo|cháo|vịt,phụ nữ mang thai
+212,0,người già,tôm|củ|gà,
+213,0,người già,xôi|quả|xôi,
+214,1,người già,lẩu|bánh mì|lẩu,
+215,0,người lớn,gà|cá|cá,
+216,1,người lớn,súp|quả|bún,phụ nữ mang thai
+217,1,trẻ em,tôm|bánh mì|xôi,
+218,0,trẻ em,gà|lợn|bánh mì,
+219,0,trẻ em,súp|tôm|mì,
+220,0,người lớn,bánh mì|quả|bánh mì,
+221,1,người già,cá|xôi|củ,
+222,0,người lớn,súp|bún|bò,
+223,0,trẻ em,lợn|xôi|bún,
+224,0,người già,súp|bò|bò,
+225,0,trẻ em,bò|bò|rau,
+226,1,người lớn,bún|lợn|củ,phụ nữ mang thai
+227,1,người lớn,lẩu|bánh mì|tôm,phụ nữ mang thai
+228,1,trẻ em,gà|vịt|củ,
+229,1,người già,rau|vịt|quả,
+230,0,người già,phở|phở|súp,
+231,0,trẻ em,gà|quả|xôi,
+232,1,người già,quả|cháo|gà,
+233,1,người già,cháo|phở|quả,
+234,0,người già,rau|rau|xôi,
+235,1,trẻ em,gà|củ|xôi,
+236,1,người lớn,cháo|cá|rau,phụ nữ mang thai
+237,0,trẻ em,mì|cháo|quả,
+238,0,trẻ em,gà|quả|bò,
+239,0,người lớn,vịt|bánh mì|súp,
+240,1,người lớn,mì|gà|bò,phụ nữ mang thai
+241,1,trẻ em,quả|bò|bún,
+242,1,người lớn,cháo|phở|cá,phụ nữ mang thai
+243,0,người lớn,súp|tôm|lẩu,
+244,0,người lớn,bún|lợn|vịt,
+245,1,người già,rau|xôi|củ,
+246,1,trẻ em,mì|tôm|mì,
+247,0,trẻ em,cá|súp|quả,
+248,0,người lớn,súp|rau|vịt,
+249,1,người già,xôi|lợn|bò,
+250,1,người lớn,cá|bún|quả,bệnh tiểu đường
+251,0,người già,cá|phở|mì,bệnh tiểu đường
+252,1,người lớn,bò|tôm|vịt,bệnh huyết áp cao
+253,0,người già,củ|gà|súp,bệnh dạ dày
+254,0,người lớn,mì|lẩu|súp,bệnh huyết áp cao
+255,0,người già,lợn|bò|gà,bệnh tiểu đường
+256,1,người lớn,súp|cháo|xôi,bệnh tiểu đường
+257,0,trẻ em,tôm|rau|lợn,
+258,0,người già,gà|quả|cháo,bệnh tiểu đường
+259,1,trẻ em,phở|phở|quả,
+260,0,người già,cháo|bò|bò,bệnh dạ dày
+261,0,người lớn,quả|quả|bánh mì,bệnh tiểu đường
+262,1,trẻ em,xôi|quả|mì,
+263,0,người lớn,mì|cháo|lẩu,bệnh tim mạch
+264,0,trẻ em,súp|vịt|gà,
+265,1,trẻ em,mì|phở|lợn,
+266,1,trẻ em,xôi|vịt|xôi,
+267,0,người lớn,cá|tôm|gà,bệnh huyết áp cao
+268,1,người lớn,xôi|cá|xôi,bệnh huyết áp cao
+269,0,người lớn,tôm|vịt|lợn,bệnh huyết áp cao
+270,0,trẻ em,phở|súp|súp,
+271,0,trẻ em,lợn|tôm|phở,
+272,0,người lớn,củ|lẩu|tôm,bệnh huyết áp cao
+273,0,người già,xôi|vịt|cá,bệnh huyết áp cao
+274,1,trẻ em,lợn|củ|bò,
+275,1,người lớn,cháo|xôi|súp,bệnh tim mạch
+276,0,trẻ em,vịt|súp|tôm,
+277,1,người lớn,quả|lợn|bún,bệnh tim mạch
+278,0,trẻ em,mì|củ|bò,
+279,1,người già,xôi|mì|bánh mì,bệnh dạ dày
+280,1,người già,quả|lẩu|gà,bệnh tiểu đường
+281,0,trẻ em,bò|bò|cháo,
+282,1,người già,quả|bún|bò,bệnh tiểu đường
+283,0,người già,tôm|súp|tôm,bệnh tiểu đường
+284,0,người lớn,bò|rau|gà,bệnh dạ dày
+285,0,người già,súp|lẩu|xôi,bệnh huyết áp cao
+286,0,người già,gà|bò|bánh mì,bệnh tim mạch
+287,1,trẻ em,súp|mì|tôm,
+288,0,người lớn,lẩu|gà|mì,bệnh tim mạch
+289,1,trẻ em,bún|củ|xôi,
+290,1,người già,củ|bánh mì|vịt,bệnh huyết áp cao
+291,1,trẻ em,cháo|gà|lẩu,
+292,0,trẻ em,mì|lẩu|bánh mì,
+293,1,trẻ em,gà|tôm|gà,
+294,1,trẻ em,gà|bún|phở,
+295,1,trẻ em,rau|rau|vịt,
+296,1,người lớn,vịt|lợn|cá,bệnh tim mạch
+297,1,trẻ em,rau|súp|lợn,
+298,0,trẻ em,xôi|quả|súp,
+299,0,người lớn,bò|củ,
+300,1,người lớn,lẩu|xôi,phụ nữ mang thai
+301,0,trẻ em,bánh mì|vịt,
+302,0,trẻ em,lẩu|súp,
+303,1,người già,bò|phở,
+304,0,người lớn,rau|mì,
+305,1,người già,quả|bò,
+306,0,trẻ em,mì|rau,
+307,0,trẻ em,súp|súp,
+308,1,người lớn,củ|xôi,phụ nữ mang thai
+309,1,trẻ em,vịt|súp,
+310,1,người lớn,tôm|củ,phụ nữ mang thai
+311,1,trẻ em,lẩu|lợn,
+312,0,trẻ em,phở|xôi,
+313,1,trẻ em,tôm|tôm,
+314,1,trẻ em,phở|bò,
+315,0,người già,rau|vịt,
+316,1,người lớn,củ|tôm,phụ nữ mang thai
+317,1,người lớn,bánh mì|lợn,phụ nữ mang thai
+318,1,trẻ em,cá|lẩu,
+319,0,trẻ em,tôm|mì,
+320,0,người già,bún|quả,
+321,0,người già,lẩu|cá,
+322,0,trẻ em,bánh mì|xôi,
+323,1,người lớn,bún|bún,phụ nữ mang thai
+324,1,người lớn,bánh mì|lợn,phụ nữ mang thai
+325,0,người lớn,cháo|phở,
+326,1,người lớn,tôm|cháo,phụ nữ mang thai
+327,0,trẻ em,bún|xôi,
+328,0,người lớn,bò|phở,
+329,1,người già,quả|gà,
+330,0,người già,xôi|quả,
+331,0,trẻ em,gà|củ,
+332,1,người lớn,súp|bánh mì,phụ nữ mang thai
+333,0,trẻ em,vịt|quả,
+334,0,người lớn,bò|bò,
+335,0,người già,rau|xôi,
+336,1,người lớn,súp|cá,phụ nữ mang thai
+337,1,trẻ em,rau|vịt,
+338,1,trẻ em,củ|súp,
+339,1,người lớn,gà|vịt,phụ nữ mang thai
+340,0,trẻ em,bún|gà,
+341,0,người lớn,quả|cháo,
+342,1,người già,cháo|lẩu,
+343,1,trẻ em,củ|súp,
+344,1,người già,vịt|bún,
+345,1,người lớn,bún|cá,phụ nữ mang thai
+346,0,người lớn,bò|bánh mì,
+347,0,người già,lẩu|lợn,
+348,1,người lớn,súp|vịt,
+349,0,trẻ em,vịt|vịt,
+350,0,người già,quả|quả,
+351,0,người lớn,cá|cá,
+352,1,người già,mì|bò,
+353,1,trẻ em,củ|vịt,
+354,1,người già,xôi|vịt,
+355,1,người già,củ|cá,
+356,0,người lớn,phở|cá,
+357,0,người lớn,tôm|cá,
+358,1,người già,lợn|lẩu,
+359,1,người lớn,bánh mì|rau,
+360,1,người già,quả|củ,
+361,0,người già,vịt|súp,
+362,1,người lớn,củ|gà,
+363,1,người già,bò|cá,
+364,0,người già,bò|vịt,
+365,0,người già,quả|phở,
+366,0,người già,bún|phở,
+367,1,người già,quả|bún,
+368,0,người già,rau|lẩu,
+369,1,người lớn,bún|mì,
+370,0,người già,bún|bò,
+371,0,trẻ em,lợn|cháo,
+372,0,trẻ em,cháo|lợn,
+373,0,người lớn,vịt|cá,
+374,1,trẻ em,phở|súp,
+375,1,người lớn,tôm|lẩu,
+376,1,người già,bò|tôm,
+377,0,người già,lợn|rau,
+378,1,trẻ em,bún|cá,
+379,1,người già,phở|bún,
+380,0,người lớn,cháo|mì,
+381,1,người lớn,bò|vịt,
+382,1,người già,cá|quả,
+383,1,người lớn,cá|cá,
+384,0,trẻ em,bò|củ,
+385,0,người già,củ|lẩu,
+386,0,người già,rau|rau,
+387,0,người lớn,mì|bún,
+388,1,người lớn,rau|mì,
+389,0,người già,củ|rau,
+390,1,người lớn,tôm|cháo,
+391,0,trẻ em,củ|súp,
+392,1,người già,cá|lợn,
+393,1,người lớn,bánh mì|xôi,
+394,0,trẻ em,gà|mì,
+395,0,người già,súp|tôm,
+396,1,người già,cá|bánh mì,
+397,0,trẻ em,quả|vịt,
+398,0,trẻ em,xôi|gà,
+399,0,trẻ em,gà|mì,
+400,1,người lớn,tôm|bánh mì,bệnh dạ dày
+401,0,người già,cháo|bánh mì,bệnh tim mạch
+402,1,người già,củ|cá,bệnh huyết áp cao
+403,1,người lớn,bánh mì|bún,bệnh dạ dày
+404,0,người già,củ|súp,bệnh tiểu đường
+405,1,người lớn,lẩu|phở,bệnh dạ dày
+406,0,người già,tôm|phở,bệnh tiểu đường
+407,0,người lớn,cá|quả,bệnh huyết áp cao
+408,0,người lớn,bún|gà,bệnh dạ dày
+409,0,người lớn,vịt|phở,bệnh huyết áp cao
+410,0,người già,củ|cháo,bệnh dạ dày
+411,1,người già,lợn|củ,bệnh tiểu đường
+412,0,người lớn,mì|súp,bệnh tiểu đường
+413,0,người lớn,củ|phở,bệnh tiểu đường
+414,1,người già,bún|phở,bệnh huyết áp cao
+415,1,trẻ em,bún|bò,
+416,0,trẻ em,xôi|mì,
+417,1,người lớn,bò|lợn,bệnh dạ dày
+418,1,người già,gà|cá,bệnh dạ dày
+419,0,người lớn,phở|lẩu,bệnh dạ dày
+420,0,trẻ em,rau|xôi,
+421,0,người lớn,lợn|cháo,bệnh tim mạch
+422,1,người lớn,mì|cháo,bệnh dạ dày
+423,0,trẻ em,phở|bò,
+424,0,người lớn,vịt|bún,bệnh tim mạch
+425,0,người già,bánh mì|vịt,bệnh huyết áp cao
+426,1,trẻ em,súp|bún,
+427,1,người lớn,phở|xôi,bệnh dạ dày
+428,0,trẻ em,cháo|lợn,
+429,0,người lớn,xôi|bò,bệnh dạ dày
+430,0,trẻ em,gà|lẩu,
+431,0,người lớn,mì|cháo,bệnh huyết áp cao
+432,0,trẻ em,bún|tôm,
+433,0,người già,cháo|tôm,bệnh tiểu đường
+434,1,người lớn,bánh mì|lợn,bệnh tim mạch
+435,1,người lớn,xôi|lẩu,bệnh tiểu đường
+436,0,trẻ em,cá|quả,
+437,1,người lớn,phở|tôm,bệnh dạ dày
+438,0,người già,bánh mì|quả,bệnh tiểu đường
+439,0,người lớn,rau|vịt,bệnh tim mạch
+440,0,trẻ em,cá|bún,
+441,1,người lớn,bò|súp,bệnh tim mạch
+442,1,người già,mì|cá,bệnh dạ dày
+443,1,người lớn,bò|phở,bệnh dạ dày
+444,1,người già,lợn|bún,bệnh dạ dày
+445,1,người lớn,xôi|phở,bệnh huyết áp cao
+446,0,trẻ em,xôi|phở,
+447,0,người lớn,súp|lợn,bệnh tiểu đường
+448,0,người già,bánh mì|rau,bệnh tim mạch
+449,1,người lớn,tôm|mì,
+450,1,trẻ em,vịt|lẩu,
+451,0,người già,súp|rau,
+452,1,người lớn,bánh mì|quả,
+453,1,người lớn,xôi|bánh mì,
+454,1,trẻ em,gà|tôm,
+455,0,người lớn,tôm|bò,
+456,1,trẻ em,bò|vịt,
+457,1,trẻ em,rau|tôm,
+458,0,người già,vịt|lẩu,
+459,0,trẻ em,bánh mì|phở,
+460,1,người già,cháo|bò,
+461,0,người lớn,bánh mì|súp,
+462,1,người lớn,xôi|tôm,
+463,0,trẻ em,tôm|xôi,
+464,0,người già,súp|tôm,
+465,0,người lớn,rau|phở,
+466,0,trẻ em,phở|bò,
+467,0,người già,mì|cháo,
+468,1,trẻ em,quả|bò,
+469,0,trẻ em,phở|rau,
+470,0,trẻ em,mì|tôm,
+471,0,người già,bò|cá,
+472,1,trẻ em,bò|cháo,
+473,0,trẻ em,gà|tôm,
+474,1,trẻ em,quả|súp,
+475,0,người lớn,bò|phở,
+476,0,người lớn,gà|bò,
+477,1,trẻ em,lẩu|xôi,
+478,1,người già,vịt|quả,
+479,1,người lớn,tôm|cá,
+480,1,người lớn,mì|lợn,
+481,0,người lớn,bánh mì|phở,
+482,0,người già,cá|lợn,
+483,0,người già,cá|xôi,
+484,0,trẻ em,súp|bún,
+485,1,trẻ em,súp|mì,
+486,0,người già,tôm|xôi,
+487,0,người lớn,bánh mì|xôi,
+488,1,người già,bánh mì|bún,
+489,1,người lớn,rau|mì,
+490,1,trẻ em,lợn|củ,
+491,1,người lớn,tôm|mì,
+492,1,người lớn,cháo|bún,
+493,0,người già,củ|vịt,
+494,0,người già,vịt|súp,
+495,0,người già,cá|lợn,
+496,1,trẻ em,súp|mì,
+497,1,người lớn,vịt|lẩu,
+498,1,trẻ em,súp|lợn,
+499,1,người lớn,tôm|mì,
+500,0,người già,phở|cháo,
+501,1,người lớn,lợn|lợn,
+502,1,người già,vịt|bò,
+503,1,người già,xôi|vịt,
+504,0,trẻ em,lợn|súp,
+505,0,người lớn,quả|bánh mì,
+506,0,người già,phở|vịt,
+507,1,người già,quả|lẩu,
+508,0,trẻ em,cháo|lợn,
+509,0,trẻ em,quả|bún,
+510,0,người già,phở|tôm,
+511,0,người lớn,bò|cá,
+512,1,người lớn,súp|tôm,
+513,0,trẻ em,lẩu|rau,
+514,0,người già,củ|tôm,
+515,1,người lớn,bánh mì|vịt,
+516,0,người lớn,tôm|bún,
+517,0,người lớn,vịt|bò,
+518,1,trẻ em,mì|bánh mì,
+519,1,trẻ em,bún|củ,
+520,0,trẻ em,lợn|bò,
+521,1,trẻ em,xôi|tôm,
+522,0,người già,xôi|súp,
+523,1,trẻ em,bò|lợn,
+524,0,người già,mì|vịt,
+525,1,người già,rau|bò,
+526,1,người già,bánh mì|cá,
+527,1,người lớn,cá|bò,
+528,1,trẻ em,bò|cháo,
+529,1,người lớn,súp|củ,
+530,0,người lớn,rau|rau,
+531,1,người già,bún|vịt,
+532,0,trẻ em,lợn|rau,
+533,0,người già,rau|bánh mì,
+534,1,trẻ em,lợn|xôi,
+535,0,người già,gà|lẩu,
+536,0,người lớn,rau|rau,
+537,1,trẻ em,gà|lợn,
+538,0,người lớn,phở|bánh mì,
+539,0,người già,rau|lẩu,
+540,1,người già,quả|củ,
+541,0,người già,lợn|súp,
+542,0,người lớn,súp|lợn,
+543,1,người già,bánh mì|rau,
+544,1,trẻ em,củ|lợn,
+545,0,trẻ em,xôi|bò,
+546,1,trẻ em,rau|rau,
+547,1,người già,rau|gà,
+548,1,người già,bánh mì|bánh mì,
+549,0,người già,xôi|cá,
+550,1,người già,bánh mì|xôi,
+551,0,người lớn,tôm|cá,
+552,1,người lớn,rau|bún,
+553,1,người lớn,bánh mì|cháo,
+554,1,trẻ em,cá|mì,
+555,1,người lớn,bò|tôm,
+556,1,trẻ em,lẩu|mì,
+557,0,người lớn,phở|củ,
+558,1,trẻ em,lẩu|tôm,
+559,0,trẻ em,bánh mì|súp,
+560,0,người lớn,tôm|bún,
+561,1,người lớn,lẩu|tôm,
+562,0,người lớn,cá|lợn,
+563,1,người già,lợn|phở,
+564,0,trẻ em,xôi|củ,
+565,1,người lớn,xôi|bánh mì,
+566,1,trẻ em,vịt|mì,
+567,1,người già,gà|phở,
+568,0,người già,gà|rau,
+569,0,người lớn,xôi|gà,
+570,1,trẻ em,bún|gà,
+571,1,người già,cá|vịt,
+572,1,người già,quả|cá,
+573,1,người già,bò|bò,
+574,0,trẻ em,bún|rau,
+575,0,trẻ em,cháo|bò,
+576,1,người già,lợn|phở,
+577,0,trẻ em,mì|phở,
+578,0,người già,củ|bánh mì,
+579,0,người lớn,mì|xôi,
+580,1,người già,củ|cháo,
+581,1,người lớn,mì|cá,
+582,0,trẻ em,lẩu|vịt,
+583,0,người lớn,súp|cháo,
+584,1,người già,mì|gà,
+585,0,người lớn,bánh mì|lợn,
+586,0,người già,bò|vịt,
+587,0,trẻ em,bò|cá,
+588,0,người già,lẩu|bò,
+589,0,người lớn,lẩu|lẩu,
+590,1,trẻ em,củ|phở,
+591,1,trẻ em,cháo|lẩu,
+592,0,người lớn,cá|cá,
+593,0,trẻ em,xôi|lẩu,
+594,0,người lớn,vịt|phở,
+595,1,người lớn,xôi|rau,
+596,0,trẻ em,mì|quả,
+597,0,trẻ em,bò|súp,
+598,0,người già,súp|súp,
+599,0,người lớn,bún|bánh mì,
+600,1,trẻ em,quả|vịt,
+601,1,trẻ em,cháo|xôi,
+602,0,người già,phở|bún,
+603,1,trẻ em,mì|cháo,
+604,0,người lớn,bò|bò,
+605,0,trẻ em,mì|tôm,
+606,0,người già,cháo|xôi,
+607,1,người già,xôi|bún,
+608,0,trẻ em,súp|tôm,
+609,0,người già,rau|vịt,
+610,1,người già,lẩu|tôm,
+611,0,người già,bò|lẩu,
+612,0,trẻ em,phở|tôm,
+613,0,người lớn,bò|phở,
+614,1,trẻ em,lẩu|cháo,
+615,1,trẻ em,rau|lợn,
+616,0,trẻ em,cá|bánh mì,
+617,1,người già,xôi|gà,
+618,1,trẻ em,phở|quả,
+619,0,trẻ em,rau|mì,
+620,0,người già,quả|bánh mì,
+621,1,người già,lẩu|lẩu,
+622,1,trẻ em,xôi|mì,
+623,1,người già,gà|vịt,
+624,1,người già,mì|súp,
+625,1,trẻ em,bún|gà,
+626,0,người lớn,gà|xôi,
+627,1,người già,xôi|phở,
+628,1,trẻ em,xôi|lợn,
+629,1,trẻ em,bò|bánh mì,
+630,1,người già,phở|bò,
+631,0,trẻ em,phở|quả,
+632,0,người già,quả|bún,
+633,0,trẻ em,lợn|vịt,
+634,0,người lớn,phở|bún,
+635,0,người lớn,quả|lợn,
+636,1,người lớn,phở|phở,
+637,0,trẻ em,súp|tôm,
+638,1,trẻ em,quả|mì,
+639,0,người lớn,gà|củ,
+640,0,người già,củ|súp,
+641,1,trẻ em,rau|rau,
+642,0,người lớn,quả|tôm,
+643,1,người già,bánh mì|lợn,
+644,1,người già,bò|bánh mì,
+645,1,người lớn,bánh mì|quả,
+646,1,người già,bún|cá,
+647,0,người già,gà|cháo,
+648,0,trẻ em,quả|xôi,
+649,0,người lớn,quả|quả,
+650,1,trẻ em,gà|xôi,
+651,1,trẻ em,tôm|tôm,
+652,0,người lớn,súp|củ,
+653,1,người lớn,bánh mì|mì,
+654,1,người lớn,gà|tôm,
+655,1,người già,phở|lợn,
+656,0,người già,mì|súp,
+657,0,trẻ em,tôm|bò,
+658,1,người già,củ|gà,
+659,1,người già,gà|tôm,
+660,0,người già,gà|tôm,
+661,0,trẻ em,bún|súp,
+662,0,trẻ em,vịt|vịt,
+663,1,người lớn,súp|cá,
+664,1,người lớn,súp|lợn,
+665,1,người già,tôm|mì,
+666,0,người già,phở|quả,
+667,1,trẻ em,mì|bánh mì,
+668,1,người già,lợn|phở,
+669,1,người già,rau|xôi,
+670,0,người già,bún|bánh mì,
+671,0,người già,tôm|lẩu,
+672,0,người lớn,lẩu|phở,
+673,1,trẻ em,vịt|vịt,
+674,0,trẻ em,lợn|phở,
+675,1,người già,củ|gà,
+676,0,người lớn,xôi|cháo,
+677,0,người lớn,xôi|cá,
+678,1,trẻ em,lẩu|tôm,
+679,1,người già,cháo|bò,
+680,1,trẻ em,bún|củ,
+681,0,người già,súp|mì,
+682,1,người lớn,tôm|xôi,
+683,1,người lớn,gà|bò,
+684,1,người già,súp|quả,
+685,1,người già,củ|xôi,
+686,1,người lớn,lợn|tôm,
+687,0,người già,tôm|bún,
+688,0,trẻ em,mì|củ,
+689,0,người già,cá|củ,
+690,0,người lớn,bánh mì|củ,
+691,1,người già,cá|rau,
+692,1,người lớn,tôm|vịt,
+693,1,người già,mì|quả,
+694,0,người lớn,củ|cá,
+695,1,trẻ em,lẩu|bò,
+696,1,người lớn,lợn|gà,
+697,0,trẻ em,tôm|cháo,
+698,1,trẻ em,súp|cá,
+699,0,trẻ em,mì|xôi,
+700,1,trẻ em,rau|gà,
+701,0,trẻ em,bánh mì|củ,
+702,1,người lớn,gà|cá,
+703,1,người lớn,vịt|lợn,
+704,1,người già,bánh mì|bò,
+705,0,trẻ em,quả|lẩu,
+706,1,trẻ em,bánh mì|phở,
+707,0,trẻ em,quả|bò,
+708,0,trẻ em,lẩu|xôi,
+709,1,trẻ em,bò|bún,
+710,1,người lớn,cháo|rau,
+711,1,người lớn,quả|bánh mì,
+712,1,người già,bò|lẩu,
+713,0,người lớn,mì|lợn,
+714,1,người lớn,quả|lợn,
+715,0,người lớn,rau|lợn,
+716,0,người lớn,tôm|tôm,
+717,1,người lớn,tôm|súp,
+718,0,người lớn,rau|mì,
+719,0,trẻ em,lẩu|bánh mì,
+720,1,trẻ em,mì|mì,
+721,1,người lớn,tôm|gà,
+722,1,người lớn,mì|mì,
+723,1,người lớn,phở|tôm,
+724,1,người lớn,tôm|xôi,
+725,1,người lớn,mì|mì,
+726,0,người lớn,bún|quả,
+727,0,người già,cá|súp,
+728,0,người già,lẩu|bún,
+729,0,người lớn,cháo|súp,
+730,1,trẻ em,xôi|vịt,
+731,1,người lớn,củ|củ,
+732,1,người già,tôm|cá,
+733,1,trẻ em,tôm|lợn,
+734,0,trẻ em,lợn|lẩu,
+735,1,người già,lợn|bún,
+736,1,người lớn,vịt|cá,
+737,1,người già,rau|mì,
+738,1,người lớn,bò|phở,
+739,1,người lớn,phở|tôm,
+740,0,trẻ em,xôi|cá,
+741,0,người già,vịt|củ,
+742,0,người già,lẩu|mì,
+743,0,người già,bún|củ,
+744,0,người lớn,mì|lợn,
+745,1,trẻ em,bánh mì|cá,
+746,0,người già,lẩu|tôm,
+747,0,trẻ em,mì|bún,
+748,0,người lớn,rau|cá,
+749,1,người lớn,vịt,
+750,0,trẻ em,cá,
+751,1,người già,xôi,bệnh tiểu đường
+752,1,người già,cháo,bệnh dạ dày
+753,1,người lớn,lẩu,bệnh huyết áp cao
+754,0,người già,gà,bệnh dạ dày
+755,1,trẻ em,rau,
+756,1,trẻ em,súp,
+757,1,người già,cá,bệnh tiểu đường
+758,1,trẻ em,phở,
+759,0,trẻ em,cá,
+760,0,người già,xôi,bệnh dạ dày
+761,1,trẻ em,bò,
+762,0,người lớn,cá,bệnh tiểu đường
+763,1,người lớn,bún,bệnh tiểu đường
+764,1,người lớn,cá,bệnh tim mạch
+765,0,người già,xôi,bệnh tim mạch
+766,1,người lớn,xôi,bệnh huyết áp cao
+767,0,người lớn,bún,bệnh huyết áp cao
+768,1,người già,lợn,bệnh tim mạch
+769,1,người già,súp,bệnh dạ dày
+770,0,trẻ em,cá,
+771,0,người già,lẩu,bệnh dạ dày
+772,0,trẻ em,cháo,
+773,0,người già,gà,bệnh dạ dày
+774,0,người lớn,củ,bệnh tim mạch
+775,1,người già,gà,bệnh tim mạch
+776,1,trẻ em,tôm,
+777,0,người già,bò,bệnh huyết áp cao
+778,1,trẻ em,rau,
+779,0,người lớn,vịt,bệnh dạ dày
+780,1,trẻ em,mì,
+781,0,người già,cá,bệnh tiểu đường
+782,0,người lớn,vịt,bệnh tiểu đường
+783,1,trẻ em,bò,
+784,0,người lớn,quả,bệnh tiểu đường
+785,0,người già,gà,bệnh tim mạch
+786,0,người lớn,bánh mì,bệnh huyết áp cao
+787,0,người lớn,quả,bệnh dạ dày
+788,0,trẻ em,lợn,
+789,0,người già,bánh mì,bệnh tim mạch
+790,1,người lớn,cá,bệnh tiểu đường
+791,1,người lớn,củ,bệnh huyết áp cao
+792,0,trẻ em,gà,
+793,1,người già,phở,bệnh dạ dày
+794,0,người lớn,bún,bệnh tiểu đường
+795,0,người lớn,cháo,bệnh tiểu đường
+796,0,trẻ em,bò,
+797,1,người già,lợn,bệnh tiểu đường
+798,0,trẻ em,bánh mì,
+799,1,trẻ em,lợn,
+800,0,người lớn,phở,bệnh tiểu đường
+801,0,trẻ em,quả,
+802,1,người già,lợn,bệnh dạ dày
+803,1,người lớn,củ,bệnh tiểu đường
+804,0,người lớn,bún,bệnh huyết áp cao
+805,1,người lớn,bún,bệnh tim mạch
+806,1,người lớn,rau,bệnh tiểu đường
+807,1,trẻ em,phở,
+808,1,trẻ em,lẩu,
+809,0,trẻ em,cá,
+810,0,trẻ em,lợn,
+811,0,người lớn,vịt,bệnh dạ dày
+812,0,người lớn,củ,bệnh huyết áp cao
+813,1,người lớn,bún,bệnh huyết áp cao
+814,1,trẻ em,gà,
+815,1,người già,bún,bệnh huyết áp cao
+816,1,người lớn,bò,bệnh huyết áp cao
+817,1,người già,tôm,bệnh tim mạch
+818,1,người lớn,lợn,bệnh tiểu đường
+819,0,trẻ em,bò,
+820,0,trẻ em,cá,
+821,1,trẻ em,mì,
+822,0,người lớn,củ,bệnh dạ dày
+823,1,người già,mì,bệnh tim mạch
+824,1,trẻ em,súp,
+825,0,người lớn,cá,bệnh tim mạch
+826,0,trẻ em,bún,
+827,1,người lớn,rau,bệnh tim mạch
+828,0,trẻ em,bún,
+829,0,người lớn,xôi,bệnh tim mạch
+830,1,người lớn,rau,bệnh tiểu đường
+831,1,người lớn,cháo,bệnh tim mạch
+832,0,người già,vịt,bệnh dạ dày
+833,0,người lớn,xôi,bệnh tiểu đường
+834,0,người già,bò,bệnh dạ dày
+835,0,trẻ em,xôi,
+836,1,trẻ em,xôi,
+837,0,người già,vịt,bệnh tiểu đường
+838,1,người già,lợn,bệnh dạ dày
+839,0,trẻ em,súp,
+840,1,trẻ em,lẩu,
+841,1,người lớn,tôm,bệnh tiểu đường
+842,1,người lớn,xôi,bệnh tiểu đường
+843,0,người già,quả,bệnh dạ dày
+844,1,trẻ em,cá,
+845,0,người già,bún,bệnh tim mạch
+846,0,người già,tôm,bệnh tiểu đường
+847,1,người già,mì,bệnh dạ dày
+848,1,người lớn,gà,bệnh dạ dày
+849,0,người già,mì,
+850,0,người lớn,cá,
+851,0,trẻ em,tôm,
+852,1,người già,cá,
+853,1,trẻ em,phở,
+854,1,người lớn,lẩu,
+855,0,người lớn,tôm,
+856,1,người già,mì,
+857,0,người lớn,củ,
+858,1,người lớn,lẩu,
+859,0,người già,lợn,
+860,1,người lớn,tôm,
+861,0,trẻ em,bánh mì,
+862,1,người già,bánh mì,
+863,0,người già,bò,
+864,1,trẻ em,phở,
+865,1,người lớn,tôm,
+866,1,người lớn,bò,
+867,1,người lớn,củ,
+868,1,người lớn,bánh mì,
+869,1,người lớn,phở,
+870,0,người già,củ,
+871,1,người già,lẩu,
+872,1,người lớn,cá,
+873,0,trẻ em,cháo,
+874,1,người lớn,quả,
+875,0,người già,phở,
+876,0,người già,lợn,
+877,1,người lớn,mì,
+878,0,người lớn,cháo,
+879,1,trẻ em,rau,
+880,1,người lớn,cháo,
+881,1,người già,cá,
+882,0,người già,bún,
+883,0,người già,lợn,
+884,0,trẻ em,bò,
+885,1,người lớn,cháo,
+886,0,người lớn,phở,
+887,1,người lớn,phở,
+888,1,trẻ em,bún,
+889,1,người lớn,cá,
+890,0,người già,gà,
+891,1,người già,quả,
+892,0,người lớn,bánh mì,
+893,1,người già,phở,
+894,0,người già,gà,
+895,0,người già,bún,
+896,0,người lớn,phở,
+897,0,người già,củ,
+898,1,người lớn,gà,
+899,1,người lớn,vịt,
+900,1,người già,bánh mì,
+901,0,người già,cháo,
+902,0,người lớn,xôi,
+903,0,trẻ em,củ,
+904,1,người già,cá,
+905,0,người già,gà,
+906,0,người già,gà,
+907,0,người lớn,cháo,
+908,1,trẻ em,quả,
+909,1,người già,bún,
+910,0,người già,quả,
+911,0,người già,lợn,
+912,1,người già,tôm,
+913,1,người lớn,súp,
+914,1,người lớn,lợn,
+915,0,người lớn,bánh mì,
+916,1,người lớn,phở,
+917,1,trẻ em,quả,
+918,0,trẻ em,xôi,
+919,1,trẻ em,xôi,
+920,1,người lớn,súp,
+921,0,người lớn,cá,
+922,0,trẻ em,bánh mì,
+923,1,người già,quả,
+924,0,người lớn,củ,
+925,0,người lớn,củ,
+926,0,trẻ em,củ,
+927,0,người già,cá,
+928,0,người lớn,bò,
+929,1,trẻ em,tôm,
+930,0,người già,bún,
+931,0,người lớn,cá,
+932,0,người già,súp,
+933,1,người già,bò,
+934,1,người lớn,vịt,
+935,1,trẻ em,phở,
+936,1,người già,gà,
+937,1,người già,gà,
+938,0,người già,rau,
+939,0,người già,lẩu,
+940,0,người lớn,cháo,
+941,1,trẻ em,cháo,
+942,0,người già,bún,
+943,0,người lớn,vịt,
+944,1,người già,củ,
+945,1,người già,cá,
+946,1,người già,súp,
+947,1,người già,bò,
+948,0,người lớn,bò,
+949,1,người già,quả,
+950,0,trẻ em,phở,
+951,0,người già,mì,
+952,0,người lớn,cá,
+953,0,người già,vịt,
+954,1,người già,củ,
+955,0,người già,bún,
+956,1,trẻ em,gà,
+957,1,trẻ em,lợn,
+958,0,người lớn,lẩu,
+959,0,người lớn,xôi,
+960,1,người già,lợn,
+961,0,người lớn,lẩu,
+962,0,người lớn,cháo,
+963,1,trẻ em,xôi,
+964,1,người lớn,phở,
+965,0,người lớn,bún,
+966,0,người lớn,bò,
+967,0,người già,mì,
+968,1,người già,củ,
+969,1,người lớn,cá,
+970,0,người lớn,cháo,
+971,1,người già,vịt,
+972,0,trẻ em,rau,
+973,0,người lớn,mì,
+974,0,trẻ em,lẩu,
+975,0,trẻ em,lợn,
+976,0,trẻ em,tôm,
+977,0,người lớn,tôm,
+978,0,trẻ em,mì,
+979,1,trẻ em,súp,
+980,0,trẻ em,lợn,
+981,1,trẻ em,lợn,
+982,0,trẻ em,phở,
+983,0,người già,vịt,
+984,1,trẻ em,bún,
+985,1,người già,bò,
+986,0,trẻ em,bún,
+987,0,trẻ em,cá,
+988,0,người lớn,quả,
+989,0,trẻ em,súp,
+990,1,người lớn,mì,
+991,1,người già,cá,
+992,1,trẻ em,quả,
+993,1,trẻ em,cá,
+994,0,người già,bò,
+995,0,người lớn,phở,
+996,1,người già,vịt,
+997,1,trẻ em,lẩu,
+998,0,trẻ em,bò,
+999,0,người già,súp,

@@ -1,0 +1,2001 @@
+user_id,recipe_name,user_gender,user_age,user_hobbies,user_health,top1_meals,top2_meals,top3_meals,top4_meals,top5_meals
+0,mắm tép chưng,1,người lớn,,bệnh dạ dày,111,128,0,0,0
+0,cá lanh kho khô,1,người lớn,,bệnh dạ dày,978,0,0,0,0
+1,bún riêu,1,người già,,bệnh tim mạch,274,791,0,0,0
+1,mướp luộc,1,người già,,bệnh tim mạch,125,0,0,0,0
+2,canh khoai mỡ,0,trẻ em,,,347,368,461,938,0
+2,canh cá diêu hồng nấu ngót,0,trẻ em,,,888,0,0,0,0
+3,rau cải chíp luộc,1,trẻ em,,,62,0,0,0,0
+3,cà tím xào,1,trẻ em,,,34,0,0,0,0
+4,sinh tố dừa,1,người già,,bệnh tim mạch,323,403,662,936,0
+4,miến cua xào,1,người già,,bệnh tim mạch,170,332,621,0,0
+5,vịt xào gừng,0,người lớn,,bệnh tiểu đường,186,0,0,0,0
+5,giá hẹ ngâm chua,0,người lớn,,bệnh tiểu đường,714,0,0,0,0
+6,xà lách trộn giấm,1,người lớn,,bệnh tiểu đường,188,0,0,0,0
+6,canh chua đầu cá ba sa,1,người lớn,,bệnh tiểu đường,116,0,0,0,0
+7,nộm đu đủ,0,người già,,bệnh tim mạch,86,0,0,0,0
+7,canh củ dền hầm sườn,0,người già,,bệnh tim mạch,414,612,713,0,0
+8,canh rau cải xanh nấu ruốc,1,trẻ em,,,338,0,0,0,0
+8,xoài chín ướp lạnh,1,trẻ em,,,588,0,0,0,0
+9,đậu hũ chiên trứng,0,trẻ em,,,11,0,0,0,0
+9,cà phê sữa,0,trẻ em,,,272,326,435,578,619
+10,rau luộc,1,trẻ em,,,686,0,0,0,0
+10,bạch tuộc sa tế,1,trẻ em,,,115,0,0,0,0
+11,đùi gà om sả tế,0,người già,,bệnh huyết áp cao,248,0,0,0,0
+11,canh ngót cá khoai,0,người già,,bệnh huyết áp cao,579,798,0,0,0
+12,thịt xông khói xào măng tây,1,người lớn,,bệnh dạ dày,187,385,0,0,0
+12,canh khoai tây nấu sườn,1,người lớn,,bệnh dạ dày,109,130,135,0,0
+13,cua đồng rang muối,1,người lớn,,bệnh huyết áp cao,93,101,0,0,0
+13,chả sả,1,người lớn,,bệnh huyết áp cao,82,0,0,0,0
+14,đuôi heo hầm kỷ tử và atiso,1,người lớn,,bệnh dạ dày,329,0,0,0,0
+14,dâu tươi giằm,1,người lớn,,bệnh dạ dày,563,855,0,0,0
+15,mì xào tôm,0,người lớn,,bệnh tiểu đường,907,0,0,0,0
+15,bắp bò hầm đậu trắng ăn kèm bánh mì,0,người lớn,,bệnh tiểu đường,183,0,0,0,0
+16,sinh tố khoai mỡ và khoai môn,1,người già,,bệnh tiểu đường,176,0,0,0,0
+16,thịt kho dừa,1,người già,,bệnh tiểu đường,143,0,0,0,0
+17,đậu phụ luộc,0,người già,,bệnh tiểu đường,34,45,54,103,0
+17,bánh bèo,0,người già,,bệnh tiểu đường,235,0,0,0,0
+18,gà nướng mật ong,1,trẻ em,,,103,0,0,0,0
+18,thịt kho trứng,1,trẻ em,,,86,110,330,342,540
+19,salad thịt bò cà tím,0,người già,,bệnh huyết áp cao,677,0,0,0,0
+19,salad cà sốt trứng chiên chua cay,0,người già,,bệnh huyết áp cao,702,0,0,0,0
+20,canh bí đao nấu thịt viên,1,trẻ em,,,500,514,726,0,0
+20,nước ép chanh dây,1,trẻ em,,,291,442,486,543,825
+21,súp tương miso trứng nấm,1,trẻ em,,,241,850,0,0,0
+21,ca cao sữa,1,trẻ em,,,846,0,0,0,0
+22,gà kho tiêu xanh,0,người già,,bệnh tim mạch,756,0,0,0,0
+22,bắp bò hầm đậu trắng ăn kèm bánh mì,0,người già,,bệnh tim mạch,183,0,0,0,0
+23,đậu bắp xào tỏi,1,người già,,bệnh huyết áp cao,31,0,0,0,0
+23,hoa kim châm xào thịt bò,1,người già,,bệnh huyết áp cao,594,0,0,0,0
+24,cá lóc nướng trui,0,người già,,bệnh tiểu đường,200,0,0,0,0
+24,canh bí đỏ thịt nạc,0,người già,,bệnh tiểu đường,153,0,0,0,0
+25,cải thìa xào tôm thịt,0,người già,,bệnh huyết áp cao,334,0,0,0,0
+25,canh cá rô nấu mẻ,0,người già,,bệnh huyết áp cao,444,727,0,0,0
+26,cá chép kho dưa,1,người già,,bệnh huyết áp cao,906,0,0,0,0
+26,trứng cút rán sốt cà chua,1,người già,,bệnh huyết áp cao,79,0,0,0,0
+27,cháo cá lóc rau đắng,1,người già,,bệnh dạ dày,700,0,0,0,0
+27,canh cua rau đai,1,người già,,bệnh dạ dày,433,443,0,0,0
+28,chè môn,0,trẻ em,,,302,0,0,0,0
+28,trà mật ong,0,trẻ em,,,411,0,0,0,0
+29,nước ổi ép,0,người lớn,,bệnh huyết áp cao,711,0,0,0,0
+29,chạo cá nướng sả,0,người lớn,,bệnh huyết áp cao,543,0,0,0,0
+30,gà cuộn lá chanh,0,trẻ em,,,312,0,0,0,0
+30,nước sâm,0,trẻ em,,,417,423,466,550,703
+31,súp trái cây nấu gà,0,người già,,,603,671,0,0,0
+31,mận ướp lạnh,0,người già,,,213,357,489,607,747
+32,đậu non sốt chanh leo,0,người lớn,,,52,0,0,0,0
+32,chè nhãn nhục,0,người lớn,,,256,405,661,0,0
+33,canh bí đỏ thịt bằm,0,người già,,,438,553,829,0,0
+33,bò nướng tiêu,0,người già,,,321,0,0,0,0
+34,canh củ dền tôm thịt,0,người lớn,,,358,0,0,0,0
+34,gà om xì dầu,0,người lớn,,,69,0,0,0,0
+35,canh giá đỗ cải thảo,1,trẻ em,,,114,0,0,0,0
+35,canh bí xanh,1,trẻ em,,,966,0,0,0,0
+36,cá cơm chiên giòn,0,trẻ em,,,472,0,0,0,0
+36,bò xào thập cẩm,0,trẻ em,,,49,64,0,0,0
+37,bò xốt ngũ vị,0,trẻ em,,,367,944,0,0,0
+37,salad rau,0,trẻ em,,,30,0,0,0,0
+38,đậu phụ tẩm hành,1,trẻ em,,,117,958,962,0,0
+38,hến xào xúc bánh tráng,1,trẻ em,,,611,0,0,0,0
+39,salad trái cây,0,người lớn,,,255,452,556,792,0
+39,rau dền nấu thịt bằm,0,người lớn,,,364,0,0,0,0
+40,xôi bắp,1,người già,,,574,165,0,0,0
+40,lòng xào dưa,1,người già,,,127,0,0,0,0
+41,canh điêu hồng nấu nghệ,0,người lớn,,,914,0,0,0,0
+41,bí đao xào thịt,0,người lớn,,,382,957,0,0,0
+42,tôm cuốn khoai tây vàng giòn,1,người lớn,,phụ nữ mang thai,693,0,0,0,0
+42,rau đay nấu cua,1,người lớn,,phụ nữ mang thai,259,570,780,0,0
+43,thiên lý xào thịt bò,1,người già,,,295,0,0,0,0
+43,chè hoa cúc táo đỏ,1,người già,,,266,849,0,0,0
+44,canh gà nấu lá giang,0,người già,,,249,256,818,0,0
+44,"lẩu cá kèo, bún",0,người già,,,0,0,0,0,0
+45,cá thu nhật nấu ngót,1,trẻ em,,,268,0,0,0,0
+45,canh củ cải đỏ nấu sườn,1,trẻ em,,,373,607,0,0,0
+46,chè sấu,0,trẻ em,,,742,0,0,0,0
+46,mướp luộc,0,trẻ em,,,125,0,0,0,0
+47,tôm cuốn khoai tây vàng giòn,0,trẻ em,,,693,0,0,0,0
+47,canh tôm nấu mướp,0,trẻ em,,,601,0,0,0,0
+48,cải xào tỏi,1,người lớn,,phụ nữ mang thai,271,345,789,0,0
+48,sinh tố sa-pô-chê,1,người lớn,,phụ nữ mang thai,189,380,468,950,0
+49,rau muống luộc,0,người già,mì|củ|vịt,,8,17,22,23,31
+49,canh rau muống cà chua,0,người già,mì|củ|vịt,,54,0,0,0,0
+50,vịt nướng xốt me,0,người lớn,quả|tôm|tôm,,529,880,0,0,0
+50,đậu hũ trắng kho sườn,0,người lớn,quả|tôm|tôm,,588,0,0,0,0
+51,cá om chua,0,trẻ em,bún|gà|cháo,,45,0,0,0,0
+51,canh khoai mỡ nấu tôm,0,trẻ em,bún|gà|cháo,,447,510,740,767,862
+52,chè tàu hũ ky,0,người lớn,bún|lợn|lợn,,581,706,0,0,0
+52,canh củ cải nấu bò,0,người lớn,bún|lợn|lợn,,223,0,0,0,0
+53,canh khổ qua tôm khô,1,trẻ em,bò|mì|rau,,424,0,0,0,0
+53,hambuger bò,1,trẻ em,bò|mì|rau,,324,0,0,0,0
+54,cà chua xào đậu phụ,1,trẻ em,súp|gà|bò,,816,437,0,0,0
+54,cá diêu hồng hấp,1,trẻ em,súp|gà|bò,,108,0,0,0,0
+55,trứng cút chiên xù,0,người lớn,gà|quả|rau,,85,0,0,0,0
+55,đùi ếch chiên bột,0,người lớn,gà|quả|rau,,186,0,0,0,0
+56,bò kho sả,0,trẻ em,lẩu|mì|rau,,467,505,0,0,0
+56,gà kho tiêu xanh,0,trẻ em,lẩu|mì|rau,,756,0,0,0,0
+57,rau câu hạnh nhân,1,người già,vịt|rau|cháo,,393,686,916,0,0
+57,rau má nước dừa,1,người già,vịt|rau|cháo,,675,0,0,0,0
+58,canh cá nấu dứa,0,người già,quả|mì|gà,,115,0,0,0,0
+58,trứng cá thu hấp gừng,0,người già,quả|mì|gà,,383,0,0,0,0
+59,đuôi heo hầm đậu phộng,0,người lớn,bánh mì|mì|cá,,480,0,0,0,0
+59,rau củ quả luộc,0,người lớn,bánh mì|mì|cá,,115,118,44,67,105
+60,lẩu thái chua cay,0,người lớn,rau|lẩu|gà,,264,0,0,0,0
+60,sinh tố cà chua,0,người lớn,rau|lẩu|gà,,214,572,646,738,912
+61,canh măng móng giò,0,người lớn,phở|rau|mì,,107,0,0,0,0
+61,rau cải xào,0,người lớn,phở|rau|mì,,976,985,0,0,0
+62,canh bí đỏ thịt nạc,1,người già,tôm|xôi|gà,,153,0,0,0,0
+62,chả đùm thịt gà,1,người già,tôm|xôi|gà,,669,0,0,0,0
+63,gà hấp hành,1,người già,xôi|lợn|quả,,536,0,0,0,0
+63,cháo bồ câu,1,người già,xôi|lợn|quả,,837,0,0,0,0
+64,thịt bò xào cần,1,người già,rau|rau|quả,,579,730,798,0,0
+64,cải ngọt luộc,1,người già,rau|rau|quả,,283,839,0,0,0
+65,canh khoai nấu sườn,0,trẻ em,tôm|rau|tôm,,134,805,0,0,0
+65,bông cải sauce tôm,0,trẻ em,tôm|rau|tôm,,858,0,0,0,0
+66,giá hẹ xào thịt bò,0,người lớn,quả|lẩu|xôi,,439,0,0,0,0
+66,"canh tàu hủ, hẹ nấu thịt bằm",0,người lớn,quả|lẩu|xôi,,628,0,0,0,0
+67,rong chân vịt trộn gà,0,người già,cá|rau|mì,,840,0,0,0,0
+67,cá hồi chưng tương,0,người già,cá|rau|mì,,661,0,0,0,0
+68,gà kho nước tương,1,trẻ em,mì|gà|quả,,452,556,0,0,0
+68,bò kho sả,1,trẻ em,mì|gà|quả,,467,505,0,0,0
+69,cháo cá lóc,1,người lớn,vịt|bún|phở,phụ nữ mang thai,404,450,956,0,0
+69,canh tôm khoai mỡ,1,người lớn,vịt|bún|phở,phụ nữ mang thai,384,594,716,0,0
+70,gỏi gà rau má,0,người lớn,phở|phở|xôi,,770,0,0,0,0
+70,thịt viên nấm sốt cà chua,0,người lớn,phở|phở|xôi,,959,968,0,0,0
+71,"chè hạt sen , táo tàu",0,người già,quả|bò|tôm,,472,0,0,0,0
+71,canh cải xanh nấu cá rô,0,người già,quả|bò|tôm,,686,0,0,0,0
+72,nước rau má bạc hà,0,người già,bò|bún|bún,,274,0,0,0,0
+72,su hào luộc,0,người già,bò|bún|bún,,182,431,925,0,0
+73,mực chiên mắm tỏi,1,người già,bò|phở|vịt,,986,0,0,0,0
+73,canh ngót nấu cá khoai,1,người già,bò|phở|vịt,,361,0,0,0,0
+74,nước mắm dầm trứng,1,trẻ em,mì|quả|bò,,38,0,0,0,0
+74,ốc xào cay,1,trẻ em,mì|quả|bò,,101,0,0,0,0
+75,cháo đậu đỏ,0,người già,gà|lợn|củ,,226,378,935,0,0
+75,sanwich kẹp jambon xông khói,0,người già,gà|lợn|củ,,215,0,0,0,0
+76,đậu đũa xào,0,người già,bánh mì|cháo|phở,,29,0,0,0,0
+76,thiên lý xào bò,0,người già,bánh mì|cháo|phở,,522,0,0,0,0
+77,canh bí nấu tôm,0,trẻ em,cá|quả|xôi,,44,157,0,0,0
+77,nước ép ổi xá lị,0,trẻ em,cá|quả|xôi,,633,0,0,0,0
+78,sườn xào dứa,0,trẻ em,lẩu|lẩu|bún,,20,0,0,0,0
+78,canh rau muống nấu ngao,0,trẻ em,lẩu|lẩu|bún,,82,0,0,0,0
+79,canh đậu hũ,0,người già,bánh mì|cháo|bánh mì,,87,0,0,0,0
+79,cá bống mú xốt hạt sen,0,người già,bánh mì|cháo|bánh mì,,496,0,0,0,0
+80,salad nga,1,người già,lẩu|quả|vịt,,515,879,0,0,0
+80,canh giò heo nấu củ,1,người già,lẩu|quả|vịt,,775,0,0,0,0
+81,chả cá thác lác chiên,1,người già,phở|cháo|lẩu,,882,0,0,0,0
+81,kem tươi trà xanh trái cây,1,người già,phở|cháo|lẩu,,931,0,0,0,0
+82,tép rim thịt heo,1,người già,xôi|rau|bún,,356,0,0,0,0
+82,chè đậu đen,1,người già,xôi|rau|bún,,172,288,451,0,0
+83,thịt kho nấm rơm,0,trẻ em,rau|lẩu|phở,,662,0,0,0,0
+83,canh gà nha đa đam,0,trẻ em,rau|lẩu|phở,,668,0,0,0,0
+84,cơm tấm sườn nướng,1,trẻ em,bò|xôi|bún,,635,682,0,0,0
+84,mực nhồi thịt chiên,1,trẻ em,bò|xôi|bún,,46,0,0,0,0
+85,cà chua xào đậu phụ,0,người già,quả|cháo|lợn,,437,816,0,0,0
+85,canh chua cá thác lác,0,người già,quả|cháo|lợn,,412,449,462,931,0
+86,cà ri bắp bò sanwich,1,người già,tôm|lẩu|củ,,167,0,0,0,0
+86,salad rau mầm,1,người già,tôm|lẩu|củ,,949,0,0,0,0
+87,canh cua khoai môn,1,trẻ em,bò|bò|bánh mì,,408,952,0,0,0
+87,sâm bổ lượng,1,trẻ em,bò|bò|bánh mì,,502,322,587,659,714
+88,đùi ếch chiên bột,0,trẻ em,vịt|cháo|tôm,,186,0,0,0,0
+88,cải xào tỏi,0,trẻ em,vịt|cháo|tôm,,271,345,789,0,0
+89,trứng chiên hẹ với thịt gà,1,trẻ em,củ|súp|rau,,395,942,0,0,0
+89,đùi ếch chiên bột,1,trẻ em,củ|súp|rau,,186,0,0,0,0
+90,tôm xốt me,1,trẻ em,rau|súp|xôi,,368,938,0,0,0
+90,lẩu vịt quay thập cẩm,1,trẻ em,rau|súp|xôi,,898,0,0,0,0
+91,"đậu luộc, mắm đồng chưnggừng",0,trẻ em,cháo|bún|bún,,777,0,0,0,0
+91,cháo trứng thịt nạc,0,trẻ em,cháo|bún|bún,,297,787,0,0,0
+92,xôi thịt quay,0,người lớn,cháo|lợn|bò,,538,0,0,0,0
+92,tim heo xào chua ngọt,0,người lớn,cháo|lợn|bò,,812,0,0,0,0
+93,canh khoai sọ hầm xương,0,trẻ em,lẩu|xôi|bánh mì,,49,67,137,0,0
+93,thịt ba chỉ luộc,0,trẻ em,lẩu|xôi|bánh mì,,15,30,309,0,0
+94,mướp hương xào nấm,1,trẻ em,lợn|xôi|cá,,61,159,0,0,0
+94,chè đậu ngự,1,trẻ em,lợn|xôi|cá,,579,734,337,448,499
+95,gỏi khô bò,0,người già,xôi|cháo|cá,,859,0,0,0,0
+95,mực xào bông hẹ,0,người già,xôi|cháo|cá,,727,0,0,0,0
+96,tôm rim thịt,1,trẻ em,vịt|bún|cháo,,679,845,910,0,0
+96,cà tím chiên giòn,1,trẻ em,vịt|bún|cháo,,234,0,0,0,0
+97,móng heo hầm hạt sen,0,người già,tôm|xôi|rau,,212,0,0,0,0
+97,khoai tây xào cà chua,0,người già,tôm|xôi|rau,,82,0,0,0,0
+98,tim xào,1,trẻ em,lẩu|bún|rau,,107,0,0,0,0
+98,bò nướng tiêu,1,trẻ em,lẩu|bún|rau,,321,0,0,0,0
+99,gan heo xốt tỏi,1,trẻ em,lẩu|bún|cá,,864,0,0,0,0
+99,canh khổ qua nấu thác lác,1,trẻ em,lẩu|bún|cá,,312,0,0,0,0
+100,nước ép cà chua,1,người già,mì|lợn|bò,,459,512,570,797,826
+100,khoai môn nấu giò,1,người già,mì|lợn|bò,,271,789,0,0,0
+101,hoa mướp xào ức gà,1,người lớn,gà|bún|súp,phụ nữ mang thai,609,707,0,0,0
+101,cải cúc nấu tôm,1,người lớn,gà|bún|súp,phụ nữ mang thai,423,0,0,0,0
+102,trứng hấp tôm,0,người lớn,bánh mì|bún|cá,,173,0,0,0,0
+102,cải thìa xào tôm thịt,0,người lớn,bánh mì|bún|cá,,334,0,0,0,0
+103,canh bầu nấu tôm,1,trẻ em,mì|bún|lẩu,,50,58,81,132,152
+103,nho ép,1,trẻ em,mì|bún|lẩu,,624,0,0,0,0
+104,kim chi dưa leo,0,người lớn,mì|quả|gà,,480,0,0,0,0
+104,tôm hấp muối,0,người lớn,mì|quả|gà,,160,0,0,0,0
+105,canh đậu hũ cà chua,1,người già,phở|xôi|bánh mì,,95,392,0,0,0
+105,bao tử heo nhồi thịt hấp,1,người già,phở|xôi|bánh mì,,449,0,0,0,0
+106,bánh canh ghẹ,0,người lớn,cá|củ|rau,,204,875,0,0,0
+106,cá nục hấp hành,0,người lớn,cá|củ|rau,,358,379,508,768,854
+107,cải xanh luộc,0,người lớn,bò|phở|lợn,,750,436,622,0,0
+107,rau củ quả luộc,0,người lớn,bò|phở|lợn,,44,67,105,115,118
+108,thịt viên nấm sốt cà chua,1,người lớn,bánh mì|mì|lẩu,phụ nữ mang thai,959,968,0,0,0
+108,canh bí đỏ thịt nạc,1,người lớn,bánh mì|mì|lẩu,phụ nữ mang thai,153,0,0,0,0
+109,chè bà ba,1,trẻ em,xôi|củ|tôm,,625,845,665,0,0
+109,nước rong biển bông cúc,1,trẻ em,xôi|củ|tôm,,569,0,0,0,0
+110,gà nướng muối ớt,1,người lớn,lẩu|mì|mì,phụ nữ mang thai,431,0,0,0,0
+110,tôm rang chua ngọt,1,người lớn,lẩu|mì|mì,phụ nữ mang thai,158,0,0,0,0
+111,canh cá giấm mẻ,1,người lớn,xôi|xôi|tôm,phụ nữ mang thai,897,0,0,0,0
+111,chả quế,1,người lớn,xôi|xôi|tôm,phụ nữ mang thai,78,0,0,0,0
+112,,1,người già,xôi|bún|bún,,0,0,0,0,0
+112,hủ tiếu giò heo,1,người già,xôi|bún|bún,,585,651,0,0,0
+113,sườn sụn sốt chua ngọt,1,trẻ em,rau|củ|cá,,83,0,0,0,0
+113,bánh mousse xoài,1,trẻ em,rau|củ|cá,,453,0,0,0,0
+114,canh sườn nấu chua,0,người già,gà|củ|gà,,976,2,968,0,0
+114,canh cá giấm mẻ,0,người già,gà|củ|gà,,897,0,0,0,0
+115,dâu giằm đá,0,người lớn,cháo|mì|củ,,695,736,0,0,0
+115,măng xào hành tỏi,0,người lớn,cháo|mì|củ,,149,0,0,0,0
+116,giá xào thịt bò,1,trẻ em,rau|phở|tôm,,977,0,0,0,0
+116,canh chua cá hồi,1,trẻ em,rau|phở|tôm,,160,269,0,0,0
+117,chả cá sốt cà chua,0,người lớn,súp|mì|phở,,14,73,0,0,0
+117,kèo nèo xào tôm thịt,0,người lớn,súp|mì|phở,,563,0,0,0,0
+118,bồ câu rim sả ớt,0,người già,củ|phở|lợn,,799,0,0,0,0
+118,rau cải xào,0,người già,củ|phở|lợn,,976,985,0,0,0
+119,nước  ép chanh dây,1,người lớn,cá|rau|cá,phụ nữ mang thai,446,0,0,0,0
+119,cá chép kho riềng,1,người lớn,cá|rau|cá,phụ nữ mang thai,839,0,0,0,0
+120,bánh mì cuộn kem trái cây,0,người già,bò|củ|rau,,691,0,0,0,0
+120,bò rim,0,người già,bò|củ|rau,,414,0,0,0,0
+121,đậu chiên xù,0,người già,quả|bò|quả,,133,0,0,0,0
+121,cá trứng rim tiêu,0,người già,quả|bò|quả,,959,984,0,0,0
+122,rau muốn xào,0,trẻ em,vịt|vịt|lẩu,,179,0,0,0,0
+122,mực chiên mắm tỏi,0,trẻ em,vịt|vịt|lẩu,,986,0,0,0,0
+123,cá thu chiên xốt chanh dây,0,người già,lẩu|quả|xôi,,211,0,0,0,0
+123,khổ qua dồn thịt,0,người già,lẩu|quả|xôi,,197,298,329,0,0
+124,chè đậu đen,0,trẻ em,quả|cháo|lẩu,,172,288,451,0,0
+124,tép rim thịt heo,0,trẻ em,quả|cháo|lẩu,,356,0,0,0,0
+125,gỏi hoa chuối khô bò,1,người già,gà|phở|mì,,330,0,0,0,0
+125,cá lóc nướng muối ớt,1,người già,gà|phở|mì,,717,0,0,0,0
+126,tôm xào sa tế,0,người lớn,phở|lẩu|lợn,,317,815,0,0,0
+126,trám nhồi thịt,0,người lớn,phở|lẩu|lợn,,949,0,0,0,0
+127,cánh gà xào chua ngọt,1,người lớn,củ|phở|gà,phụ nữ mang thai,85,0,0,0,0
+127,chè đậu đen,1,người lớn,củ|phở|gà,phụ nữ mang thai,451,172,288,0,0
+128,mướp xào lòng gà,0,người lớn,lợn|bún|vịt,,314,316,462,571,595
+128,bò xốt ngũ vị,0,người lớn,lợn|bún|vịt,,367,944,0,0,0
+129,thịt chân giò luộc,1,trẻ em,súp|tôm|mì,,27,31,51,111,116
+129,gà quay mật ong,1,trẻ em,súp|tôm|mì,,109,0,0,0,0
+130,cá sốt cà chua,0,người lớn,mì|lợn|cá,,139,0,0,0,0
+130,thịt kho trứng cút,0,người lớn,mì|lợn|cá,,64,796,0,0,0
+131,bò nướng tiêu,0,trẻ em,xôi|phở|cháo,,321,0,0,0,0
+131,ba rọi chiên nước mắm,0,trẻ em,xôi|phở|cháo,,253,590,802,824,0
+132,gỏi bò trộn đu đủ,0,người lớn,cá|mì|mì,,489,0,0,0,0
+132,bún bò giò heo,0,người lớn,cá|mì|mì,,266,849,0,0,0
+133,nho ướp lạnh,0,trẻ em,tôm|xôi|lợn,,440,287,522,744,0
+133,vịt khìa,0,trẻ em,tôm|xôi|lợn,,766,0,0,0,0
+134,tôm hấp hành,1,người già,mì|mì|gà,,419,947,0,0,0
+134,gan heo hầm hà thủ ô,1,người già,mì|mì|gà,,203,0,0,0,0
+135,rau mồng tơi luộc,1,trẻ em,mì|lợn|cá,,24,0,0,0,0
+135,cải ngọt xào tỏi,1,trẻ em,mì|lợn|cá,,874,0,0,0,0
+136,mực chiên giòn,1,trẻ em,rau|quả|bún,,72,0,0,0,0
+136,đậu rán,1,trẻ em,rau|quả|bún,,20,140,0,0,0
+137,mướp xào nấm hương,0,người già,bún|quả|lợn,,474,0,0,0,0
+137,gân đà điểu tiềm rau củ,0,người già,bún|quả|lợn,,798,0,0,0,0
+138,bao tử cá basa xào,1,trẻ em,cá|cháo|xôi,,987,0,0,0,0
+138,ốc nấu chuối xanh,1,trẻ em,cá|cháo|xôi,,409,946,0,0,0
+139,mướp xào nấm,0,người lớn,xôi|mì|bánh mì,,860,0,0,0,0
+139,rau muống luộc ăn kèm cà pháo,0,người lớn,xôi|mì|bánh mì,,2,0,0,0,0
+140,mướp xào nấm hương,1,trẻ em,củ|cá|cá,,474,0,0,0,0
+140,bún măng vịt,1,trẻ em,củ|cá|cá,,547,0,0,0,0
+141,thịt luộc mắm tôm,1,người lớn,lợn|cá|lẩu,phụ nữ mang thai,554,0,0,0,0
+141,thịt nhồi nấu đông cô rim dầu hào,1,người lớn,lợn|cá|lẩu,phụ nữ mang thai,663,0,0,0,0
+142,cá điêu hồng hấp xì dầu,0,người già,bánh mì|bún|củ,,968,0,0,0,0
+142,canh khổ hoa dồn thịt lợn,0,người già,bánh mì|bún|củ,,238,817,0,0,0
+143,sinh tố kiwi,1,người lớn,tôm|quả|bánh mì,phụ nữ mang thai,229,0,0,0,0
+143,cá rô rán giòn,1,người lớn,tôm|quả|bánh mì,phụ nữ mang thai,23,24,0,0,0
+144,canh củ dền nấu tôm tươi,1,người già,súp|xôi|phở,,221,334,0,0,0
+144,canh giò sống nấu ngót,1,người già,súp|xôi|phở,,365,918,0,0,0
+145,giò heo hầm rau củ,1,trẻ em,lợn|củ|bánh mì,,431,925,0,0,0
+145,canh bao tử hầm tiêu xanh,1,trẻ em,lợn|củ|bánh mì,,576,0,0,0,0
+146,thịt chân giò luộc,0,người già,bò|cháo|vịt,,51,27,31,111,116
+146,cải chua trộn mắm gừng,0,người già,bò|cháo|vịt,,845,0,0,0,0
+147,lầu cua đồng,1,người già,quả|vịt|xôi,,370,0,0,0,0
+147,nấm xào,1,người già,quả|vịt|xôi,,986,0,0,0,0
+148,mì xào tôm,1,người lớn,cháo|cá|lợn,phụ nữ mang thai,907,0,0,0,0
+148,mận,1,người lớn,cháo|cá|lợn,phụ nữ mang thai,200,0,0,0,0
+149,gỏi bưởi,0,người lớn,cá|cá|bánh mì,,572,0,0,0,0
+149,canh ngót nấu tôm,0,người lớn,cá|cá|bánh mì,,397,0,0,0,0
+150,canh bầu nấu tôm,1,trẻ em,tôm|cháo|xôi,,50,58,81,132,152
+150,mía ướp lạnh,1,trẻ em,tôm|cháo|xôi,,0,0,0,0,0
+151,chè thưng,0,trẻ em,cháo|cháo|tôm,,505,0,0,0,0
+151,gỏi sầu đâu,0,trẻ em,cháo|cháo|tôm,,747,0,0,0,0
+152,cá om dưa,1,người già,gà|rau|bò,,96,0,0,0,0
+152,canh bí đỏ hầm giò heo,1,người già,gà|rau|bò,,248,0,0,0,0
+153,cải bó xôi xào bò,0,trẻ em,súp|vịt|bánh mì,,679,0,0,0,0
+153,sanwich kẹp jambon xông khói,0,trẻ em,súp|vịt|bánh mì,,215,0,0,0,0
+154,canh bí nhồi thịt,0,trẻ em,gà|vịt|củ,,13,0,0,0,0
+154,nước ép thơm,0,trẻ em,gà|vịt|củ,,227,513,786,937,303
+155,canh cá thu nấu ngót,1,người già,gà|cháo|lợn,,291,825,872,923,0
+155,chè táo xọn,1,người già,gà|cháo|lợn,,248,441,690,805,0
+156,cá bống kho tộ,1,người lớn,bò|quả|xôi,phụ nữ mang thai,430,939,0,0,0
+156,trái cây thập cẩm,1,người lớn,bò|quả|xôi,phụ nữ mang thai,419,947,560,0,0
+157,canh rau ngót nấu bò,0,người lớn,cá|củ|lẩu,,746,0,0,0,0
+157,mứt thơm,0,người lớn,cá|củ|lẩu,,249,818,0,0,0
+158,cá điêu hồng chiên xù,1,người lớn,cháo|bún|cháo,phụ nữ mang thai,300,783,909,0,0
+158,sươn sáo,1,người lớn,cháo|bún|cháo,phụ nữ mang thai,397,0,0,0,0
+159,đậu hũ chiên trứng,0,người lớn,tôm|phở|xôi,,11,0,0,0,0
+159,rau muống chẻ trộn tôm,0,người lớn,tôm|phở|xôi,,599,658,769,0,0
+160,nước sprite,0,người già,gà|mì|cháo,,871,0,0,0,0
+160,miến xào cua,0,người già,gà|mì|cháo,,973,231,800,0,0
+161,thịt kho măng,1,trẻ em,lẩu|mì|vịt,,286,549,0,0,0
+161,canh chua hoa so đũa nấu tôm,1,trẻ em,lẩu|mì|vịt,,595,0,0,0,0
+162,cá cơm kho thịt miền nam,1,người lớn,cá|phở|cá,phụ nữ mang thai,819,0,0,0,0
+162,cá rán giòn,1,người lớn,cá|phở|cá,phụ nữ mang thai,28,29,102,0,0
+163,canh ngót nấu cá khoai,0,người già,súp|quả|lẩu,,361,0,0,0,0
+163,canh rau ngót nấu thịt,0,người già,súp|quả|lẩu,,15,0,0,0,0
+164,bún gạo xào hải sản,0,trẻ em,xôi|cháo|súp,,209,272,793,808,0
+164,bò nướng kiệu,0,trẻ em,xôi|cháo|súp,,282,0,0,0,0
+165,canh chua tôm bông sođũa miền nam,1,người lớn,xôi|gà|bún,phụ nữ mang thai,786,0,0,0,0
+165,canh chua gà lá giang,1,người lớn,xôi|gà|bún,phụ nữ mang thai,783,0,0,0,0
+166,salad mầm rau muống,0,trẻ em,rau|súp|xôi,,643,0,0,0,0
+166,sinh tố dưa gang,0,trẻ em,rau|súp|xôi,,171,295,500,514,0
+167,canh bí đỏ nấu sườn,0,trẻ em,bò|súp|bánh mì,,85,193,582,701,752
+167,bánh mì thịt quay,0,trẻ em,bò|súp|bánh mì,,371,926,0,0,0
+168,tép rim thịt heo,1,người lớn,củ|bánh mì|bò,phụ nữ mang thai,356,0,0,0,0
+168,dâu giằm,1,người lớn,củ|bánh mì|bò,phụ nữ mang thai,186,602,0,0,0
+169,nước rau muống chua,1,người già,mì|cháo|mì,,57,65,0,0,0
+169,đậu hũ dồn thịt,1,người già,mì|cháo|mì,,429,462,0,0,0
+170,sườn non kho cải chua,1,trẻ em,lẩu|gà|xôi,,256,0,0,0,0
+170,chè mủ trôm,1,trẻ em,lẩu|gà|xôi,,790,238,817,0,0
+171,đùi gà chiên muối sả,0,người lớn,tôm|bò|gà,,406,0,0,0,0
+171,canh nấm rau củ,0,người lớn,tôm|bò|gà,,173,0,0,0,0
+172,thịt rán,1,người lớn,củ|gà|bún,phụ nữ mang thai,961,958,0,0,0
+172,súp lơ xào,1,người lớn,củ|gà|bún,phụ nữ mang thai,965,960,964,0,0
+173,canh khoai môn nấu giò,1,trẻ em,súp|phở|củ,,458,0,0,0,0
+173,"cá trê chiên giòn, nước mắm gừng",1,trẻ em,súp|phở|củ,,601,0,0,0,0
+174,mướp đắng xào trứng,0,người già,cá|cá|phở,,131,0,0,0,0
+174,heo giả cầy,0,người già,cá|cá|phở,,785,0,0,0,0
+175,canh cải xooang thịt bằm,1,người lớn,tôm|phở|gà,phụ nữ mang thai,410,0,0,0,0
+175,bò xào ớt chuông,1,người lớn,tôm|phở|gà,phụ nữ mang thai,497,0,0,0,0
+176,gà hấp cải xanh,0,người lớn,quả|súp|lẩu,,418,924,0,0,0
+176,tôm trộm ba khía,0,người lớn,quả|súp|lẩu,,769,0,0,0,0
+177,canh thịt bò cà chua,0,người già,rau|bún|mì,,106,0,0,0,0
+177,sinh tố kiwi,0,người già,rau|bún|mì,,229,0,0,0,0
+178,sinh tố sa bô chê,0,trẻ em,cháo|tôm|cháo,,611,796,0,0,0
+178,gỏi cổ hủ dừa,0,trẻ em,cháo|tôm|cháo,,554,535,0,0,0
+179,cá nục kho,0,trẻ em,tôm|bò|mì,,72,0,0,0,0
+179,tôm xóc trứng muối,0,trẻ em,tôm|bò|mì,,370,0,0,0,0
+180,canh bí xanh nấu sườn,1,trẻ em,quả|lẩu|xôi,,769,0,0,0,0
+180,cháo sườn nấm bào ngư,1,trẻ em,quả|lẩu|xôi,,531,0,0,0,0
+181,khổ qua nhồi thịt,0,trẻ em,rau|xôi|xôi,,409,597,946,0,0
+181,mận ướp lạnh,0,trẻ em,rau|xôi|xôi,,357,607,213,489,747
+182,salad cà sốt trứng chiên chua cay,0,trẻ em,bò|phở|vịt,,702,0,0,0,0
+182,trứng tráng,0,trẻ em,bò|phở|vịt,,89,91,113,0,0
+183,há cảo chiên,1,trẻ em,cháo|phở|lợn,,269,0,0,0,0
+183,ngọn su su xào tỏi,1,trẻ em,cháo|phở|lợn,,124,0,0,0,0
+184,nước ép cà chua,1,trẻ em,quả|mì|quả,,459,512,570,797,826
+184,cá cơm kho đậu tương,1,trẻ em,quả|mì|quả,,775,0,0,0,0
+185,mãng cầu giằm,0,người lớn,vịt|xôi|bún,,584,667,692,0,0
+185,sườn non ram mặn,0,người lớn,vịt|xôi|bún,,9,0,0,0,0
+186,cá bống chiên giòn,1,người lớn,phở|xôi|quả,phụ nữ mang thai,134,0,0,0,0
+186,pudding xoài,1,người lớn,phở|xôi|quả,phụ nữ mang thai,674,0,0,0,0
+187,dâu giằm,1,trẻ em,cháo|lẩu|phở,,602,186,0,0,0
+187,canh rau tập tàng,1,trẻ em,cháo|lẩu|phở,,479,0,0,0,0
+188,canh hẹ tàu hủ non,1,người già,rau|cháo|bò,,689,0,0,0,0
+188,nấm bạch tuyết xào thăn heo,1,người già,rau|cháo|bò,,597,0,0,0,0
+189,canh bí nấu thịt gà,1,người lớn,bún|bò|súp,phụ nữ mang thai,35,0,0,0,0
+189,bao tử hầm tiêu,1,người lớn,bún|bò|súp,phụ nữ mang thai,458,774,0,0,0
+190,bún mọc,0,người già,rau|gà|súp,,206,352,353,471,632
+190,cải mèo xào thịt bò,0,người già,rau|gà|súp,,975,0,0,0,0
+191,dưa cải muối chưa,1,trẻ em,lẩu|bánh mì|bánh mì,,22,0,0,0,0
+191,đậu đũa xào lòng,1,trẻ em,lẩu|bánh mì|bánh mì,,27,0,0,0,0
+192,canh đu đủ nấu giò heo,1,người già,phở|củ|mì,,213,311,0,0,0
+192,gỏi tôm ngó sen,1,người già,phở|củ|mì,,397,0,0,0,0
+193,rau bí luộc,0,người già,bò|lợn|gà,,20,0,0,0,0
+193,đậu bắp xào nấm hương,0,người già,bò|lợn|gà,,430,939,0,0,0
+194,tôm nấu tỏi,0,người già,xôi|phở|mì,,611,0,0,0,0
+194,nấm tuyết xào gà,0,người già,xôi|phở|mì,,369,0,0,0,0
+195,dưa xào thịt bò,1,trẻ em,bún|cháo|bún,,103,133,0,0,0
+195,canh cà bung,1,trẻ em,bún|cháo|bún,,121,142,0,0,0
+196,canh cải mầm nấu tôm viên,0,người già,gà|lẩu|súp,,796,0,0,0,0
+196,cải cuộn thịt bò,0,người già,gà|lẩu|súp,,358,0,0,0,0
+197,cà ri mực,0,người già,rau|cá|xôi,,225,0,0,0,0
+197,canh khổ qua cá thác lácnước ép táo,0,người già,rau|cá|xôi,,765,0,0,0,0
+198,giá xào tim heo,1,trẻ em,bún|súp|bún,,472,775,847,0,0
+198,canh ngó sen thịt heo,1,trẻ em,bún|súp|bún,,683,0,0,0,0
+199,đùi gà chiên tỏi ớt,0,trẻ em,cá|phở|lẩu,,250,813,322,0,0
+199,mực chiên giòn vị trà xanh,0,trẻ em,cá|phở|lẩu,,597,646,0,0,0
+200,salad xoài thịt gà,0,người già,củ|súp|bún,,694,0,0,0,0
+200,đậu rán chấm mắm tôm,0,người già,củ|súp|bún,,18,0,0,0,0
+201,ba rọi chiên giòn,0,người già,mì|lẩu|cá,,650,0,0,0,0
+201,sườn nướng mật ong,0,người già,mì|lẩu|cá,,80,0,0,0,0
+202,bún gạo xào,0,người già,cháo|lợn|gà,,178,304,425,527,712
+202,canh ngao,0,người già,cháo|lợn|gà,,16,0,0,0,0
+203,gà rang gừng,1,người già,gà|lợn|xôi,,959,0,0,0,0
+203,canh cá rô nấu mẻ,1,người già,gà|lợn|xôi,,444,727,0,0,0
+204,gỏi tôm ngó sen,0,người lớn,phở|cá|xôi,,397,0,0,0,0
+204,bò xào bông hành,0,người lớn,phở|cá|xôi,,567,0,0,0,0
+205,đậu que xào tỏi,0,người già,rau|tôm|xôi,,239,0,0,0,0
+205,đậu phụ tứ xuyên,0,người già,rau|tôm|xôi,,89,0,0,0,0
+206,sườn nướng nước cốt dừa,0,người lớn,quả|mì|phở,,535,0,0,0,0
+206,canh măng chua,0,người lớn,quả|mì|phở,,50,0,0,0,0
+207,rau muốn xào,1,trẻ em,súp|súp|mì,,179,0,0,0,0
+207,bánh xèo nấm,1,trẻ em,súp|súp|mì,,526,0,0,0,0
+208,gỏi sứa,1,trẻ em,vịt|gà|quả,,395,942,510,573,862
+208,salad nga,1,trẻ em,vịt|gà|quả,,515,879,0,0,0
+209,nước ép cà chua,0,trẻ em,củ|cháo|rau,,512,570,864,459,797
+209,"chè hạt sen , táo tàu",0,trẻ em,củ|cháo|rau,,472,0,0,0,0
+210,đậu rán chấm mắm tôm,1,người già,bò|lẩu|cá,,18,0,0,0,0
+210,cá kèo chiên xù,1,người già,bò|lẩu|cá,,728,0,0,0,0
+211,canh chua tép,1,người già,súp|quả|cháo,,164,0,0,0,0
+211,canh măng nấu móng giò,1,người già,súp|quả|cháo,,66,0,0,0,0
+212,mực nhồi thịt chiên,1,trẻ em,vịt|bánh mì|lẩu,,46,0,0,0,0
+212,thịt lợn rang cháy cạnh,1,trẻ em,vịt|bánh mì|lẩu,,147,153,0,0,0
+213,sườn rán,0,người lớn,cháo|bò|gà,,82,0,0,0,0
+213,thác lác nấu riêu,0,người lớn,cháo|bò|gà,,390,941,0,0,0
+214,cải bó xôi xào tỏi,0,người lớn,lợn|quả|gà,,620,826,0,0,0
+214,canh rau ngót nấu thịt,0,người lớn,lợn|quả|gà,,15,0,0,0,0
+215,tôm rang trứng muối,1,trẻ em,cá|lợn|cháo,,254,441,848,0,0
+215,thác lác nấu riêu,1,trẻ em,cá|lợn|cháo,,390,941,0,0,0
+216,canh thìa là cá điêu hồng,1,người già,mì|bánh mì|quả,,182,339,0,0,0
+216,nộm tai heo,1,người già,mì|bánh mì|quả,,114,0,0,0,0
+217,bánh chuối hấp,1,trẻ em,cháo|mì|cá,,365,918,0,0,0
+217,rau lang xào,1,trẻ em,cháo|mì|cá,,967,0,0,0,0
+218,canh măng nấu sườn,0,người già,bánh mì|củ|gà,,899,0,0,0,0
+218,canh cải bắp thịt cuộn,0,người già,bánh mì|củ|gà,,469,0,0,0,0
+219,ốc móng tay xào,1,người già,cháo|súp|súp,,30,0,0,0,0
+219,nui xào bò,1,người già,cháo|súp|súp,,191,333,0,0,0
+220,trứng ốp lết,0,trẻ em,cá|súp|tôm,,61,0,0,0,0
+220,canh thịt bò cà chua,0,trẻ em,cá|súp|tôm,,106,0,0,0,0
+221,mực xào chua ngọt,1,người già,súp|gà|mì,,9,0,0,0,0
+221,cánh vịt nấu tương,1,người già,súp|gà|mì,,645,0,0,0,0
+222,gân đà điểu tiềm rau củ,1,trẻ em,xôi|lẩu|rau,,798,0,0,0,0
+222,chè hạt sen,1,trẻ em,xôi|lẩu|rau,,212,284,429,437,777
+223,canh củ cải nấu bò,1,người lớn,bò|gà|súp,phụ nữ mang thai,223,0,0,0,0
+223,bánh bí đỏ hấp,1,người lớn,bò|gà|súp,phụ nữ mang thai,673,0,0,0,0
+224,chè xoài trân châu,0,người già,lẩu|gà|rau,,872,0,0,0,0
+224,canh cải thảo nấu thịt băm,0,người già,lẩu|gà|rau,,234,0,0,0,0
+225,canh chua hoa so đũa nấu tôm,1,người già,phở|súp|phở,,595,0,0,0,0
+225,mận,1,người già,phở|súp|phở,,200,0,0,0,0
+226,bánh dày chả lụa,0,người lớn,bánh mì|gà|mì,,477,0,0,0,0
+226,ếch rim sả ớt,0,người lớn,bánh mì|gà|mì,,270,401,581,834,0
+227,canh chua hoa so đũa nấu tôm,0,trẻ em,rau|gà|quả,,595,0,0,0,0
+227,sinh tố sa-bô-chê,0,trẻ em,rau|gà|quả,,211,239,277,299,790
+228,khoai môn lệ phố,0,người già,củ|xôi|củ,,127,962,0,0,0
+228,táo ướp lạnh,0,người già,củ|xôi|củ,,576,679,329,0,0
+229,gỏi bò trộn đu đủ,1,trẻ em,rau|mì|xôi,,489,0,0,0,0
+229,canh đậu ngự hầm xường non,1,trẻ em,rau|mì|xôi,,284,777,0,0,0
+230,bún gạo xào,0,trẻ em,cháo|vịt|cháo,,178,304,425,527,712
+230,cà tím nhồi thịt nướng,0,trẻ em,cháo|vịt|cháo,,965,0,0,0,0
+231,canh rau mồng tơi nấu ngao,1,người lớn,cá|vịt|phở,phụ nữ mang thai,33,0,0,0,0
+231,cải bó xôi xào tỏi,1,người lớn,cá|vịt|phở,phụ nữ mang thai,620,826,0,0,0
+232,miến gà,0,người già,súp|cháo|quả,,207,261,326,806,922
+232,canh bông cải nấu thịt bằm,0,người già,súp|cháo|quả,,826,0,0,0,0
+233,chân giò hầm hạt sen,1,trẻ em,mì|phở|rau,,0,0,0,0,0
+233,salad ngô non,1,trẻ em,mì|phở|rau,,693,0,0,0,0
+234,chè nhãn nhục,0,người lớn,lẩu|rau|bún,,661,256,405,0,0
+234,canh bí nấu thịt gà,0,người lớn,lẩu|rau|bún,,35,0,0,0,0
+235,móng heo hầm hạt sen,0,trẻ em,rau|tôm|cháo,,212,0,0,0,0
+235,cua rang me,0,trẻ em,rau|tôm|cháo,,377,876,929,0,0
+236,đậu hũ sốt cà,0,người lớn,lẩu|quả|cháo,,2,0,0,0,0
+236,khoai tây nhồi thịt heo chiên,0,người lớn,lẩu|quả|cháo,,276,831,0,0,0
+237,canh rau muống nấu hến,1,người lớn,bánh mì|gà|lẩu,phụ nữ mang thai,227,937,0,0,0
+237,canh rau mồng tơi nấu tôm,1,người lớn,bánh mì|gà|lẩu,phụ nữ mang thai,503,0,0,0,0
+238,cải xào tỏi,1,trẻ em,lợn|xôi|phở,,345,271,789,0,0
+238,canh rau má thịt bằm,1,trẻ em,lợn|xôi|phở,,457,0,0,0,0
+239,cá rô chiên,0,người già,mì|lợn|súp,,42,0,0,0,0
+239,pudding xoài,0,người già,mì|lợn|súp,,674,0,0,0,0
+240,các chình chiên muối ớt,1,trẻ em,quả|tôm|cháo,,465,0,0,0,0
+240,súp rong biển hải sản,1,trẻ em,quả|tôm|cháo,,647,655,0,0,0
+241,đỗ xào thịt bò,1,người già,mì|vịt|bò,,51,0,0,0,0
+241,tôm chua riềng,1,người già,mì|vịt|bò,,193,0,0,0,0
+242,cà dầm mắm,1,người già,lẩu|xôi|gà,,118,0,0,0,0
+242,cải mèo xào thịt bò,1,người già,lẩu|xôi|gà,,975,0,0,0,0
+243,hủ tiếu,1,người già,tôm|xôi|lẩu,,699,0,0,0,0
+243,sinh tố mãng cầu,1,người già,tôm|xôi|lẩu,,538,341,488,511,534
+244,lòng xào dưa chua,0,người lớn,bánh mì|súp|bún,,79,0,0,0,0
+244,khoai tây dồn thịt đút lò phô mai,0,người lớn,bánh mì|súp|bún,,605,0,0,0,0
+245,thịt nướng,0,người già,lợn|bò|gà,,975,970,0,0,0
+245,mực chiên giòn,0,người già,lợn|bò|gà,,72,0,0,0,0
+246,lẩu hải sản,1,người lớn,bò|bún|cháo,phụ nữ mang thai,580,660,0,0,0
+246,thịt nướng,1,người lớn,bò|bún|cháo,phụ nữ mang thai,975,970,0,0,0
+247,đùi ếch chiên bột,1,trẻ em,bánh mì|phở|phở,,186,0,0,0,0
+247,cá rô chiên,1,trẻ em,bánh mì|phở|phở,,42,0,0,0,0
+248,canh rau cải,0,người lớn,xôi|lẩu|tôm,,986,0,0,0,0
+248,nước mía lau,0,người lớn,xôi|lẩu|tôm,,554,0,0,0,0
+249,cua om giấm,0,người lớn,cháo|mì|cháo,,690,0,0,0,0
+249,cá thác lác chiên xù,0,người lớn,cháo|mì|cháo,,864,0,0,0,0
+250,tôm rim thịt,1,người lớn,tôm|cháo|rau,bệnh huyết áp cao,679,845,910,0,0
+250,gan bò xào tứ xuyên,1,người lớn,tôm|cháo|rau,bệnh huyết áp cao,728,0,0,0,0
+251,thịt viên xiên nướng,1,người lớn,lẩu|vịt|súp,bệnh huyết áp cao,117,0,0,0,0
+251,đậu que luộc,1,người lớn,lẩu|vịt|súp,bệnh huyết áp cao,783,0,0,0,0
+252,đậu bắp xào nấm rơm,0,người già,phở|tôm|tôm,bệnh dạ dày,294,351,0,0,0
+252,muối sả mắm ruốc kho,0,người già,phở|tôm|tôm,bệnh dạ dày,424,934,0,0,0
+253,canh bầu nấu ngao,1,người già,bánh mì|phở|lẩu,bệnh tiểu đường,20,149,654,0,0
+253,mận hà nội ngâm nước đường,1,người già,bánh mì|phở|lẩu,bệnh tiểu đường,618,647,0,0,0
+254,mực trứng chiên giòn,1,người lớn,rau|xôi|lợn,bệnh tim mạch,41,0,0,0,0
+254,cá chép kho riềng,1,người lớn,rau|xôi|lợn,bệnh tim mạch,839,0,0,0,0
+255,cháo trắng lá dứa,0,trẻ em,lợn|củ|bún,,346,0,0,0,0
+255,súp đậu đỏ nấu đậu phụ,0,trẻ em,lợn|củ|bún,,496,0,0,0,0
+256,gà rang gừng,1,người lớn,cá|lẩu|cá,bệnh huyết áp cao,959,0,0,0,0
+256,sữa đậu xanh,1,người lớn,cá|lẩu|cá,bệnh huyết áp cao,656,484,547,737,0
+257,nước ép cóc,1,người lớn,rau|bún|lẩu,bệnh tim mạch,184,0,0,0,0
+257,trà chanh nóng,1,người lớn,rau|bún|lẩu,bệnh tim mạch,886,0,0,0,0
+258,bánh bèo chén,0,người lớn,súp|xôi|rau,bệnh tiểu đường,499,0,0,0,0
+258,bắp giò luộc,0,người lớn,súp|xôi|rau,bệnh tiểu đường,974,0,0,0,0
+259,canh rau đay nấu cua,1,người già,lẩu|bò|cháo,bệnh dạ dày,785,0,0,0,0
+259,tai heo luộc,1,người già,lẩu|bò|cháo,bệnh dạ dày,55,0,0,0,0
+260,canh bí xanh nấu thịt,0,trẻ em,lẩu|bún|lợn,,981,0,0,0,0
+260,bò xào cần nước,0,trẻ em,lẩu|bún|lợn,,258,0,0,0,0
+261,bò xào cần,0,người già,bún|quả|rau,bệnh huyết áp cao,347,903,0,0,0
+261,salad rau củ với trứng đà điểu luộc,0,người già,bún|quả|rau,bệnh huyết áp cao,385,0,0,0,0
+262,cơm tấm bì chay,1,trẻ em,lợn|vịt|mì,,394,932,0,0,0
+262,chạo cá nướng sả,1,trẻ em,lợn|vịt|mì,,543,0,0,0,0
+263,gỏi mít non tôm thịt,0,người già,quả|phở|cá,bệnh tiểu đường,347,0,0,0,0
+263,ớt chuông xào bò,0,người già,quả|phở|cá,bệnh tiểu đường,657,0,0,0,0
+264,quýt đường,0,người già,gà|bún|gà,bệnh huyết áp cao,462,0,0,0,0
+264,gà xào xúp lơ,0,người già,gà|bún|gà,bệnh huyết áp cao,689,0,0,0,0
+265,cá cơm chiên bột,0,người lớn,lẩu|cá|lẩu,bệnh tiểu đường,0,0,0,0,0
+265,súp cốm,0,người lớn,lẩu|cá|lẩu,bệnh tiểu đường,176,0,0,0,0
+266,dưa leo trộn sò điệp,0,người già,vịt|cháo|bún,bệnh tim mạch,587,659,0,0,0
+266,thịt cua xào chua ngọt,0,người già,vịt|cháo|bún,bệnh tim mạch,583,847,0,0,0
+267,cải chua xào chả cá,0,người lớn,súp|bánh mì|gà,bệnh tim mạch,309,799,0,0,0
+267,cải bó xôi xào tỏi,0,người lớn,súp|bánh mì|gà,bệnh tim mạch,620,826,0,0,0
+268,mực xào chua ngọt,0,người già,súp|xôi|bánh mì,bệnh huyết áp cao,9,0,0,0,0
+268,thịt viên xiên nướng,0,người già,súp|xôi|bánh mì,bệnh huyết áp cao,117,0,0,0,0
+269,thịt xiên nướng,0,người lớn,xôi|rau|bò,bệnh dạ dày,1,0,0,0,0
+269,gỏi su hào nấm tuyết,0,người lớn,xôi|rau|bò,bệnh dạ dày,311,0,0,0,0
+270,giá hẹ ngâm chua,1,người già,gà|súp|xôi,bệnh dạ dày,714,0,0,0,0
+270,canh chua tôm bông sođũa miền nam,1,người già,gà|súp|xôi,bệnh dạ dày,786,0,0,0,0
+271,đậu quả xào tỏi,1,người lớn,súp|phở|phở,bệnh huyết áp cao,980,0,0,0,0
+271,trứng cút xào chua ngọt,1,người lớn,súp|phở|phở,bệnh huyết áp cao,44,0,0,0,0
+272,nộm đu đủ,1,người lớn,cháo|bún|xôi,bệnh tiểu đường,86,0,0,0,0
+272,cá trôi chiên ròn,1,người lớn,cháo|bún|xôi,bệnh tiểu đường,88,0,0,0,0
+273,cà phê sữa nóng,1,người già,gà|rau|vịt,bệnh tiểu đường,328,0,0,0,0
+273,thịt lợn rán,1,người già,gà|rau|vịt,bệnh tiểu đường,139,0,0,0,0
+274,cải ngồng xào tỏi,1,người lớn,cháo|súp|lợn,bệnh huyết áp cao,899,0,0,0,0
+274,nước ép dưa hấu,1,người lớn,cháo|súp|lợn,bệnh huyết áp cao,193,260,582,598,653
+275,canh bí đỏ nấu sườn,0,người già,rau|gà|lợn,bệnh huyết áp cao,85,193,701,582,752
+275,lòng gà xào nấm,0,người già,rau|gà|lợn,bệnh huyết áp cao,15,0,0,0,0
+276,cá hồi kho tiêu,0,trẻ em,bún|cháo|lợn,,37,0,0,0,0
+276,bánh bao,0,trẻ em,bún|cháo|lợn,,174,240,486,675,0
+277,nem lụi,0,người già,củ|mì|củ,bệnh huyết áp cao,973,0,0,0,0
+277,bánh hỏi thịt quay,0,người già,củ|mì|củ,bệnh huyết áp cao,434,927,0,0,0
+278,cá nục hấp hành,1,người lớn,quả|vịt|lẩu,bệnh huyết áp cao,358,379,508,768,854
+278,"thịt bò xào ớt chuông, cần tỏi",1,người lớn,quả|vịt|lẩu,bệnh huyết áp cao,987,0,0,0,0
+279,bò kho gừng sả,0,trẻ em,cá|cá|bò,,974,0,0,0,0
+279,bánh mì cá ngừ,0,trẻ em,cá|cá|bò,,386,945,0,0,0
+280,đậu hũ dồn thịt xốt cà chua,0,người già,lẩu|gà|cá,bệnh dạ dày,161,0,0,0,0
+280,gà hầm sả,0,người già,lẩu|gà|cá,bệnh dạ dày,296,794,0,0,0
+281,sữa đậu xanh,0,người già,cá|vịt|xôi,bệnh huyết áp cao,547,656,484,737,0
+281,ức gà xào nấm,0,người già,cá|vịt|xôi,bệnh huyết áp cao,382,957,0,0,0
+282,canh nấm rơm đậu hũ non,1,trẻ em,cháo|bún|vịt,,314,0,0,0,0
+282,salad táo,1,trẻ em,cháo|bún|vịt,,409,946,0,0,0
+283,canh sướn nấu củ dền,1,người lớn,phở|bò|mì,bệnh tim mạch,439,0,0,0,0
+283,hàu chiên trứng,1,người lớn,phở|bò|mì,bệnh tim mạch,925,0,0,0,0
+284,bí ngòi xào tỏi,1,trẻ em,bánh mì|gà|vịt,,916,393,0,0,0
+284,ốc xào cay,1,trẻ em,bánh mì|gà|vịt,,101,0,0,0,0
+285,canh cải bắp cuộn thịt,0,trẻ em,cá|phở|gà,,562,0,0,0,0
+285,canh khoai môn nấu thịt,0,trẻ em,cá|phở|gà,,540,887,0,0,0
+286,súp cốm,1,người lớn,cháo|cháo|cá,bệnh dạ dày,176,0,0,0,0
+286,bún đậu phụ mắm tôm,1,người lớn,cháo|cháo|cá,bệnh dạ dày,202,0,0,0,0
+287,tôm sốt cà chua,0,trẻ em,bánh mì|cá|lẩu,,102,0,0,0,0
+287,nước ép ổi xá lị,0,trẻ em,bánh mì|cá|lẩu,,633,0,0,0,0
+288,bánhphô mai sầu riêng,0,người lớn,phở|lợn|súp,bệnh dạ dày,906,0,0,0,0
+288,canh mồng tơi nấu nấm,0,người lớn,phở|lợn|súp,bệnh dạ dày,536,0,0,0,0
+289,đậu phụ trứng sốt cà,0,người lớn,cháo|rau|gà,bệnh dạ dày,963,0,0,0,0
+289,tôm xào sa tế,0,người lớn,cháo|rau|gà,bệnh dạ dày,317,815,0,0,0
+290,tai heo luộc,1,người già,cá|củ|bún,bệnh huyết áp cao,55,0,0,0,0
+290,cá rô phi tẩm bột chiên,1,người già,cá|củ|bún,bệnh huyết áp cao,960,971,987,0,0
+291,giò heo hầm rau củ,1,người lớn,bánh mì|súp|lẩu,bệnh tim mạch,431,925,0,0,0
+291,gỏi mít tôm thịt,1,người lớn,bánh mì|súp|lẩu,bệnh tim mạch,427,915,0,0,0
+292,bí ngô xào tỏi,1,người lớn,cá|mì|vịt,bệnh huyết áp cao,26,0,0,0,0
+292,đậu quả xào tỏi,1,người lớn,cá|mì|vịt,bệnh huyết áp cao,980,0,0,0,0
+293,canh sườn nấu chua,1,trẻ em,củ|quả|bún,,976,2,968,0,0
+293,mãng cầu giằm,1,trẻ em,củ|quả|bún,,584,667,692,0,0
+294,su su luộc chấm muối vừng,1,trẻ em,súp|cháo|bánh mì,,984,0,0,0,0
+294,canh đu đủ nấu giò heo,1,trẻ em,súp|cháo|bánh mì,,213,311,0,0,0
+295,rau muống xào tỏi,1,trẻ em,lẩu|bún|rau,,33,39,48,54,94
+295,chả quế,1,trẻ em,lẩu|bún|rau,,78,0,0,0,0
+296,canh hến nấu chua,0,người lớn,củ|xôi|bún,bệnh dạ dày,147,0,0,0,0
+296,lòng xào dưa,0,người lớn,củ|xôi|bún,bệnh dạ dày,127,0,0,0,0
+297,canh bí xanh nấu tôm đồng,0,trẻ em,bún|mì|củ,,663,0,0,0,0
+297,măng xào,0,trẻ em,bún|mì|củ,,35,0,0,0,0
+298,sơ ri ép,0,trẻ em,xôi|lẩu|bò,,909,0,0,0,0
+298,thịt xông khói,0,trẻ em,xôi|lẩu|bò,,58,0,0,0,0
+299,"chả cá lã vọng,  ăn kèm bún, thì là, hành tước sợi",0,trẻ em,lợn|mì,,861,0,0,0,0
+299,canh bí đỏ nấu sườn,0,trẻ em,lợn|mì,,85,193,582,701,752
+300,mì căn xào cải,0,trẻ em,bún|củ,,429,0,0,0,0
+300,mắm tép,0,trẻ em,bún|củ,,74,0,0,0,0
+301,nộm gà xé phay,1,người già,lợn|phở,,99,0,0,0,0
+301,mì gói nấu hải sản,1,người già,lợn|phở,,224,0,0,0,0
+302,măng tây xào bơ tỏi,0,người lớn,súp|mì,,37,0,0,0,0
+302,mực xào dứa,0,người lớn,súp|mì,,84,95,0,0,0
+303,ngọn su su xào,1,người già,phở|bò,,982,0,0,0,0
+303,canh củ cải nấu bò,1,người già,phở|bò,,223,0,0,0,0
+304,bò xào chua ngọt,0,trẻ em,vịt|bánh mì,,804,0,0,0,0
+304,canh chua cá lóc,0,trẻ em,vịt|bánh mì,,292,316,320,482,511
+305,thịt nạc kho tiêu,0,người già,bánh mì|củ,,194,244,830,0,0
+305,dưa giá,0,người già,bánh mì|củ,,74,740,796,0,0
+306,cà dầm mắm,0,người lớn,mì|cháo,,118,0,0,0,0
+306,nước rau muống chua,0,người lớn,mì|cháo,,57,65,0,0,0
+307,canh tôm bông cải,0,người lớn,cá|gà,,634,680,751,766,0
+307,bánh cuốn nem nướng,0,người lớn,cá|gà,,476,517,0,0,0
+308,canh rau muống nấu ngao,1,trẻ em,súp|bún,,82,0,0,0,0
+308,bún gạo xào hải sản,1,trẻ em,súp|bún,,209,272,793,808,0
+309,canh cua mồng tơi,0,người già,lẩu|phở,,118,0,0,0,0
+309,nước sấu ngâm,0,người già,lẩu|phở,,224,0,0,0,0
+310,hải sản xào rau củ,1,người lớn,súp|lợn,phụ nữ mang thai,227,359,575,786,937
+310,canh điêu hồng nấu nghệ,1,người lớn,súp|lợn,phụ nữ mang thai,914,0,0,0,0
+311,mực xào cà ri,0,người lớn,củ|vịt,,180,316,0,0,0
+311,đậu phụ chiên muối sả,0,người lớn,củ|vịt,,724,0,0,0,0
+312,cá điêu hồng chiên xù,1,trẻ em,xôi|bò,,300,783,909,0,0
+312,canh dưa hường nấu tôm,1,trẻ em,xôi|bò,,467,0,0,0,0
+313,bí đao cuốn thịt,1,người lớn,bún|rau,phụ nữ mang thai,142,0,0,0,0
+313,sinh tố dâu,1,người lớn,bún|rau,phụ nữ mang thai,457,640,197,292,298
+314,rau câu dừa,0,trẻ em,mì|rau,,199,313,430,509,865
+314,trà chanh nóng,0,trẻ em,mì|rau,,886,0,0,0,0
+315,canh cá khoai cải bẹ xanh,1,người già,bánh mì|củ,,605,0,0,0,0
+315,sườn nướng ruốc huế,1,người già,bánh mì|củ,,572,0,0,0,0
+316,thịt nướng,1,trẻ em,tôm|quả,,970,975,0,0,0
+316,canh bí đao nấu tôm nõn,1,trẻ em,tôm|quả,,542,0,0,0,0
+317,canh chua cá kèo,0,người già,tôm|bún,,406,0,0,0,0
+317,bắp bò ngâm nước mắm,0,người già,tôm|bún,,210,310,0,0,0
+318,su hào xào trứng,0,người lớn,cá|bánh mì,,983,974,0,0,0
+318,sườn chiên xả ớt,0,người lớn,cá|bánh mì,,221,334,0,0,0
+319,cải chip luộc,0,người lớn,phở|lợn,,155,0,0,0,0
+319,lẩu tươi,0,người lớn,phở|lợn,,293,779,0,0,0
+320,thịt heo kho đậu phụ,1,trẻ em,cá|súp,,534,0,0,0,0
+320,súp cua bắp non,1,trẻ em,cá|súp,,266,849,0,0,0
+321,chè khoai cao,0,người già,củ|quả,,262,821,0,0,0
+321,nộm đu đủ xanh chả quế,0,người già,củ|quả,,366,0,0,0,0
+322,đậu non sốt chanh leo,0,người già,rau|quả,,52,0,0,0,0
+322,thịt bò xào cà ri,0,người già,rau|quả,,216,0,0,0,0
+323,cá cơm chiên giòn,0,người lớn,bò|tôm,,472,0,0,0,0
+323,sườn nướng,0,người lớn,bò|tôm,,125,976,978,0,0
+324,canh đu đủ hầm xương bò,1,trẻ em,lợn|phở,,188,0,0,0,0
+324,mận,1,trẻ em,lợn|phở,,200,0,0,0,0
+325,giò heo hầm rau củ,1,người lớn,súp|lợn,phụ nữ mang thai,431,925,0,0,0
+325,cải mèo xào thịt bò,1,người lớn,súp|lợn,phụ nữ mang thai,975,0,0,0,0
+326,canh dưa chua,1,người già,củ|phở,,51,0,0,0,0
+326,sườn non chua ngọt,1,người già,củ|phở,,770,0,0,0,0
+327,"chè hạt sen , táo tàu",0,người lớn,cá|vịt,,472,0,0,0,0
+327,đậu phụ trứng sốt cà,0,người lớn,cá|vịt,,963,0,0,0,0
+328,canh chua cá,1,người lớn,phở|quả,phụ nữ mang thai,967,0,0,0,0
+328,lươn cuốn lá cách chiên,1,người lớn,phở|quả,phụ nữ mang thai,625,0,0,0,0
+329,canh chua hải sản,1,người lớn,lẩu|phở,phụ nữ mang thai,317,614,815,0,0
+329,thịt bò nhúng giấm,1,người lớn,lẩu|phở,phụ nữ mang thai,912,0,0,0,0
+330,lẩu thái,1,người lớn,lợn|xôi,phụ nữ mang thai,323,495,738,0,0
+330,nộm đu đủ xanh chả quế,1,người lớn,lợn|xôi,phụ nữ mang thai,366,0,0,0,0
+331,cà tím tẩm bột chiên giòn,0,người lớn,bò|bò,,982,0,0,0,0
+331,canh thìa là cá điêu hồng,0,người lớn,bò|bò,,182,339,0,0,0
+332,nước sprite,1,người lớn,mì|phở,phụ nữ mang thai,871,0,0,0,0
+332,bún bung,1,người lớn,mì|phở,phụ nữ mang thai,246,788,0,0,0
+333,lòng gà xào nấm,0,người lớn,củ|tôm,,15,0,0,0,0
+333,khoai tây chiên,0,người lớn,củ|tôm,,53,0,0,0,0
+334,gỏi gân heo măng chua,1,trẻ em,lợn|bún,,454,0,0,0,0
+334,dưa góp,1,trẻ em,lợn|bún,,109,138,0,0,0
+335,trứng ốp lết,0,người già,súp|củ,,61,0,0,0,0
+335,nước ép xoài,0,người già,súp|củ,,333,0,0,0,0
+336,phở gà,1,trẻ em,súp|cháo,,739,868,0,0,0
+336,chân giò hầm hạt sen,1,trẻ em,súp|cháo,,0,0,0,0,0
+337,đọt lanh luộc,1,người già,mì|cháo,,772,0,0,0,0
+337,cá rán,1,người già,mì|cháo,,17,0,0,0,0
+338,ốc móng tay xào,0,người lớn,cá|cá,,30,0,0,0,0
+338,canh bí xanh nấu tôm,0,người lớn,cá|cá,,840,0,0,0,0
+339,bí đỏ nấu sườn heo,0,người già,bò|súp,,253,802,0,0,0
+339,cá bông lau kho,0,người già,bò|súp,,860,0,0,0,0
+340,bánh su nhân trà xanh,0,trẻ em,phở|cháo,,859,0,0,0,0
+340,dưa hấu ướp lạnh,0,trẻ em,phở|cháo,,234,258,280,391,458
+341,cá rô phi tẩm bột chiên,1,người già,phở|xôi,,960,971,987,0,0
+341,gỏi cuốn bỗng,1,người già,phở|xôi,,600,0,0,0,0
+342,bánh bèo chén,1,người lớn,xôi|xôi,phụ nữ mang thai,499,0,0,0,0
+342,cơm rượu bắc,1,người lớn,xôi|xôi,phụ nữ mang thai,285,778,0,0,0
+343,canh bí đỏ thịt bằm,0,người già,lẩu|bún,,438,553,829,0,0
+343,heo nướng mè,0,người già,lẩu|bún,,485,0,0,0,0
+344,canh thịt bò cà chua,0,người lớn,tôm|gà,,106,0,0,0,0
+344,salad rau củ với trứng đà điểu luộc,0,người lớn,tôm|gà,,385,0,0,0,0
+345,tôm nướng muối ớt,0,người già,gà|bánh mì,,473,0,0,0,0
+345,cá chép kho riềng,0,người già,gà|bánh mì,,839,0,0,0,0
+346,nghêu xào hoa thiên lý,0,người lớn,vịt|lẩu,,478,0,0,0,0
+346,hamburger bò,0,người lớn,vịt|lẩu,,230,795,0,0,0
+347,cá chạch rán giòn,0,người lớn,súp|cháo,,98,0,0,0,0
+347,đọt bí xào tỏi,0,người lớn,súp|cháo,,244,804,830,0,0
+348,canh cua thiên lý,0,người già,gà|bún,,709,0,0,0,0
+348,tôm xào sa tế,0,người già,gà|bún,,317,815,0,0,0
+349,cá nục hấp hành,1,người lớn,củ|vịt,phụ nữ mang thai,358,379,508,768,854
+349,bún thịt nướng,1,người lớn,củ|vịt,phụ nữ mang thai,328,578,631,688,708
+350,giá xào huyết,0,người lớn,cháo|phở,,552,0,0,0,0
+350,ngao hấp sả,0,người lớn,cháo|phở,,39,0,0,0,0
+351,cá hồi chiên xốt gấc,0,người già,lợn|bún,,607,0,0,0,0
+351,mực chiên mắm,0,người già,lợn|bún,,972,0,0,0,0
+352,ngao xào me,1,người lớn,cá|mì,phụ nữ mang thai,154,0,0,0,0
+352,cá trắm hấp cải xanh,1,người lớn,cá|mì,phụ nữ mang thai,258,801,0,0,0
+353,chả cá rán,1,người lớn,bánh mì|quả,phụ nữ mang thai,97,135,0,0,0
+353,cải ngồng xào nấm,1,người lớn,bánh mì|quả,phụ nữ mang thai,743,0,0,0,0
+354,cà tím nhồi thịt nướng,1,người già,lẩu|bò,,965,0,0,0,0
+354,vịt om sấu,1,người già,lẩu|bò,,54,530,0,0,0
+355,dưa hoàng kim,0,người già,quả|cá,,392,0,0,0,0
+355,hoa bí xào tỏi,0,người già,quả|cá,,71,110,384,0,0
+356,gỏi khô cá lóc dưa leo,0,người lớn,tôm|phở,,447,0,0,0,0
+356,thịt viên,0,người lớn,tôm|phở,,969,0,0,0,0
+357,ngọn bí xào tỏi,0,người già,rau|bánh mì,,733,0,0,0,0
+357,cánh gà chiên bơ,0,người già,rau|bánh mì,,58,0,0,0,0
+358,mía ướp lạnh,1,người lớn,rau|mì,phụ nữ mang thai,0,0,0,0,0
+358,đậu quả xào,1,người lớn,rau|mì,phụ nữ mang thai,978,970,0,0,0
+359,cháo cá kim châm,1,người già,cháo|súp,,828,0,0,0,0
+359,canh chua cá ba sa,1,người già,cháo|súp,,625,845,0,0,0
+360,củ năng nấu sườn,1,người lớn,tôm|mì,phụ nữ mang thai,599,658,270,0,0
+360,canh khoai môn nấu giò,1,người lớn,tôm|mì,phụ nữ mang thai,458,0,0,0,0
+361,đậu hũ dồn thịt,1,người lớn,lợn|củ,phụ nữ mang thai,429,462,0,0,0
+361,thịt kho dưa cải,1,người lớn,lợn|củ,phụ nữ mang thai,306,0,0,0,0
+362,mực xào hành cần,1,người già,mì|gà,,329,444,586,0,0
+362,canh mướp,1,người già,mì|gà,,27,0,0,0,0
+363,nước ép bưởi,1,trẻ em,quả|bún,,708,174,181,230,389
+363,sữa cao cao nóng,1,trẻ em,quả|bún,,638,0,0,0,0
+364,cháo lòng,1,người già,lợn|cháo,,703,814,0,0,0
+364,canh nấm thịt xay,1,người già,lợn|cháo,,665,0,0,0,0
+365,nước trà atiso,1,người già,tôm|mì,,741,0,0,0,0
+365,cà rigà,1,người già,tôm|mì,,720,0,0,0,0
+366,canh ngót nấu tôm,1,người già,lợn|cá,,397,0,0,0,0
+366,bông hành xào tôm thẻ,1,người già,lợn|cá,,377,876,929,0,0
+367,chuối cau,0,người lớn,lợn|vịt,,207,253,300,732,802
+367,canh rau ngót thịt băm,0,người lớn,lợn|vịt,,55,92,155,156,0
+368,cải cúc nấu tôm,0,trẻ em,rau|xôi,,423,0,0,0,0
+368,gỏi cổ hủ dừa,0,trẻ em,rau|xôi,,554,535,0,0,0
+369,thịt nướng sốt bbq,0,người lớn,vịt|tôm,,971,0,0,0,0
+369,canh cải xoong nấu bò,0,người lớn,vịt|tôm,,611,301,0,0,0
+370,sườn heo nướng muối,0,trẻ em,lẩu|bò,,474,0,0,0,0
+370,canh điêu hồng nấu ngót,0,trẻ em,lẩu|bò,,515,847,0,0,0
+371,bí ngòi hấp xốt dâu,1,người già,cháo|bún,,637,684,0,0,0
+371,gỏi ngó sen,1,người già,cháo|bún,,668,0,0,0,0
+372,mì căn xào cải,0,trẻ em,cháo|cá,,429,0,0,0,0
+372,mướp xào nấm hương,0,trẻ em,cháo|cá,,474,0,0,0,0
+373,cần nước xào tỏi,0,người lớn,quả|bánh mì,,449,0,0,0,0
+373,tôm nướng muối ớt,0,người lớn,quả|bánh mì,,473,0,0,0,0
+374,cá sốt cà chua,1,người già,lẩu|bánh mì,,139,0,0,0,0
+374,bông thiên lý xào thịt bò,1,người già,lẩu|bánh mì,,391,0,0,0,0
+375,sườn heo nướng,0,người lớn,bò|gà,,470,0,0,0,0
+375,cá kèo kho tiêu,0,người lớn,bò|gà,,155,0,0,0,0
+376,cá cơm chiên ròn,1,người lớn,củ|cháo,phụ nữ mang thai,94,0,0,0,0
+376,cải cúc nấu tôm,1,người lớn,củ|cháo,phụ nữ mang thai,423,0,0,0,0
+377,canh cá chua,0,người lớn,lẩu|gà,,29,0,0,0,0
+377,cá trê chiên mắm gừng,0,người lớn,lẩu|gà,,733,0,0,0,0
+378,tôm xào sa tế,0,người lớn,vịt|mì,,317,815,0,0,0
+378,cá thu  kho gừng,0,người lớn,vịt|mì,,292,807,0,0,0
+379,cải thảo xào,1,người già,lợn|củ,,76,0,0,0,0
+379,nấm mỡ xốt thịt ham,1,người già,lợn|củ,,836,0,0,0,0
+380,bò xào cần tây,0,người lớn,mì|lẩu,,379,0,0,0,0
+380,thịt kho nghệ,0,người lớn,mì|lẩu,,874,0,0,0,0
+381,cá trê hấp gừng,1,người lớn,vịt|súp,phụ nữ mang thai,432,0,0,0,0
+381,cá trứng nướng,1,người lớn,vịt|súp,phụ nữ mang thai,689,0,0,0,0
+382,nộm xoài xanh,0,người lớn,tôm|cá,,55,0,0,0,0
+382,măng tươi luộc,0,người lớn,tôm|cá,,125,0,0,0,0
+383,cánh gà xào chua ngọt,0,người lớn,quả|tôm,,85,0,0,0,0
+383,gỏi bò trộn đu đủ,0,người lớn,quả|tôm,,489,0,0,0,0
+384,nấm xào trứng,0,người lớn,vịt|cá,,483,0,0,0,0
+384,bánh xèo nấm,0,người lớn,vịt|cá,,526,0,0,0,0
+385,bắp bò hầm đậu trắng ăn kèm bánh mì,1,người già,lợn|phở,,183,0,0,0,0
+385,canh rau ngót nấu tôm,1,người già,lợn|phở,,569,0,0,0,0
+386,đậu đũa xào,0,người già,bánh mì|súp,,29,0,0,0,0
+386,canh mồng tơi nấu cua,0,người già,bánh mì|súp,,75,819,0,0,0
+387,bạch tuộc sa tế,1,người lớn,quả|bánh mì,phụ nữ mang thai,115,0,0,0,0
+387,cà ri mực,1,người lớn,quả|bánh mì,phụ nữ mang thai,225,0,0,0,0
+388,bún sứa,1,người lớn,rau|cháo,phụ nữ mang thai,773,0,0,0,0
+388,canh khổ hoa dồn thịt lợn,1,người lớn,rau|cháo,phụ nữ mang thai,238,817,0,0,0
+389,bánh bò hấp,0,người già,bánh mì|mì,,467,497,0,0,0
+389,canh tần ô thịt bò,0,người già,bánh mì|mì,,217,294,351,380,950
+390,trứng chiên hẹ với thịt gà,0,người già,tôm|bún,,395,942,0,0,0
+390,lươn cuốn lá cách chiên,0,người già,tôm|bún,,625,0,0,0,0
+391,chè môn,1,người già,lẩu|phở,,302,0,0,0,0
+391,canh củ sen hầm,1,người già,lẩu|phở,,382,957,0,0,0
+392,cá thu chiên xốt chanh dây,0,người lớn,lợn|gà,,211,0,0,0,0
+392,cá rán giòn,0,người lớn,lợn|gà,,28,29,102,0,0
+393,bì nấu đông,1,người lớn,vịt|tôm,phụ nữ mang thai,974,0,0,0,0
+393,cải ngồng xào nấm,1,người lớn,vịt|tôm,phụ nữ mang thai,743,0,0,0,0
+394,thịt xào rau củ,0,người lớn,bánh mì|vịt,,661,0,0,0,0
+394,canh khổ qua dồn thịt,0,người lớn,bánh mì|vịt,,413,465,491,565,646
+395,bún gạo nấu bò viên,0,người lớn,vịt|bò,,710,0,0,0,0
+395,canh tôm nõn nấu bí đao,0,người lớn,vịt|bò,,848,254,949,0,0
+396,gỏi nha đam tôm,0,người già,mì|vịt,,648,0,0,0,0
+396,hoa thiên lý trộn bò,0,người già,mì|vịt,,276,831,0,0,0
+397,canh cải thảo nấu thịt băm,1,trẻ em,mì|cháo,,234,0,0,0,0
+397,lẩu tươi,1,trẻ em,mì|cháo,,293,779,0,0,0
+398,ngọn bí xào tỏi,0,người lớn,bún|phở,,733,0,0,0,0
+398,canh chua tép,0,người lớn,bún|phở,,164,0,0,0,0
+399,thịt ba chỉ rang cháy cạnh,0,người lớn,rau|bánh mì,,34,0,0,0,0
+399,"xu hào xào,",0,người lớn,rau|bánh mì,,0,0,0,0,0
+400,dâu tươi giằm,1,người lớn,tôm|bánh mì,bệnh huyết áp cao,563,855,0,0,0
+400,gỏi bạc hà,1,người lớn,tôm|bánh mì,bệnh huyết áp cao,373,0,0,0,0
+401,sò dương trộn bắp cải tím,1,người già,cá|cháo,bệnh tim mạch,521,0,0,0,0
+401,canh chua khoai sọ nấu rau nhút,1,người già,cá|cháo,bệnh tim mạch,286,0,0,0,0
+402,cá chạch kho nghệ,0,người già,súp|lẩu,bệnh tim mạch,494,569,0,0,0
+402,canh rau má nấu bò,0,người già,súp|lẩu,bệnh tim mạch,640,0,0,0,0
+403,mì ý xào bò,1,trẻ em,bò|rau,,518,885,0,0,0
+403,cá rô phi chiên ròn,1,trẻ em,bò|rau,,48,0,0,0,0
+404,canh ngót nấu tôm,1,người già,súp|bánh mì,bệnh tiểu đường,397,0,0,0,0
+404,gà kho sả nghệ,1,người già,súp|bánh mì,bệnh tiểu đường,758,0,0,0,0
+405,canh nấm rơm đậu phụ non,1,người già,lợn|lẩu,bệnh huyết áp cao,667,0,0,0,0
+405,cà tím xào,1,người già,lợn|lẩu,bệnh huyết áp cao,34,0,0,0,0
+406,cà tím nướng mỡ hành,0,người già,quả|xôi,bệnh tim mạch,278,327,618,647,732
+406,gỏi khô cá sặt dưa leo,0,người già,quả|xôi,bệnh tim mạch,734,0,0,0,0
+407,canh cải thảo nấu thịt băm,1,trẻ em,lợn|quả,,234,0,0,0,0
+407,đậu phụ tứ xuyên,1,trẻ em,lợn|quả,,89,0,0,0,0
+408,đậu rán,0,người lớn,bò|củ,bệnh huyết áp cao,20,140,0,0,0
+408,canh bí xanh nấu tôm đồng,0,người lớn,bò|củ,bệnh huyết áp cao,663,0,0,0,0
+409,cải thìa xào nấm,0,trẻ em,bánh mì|mì,,299,399,930,0,0
+409,bánh hỏi thịt quay,0,trẻ em,bánh mì|mì,,434,927,0,0,0
+410,cá điêu hồng hấp tàu xì,1,người già,lẩu|lợn,bệnh tiểu đường,641,0,0,0,0
+410,cá chẻm chiên xù xốt caramel,1,người già,lẩu|lợn,bệnh tiểu đường,633,0,0,0,0
+411,canh xương,1,người lớn,cá|gà,bệnh dạ dày,26,0,0,0,0
+411,lươn cuốn lá cách chiên,1,người lớn,cá|gà,bệnh dạ dày,625,0,0,0,0
+412,đọt bí xào thịt ba chỉ,0,người lớn,cháo|phở,bệnh dạ dày,610,0,0,0,0
+412,bò xào bông hẹ,0,người lớn,cháo|phở,bệnh dạ dày,312,0,0,0,0
+413,bí luộc chấm kho quẹt,0,người lớn,lợn|súp,bệnh tim mạch,683,0,0,0,0
+413,na ướp lạnh,0,người lớn,lợn|súp,bệnh tim mạch,822,0,0,0,0
+414,cocacola,0,người già,quả|súp,bệnh tiểu đường,873,0,0,0,0
+414,canh cá diêu hồng nấu ngót,0,người già,quả|súp,bệnh tiểu đường,888,0,0,0,0
+415,dưa khổ qua đèo,1,người già,mì|lẩu,bệnh huyết áp cao,233,838,920,0,0
+415,canh bí đỏ,1,người già,mì|lẩu,bệnh huyết áp cao,98,0,0,0,0
+416,canh bí đỏ nấu tôm,0,người già,gà|xôi,bệnh tim mạch,131,0,0,0,0
+416,cá thu chiên xốt me,0,người già,gà|xôi,bệnh tim mạch,640,0,0,0,0
+417,canh điêu hồng nấu nghệ,0,trẻ em,củ|súp,,914,0,0,0,0
+417,canh mướp hương nấm rơm,0,trẻ em,củ|súp,,186,0,0,0,0
+418,khoai tây nhồi thịt heo chiên,0,người già,phở|lẩu,bệnh tiểu đường,276,831,0,0,0
+418,canh hẹ tàu hủ non,0,người già,phở|lẩu,bệnh tiểu đường,689,0,0,0,0
+419,cá om dưa cải,0,người lớn,mì|lợn,bệnh huyết áp cao,13,0,0,0,0
+419,canh khổ qua cá thác lácnước ép táo,0,người lớn,mì|lợn,bệnh huyết áp cao,765,0,0,0,0
+420,chạo cá nướng sả,0,người già,cháo|phở,bệnh dạ dày,543,0,0,0,0
+420,mực dồn thịt xốt cam,0,người già,cháo|phở,bệnh dạ dày,751,0,0,0,0
+421,bánh xèo thịt vịt,1,trẻ em,cá|phở,,731,0,0,0,0
+421,cháo cá lóc rau đắng,1,trẻ em,cá|phở,,700,0,0,0,0
+422,bí đao cuốn thịt,1,người lớn,cháo|lợn,bệnh huyết áp cao,142,0,0,0,0
+422,chả lục kep sandwich,1,người lớn,cháo|lợn,bệnh huyết áp cao,721,0,0,0,0
+423,miến xào cua,0,người lớn,bún|mì,bệnh dạ dày,231,800,973,0,0
+423,lòng xào dưa chua,0,người lớn,bún|mì,bệnh dạ dày,79,0,0,0,0
+424,nước mía,1,trẻ em,tôm|lẩu,,481,545,953,243,729
+424,canh cá khoai cải bẹ xanh,1,trẻ em,tôm|lẩu,,605,0,0,0,0
+425,rau càng cua trộn thịt bò,0,người lớn,xôi|phở,bệnh dạ dày,307,758,910,0,0
+425,bó xôi xào tỏi,0,người lớn,xôi|phở,bệnh dạ dày,872,0,0,0,0
+426,"lẩu cá kèo, bún",1,người lớn,bánh mì|bánh mì,bệnh huyết áp cao,0,0,0,0,0
+426,cánh gà nướng hương quế,1,người lớn,bánh mì|bánh mì,bệnh huyết áp cao,451,0,0,0,0
+427,canh khoai mỡ nấu tôm khô,1,người lớn,gà|phở,bệnh tim mạch,858,0,0,0,0
+427,canh mực chua ngọt,1,người lớn,gà|phở,bệnh tim mạch,690,0,0,0,0
+428,tép rim ba rọi,0,người già,bánh mì|rau,bệnh dạ dày,620,0,0,0,0
+428,sinh tố chuối và dứa,0,người già,bánh mì|rau,bệnh dạ dày,0,0,0,0,0
+429,tôm kho củ sen,0,người già,vịt|bánh mì,bệnh dạ dày,576,0,0,0,0
+429,canh khoai từ nấu tôm,0,người già,vịt|bánh mì,bệnh dạ dày,504,0,0,0,0
+430,nước mía lau,0,người già,súp|gà,bệnh dạ dày,554,0,0,0,0
+430,bông hẹ xào bò,0,người già,súp|gà,bệnh dạ dày,413,650,0,0,0
+431,thịt gà viên nướng mèđen,0,người già,súp|cháo,bệnh tim mạch,916,0,0,0,0
+431,"lẩu cá kèo, bún",0,người già,súp|cháo,bệnh tim mạch,0,0,0,0,0
+432,nước củ sen,1,trẻ em,bò|xôi,,198,0,0,0,0
+432,bánh mì trứng ốp la,1,trẻ em,bò|xôi,,343,0,0,0,0
+433,chè hạt sen táo tàu,1,trẻ em,mì|xôi,,510,530,862,895,0
+433,canh rau muống cà chua,1,trẻ em,mì|xôi,,54,0,0,0,0
+434,chè trôi nước,0,người lớn,súp|bò,bệnh tiểu đường,420,919,0,0,0
+434,canh cải thảo nấu thịt,0,người lớn,súp|bò,bệnh tiểu đường,146,0,0,0,0
+435,cháo sườn nấm bào ngư,0,người lớn,phở|lợn,bệnh dạ dày,531,0,0,0,0
+435,bắp bò ngâm nước mắm,0,người lớn,phở|lợn,bệnh dạ dày,210,310,0,0,0
+436,cá thiều nướng muối ớt,1,trẻ em,lẩu|phở,,366,0,0,0,0
+436,giá xào huyết,1,trẻ em,lẩu|phở,,552,0,0,0,0
+437,canh giá hẹ đậu phụ non,0,người lớn,bò|củ,bệnh tiểu đường,522,0,0,0,0
+437,canh khoai môn nấu tôm khô,0,người lớn,bò|củ,bệnh tiểu đường,902,0,0,0,0
+438,mực xào rối,0,người lớn,súp|bánh mì,bệnh huyết áp cao,513,0,0,0,0
+438,canh đuôi heo hầm atiso,0,người lớn,súp|bánh mì,bệnh huyết áp cao,567,0,0,0,0
+439,cá hú kho tộ,1,người lớn,súp|củ,bệnh tiểu đường,561,0,0,0,0
+439,cháo gà ác hạt sen,1,người lớn,súp|củ,bệnh tiểu đường,763,0,0,0,0
+440,canh rau ngót nấu thịt băm,0,trẻ em,cá|phở,,113,0,0,0,0
+440,cá thu sốt cà chua,0,trẻ em,cá|phở,,95,970,0,0,0
+441,bún cá,0,trẻ em,bò|vịt,,247,881,0,0,0
+441,bò xào bông hẹ,0,trẻ em,bò|vịt,,312,0,0,0,0
+442,bí đỏ xào nấm rơm,1,người già,quả|lẩu,bệnh tiểu đường,432,0,0,0,0
+442,hến nấu thì là,1,người già,quả|lẩu,bệnh tiểu đường,216,0,0,0,0
+443,cá lóc kho tương gừng,1,người lớn,bún|lẩu,bệnh tim mạch,436,0,0,0,0
+443,bao tử hầm tiêu xanh,1,người lớn,bún|lẩu,bệnh tim mạch,482,0,0,0,0
+444,canh đầu cá nấu chua,1,người già,lẩu|rau,bệnh tiểu đường,104,0,0,0,0
+444,lẩu mắm,1,người già,lẩu|rau,bệnh tiểu đường,564,913,0,0,0
+445,rau cải xào,1,người lớn,cháo|bánh mì,bệnh huyết áp cao,976,985,0,0,0
+445,giò heo hầm măng khô,1,người lớn,cháo|bánh mì,bệnh huyết áp cao,364,0,0,0,0
+446,thịt ba rọi quay,1,người già,mì|súp,bệnh tim mạch,184,0,0,0,0
+446,mực xào thơm,1,người già,mì|súp,bệnh tim mạch,292,807,0,0,0
+447,cá cơm rang,0,người lớn,gà|súp,bệnh tiểu đường,126,0,0,0,0
+447,giá hẹ xào,0,người lớn,gà|súp,bệnh tiểu đường,422,0,0,0,0
+448,sandwich tươi nhân thịt gà,1,trẻ em,rau|tôm,,551,0,0,0,0
+448,gà cuộn lá chanh,1,trẻ em,rau|tôm,,312,0,0,0,0
+449,miến gà,0,người già,quả|tôm,,207,261,326,806,922
+449,bún giò heo,0,người già,quả|tôm,,894,0,0,0,0
+450,đậu phụ chiên sả,0,người lớn,gà|rau,,480,766,0,0,0
+450,cá điêu hồng hấp xì dầu,0,người lớn,gà|rau,,968,0,0,0,0
+451,cá cơm chiên giòn,1,trẻ em,cá|vịt,,472,0,0,0,0
+451,chuối cao,1,trẻ em,cá|vịt,,474,0,0,0,0
+452,canh khổ qua nấu thác lác,1,người già,lợn|bánh mì,,312,0,0,0,0
+452,bánh mì nướng phô mai,1,người già,lợn|bánh mì,,374,0,0,0,0
+453,lạc rang,0,người lớn,cá|gà,,18,130,43,90,120
+453,cá chép kho dưa,0,người lớn,cá|gà,,906,0,0,0,0
+454,canh dưa cà chua,1,người lớn,mì|phở,phụ nữ mang thai,73,0,0,0,0
+454,cật heo chấy tỏi,1,người lớn,mì|phở,phụ nữ mang thai,529,880,0,0,0
+455,trứng chiên thịt băm,0,người già,quả|quả,,899,0,0,0,0
+455,giá hẹ xào tim heo,0,người già,quả|quả,,194,869,0,0,0
+456,lòng luộc,1,trẻ em,rau|cá,,96,0,0,0,0
+456,canh mướp,1,trẻ em,rau|cá,,27,0,0,0,0
+457,bánh bèo tôm cháy,0,trẻ em,tôm|cháo,,481,545,0,0,0
+457,xà lách trộn thịt bò,0,trẻ em,tôm|cháo,,239,0,0,0,0
+458,"chè hạt sen , táo tàu",0,người già,củ|bánh mì,,472,0,0,0,0
+458,bò nướng tiêu,0,người già,củ|bánh mì,,321,0,0,0,0
+459,cá lóc hấp bầu,0,trẻ em,gà|vịt,,474,539,0,0,0
+459,ngao hấp,0,trẻ em,gà|vịt,,40,0,0,0,0
+460,canh chua cá hồi,0,trẻ em,cháo|súp,,160,269,0,0,0
+460,thiên lý xào thịt bò,0,trẻ em,cháo|súp,,295,0,0,0,0
+461,bắp bò hấp hành,1,trẻ em,tôm|củ,,736,0,0,0,0
+461,gà kho gừng,1,trẻ em,tôm|củ,,423,190,747,0,0
+462,trà xanh,1,trẻ em,xôi|lẩu,,477,548,776,0,0
+462,ếch hầm nồi đất,1,trẻ em,xôi|lẩu,,594,0,0,0,0
+463,gỏi cóc trộn khô mực,0,trẻ em,vịt|tôm,,285,778,0,0,0
+463,canh chua cá,0,trẻ em,vịt|tôm,,967,0,0,0,0
+464,trứng chim cút chiên xù,1,người lớn,củ|phở,phụ nữ mang thai,143,0,0,0,0
+464,canh bí đỏ nấu gà,1,người lớn,củ|phở,phụ nữ mang thai,613,717,0,0,0
+465,tôm rang thịt,0,người lớn,cháo|bánh mì,,90,0,0,0,0
+465,bò xào hành cần,0,người lớn,cháo|bánh mì,,500,511,514,726,815
+466,thịt heo kho tàu,0,người lớn,gà|cá,,714,0,0,0,0
+466,cá rô phi chiên ròn,0,người lớn,gà|cá,,48,0,0,0,0
+467,cải thìa xào tôm thịt,0,người lớn,vịt|bánh mì,,334,0,0,0,0
+467,canh rau cải nấu thịt băm,0,người lớn,vịt|bánh mì,,65,0,0,0,0
+468,dưa tây ướp lạnh,1,trẻ em,gà|bánh mì,,491,0,0,0,0
+468,ốc luộc chấm nước mắm gừng,1,trẻ em,gà|bánh mì,,264,0,0,0,0
+469,canh ngao rau răm,0,người lớn,gà|vịt,,645,0,0,0,0
+469,sinh tố cà chua,0,người lớn,gà|vịt,,168,187,214,241,270
+470,xu hào ngâm chua ngọt,1,người lớn,bánh mì|tôm,phụ nữ mang thai,975,0,0,0,0
+470,nước rong biển bông cúc,1,người lớn,bánh mì|tôm,phụ nữ mang thai,569,0,0,0,0
+471,canh cải chua nấu sườn,0,người già,bánh mì|bò,,478,0,0,0,0
+471,mực chiên giòn,0,người già,bánh mì|bò,,72,0,0,0,0
+472,nước rong biển bông cúc,0,người già,lợn|lẩu,,569,0,0,0,0
+472,canh khoai mỡ,0,người già,lợn|lẩu,,347,368,461,938,0
+473,canh giò heo nấu củ,0,người lớn,phở|tôm,,775,0,0,0,0
+473,canh rau ngót nấu tôm,0,người lớn,phở|tôm,,569,0,0,0,0
+474,canh bí đỏ nấu sườn,1,người già,xôi|bánh mì,,85,193,582,701,752
+474,canh chua tôm cá lóc,1,người già,xôi|bánh mì,,934,0,0,0,0
+475,phi lê cá điêu hồng xào đậu rồng,0,người già,bò|lẩu,,440,0,0,0,0
+475,bánh mì cuộn kem trái cây,0,người già,bò|lẩu,,691,0,0,0,0
+476,lưỡi lợn xào thập cẩm,0,người lớn,bún|lợn,,70,0,0,0,0
+476,canh su hào nấu tôm,0,người lớn,bún|lợn,,123,0,0,0,0
+477,thịt xào ngồng tỏi,0,người già,phở|bún,,16,0,0,0,0
+477,súp đậu đỏ nấu đậu phụ,0,người già,phở|bún,,496,0,0,0,0
+478,đậu rán chấm mắm tôm,0,người lớn,cá|bánh mì,,18,0,0,0,0
+478,canh sườn nấu chua,0,người lớn,cá|bánh mì,,968,976,2,0,0
+479,canh rau muống chua,0,người già,xôi|mì,,64,0,0,0,0
+479,gà xào xúp lơ,0,người già,xôi|mì,,689,0,0,0,0
+480,canh khổ hoa dồn thịt lợn,0,người lớn,rau|xôi,,238,817,0,0,0
+480,gà hấp lá chanh,0,người lớn,rau|xôi,,36,0,0,0,0
+481,đọt lanh luộc,0,trẻ em,bò|quả,,772,0,0,0,0
+481,sinh tố sa-pô-chê,0,trẻ em,bò|quả,,380,950,189,468,0
+482,bò xào hành cần,1,người già,vịt|rau,,500,511,514,726,815
+482,miến cua xào,1,người già,vịt|rau,,170,332,621,0,0
+483,khổ qua nhồi thịt,0,người già,quả|bò,,409,597,946,0,0
+483,gà tiềm,0,người già,quả|bò,,488,0,0,0,0
+484,canh bí đỏ hầm giò heo,1,người lớn,bún|lợn,phụ nữ mang thai,248,0,0,0,0
+484,thịt bò hấp xả,1,người lớn,bún|lợn,phụ nữ mang thai,48,0,0,0,0
+485,điêu hồng kho tương,1,trẻ em,mì|tôm,,199,0,0,0,0
+485,cải xanh luộc cuộn nấm sốt thăn heo xào gừng,1,trẻ em,mì|tôm,,717,0,0,0,0
+486,gà nướng muối ớt,1,người lớn,súp|rau,phụ nữ mang thai,431,0,0,0,0
+486,tôm bọc củ sen chiên,1,người lớn,súp|rau,phụ nữ mang thai,543,0,0,0,0
+487,mực trứng hấp,1,trẻ em,mì|cháo,,83,0,0,0,0
+487,chạo chay,1,trẻ em,mì|cháo,,571,0,0,0,0
+488,thịt bò xào cần,1,trẻ em,phở|xôi,,579,730,798,0,0
+488,cá trê kho tương,1,trẻ em,phở|xôi,,249,630,696,818,0
+489,tôm chiên củ sen,1,người già,xôi|súp,,948,0,0,0,0
+489,milo nóng,1,người già,xôi|súp,,167,0,0,0,0
+490,canh mướp nấu nấm,1,trẻ em,vịt|vịt,,853,0,0,0,0
+490,đậu rồng xào,1,trẻ em,vịt|vịt,,216,361,0,0,0
+491,canh cải xooang cá thác lác,0,trẻ em,cá|bánh mì,,196,0,0,0,0
+491,canh khổ qua dồn cá thác lác,0,trẻ em,cá|bánh mì,,356,0,0,0,0
+492,cá chẻm muối sả chiên,1,người lớn,bún|quả,phụ nữ mang thai,840,0,0,0,0
+492,chè nếp than,1,người lớn,bún|quả,phụ nữ mang thai,282,0,0,0,0
+493,"chè hạt sen , táo tàu",0,người già,cá|bò,,472,0,0,0,0
+493,mía ướp lạnh,0,người già,cá|bò,,0,0,0,0,0
+494,gà xào xúp lơ,1,trẻ em,xôi|tôm,,689,0,0,0,0
+494,giá hẹ xào thịt bò,1,trẻ em,xôi|tôm,,439,0,0,0,0
+495,thịt gà xào sa tế,0,người già,mì|súp,,175,637,684,0,0
+495,canh rau ngót nấu tôm,0,người già,mì|súp,,569,0,0,0,0
+496,tép đồng cuốn bánh tráng,1,người lớn,quả|phở,,383,0,0,0,0
+496,canh ngao,1,người lớn,quả|phở,,16,0,0,0,0
+497,gà kho tàu,0,người già,lẩu|quả,,478,0,0,0,0
+497,mướp đắng xào trứng,0,người già,lẩu|quả,,131,0,0,0,0
+498,rau củ luộc chấm kho quẹt,0,người già,cháo|cá,,11,0,0,0,0
+498,canh sườn heo đậu đỏ,0,người già,cháo|cá,,581,706,0,0,0
+499,rong chân vịt trộn gà,0,người già,quả|mì,,840,0,0,0,0
+499,vịt quay om nước tương,0,người già,quả|mì,,280,0,0,0,0
+500,bánh mousse xoài,1,trẻ em,tôm|cá,,453,0,0,0,0
+500,canh chua tôm,1,trẻ em,tôm|cá,,5,0,0,0,0
+501,bún mọc,1,người lớn,tôm|phở,,206,352,353,471,632
+501,gà rang gừng,1,người lớn,tôm|phở,,959,0,0,0,0
+502,rau lang xào,0,người già,bò|vịt,,967,0,0,0,0
+502,bánh ướt thịt nướng,0,người già,bò|vịt,,490,0,0,0,0
+503,tôm rim ba rọi,0,người lớn,tôm|súp,,608,748,0,0,0
+503,cá lóc nướng trui,0,người lớn,tôm|súp,,200,0,0,0,0
+504,rau củ luộc chấm kho quẹt,1,người già,gà|cá,,11,0,0,0,0
+504,chuối cao,1,người già,gà|cá,,474,0,0,0,0
+505,chả cá chiên,1,trẻ em,súp|cá,,106,677,0,0,0
+505,tôm nấu tỏi,1,trẻ em,súp|cá,,611,0,0,0,0
+506,canh bí đao nấu thịt viên,1,người già,phở|vịt,,500,514,726,0,0
+506,bò xào nấmbắp non  cà rốt,1,người già,phở|vịt,,284,948,0,0,0
+507,thịt ba rọi quay,0,người lớn,lợn|bún,,184,0,0,0,0
+507,cá kèo kho rau răm,0,người lớn,lợn|bún,,504,852,865,0,0
+508,canh chua gà lá giang,0,trẻ em,tôm|quả,,783,0,0,0,0
+508,thịt bò xào cần,0,trẻ em,tôm|quả,,579,730,798,0,0
+509,cá rô chiên xù,1,người già,rau|bò,,32,0,0,0,0
+509,bò xào cần,1,người già,rau|bò,,347,903,0,0,0
+510,"đậu luộc, mắm đồng chưnggừng",0,trẻ em,bún|cháo,,777,0,0,0,0
+510,rau củ luộc chấm tương hạt kho sả,0,trẻ em,bún|cháo,,751,0,0,0,0
+511,canh chua đầu cá ba sa,1,trẻ em,rau|củ,,116,0,0,0,0
+511,cá chạch kho nghệ,1,trẻ em,rau|củ,,569,494,0,0,0
+512,mắm tép,1,trẻ em,súp|bánh mì,,74,0,0,0,0
+512,canh cải xooang cá thác lác,1,trẻ em,súp|bánh mì,,196,0,0,0,0
+513,hoa chuối cá kèo,0,trẻ em,bò|gà,,199,0,0,0,0
+513,chè đậu xanh viên nướcdừa,0,trẻ em,bò|gà,,941,0,0,0,0
+514,lòng xào dưa chua,1,người lớn,tôm|lợn,,79,0,0,0,0
+514,táo,1,người lớn,tôm|lợn,,161,0,0,0,0
+515,canh cải mầm nấu tôm viên,0,người lớn,rau|bò,,796,0,0,0,0
+515,canh đậu phụ nấu hẹ,0,người lớn,rau|bò,,761,0,0,0,0
+516,trám nhồi thịt,0,người già,củ|rau,,949,0,0,0,0
+516,mướp xào nấm hương,0,người già,củ|rau,,474,0,0,0,0
+517,"canh tàu hủ, hẹ nấu thịt bằm",0,người lớn,cháo|lẩu,,628,0,0,0,0
+517,nước ép bưởi,0,người lớn,cháo|lẩu,,389,928,174,181,230
+518,bún xào singapore,0,trẻ em,bún|bánh mì,,282,0,0,0,0
+518,chả giò tôm bắp,0,trẻ em,bún|bánh mì,,589,0,0,0,0
+519,cá sapa chiên dầu mè,0,trẻ em,cháo|cá,,732,0,0,0,0
+519,mãng cầu giằm sữa,0,trẻ em,cháo|cá,,223,290,318,809,0
+520,măng xào,1,người già,tôm|quả,,35,0,0,0,0
+520,canh cải cúc thịt bằm,1,người già,tôm|quả,,222,0,0,0,0
+521,"rau càng cua trộn,trứng giấm đường",1,người già,cá|quả,,338,0,0,0,0
+521,bánh pudding xoài,1,người già,cá|quả,,727,0,0,0,0
+522,miến xào cua,1,người già,phở|vịt,,231,800,973,0,0
+522,canh đậu phụ nấu tôm,1,người già,phở|vịt,,440,0,0,0,0
+523,súp lạnh,0,người già,mì|xôi,,534,0,0,0,0
+523,vịt xào gừng,0,người già,mì|xôi,,186,0,0,0,0
+524,canh mực chua ngọt,0,người già,rau|củ,,690,0,0,0,0
+524,canh rau ngót nấu thịt băm,0,người già,rau|củ,,113,0,0,0,0
+525,sườn non kho cải chua,1,người lớn,xôi|bò,,256,0,0,0,0
+525,canh giá hẹ,1,người lớn,xôi|bò,,892,0,0,0,0
+526,sườn nướng nước cốt dừa,1,người già,mì|cá,,535,0,0,0,0
+526,gà om xì dầu,1,người già,mì|cá,,69,0,0,0,0
+527,gỏimắm,1,trẻ em,vịt|lẩu,,826,0,0,0,0
+527,canh chuối già nấu mẻ,1,trẻ em,vịt|lẩu,,258,801,0,0,0
+528,chè táo xọn,0,người già,súp|bánh mì,,248,441,690,805,0
+528,nộm rau muống,0,người già,súp|bánh mì,,115,0,0,0,0
+529,canh chua cá thác lác,0,người già,mì|bún,,412,449,462,931,0
+529,cà xào thịt bằm,0,người già,mì|bún,,541,900,0,0,0
+530,phèo non cải chua,1,người lớn,bánh mì|lợn,,560,867,0,0,0
+530,sườn chua ngọt,1,người lớn,bánh mì|lợn,,357,0,0,0,0
+531,cần ống xào bò,0,người già,súp|lợn,,301,0,0,0,0
+531,thịt cua xào chua ngọt,0,người già,súp|lợn,,583,847,0,0,0
+532,cá rô nướng,0,người già,rau|phở,,130,0,0,0,0
+532,gỏi rau nhút,0,người già,rau|phở,,701,0,0,0,0
+533,giá hẹ xào tim heo,1,người già,củ|cháo,,194,869,0,0,0
+533,thịt ba chỉ chiên giòn,1,người già,củ|cháo,,28,0,0,0,0
+534,canh rau cải,0,trẻ em,xôi|xôi,,986,0,0,0,0
+534,cá trê kho me,0,trẻ em,xôi|xôi,,888,0,0,0,0
+535,mì xào dòn,1,trẻ em,mì|củ,,255,792,0,0,0
+535,bắp cải tím trộn nghêu hấp,1,trẻ em,mì|củ,,633,0,0,0,0
+536,lẩu cháo ( phúc kiến ),0,trẻ em,bánh mì|rau,,953,0,0,0,0
+536,su hào ngâm chua ngọt,0,trẻ em,bánh mì|rau,,974,0,0,0,0
+537,canh mướp hương nấm rơm,0,trẻ em,súp|rau,,186,0,0,0,0
+537,mứt thơm,0,trẻ em,súp|rau,,249,818,0,0,0
+538,các chình chiên muối ớt,1,người lớn,phở|rau,,465,0,0,0,0
+538,gân đà điểu tiềm rau củ,1,người lớn,phở|rau,,798,0,0,0,0
+539,nấm xào,1,trẻ em,cháo|súp,,986,0,0,0,0
+539,xà lách trộn thịt bò,1,trẻ em,cháo|súp,,239,0,0,0,0
+540,tôm nõn xào rau củ,1,trẻ em,tôm|bánh mì,,291,825,923,0,0
+540,canh bí xanh nấu tôm đồng,1,trẻ em,tôm|bánh mì,,663,0,0,0,0
+541,cá hấp xì dầu,1,người già,bò|bún,,57,0,0,0,0
+541,cá điêu hồng kho tương,1,người già,bò|bún,,595,765,0,0,0
+542,canh cua mồng tơi,0,người già,cá|mì,,118,0,0,0,0
+542,nem bắc,0,người già,cá|mì,,713,0,0,0,0
+543,sandwich nướng phi lê cá hồi,0,người già,bún|bò,,577,0,0,0,0
+543,canh cải thảo cuốn thịt,0,người già,bún|bò,,79,0,0,0,0
+544,gà kho chay,0,người lớn,xôi|cháo,,706,0,0,0,0
+544,canh đậu đỏ nấu sườn,0,người lớn,xôi|cháo,,405,0,0,0,0
+545,bún gạo xào tôm,0,trẻ em,xôi|xôi,,873,0,0,0,0
+545,canh nấm rơm nấu mướp,0,trẻ em,xôi|xôi,,732,0,0,0,0
+546,canh cua rau nhút,0,người lớn,cháo|tôm,,432,572,0,0,0
+546,đậu quả xào,0,người lớn,cháo|tôm,,970,978,0,0,0
+547,tôm cuộn khoai tây chiên,1,người già,rau|rau,,156,0,0,0,0
+547,canh chua tôm cá lóc,1,người già,rau|rau,,934,0,0,0,0
+548,món cực ngon cho gia đình,1,người lớn,cháo|cháo,,970,0,0,0,0
+548,đùi heo xông khói cuộn bơ,1,người lớn,cháo|cháo,,668,0,0,0,0
+549,măng xào hành tỏi,1,người lớn,tôm|súp,,149,0,0,0,0
+549,súp rong biển hải sản,1,người lớn,tôm|súp,,647,655,0,0,0
+550,bún giò heo,1,người già,mì|quả,,894,0,0,0,0
+550,cánh vịt nấu tương,1,người già,mì|quả,,645,0,0,0,0
+551,canh đu đủ hầm xương bò,1,trẻ em,bánh mì|súp,,188,0,0,0,0
+551,nước củ sen,1,trẻ em,bánh mì|súp,,198,0,0,0,0
+552,canh bí xanh nấu sườn,1,người lớn,lợn|bánh mì,,769,0,0,0,0
+552,bồ câu rim sả ớt,1,người lớn,lợn|bánh mì,,799,0,0,0,0
+553,thịt kho củ cải,0,người già,cháo|mì,,219,257,284,777,948
+553,cá thu chiên xốt cà,0,người già,cháo|mì,,350,610,836,0,0
+554,mực xào dứa,0,trẻ em,xôi|phở,,84,95,0,0,0
+554,tôm xào sa tế,0,trẻ em,xôi|phở,,317,815,0,0,0
+555,canh chua nghêu,1,người lớn,bánh mì|bánh mì,,573,0,0,0,0
+555,rau bí xào tỏi,1,người lớn,bánh mì|bánh mì,,1,8,129,249,630
+556,sườn chua ngọt,1,người lớn,gà|bún,,357,0,0,0,0
+556,hoa thiên lý xào bò,1,người lớn,gà|bún,,716,0,0,0,0
+557,canh nghêu nấu hẹ,0,người lớn,phở|cháo,,483,0,0,0,0
+557,nộm gân bò trộn cần tây,0,người lớn,phở|cháo,,861,0,0,0,0
+558,cà tím nhồi thịt nướng,0,người lớn,củ|lợn,,965,0,0,0,0
+558,sườn rim tôm,0,người lớn,củ|lợn,,560,0,0,0,0
+559,"rau càng cua trộn trứng, giấm đường",0,người già,vịt|gà,,169,0,0,0,0
+559,canh hến nấu chua,0,người già,vịt|gà,,147,0,0,0,0
+560,cam tươi,0,trẻ em,củ|cháo,,535,0,0,0,0
+560,sữa cacao,0,trẻ em,củ|cháo,,215,0,0,0,0
+561,bún cá thu,1,người lớn,súp|củ,,664,0,0,0,0
+561,sữa chua,1,người lớn,súp|củ,,173,276,317,525,609
+562,sinh tố saboche,1,người lớn,phở|lợn,,577,0,0,0,0
+562,sườn lợn xào ngũ sắc,1,người lớn,phở|lợn,,674,0,0,0,0
+563,giá hẹ ngâm chua,0,trẻ em,lợn|quả,,714,0,0,0,0
+563,bún măng vịt,0,trẻ em,lợn|quả,,547,0,0,0,0
+564,cua đồng rang muối,0,người lớn,rau|rau,,93,101,0,0,0
+564,phở hải sản,0,người lớn,rau|rau,,442,0,0,0,0
+565,sữa chua,1,người già,bánh mì|súp,,173,276,317,525,609
+565,cơm chiên dương châu,1,người già,bánh mì|súp,,198,523,0,0,0
+566,nấm xào trứng,1,người già,củ|bò,,483,0,0,0,0
+566,thịt luộc mắm tôm,1,người già,củ|bò,,554,0,0,0,0
+567,bánh canh cua,1,người lớn,rau|bò,,402,516,546,889,0
+567,canh ngao rau răm,1,người lớn,rau|bò,,645,0,0,0,0
+568,canh cải xoong tôm khô,0,người già,xôi|mì,,489,0,0,0,0
+568,canh rau má tôm khô,0,người già,xôi|mì,,391,0,0,0,0
+569,canh cà bung,1,người lớn,xôi|vịt,,121,142,0,0,0
+569,đậu que xào tỏi,1,người lớn,xôi|vịt,,239,0,0,0,0
+570,rau cải xoong trộn bò,0,trẻ em,tôm|xôi,,634,680,0,0,0
+570,cá chép kho dưa,0,trẻ em,tôm|xôi,,906,0,0,0,0
+571,canh xương,0,trẻ em,bò|súp,,26,0,0,0,0
+571,canh chua cá hồi,0,trẻ em,bò|súp,,160,269,0,0,0
+572,canh bí đỏ,1,người lớn,củ|xôi,,98,0,0,0,0
+572,bí đỏ xào nấm rơm,1,người lớn,củ|xôi,,432,0,0,0,0
+573,canh bí đỏ nấu gà,0,người già,xôi|rau,,613,717,0,0,0
+573,bao tử cá basa xào,0,người già,xôi|rau,,987,0,0,0,0
+574,mực xào cà ri,0,người già,phở|quả,,180,316,0,0,0
+574,rau muống xào chao,0,người già,phở|quả,,180,482,534,767,0
+575,đọt bí xào tỏi,1,trẻ em,củ|mì,,244,804,830,0,0
+575,bún cá thu,1,trẻ em,củ|mì,,664,0,0,0,0
+576,xôi thịt quay,1,người lớn,lợn|quả,,538,0,0,0,0
+576,cà tím xào,1,người lớn,lợn|quả,,34,0,0,0,0
+577,canh tần ô thịt bò,1,người lớn,rau|bánh mì,,217,294,351,380,950
+577,sinh tố đu  đủ,1,người lớn,rau|bánh mì,,208,0,0,0,0
+578,cánh gà xào chua ngọt,1,người già,bún|cá,,85,0,0,0,0
+578,tôm xóc trứng muối,1,người già,bún|cá,,370,0,0,0,0
+579,rau cải luộc,1,người già,vịt|lẩu,,134,977,0,0,0
+579,thiên lý xào bò,1,người già,vịt|lẩu,,522,0,0,0,0
+580,hoa thiên lý xào tỏi,1,người già,bánh mì|phở,,132,157,0,0,0
+580,bò xào bông hành,1,người già,bánh mì|phở,,567,0,0,0,0
+581,canh chua dưa cải,0,trẻ em,tôm|mì,,539,0,0,0,0
+581,sữa tươi,0,trẻ em,tôm|mì,,218,275,421,771,857
+582,canh riêu cá niền bắc,1,trẻ em,mì|cháo,,725,0,0,0,0
+582,gỏi nha đam tôm,1,trẻ em,mì|cháo,,648,0,0,0,0
+583,canh sườn nấu củ sen,1,người lớn,rau|quả,,756,0,0,0,0
+583,canh cà rốt hầm sườn,1,người lớn,rau|quả,,600,657,0,0,0
+584,tôm rang,0,người lớn,vịt|mì,,40,73,124,129,0
+584,dưa chuột bao tử muối,0,người lớn,vịt|mì,,135,0,0,0,0
+585,canh khoai môn nấu tôm khô,1,người lớn,bánh mì|phở,,902,0,0,0,0
+585,thịt viên nấm sốt cà chua,1,người lớn,bánh mì|phở,,959,968,0,0,0
+586,"chè hạt sen , táo tàu",1,người già,phở|quả,,472,0,0,0,0
+586,kim chi dưa leo,1,người già,phở|quả,,480,0,0,0,0
+587,cá chép kho gừng,1,người lớn,súp|bò,,498,0,0,0,0
+587,canh cải nấu thịt băm,1,người lớn,súp|bò,,96,110,0,0,0
+588,rau muống xào tỏi,0,người lớn,bún|tôm,,33,102,317,584,39
+588,muối sả mắm ruốc kho,0,người lớn,bún|tôm,,424,934,0,0,0
+589,cháo cá lóc rau đắng,0,người già,súp|lợn,,700,0,0,0,0
+589,nước dừa xiêm,0,người già,súp|lợn,,480,761,0,0,0
+590,cá trứng rim tiêu,1,người già,mì|cháo,,959,984,0,0,0
+590,thịt xào ngồng tỏi,1,người già,mì|cháo,,16,0,0,0,0
+591,ngồng cải luộc,1,người già,bò|cháo,,153,412,931,0,0
+591,canh cải chua hải sản,1,người già,bò|cháo,,859,0,0,0,0
+592,ngồng cảo xào tỏi,1,trẻ em,lợn|xôi,,52,0,0,0,0
+592,gỏi bò trộn đu đủ,1,trẻ em,lợn|xôi,,489,0,0,0,0
+593,bánh hỏi cuốn thịt quay,0,trẻ em,bò|bún,,624,0,0,0,0
+593,canh giò heo hầm thuốc bắc,0,trẻ em,bò|bún,,519,0,0,0,0
+594,gỏi ngó sen chay,0,trẻ em,mì|cá,,392,0,0,0,0
+594,nộm sứa,0,trẻ em,mì|cá,,89,0,0,0,0
+595,canh chua tôm bông sođũa miền nam,1,người già,gà|lẩu,,786,0,0,0,0
+595,lòng gà rim nước dừa,1,người già,gà|lẩu,,557,896,0,0,0
+596,canh rau mồng tơi nấu tôm,0,người lớn,mì|bánh mì,,503,0,0,0,0
+596,canh chuối già nấu mẻ,0,người lớn,mì|bánh mì,,258,801,0,0,0
+597,lê chẻ,1,người lớn,cháo|cá,,180,0,0,0,0
+597,bánh chưng chiên sốt sa tế me,1,người lớn,cháo|cá,,265,0,0,0,0
+598,ốc nhồi thịt,0,người lớn,cháo|xôi,,380,950,0,0,0
+598,cá rô rán giòn,0,người lớn,cháo|xôi,,23,24,0,0,0
+599,canh đậu phụ nấu tôm,1,người già,cháo|củ,,440,0,0,0,0
+599,nước ép củ dền,1,người già,cháo|củ,,210,310,428,0,0
+600,đậu bắp xào nấm hương,0,trẻ em,gà|lợn,,430,939,0,0,0
+600,bao tử hầm tiêu xanh,0,trẻ em,gà|lợn,,482,0,0,0,0
+601,canh cải thảo giá đỗ,0,người già,mì|gà,,53,0,0,0,0
+601,canh khoai sọ nấu xương,0,người già,mì|gà,,36,0,0,0,0
+602,gỏi hoa chuối bò khô,0,người già,bò|bánh mì,,380,950,0,0,0
+602,chè sương sa hạt lựu,0,người già,bò|bánh mì,,567,0,0,0,0
+603,trứng chiên hẹ với thịt gà,1,người già,củ|rau,,395,942,0,0,0
+603,canh bí xanh nấu tôm,1,người già,củ|rau,,840,0,0,0,0
+604,canh chua cá kèo,0,người lớn,củ|lẩu,,406,0,0,0,0
+604,bò xào tỏi tây,0,người lớn,củ|lẩu,,187,335,364,606,0
+605,rau má nước dừa,0,người già,cá|tôm,,675,0,0,0,0
+605,giá xào thịt bò,0,người già,cá|tôm,,977,0,0,0,0
+606,canh khoai môn nấu sườn,1,người lớn,củ|tôm,,878,0,0,0,0
+606,canh dưa chua,1,người lớn,củ|tôm,,51,0,0,0,0
+607,chả cá rán,1,người già,bún|tôm,,97,135,0,0,0
+607,bún cá,1,người già,bún|tôm,,247,881,0,0,0
+608,mùng tơi luộc,0,người lớn,súp|bún,,969,0,0,0,0
+608,bánh hỏi thịt nướng,0,người lớn,súp|bún,,220,484,0,0,0
+609,cà tím tẩm bột chiên giòn,0,người già,rau|bò,,982,0,0,0,0
+609,dưa chuột chẻ,0,người già,rau|bò,,59,74,108,122,35
+610,chuối cau,0,người già,phở|bò,,852,207,253,300,732
+610,"lẩu mắm, bún tươi",0,người già,phở|bò,,499,0,0,0,0
+611,canh cá lóc nấu cần,1,người già,mì|cháo,,252,0,0,0,0
+611,bánh flan rau câu,1,người già,mì|cháo,,914,0,0,0,0
+612,tàu hủ đá đường,0,trẻ em,lợn|lẩu,,654,0,0,0,0
+612,thịt cua xao chua ngọt,0,trẻ em,lợn|lẩu,,762,0,0,0,0
+613,cải chip luộc,1,người già,lợn|xôi,,155,0,0,0,0
+613,canh rau đay mướp,1,người già,lợn|xôi,,51,0,0,0,0
+614,cá nục kho me,1,người già,súp|lợn,,537,855,0,0,0
+614,bánh hỏi heo quay,1,người già,súp|lợn,,737,0,0,0,0
+615,trứng cút chiên xù,0,người già,mì|cá,,85,0,0,0,0
+615,canh củ dền tôm thịt,0,người già,mì|cá,,358,0,0,0,0
+616,canh rau mồng tơi nấu tôm,1,người già,mì|bánh mì,,503,0,0,0,0
+616,bò kho ớt,1,người già,mì|bánh mì,,709,0,0,0,0
+617,bún giò heo,1,trẻ em,gà|quả,,894,0,0,0,0
+617,"xu hào xào,",1,trẻ em,gà|quả,,0,0,0,0,0
+618,xà lách cà chua,0,người già,phở|cháo,,279,811,0,0,0
+618,cá ngừ kho thơm,0,người già,phở|cháo,,573,0,0,0,0
+619,nước ép thơm,0,người già,lẩu|quả,,227,303,398,412,433
+619,mực dồn thịt,0,người già,lẩu|quả,,182,0,0,0,0
+620,canh rau cải ngọt,0,người lớn,phở|lợn,,99,0,0,0,0
+620,canh mướp thịt băm,0,người lớn,phở|lợn,,987,0,0,0,0
+621,cháo hến,0,người lớn,bánh mì|lợn,,389,512,524,893,928
+621,thịt kho tàu,0,người lớn,bánh mì|lợn,,17,75,915,984,0
+622,salad cà sốt trứng chiên chua cay,0,trẻ em,lẩu|cá,,702,0,0,0,0
+622,canh chua cá lóc,0,trẻ em,lẩu|cá,,292,316,320,482,511
+623,khoai môn nấu giò,0,trẻ em,lợn|lợn,,271,789,0,0,0
+623,canh cua rau đay,0,trẻ em,lợn|lợn,,90,91,101,117,321
+624,dâu giằm,1,trẻ em,củ|tôm,,186,602,0,0,0
+624,nộm dưa chuột,1,trẻ em,củ|tôm,,143,0,0,0,0
+625,ốc nấu đậu,0,trẻ em,phở|cháo,,24,0,0,0,0
+625,sinh tố xoài,0,trẻ em,phở|cháo,,289,355,409,463,833
+626,trà chanh,0,trẻ em,bò|súp,,908,242,592,643,841
+626,tôm chiên sả ớt,0,trẻ em,bò|súp,,59,0,0,0,0
+627,"canh tàu hủ, hẹ nấu thịt bằm",0,người lớn,lợn|rau,,628,0,0,0,0
+627,trà nóng,0,người lớn,lợn|rau,,520,0,0,0,0
+628,bò xào thập cẩm,0,người lớn,vịt|súp,,49,64,0,0,0
+628,canh bí xanh nấu tôm nõn,0,người lớn,vịt|súp,,883,0,0,0,0
+629,măng xào lá lốt,1,trẻ em,cháo|bánh mì,,213,0,0,0,0
+629,rong chân vịt trộn gà,1,trẻ em,cháo|bánh mì,,840,0,0,0,0
+630,gà chiên bơ,0,trẻ em,lợn|cháo,,528,0,0,0,0
+630,canh rau ngót thịt băm,0,trẻ em,lợn|cháo,,55,92,155,156,0
+631,canh mướp đắng nhồi thịt,1,người lớn,phở|lẩu,,30,94,0,0,0
+631,cá kho tộ,1,người lớn,phở|lẩu,,14,132,0,0,0
+632,măng xào thịt,1,người già,súp|bánh mì,,539,0,0,0,0
+632,cà tím chiên giòn,1,người già,súp|bánh mì,,234,0,0,0,0
+633,bánh mì trứng ốp la xúc xích,0,trẻ em,bò|bánh mì,,421,0,0,0,0
+633,gà kho nước tương,0,trẻ em,bò|bánh mì,,452,556,0,0,0
+634,cá chẻm muối sả chiên,1,người lớn,súp|tôm,,840,0,0,0,0
+634,sữa cacao,1,người lớn,súp|tôm,,215,0,0,0,0
+635,cải xoong xào bò,0,trẻ em,quả|phở,,878,0,0,0,0
+635,bò xào cà ri,0,trẻ em,quả|phở,,192,0,0,0,0
+636,chè thái,0,trẻ em,gà|cá,,252,0,0,0,0
+636,tôm trộn ba khía,0,trẻ em,gà|cá,,709,0,0,0,0
+637,cá trê kho tương,1,người già,súp|bún,,249,630,696,818,0
+637,bò kho sả,1,người già,súp|bún,,467,505,0,0,0
+638,canh cua rau đai,1,người già,quả|mì,,433,443,0,0,0
+638,nho,1,người già,quả|mì,,160,269,0,0,0
+639,tép đồng cuốn bánh tráng,1,trẻ em,tôm|xôi,,383,0,0,0,0
+639,nộm dưa chuột,1,trẻ em,tôm|xôi,,143,0,0,0,0
+640,cháo trắng lá dứa,0,người lớn,xôi|mì,,346,0,0,0,0
+640,gỏi hoa chuối bò khô,0,người lớn,xôi|mì,,380,950,0,0,0
+641,tôm chiên củ sen,1,người già,súp|tôm,,948,0,0,0,0
+641,trám nhồi thịt,1,người già,súp|tôm,,949,0,0,0,0
+642,thiên lý xào bò,0,trẻ em,bò|súp,,522,0,0,0,0
+642,gỏi mít non tôm thịt,0,trẻ em,bò|súp,,347,0,0,0,0
+643,phèo non cải chua,1,trẻ em,vịt|rau,,560,867,0,0,0
+643,súp hoành thánh hải sản,1,trẻ em,vịt|rau,,823,0,0,0,0
+644,canh mắm,0,trẻ em,phở|lẩu,,537,0,0,0,0
+644,tim heo xào chua ngọt,0,trẻ em,phở|lẩu,,812,0,0,0,0
+645,bánh đa cua,0,người lớn,bò|mì,,242,764,841,856,921
+645,măng xào thịt,0,người lớn,bò|mì,,539,0,0,0,0
+646,rau bí xào tỏi,0,người già,lợn|gà,,8,249,818,1,129
+646,cá thu chiên xốt cà,0,người già,lợn|gà,,350,610,836,0,0
+647,"tép khô xào hành, khế",0,người già,súp|mì,,2,0,0,0,0
+647,củ sen xào tôm,0,người già,súp|mì,,163,342,469,0,0
+648,trứng hấp vân,0,người lớn,phở|cháo,,77,114,0,0,0
+648,canh măng chua nấu cá nục,0,người lớn,phở|cháo,,643,0,0,0,0
+649,cánh gà xào chua ngọt,0,trẻ em,rau|cá,,85,0,0,0,0
+649,đậu hũ chiên xù,0,trẻ em,rau|cá,,196,236,0,0,0
+650,nước củ sen,1,trẻ em,bò|vịt,,198,0,0,0,0
+650,cá om dưa,1,trẻ em,bò|vịt,,96,0,0,0,0
+651,bò nấu đậu,1,người già,lẩu|quả,,443,0,0,0,0
+651,chè chuối,1,người già,lẩu|quả,,395,414,942,0,0
+652,sườn nướng mật ong,0,người lớn,vịt|tôm,,80,0,0,0,0
+652,hủ tiếu,0,người lớn,vịt|tôm,,699,0,0,0,0
+653,tép đồng cuốn bánh tráng,0,người lớn,tôm|xôi,,383,0,0,0,0
+653,thịt nhồi nấu đông cô rim dầu hào,0,người lớn,tôm|xôi,,663,0,0,0,0
+654,hủ tiếu sườn,0,người lớn,bún|bánh mì,,566,0,0,0,0
+654,bánh pizza nấm,0,người lớn,bún|bánh mì,,415,0,0,0,0
+655,thịt bò xào rau củ,0,người già,bún|súp,,81,0,0,0,0
+655,tôm chiên xả,0,người già,bún|súp,,67,0,0,0,0
+656,canh chua tôm,0,người lớn,gà|mì,,5,0,0,0,0
+656,salad cà sốt trứng chiên chua cay,0,người lớn,gà|mì,,702,0,0,0,0
+657,trái cây tươi,0,trẻ em,bò|súp,,452,556,0,0,0
+657,bánh canh chả cá,0,trẻ em,bò|súp,,550,0,0,0,0
+658,cải chíp xào nấm,1,người già,quả|phở,,114,0,0,0,0
+658,bông cải xao cật heo,1,người già,quả|phở,,590,0,0,0,0
+659,canh sườn nấu đậu ngự,1,trẻ em,quả|bánh mì,,620,0,0,0,0
+659,mì lạnh trộn bò,1,trẻ em,quả|bánh mì,,626,670,757,0,0
+660,rau sống,0,người lớn,rau|vịt,,96,104,108,122,130
+660,cải mầm trộn dầu giấm,0,người lớn,rau|vịt,,203,268,0,0,0
+661,mì xào bò,0,trẻ em,gà|củ,,398,857,955,0,0
+661,canh cá điêu hồng chua ngọt,0,trẻ em,gà|củ,,250,813,0,0,0
+662,đậu phụ luộc,0,người lớn,vịt|gà,,34,54,103,45,0
+662,"bún khô xào bắp cải tím, thịt bò",0,người lớn,vịt|gà,,617,0,0,0,0
+663,canh chua cá lóc,0,trẻ em,củ|mì,,292,316,320,482,511
+663,canh sườn nấu đậu ngự,0,trẻ em,củ|mì,,620,0,0,0,0
+664,sò dương xào rau muống,1,người lớn,rau|cháo,,420,919,0,0,0
+664,nước ép củ dền,1,người lớn,rau|cháo,,210,310,428,0,0
+665,bông thiên lý xào thịt bò,1,người già,cháo|lẩu,,391,0,0,0,0
+665,tép rim thịt heo,1,người già,cháo|lẩu,,356,0,0,0,0
+666,nước ép cà rốt,1,trẻ em,mì|bò,,273,366,386,835,945
+666,súp lơ luộc,1,trẻ em,mì|bò,,69,127,141,145,0
+667,xà lách cà chua,1,người lớn,vịt|phở,,279,811,0,0,0
+667,gỏi khô bò,1,người lớn,vịt|phở,,859,0,0,0,0
+668,súp rong biển hải sản,1,người lớn,lợn|quả,,647,655,0,0,0
+668,canh cà chua trứng,1,người lớn,lợn|quả,,129,497,0,0,0
+669,nước ép sơ ri,1,trẻ em,mì|tôm,,600,746,0,0,0
+669,canh giá hẹ đậu phụ non,1,trẻ em,mì|tôm,,522,0,0,0,0
+670,hoa thiên lý xào tỏi,0,trẻ em,rau|tôm,,132,157,0,0,0
+670,sườn heo chiên xốt cà chua,0,trẻ em,rau|tôm,,600,0,0,0,0
+671,gà hầm cam mỹ bánh mì,1,người già,bò|bánh mì,,745,0,0,0,0
+671,trà bí đao,1,người già,bò|bánh mì,,539,0,0,0,0
+672,sandwich nướng phi lê cá hồi,1,người già,bò|bánh mì,,577,0,0,0,0
+672,thịt chân giò muối,1,người già,bò|bánh mì,,81,0,0,0,0
+673,chè trái cây,1,trẻ em,gà|bún,,482,0,0,0,0
+673,nước ép cam,1,trẻ em,gà|bún,,704,493,677,0,0
+674,rau đắng đất nấu cá lóc,0,trẻ em,mì|củ,,214,0,0,0,0
+674,sinh tố sa-bô-chê,0,trẻ em,mì|củ,,211,239,277,299,790
+675,spaghetti xúc xích,0,người già,vịt|cháo,,644,0,0,0,0
+675,bún giò heo nấu dọc mùng,0,người già,vịt|cháo,,623,652,0,0,0
+676,xôi chiên gà rôti,0,trẻ em,bánh mì|quả,,936,0,0,0,0
+676,nước ép dứa,0,trẻ em,bánh mì|quả,,664,0,0,0,0
+677,thịt gà rang gừng,1,người già,quả|vịt,,21,75,141,0,0
+677,bò xào cà ri,1,người già,quả|vịt,,192,0,0,0,0
+678,canh củ năng thịt gà,0,người già,bún|bún,,571,0,0,0,0
+678,chè hạt sen táo tàu,0,người già,bún|bún,,510,530,862,895,0
+679,khoai tây nhồi thịt heo chiên,1,người già,mì|quả,,276,831,0,0,0
+679,canh rau cải ngọt,1,người già,mì|quả,,99,0,0,0,0
+680,bánh ướt thịt nướng,1,trẻ em,mì|mì,,490,0,0,0,0
+680,trứng dầm nước mắm,1,trẻ em,mì|mì,,132,0,0,0,0
+681,bánh bèo chén,1,trẻ em,lợn|vịt,,499,0,0,0,0
+681,đậu hũ chiên trứng,1,trẻ em,lợn|vịt,,11,0,0,0,0
+682,nước  ép chanh dây,1,người già,súp|tôm,,446,0,0,0,0
+682,cá chẻm hấp cải bẹ xanh,1,người già,súp|tôm,,188,0,0,0,0
+683,móng heo hầm hạt sen,0,trẻ em,mì|tôm,,212,0,0,0,0
+683,cá thiều nướng muối ớt,0,trẻ em,mì|tôm,,366,0,0,0,0
+684,chè đậu đỏ bánh lọt,1,trẻ em,súp|bún,,694,0,0,0,0
+684,bún sứa,1,trẻ em,súp|bún,,773,0,0,0,0
+685,canh ngót cá khoai,0,trẻ em,bánh mì|bánh mì,,579,798,0,0,0
+685,đuôi heo hầm kỷ tử và atiso,0,trẻ em,bánh mì|bánh mì,,329,0,0,0,0
+686,bánh khoai mì,1,người già,lẩu|bún,,279,384,811,858,0
+686,thịt luộc,1,người già,lẩu|bún,,74,960,963,982,0
+687,gỏi măng tươi,1,trẻ em,rau|rau,,470,613,0,0,0
+687,thịt gà viên nướng mèđen,1,trẻ em,rau|rau,,916,0,0,0,0
+688,thịt luộc cuốn bánh tráng mè,1,người già,bún|rau,,694,0,0,0,0
+688,lẩu tươi,1,người già,bún|rau,,293,779,0,0,0
+689,trà chanh,1,người lớn,lợn|rau,,643,242,592,841,908
+689,cánh gà ram me,1,người lớn,lợn|rau,,702,0,0,0,0
+690,dọc mùng xào sả,1,người lớn,bánh mì|vịt,,256,0,0,0,0
+690,"kem trái cây, nho khô",1,người lớn,bánh mì|vịt,,528,0,0,0,0
+691,dưa chuột góp,1,người già,xôi|quả,,19,0,0,0,0
+691,cá lóc kho xốt tương gừng,1,người già,xôi|quả,,288,392,0,0,0
+692,dưa hoàng kim,0,người già,rau|bò,,392,0,0,0,0
+692,yaourt giằm dâu tươi,0,người già,rau|bò,,478,0,0,0,0
+693,bắp bò hấp hành,1,người lớn,xôi|bò,,736,0,0,0,0
+693,bồ câu rim sả ớt,1,người lớn,xôi|bò,,799,0,0,0,0
+694,khoai tây dồn thịt đút lò phô mai,1,người già,mì|rau,,605,0,0,0,0
+694,canh đậu ngự hầm xường non,1,người già,mì|rau,,284,777,0,0,0
+695,thịt lợn quay giòn bì,1,trẻ em,súp|bò,,125,0,0,0,0
+695,canh đậu hầm sườn heo,1,trẻ em,súp|bò,,590,0,0,0,0
+696,ốc nấu đậu,1,người già,quả|lẩu,,24,0,0,0,0
+696,đậu que luộc,1,người già,quả|lẩu,,783,0,0,0,0
+697,nước ép chanh dây,0,trẻ em,mì|cá,,291,543,825,923,442
+697,cơm tấm bì chay,0,trẻ em,mì|cá,,394,932,0,0,0
+698,chè đậu đỏ,1,người lớn,vịt|cá,,339,559,772,0,0
+698,canh khoai môn nấu giò heo,1,người lớn,vịt|cá,,774,0,0,0,0
+699,rau củ luộc chấm tương hạt kho sả,1,người già,lẩu|súp,,751,0,0,0,0
+699,gỏi khô cá sặt dưa leo,1,người già,lẩu|súp,,734,0,0,0,0
+700,gà hầm sả,1,người lớn,cá|lẩu,,296,794,0,0,0
+700,chè đậu đỏ,1,người lớn,cá|lẩu,,339,559,772,0,0
+701,trứng dầm nước mắm,0,trẻ em,lợn|phở,,132,0,0,0,0
+701,cá kho tương bần,0,trẻ em,lợn|phở,,405,0,0,0,0
+702,nộm rau muống,0,trẻ em,vịt|cháo,,115,0,0,0,0
+702,tôm xào đậu tương,0,trẻ em,vịt|cháo,,322,0,0,0,0
+703,sườn nướng,0,người lớn,vịt|tôm,,125,976,978,0,0
+703,cá bống kho,0,người lớn,vịt|tôm,,145,0,0,0,0
+704,sinh tố saboche,0,người già,xôi|cháo,,577,0,0,0,0
+704,nấm nướng giấy bạc,0,người già,xôi|cháo,,805,0,0,0,0
+705,gỏi măng tươi,1,trẻ em,súp|xôi,,470,613,0,0,0
+705,canh bí nấu tôm,1,trẻ em,súp|xôi,,44,157,0,0,0
+706,cà ri bắp bò sanwich,0,người lớn,cá|bánh mì,,167,0,0,0,0
+706,giá xào,0,người lớn,cá|bánh mì,,151,0,0,0,0
+707,thịt gà viên nướng mèđen,0,người già,bún|súp,,916,0,0,0,0
+707,bông bí xào ba rọi,0,người già,bún|súp,,583,762,0,0,0
+708,cá thu nhật chiên nước mắm,0,người lớn,bò|cá,,287,0,0,0,0
+708,canh nấm nấu mướp,0,người lớn,bò|cá,,618,647,0,0,0
+709,cá trê chiên giòn,1,trẻ em,mì|bánh mì,,205,348,422,615,0
+709,lẩu vịt,1,trẻ em,mì|bánh mì,,602,695,0,0,0
+710,canh bí xanh nấu tôm nõn,0,người lớn,gà|cháo,,883,0,0,0,0
+710,canh đu đủ hầm xương bò,0,người lớn,gà|cháo,,188,0,0,0,0
+711,canh thìa là cá điêu hồng,1,người già,bò|cá,,182,339,0,0,0
+711,dưa cải muối chua,1,người già,bò|cá,,16,0,0,0,0
+712,canh cà rốt hầm sườn,1,trẻ em,rau|xôi,,600,657,0,0,0
+712,canh cua rau đay,1,trẻ em,rau|xôi,,90,91,101,117,321
+713,canh khổ qua nấu với thịt viên,1,người già,xôi|rau,,9,0,0,0,0
+713,thiên lý xào thịt bò,1,người già,xôi|rau,,295,0,0,0,0
+714,chè hạt sen táo tàu,0,người già,mì|bò,,510,530,862,895,0
+714,cá lóc om hoa điên điển,0,người già,mì|bò,,584,692,0,0,0
+715,măng xào tôm,0,trẻ em,mì|lẩu,,479,498,640,725,0
+715,bún gạo xào,0,trẻ em,mì|lẩu,,178,304,425,527,712
+716,khổ qua dồn hải sản,0,trẻ em,củ|vịt,,553,0,0,0,0
+716,trứng dầm nước mắm,0,trẻ em,củ|vịt,,132,0,0,0,0
+717,canh ngót nấu tôm,0,người già,rau|cá,,397,0,0,0,0
+717,chè táo xọn,0,người già,rau|cá,,248,441,690,805,0
+718,tôm cuốn khoai tây vàng giòn,1,người già,cá|xôi,,693,0,0,0,0
+718,bò xào thập cẩm,1,người già,cá|xôi,,49,64,0,0,0
+719,thịt rán,1,người già,rau|bánh mì,,958,961,0,0,0
+719,ngan kho gừng,1,người già,rau|bánh mì,,208,0,0,0,0
+720,rau muống luộc,1,người lớn,bánh mì|phở,,8,17,22,23,31
+720,cà ri bắp bò sanwich,1,người lớn,bánh mì|phở,,167,0,0,0,0
+721,cá bống đục kho nước dừa,0,người già,cháo|vịt,,262,0,0,0,0
+721,cá chạch kho gừng,0,người già,cháo|vịt,,390,941,0,0,0
+722,trứng đút hẹ,1,người lớn,tôm|gà,,418,924,0,0,0
+722,cá chim chiên tỏi,1,người lớn,tôm|gà,,173,299,618,0,0
+723,sườn non chua ngọt,0,người lớn,vịt|vịt,,770,0,0,0,0
+723,sữa ca cao nóng,0,người lớn,vịt|vịt,,814,0,0,0,0
+724,thịt luộc mắm tôm,1,trẻ em,rau|bò,,554,0,0,0,0
+724,cá kèo kho rau răm,1,trẻ em,rau|bò,,504,852,865,0,0
+725,canh giá hẹ đậu phụ non,1,người lớn,lợn|mì,,522,0,0,0,0
+725,canh chua cá thác lác,1,người lớn,lợn|mì,,412,449,462,931,0
+726,cá thu nhật nấu ngót,1,người lớn,mì|bánh mì,,268,0,0,0,0
+726,canh chua tôm,1,người lớn,mì|bánh mì,,5,0,0,0,0
+727,bao tử cá basa xào,0,người già,phở|lẩu,,987,0,0,0,0
+727,cá điêu hồng chiên xù,0,người già,phở|lẩu,,300,783,909,0,0
+728,phở gà,1,người già,bánh mì|mì,,739,868,0,0,0
+728,lẩu bắp bò nhúng hành răm,1,người già,bánh mì|mì,,448,0,0,0,0
+729,bún bánh tráng rau sống,1,người già,lẩu|tôm,,912,0,0,0,0
+729,canh nghêu nấu hẹ,1,người già,lẩu|tôm,,483,0,0,0,0
+730,đậu rồng xào tỏi,0,trẻ em,bún|cháo,,902,0,0,0,0
+730,canh rau ngót thịt băm,0,trẻ em,bún|cháo,,55,92,155,156,0
+731,nộm hoa chuối,1,trẻ em,xôi|bún,,78,110,148,458,774
+731,bí ngòi xào tỏi,1,trẻ em,xôi|bún,,393,916,0,0,0
+732,đậu phụ xốt thịt băm,1,người lớn,củ|bánh mì,,542,0,0,0,0
+732,ngọn bí xào tỏi,1,người lớn,củ|bánh mì,,733,0,0,0,0
+733,ốc nấu chuối xanh,1,người già,vịt|mì,,409,946,0,0,0
+733,su hào xào trứng,1,người già,vịt|mì,,974,983,0,0,0
+734,canh rau má thịt bằm,0,người lớn,bún|bò,,457,0,0,0,0
+734,canh chua nghêu,0,người lớn,bún|bò,,573,0,0,0,0
+735,canh thiên lý nấu mọc,1,người già,súp|tôm,,964,0,0,0,0
+735,sườn chìa nướng cơm nắm,1,người già,súp|tôm,,507,0,0,0,0
+736,cá hồi kho tiêu,1,trẻ em,gà|tôm,,37,0,0,0,0
+736,"canh tàu hủ, hẹ nấu thịt bằm",1,trẻ em,gà|tôm,,628,0,0,0,0
+737,mực chiên mắm,0,người già,cháo|lẩu,,972,0,0,0,0
+737,thịt luộc cuốn bánh tráng mè,0,người già,cháo|lẩu,,694,0,0,0,0
+738,mận,1,trẻ em,xôi|mì,,200,0,0,0,0
+738,trứng hấp vân,1,trẻ em,xôi|mì,,77,114,0,0,0
+739,canh tôm nấu đậu phụ,1,trẻ em,bún|cá,,509,865,0,0,0
+739,mướp hương xào nấm,1,trẻ em,bún|cá,,61,159,0,0,0
+740,"chè hạt sen , táo tàu",1,người lớn,cháo|cá,,472,0,0,0,0
+740,chè đậu ngự,1,người lớn,cháo|cá,,579,734,337,448,499
+741,thịt kho nấm rơm,0,người già,xôi|phở,,662,0,0,0,0
+741,thịt heo kho tàu,0,người già,xôi|phở,,714,0,0,0,0
+742,cá chép kho riềng,0,trẻ em,tôm|bún,,839,0,0,0,0
+742,thịt gà rang gừng,0,trẻ em,tôm|bún,,141,21,75,0,0
+743,sườn non ram mặn,0,người lớn,bún|rau,,9,0,0,0,0
+743,nho ép,0,người lớn,bún|rau,,624,0,0,0,0
+744,bún giò heo,1,người lớn,bò|lẩu,,894,0,0,0,0
+744,canh chua cá hồi,1,người lớn,bò|lẩu,,160,269,0,0,0
+745,cá chạch kho lá nghệ,1,trẻ em,củ|bánh mì,,196,236,0,0,0
+745,"lẩu cá kèo, bún",1,trẻ em,củ|bánh mì,,0,0,0,0,0
+746,canh chua cá thác lác,0,người già,mì|cá,,412,449,462,931,0
+746,lòng luộc,0,người già,mì|cá,,96,0,0,0,0
+747,bao tử hầm tiêu,1,người lớn,tôm|rau,,458,774,0,0,0
+747,chả đậu phụ,1,người lớn,tôm|rau,,967,986,0,0,0
+748,cá trê hấp gừng,1,người già,xôi|quả,,432,0,0,0,0
+748,chè trái vải rau câu,1,người già,xôi|quả,,709,0,0,0,0
+749,đậu cove xào lòng,0,trẻ em,xôi,,21,0,0,0,0
+749,đùi gà nướng mẻ,0,trẻ em,xôi,,911,0,0,0,0
+750,ngồng cải chấm nước mắm trứng,1,trẻ em,bò,,0,0,0,0,0
+750,đậu phụ rán,1,trẻ em,bò,,63,71,0,0,0
+751,chả tôm cuốn sả,1,người già,mì,bệnh tim mạch,60,0,0,0,0
+751,dâu giằm,1,người già,mì,bệnh tim mạch,186,602,0,0,0
+752,canh cải thảo cuốn thịt,1,trẻ em,súp,,79,0,0,0,0
+752,hoa quả tráng miệng,1,trẻ em,súp,,16,26,0,0,0
+753,canh nấm rau củ,0,người lớn,bánh mì,bệnh tim mạch,173,0,0,0,0
+753,canh ngót nấu cá khoai,0,người lớn,bánh mì,bệnh tim mạch,361,0,0,0,0
+754,đùi gà chiên muối sả,1,người già,cá,bệnh dạ dày,406,0,0,0,0
+754,xôi thịt quay,1,người già,cá,bệnh dạ dày,538,0,0,0,0
+755,hủ tiếu xào hải sản,1,người lớn,bún,bệnh dạ dày,331,0,0,0,0
+755,thịt cua xào chua ngọt,1,người lớn,bún,bệnh dạ dày,583,847,0,0,0
+756,cá chim chiên giòn,0,người lớn,cá,bệnh dạ dày,965,966,0,0,0
+756,lòng xào dưa,0,người lớn,cá,bệnh dạ dày,127,0,0,0,0
+757,bánh hỏi heo quay,1,trẻ em,củ,,737,0,0,0,0
+757,canh bầu nấu tôm,1,trẻ em,củ,,81,50,58,132,152
+758,"chả cá lã vọng,  ăn kèm bún, thì là, hành tước sợi",0,người lớn,cá,bệnh tiểu đường,861,0,0,0,0
+758,cá chép kho gừng,0,người lớn,cá,bệnh tiểu đường,498,0,0,0,0
+759,canh mướp nấu nấm,0,người lớn,quả,bệnh tiểu đường,853,0,0,0,0
+759,nghêu xào hoa thiên lý,0,người lớn,quả,bệnh tiểu đường,478,0,0,0,0
+760,cháo cá lóc rau đắng,0,người lớn,cháo,bệnh tiểu đường,700,0,0,0,0
+760,canh khoai mỡ nấu tôm,0,người lớn,cháo,bệnh tiểu đường,447,510,740,767,862
+761,canh măng chua,0,người già,tôm,bệnh huyết áp cao,50,0,0,0,0
+761,trứng cút rán sốt cà chua,0,người già,tôm,bệnh huyết áp cao,79,0,0,0,0
+762,thịt kho tiêu,1,trẻ em,lẩu,,587,659,674,0,0
+762,cá thu xốt xoài,1,trẻ em,lẩu,,407,940,0,0,0
+763,canh thiên lý nấu mọc,0,người lớn,lợn,bệnh huyết áp cao,964,0,0,0,0
+763,thịt xào rau củ,0,người lớn,lợn,bệnh huyết áp cao,661,0,0,0,0
+764,canh khoai sọ rau rút,0,người già,củ,bệnh huyết áp cao,83,0,0,0,0
+764,giá xào hẹ,0,người già,củ,bệnh huyết áp cao,205,348,0,0,0
+765,canh cua rau đay,1,người lớn,cá,bệnh dạ dày,91,772,864,90,101
+765,cá bống chiên giòn,1,người lớn,cá,bệnh dạ dày,134,0,0,0,0
+766,cải xoong xào ba rọi,1,người lớn,xôi,bệnh dạ dày,742,0,0,0,0
+766,xôi thịt quay,1,người lớn,xôi,bệnh dạ dày,538,0,0,0,0
+767,salad táo,0,trẻ em,súp,,409,946,0,0,0
+767,gỏi xoài tôm thịt,0,trẻ em,súp,,367,944,0,0,0
+768,chè bánh lọt,0,trẻ em,gà,,725,0,0,0,0
+768,rau cải xoong trộn bò,0,trẻ em,gà,,634,680,0,0,0
+769,sườn rim tôm,1,người lớn,lẩu,bệnh huyết áp cao,560,0,0,0,0
+769,đùi ếch chiên bột,1,người lớn,lẩu,bệnh huyết áp cao,186,0,0,0,0
+770,xà lách trộn giấm,1,người lớn,củ,bệnh dạ dày,188,0,0,0,0
+770,canh củ năng nấu sườn,1,người lớn,củ,bệnh dạ dày,383,0,0,0,0
+771,sâm dứa sữa,0,trẻ em,củ,,911,0,0,0,0
+771,cá bống kho tiêu,0,trẻ em,củ,,223,311,447,457,767
+772,hoa thiên lý xào tỏi,0,người già,cá,bệnh dạ dày,132,157,0,0,0
+772,mực dồn thịt xốt cam,0,người già,cá,bệnh dạ dày,751,0,0,0,0
+773,canh khoai tây nấu sườn,1,trẻ em,gà,,109,130,135,0,0
+773,gỏi bò trộn đu đủ,1,trẻ em,gà,,489,0,0,0,0
+774,tôm cuốn khoai tây chiên giòn,1,người lớn,cháo,bệnh huyết áp cao,63,0,0,0,0
+774,cải thìa xào tỏi,1,người lớn,cháo,bệnh huyết áp cao,168,405,608,748,781
+775,canh rau ngót thịt băm,0,trẻ em,súp,,55,92,155,156,0
+775,nộm hoa chuối trộn nghêu,0,trẻ em,súp,,897,0,0,0,0
+776,bao tử heo nhồi thịt hấp,0,người già,gà,bệnh dạ dày,449,0,0,0,0
+776,vịt xào gừng,0,người già,gà,bệnh dạ dày,186,0,0,0,0
+777,ếch rim sả ớt,0,trẻ em,vịt,,270,401,581,834,0
+777,hạt điều gương,0,trẻ em,vịt,,216,0,0,0,0
+778,"patê gan gà, bánh mì",1,người lớn,xôi,bệnh dạ dày,305,0,0,0,0
+778,bún cá thu,1,người lớn,xôi,bệnh dạ dày,664,0,0,0,0
+779,thịt rán,1,trẻ em,tôm,,958,961,0,0,0
+779,canh cải cúc nấu mọc,1,trẻ em,tôm,,369,0,0,0,0
+780,nộm đu đủ,1,người lớn,xôi,bệnh huyết áp cao,86,0,0,0,0
+780,canh cải cúc thịt bằm,1,người lớn,xôi,bệnh huyết áp cao,222,0,0,0,0
+781,canh bí nấu mọc,0,người già,phở,bệnh huyết áp cao,975,0,0,0,0
+781,canh sườn nấu chua,0,người già,phở,bệnh huyết áp cao,2,968,976,0,0
+782,canh ngao chua,0,người lớn,phở,bệnh huyết áp cao,46,47,133,139,140
+782,canh su hào nấu tôm,0,người lớn,phở,bệnh huyết áp cao,123,0,0,0,0
+783,trà bí đao,0,người lớn,lợn,bệnh huyết áp cao,539,0,0,0,0
+783,đùi heo xông khói cuộn bơ,0,người lớn,lợn,bệnh huyết áp cao,668,0,0,0,0
+784,bánh mì trứng ốp la,0,trẻ em,cá,,343,0,0,0,0
+784,cải thìa xào tôm thịt,0,trẻ em,cá,,334,0,0,0,0
+785,canh bí nấu mọc,1,trẻ em,bánh mì,,975,0,0,0,0
+785,salad gà,1,trẻ em,bánh mì,,612,0,0,0,0
+786,nước bưởi,1,trẻ em,bún,,759,0,0,0,0
+786,nho ép,1,trẻ em,bún,,624,0,0,0,0
+787,trứng ốp la,1,người lớn,phở,bệnh dạ dày,155,0,0,0,0
+787,chè hoa cúc táo đỏ,1,người lớn,phở,bệnh dạ dày,266,849,0,0,0
+788,sươn sáo,1,người già,súp,bệnh dạ dày,397,0,0,0,0
+788,cải xoong xào ba rọi,1,người già,súp,bệnh dạ dày,742,0,0,0,0
+789,canh cải nấu ngao,1,người lớn,cháo,bệnh tiểu đường,159,0,0,0,0
+789,gà hấp cải xanh,1,người lớn,cháo,bệnh tiểu đường,418,924,0,0,0
+790,sinh tố sa-pô-chê,0,người lớn,xôi,bệnh dạ dày,189,380,468,950,0
+790,hoa mướp xào ức gà,0,người lớn,xôi,bệnh dạ dày,609,707,0,0,0
+791,canh rau ngót thịt băm,1,người già,gà,bệnh tim mạch,55,92,155,156,0
+791,canh bông cải nấu thịt bằm,1,người già,gà,bệnh tim mạch,826,0,0,0,0
+792,cá lóc om hoa điên điển,1,người già,gà,bệnh dạ dày,584,692,0,0,0
+792,sườn ram,1,người già,gà,bệnh dạ dày,410,0,0,0,0
+793,xôi xiêm,0,người già,gà,bệnh dạ dày,264,0,0,0,0
+793,cải xào tỏi,0,người già,gà,bệnh dạ dày,271,345,789,0,0
+794,mận hà nội ngâm nước đường,1,người già,mì,bệnh huyết áp cao,618,647,0,0,0
+794,cà chua dồn thịt,1,người già,mì,bệnh huyết áp cao,439,0,0,0,0
+795,nước ép cốc ổi,1,trẻ em,cá,,728,0,0,0,0
+795,canh nấm rau củ,1,trẻ em,cá,,173,0,0,0,0
+796,canh bí xanh nấu tôm nõn,0,trẻ em,súp,,883,0,0,0,0
+796,canh cá điêu hồng chua ngọt,0,trẻ em,súp,,250,813,0,0,0
+797,váng đậu cuộn thịt,1,trẻ em,phở,,966,976,0,0,0
+797,canh cải cúc nấu mọc,1,trẻ em,phở,,369,0,0,0,0
+798,canh cua rau đai,1,trẻ em,lợn,,433,443,0,0,0
+798,canh rau muống me,1,trẻ em,lợn,,393,0,0,0,0
+799,sinh tố chuối và dứa,0,trẻ em,tôm,,0,0,0,0,0
+799,cháo gà ác hạt sen,0,trẻ em,tôm,,763,0,0,0,0
+800,đậu hũ trắng kho sườn,1,trẻ em,quả,,588,0,0,0,0
+800,dâu tươi giằm,1,trẻ em,quả,,563,855,0,0,0
+801,canh cải thảo giá đỗ,1,trẻ em,cháo,,53,0,0,0,0
+801,bí đao xào tôm thịt,1,trẻ em,cháo,,276,831,0,0,0
+802,canh khổ qua tôm khô,0,trẻ em,súp,,424,0,0,0,0
+802,chanh cá nấu chua,0,trẻ em,súp,,28,0,0,0,0
+803,giá xào huyết,0,người lớn,xôi,bệnh tiểu đường,552,0,0,0,0
+803,bắp cải trắng luộc,0,người lớn,xôi,bệnh tiểu đường,582,752,0,0,0
+804,canh chuối già nấu mẻ,0,trẻ em,quả,,258,801,0,0,0
+804,măng xào lá lốt,0,trẻ em,quả,,213,0,0,0,0
+805,canh dưa hường nấu tôm,0,người già,gà,bệnh huyết áp cao,467,0,0,0,0
+805,chuối cao,0,người già,gà,bệnh huyết áp cao,474,0,0,0,0
+806,miến gà tôm thịt,0,trẻ em,vịt,,676,0,0,0,0
+806,trứng chiên thịt băm,0,trẻ em,vịt,,899,0,0,0,0
+807,cà pháo,1,người già,cháo,bệnh tiểu đường,56,73,75,83,90
+807,gỏi sen tôm thịt,1,người già,cháo,bệnh tiểu đường,565,0,0,0,0
+808,canh nghêu chua ngọt,0,người già,lợn,bệnh dạ dày,287,0,0,0,0
+808,canh riêu nấu ngao,0,người già,lợn,bệnh dạ dày,822,0,0,0,0
+809,rau bí luộc,0,người lớn,quả,bệnh huyết áp cao,20,0,0,0,0
+809,cá rô phi chiên ròn,0,người lớn,quả,bệnh huyết áp cao,48,0,0,0,0
+810,gà chiên nước mắm,1,người già,xôi,bệnh dạ dày,983,0,0,0,0
+810,tôm rim thịt,1,người già,xôi,bệnh dạ dày,679,845,910,0,0
+811,bánh flan ca cao,1,người lớn,quả,bệnh tim mạch,840,0,0,0,0
+811,canh cà tím chiên,1,người lớn,quả,bệnh tim mạch,530,0,0,0,0
+812,trái cây tươi,1,trẻ em,cháo,,452,556,0,0,0
+812,cải xanh luộc,1,trẻ em,cháo,,436,622,750,0,0
+813,cá cơm chiên giòn,1,người lớn,vịt,bệnh dạ dày,472,0,0,0,0
+813,lẩu bắp bò nhúng hành răm,1,người lớn,vịt,bệnh dạ dày,448,0,0,0,0
+814,thịt lợn rang sả ớt,0,người già,cháo,bệnh dạ dày,50,0,0,0,0
+814,canh rau má thịt bò,0,người già,cháo,bệnh dạ dày,722,0,0,0,0
+815,cải thảo luộc,1,trẻ em,bò,,19,0,0,0,0
+815,thịt ba rọi chiên nước mắm,1,trẻ em,bò,,344,0,0,0,0
+816,gan bò xào tứ xuyên,0,người lớn,phở,bệnh tiểu đường,728,0,0,0,0
+816,canh cải xoong nấu bò,0,người lớn,phở,bệnh tiểu đường,301,611,0,0,0
+817,mãng cầu ta ướp lạnh,0,người lớn,vịt,bệnh tim mạch,722,0,0,0,0
+817,hủ tiếu nang vang,0,người lớn,vịt,bệnh tim mạch,827,0,0,0,0
+818,mì quảng,1,người lớn,quả,bệnh huyết áp cao,619,627,718,0,0
+818,bún giò heo nấu dọc mùng,1,người lớn,quả,bệnh huyết áp cao,623,652,0,0,0
+819,canh rau má thịt bằm,0,người già,xôi,bệnh tim mạch,457,0,0,0,0
+819,canh mướp đắng nhồi thịt,0,người già,xôi,bệnh tim mạch,30,94,0,0,0
+820,recipe_name,1,người lớn,xôi,bệnh huyết áp cao,0,0,0,0,0
+820,canh cá lóc nấu cần,1,người lớn,xôi,bệnh huyết áp cao,252,0,0,0,0
+821,chả giò tôm bắp,1,người lớn,mì,bệnh tiểu đường,589,0,0,0,0
+821,cá bống kho,1,người lớn,mì,bệnh tiểu đường,145,0,0,0,0
+822,mướp xào nấm rơm,1,người già,phở,bệnh tim mạch,760,0,0,0,0
+822,canh ngót nấu thịt bò,1,người già,phở,bệnh tim mạch,422,583,0,0,0
+823,canh chua nghêu,1,trẻ em,phở,,573,0,0,0,0
+823,đậu phụ kho lòng heo,1,trẻ em,phở,,672,687,0,0,0
+824,cánh gà ram me,1,người già,bánh mì,bệnh dạ dày,702,0,0,0,0
+824,salad cà sốt trứng chiên chua cay,1,người già,bánh mì,bệnh dạ dày,702,0,0,0,0
+825,canh bí đỏ nấu gà,1,người già,súp,bệnh tiểu đường,613,717,0,0,0
+825,canh cải ngọt nấu ngao,1,người già,súp,bệnh tiểu đường,89,0,0,0,0
+826,bánh su nhân trà xanh,1,người già,vịt,bệnh tiểu đường,859,0,0,0,0
+826,canh khổ qua cá,1,người già,vịt,bệnh tiểu đường,307,0,0,0,0
+827,bông bí nhồi thịt,1,trẻ em,bánh mì,,390,941,0,0,0
+827,bò nhúng giấm,1,trẻ em,bánh mì,,649,0,0,0,0
+828,mực khìa trái dừa,0,người già,lợn,bệnh dạ dày,387,0,0,0,0
+828,đọt bí xào tỏi,0,người già,lợn,bệnh dạ dày,244,804,830,0,0
+829,canh cá thu nấu ngót,0,trẻ em,súp,,291,825,872,923,0
+829,khổ qua dồn hải sản,0,trẻ em,súp,,553,0,0,0,0
+830,nước dừa tươi,1,trẻ em,cá,,519,281,0,0,0
+830,vịt kho gừng,1,trẻ em,cá,,812,0,0,0,0
+831,dưa xào,0,người già,bò,bệnh tim mạch,32,0,0,0,0
+831,trà nóng,0,người già,bò,bệnh tim mạch,520,0,0,0,0
+832,lầu cua đồng,0,người lớn,vịt,bệnh tiểu đường,370,0,0,0,0
+832,bánh xèo thịt vịt,0,người lớn,vịt,bệnh tiểu đường,731,0,0,0,0
+833,khoai tây nhồi thịt heo chiên,1,người lớn,phở,bệnh tiểu đường,276,831,0,0,0
+833,bí đỏ nấu sườn heo,1,người lớn,phở,bệnh tiểu đường,253,802,0,0,0
+834,bánh chuối hấp,0,người già,tôm,bệnh huyết áp cao,365,918,0,0,0
+834,giá xào hẹ,0,người già,tôm,bệnh huyết áp cao,205,348,0,0,0
+835,vịt kho gừng,1,người lớn,tôm,bệnh tiểu đường,812,0,0,0,0
+835,cháo gà ác hạt sen,1,người lớn,tôm,bệnh tiểu đường,763,0,0,0,0
+836,cá viên chiên,1,trẻ em,xôi,,138,0,0,0,0
+836,cá hấp xì dầu,1,trẻ em,xôi,,57,0,0,0,0
+837,canh cải nấu tôm,1,người già,lẩu,bệnh dạ dày,100,959,0,0,0
+837,mắm tép chưng,1,người già,lẩu,bệnh dạ dày,111,128,0,0,0
+838,tôm chua riềng,0,người lớn,quả,bệnh huyết áp cao,193,0,0,0,0
+838,xu hào ngâm chua ngọt,0,người lớn,quả,bệnh huyết áp cao,975,0,0,0,0
+839,chè hạt sen,0,người già,tôm,bệnh dạ dày,429,876,948,212,284
+839,cá rô rán giòn,0,người già,tôm,bệnh dạ dày,23,24,0,0,0
+840,phở hải sản,1,trẻ em,cháo,,442,0,0,0,0
+840,móng heo hầm hạt sen,1,trẻ em,cháo,,212,0,0,0,0
+841,gà sao nấu sả,1,người già,phở,bệnh huyết áp cao,502,0,0,0,0
+841,cá bống kho,1,người già,phở,bệnh huyết áp cao,145,0,0,0,0
+842,rau cải xào thịt bò,1,người lớn,cháo,bệnh tiểu đường,56,0,0,0,0
+842,nem lụi,1,người lớn,cháo,bệnh tiểu đường,973,0,0,0,0
+843,chuối cau tươi,1,người lớn,quả,bệnh dạ dày,760,0,0,0,0
+843,đùi gà nướng mẻ,1,người lớn,quả,bệnh dạ dày,911,0,0,0,0
+844,bắp giò luộc,0,người già,lẩu,bệnh tim mạch,974,0,0,0,0
+844,cháo lá dứa hột vịt muối,0,người già,lẩu,bệnh tim mạch,341,0,0,0,0
+845,cơm chiên hải sản,1,trẻ em,phở,,303,416,810,933,0
+845,cá hú kho tộ,1,trẻ em,phở,,561,0,0,0,0
+846,thịt bò xào cần,0,trẻ em,lẩu,,579,730,798,0,0
+846,canh mướp nấu tôm,0,trẻ em,lẩu,,141,505,0,0,0
+847,gan heo xốt tỏi,1,người lớn,tôm,bệnh huyết áp cao,864,0,0,0,0
+847,cơm rượu bắc,1,người lớn,tôm,bệnh huyết áp cao,285,778,0,0,0
+848,đùi gà nướng mẻ,0,người lớn,rau,bệnh tim mạch,911,0,0,0,0
+848,sườn heo nướng,0,người lớn,rau,bệnh tim mạch,470,0,0,0,0
+849,nước ép sơ ri,0,người già,vịt,,600,746,0,0,0
+849,rau bí luộc,0,người già,vịt,,20,0,0,0,0
+850,dưa chuột góp,0,trẻ em,mì,,19,0,0,0,0
+850,canh bí đỏ thịt nạc,0,trẻ em,mì,,153,0,0,0,0
+851,giá xào hẹ,0,trẻ em,bánh mì,,205,348,0,0,0
+851,gà hấp cải xanh,0,trẻ em,bánh mì,,418,924,0,0,0
+852,ngọn su su xào,1,người lớn,rau,,982,0,0,0,0
+852,bánh cuốn nóng,1,người lớn,rau,,568,604,844,0,0
+853,dưa bắp cải,1,người già,bò,,87,0,0,0,0
+853,canh riêu cá niền bắc,1,người già,bò,,725,0,0,0,0
+854,cơm rượu bắc,0,trẻ em,lẩu,,285,778,0,0,0
+854,lê ướp lạnh,0,trẻ em,lẩu,,898,196,236,271,311
+855,cá rô chiên xù,0,người lớn,phở,,32,0,0,0,0
+855,chè táo xọn,0,người lớn,phở,,248,441,690,805,0
+856,canh khoai tây thịt băm,0,người già,vịt,,441,0,0,0,0
+856,gà sao nấu sả,0,người già,vịt,,502,0,0,0,0
+857,canh giò sống rau ngót,0,trẻ em,cá,,190,0,0,0,0
+857,canh rau tập tàng,0,trẻ em,cá,,479,0,0,0,0
+858,rau củ luộc nước  mắm kho tiêu,0,người già,gà,,263,0,0,0,0
+858,lê chẻ,0,người già,gà,,180,0,0,0,0
+859,sườn chua ngọt,1,người lớn,bò,,357,0,0,0,0
+859,lê ướp đá,1,người lớn,bò,,427,915,0,0,0
+860,thịt kho tàu,1,người già,cháo,,17,75,915,984,0
+860,chè thái,1,người già,cháo,,252,0,0,0,0
+861,miến xào cua,0,người lớn,bún,,231,800,973,0,0
+861,phèo non xào cải chua,0,người lớn,bún,,890,0,0,0,0
+862,mực xào sa tế,1,người lớn,lẩu,,314,0,0,0,0
+862,thịt ba rọi chiên nước mắm,1,người lớn,lẩu,,344,0,0,0,0
+863,cá rô phi chiên giòn,0,trẻ em,bánh mì,,91,0,0,0,0
+863,tép rim ba rọi,0,trẻ em,bánh mì,,620,0,0,0,0
+864,hamburger bò,1,người già,cháo,,230,795,0,0,0
+864,mãng cầu ta ướp lạnh,1,người già,cháo,,722,0,0,0,0
+865,rau củ luộc chấm tương hạt kho sả,1,trẻ em,củ,,751,0,0,0,0
+865,tép đồng cuốn bánh tráng,1,trẻ em,củ,,383,0,0,0,0
+866,canh ngao nấm kim châm,0,trẻ em,quả,,103,0,0,0,0
+866,tôm rang,0,trẻ em,quả,,40,73,124,129,0
+867,cá lóc kho xốt tương gừng,1,người già,mì,,288,392,0,0,0
+867,bò xào cần tỏi,1,người già,mì,,45,980,981,0,0
+868,nộm hoa chuối,1,người lớn,bánh mì,,78,110,148,458,774
+868,sườn ram thơm chua ngọt,1,người lớn,bánh mì,,479,0,0,0,0
+869,canh cua thiên lý,1,trẻ em,cá,,709,0,0,0,0
+869,sinh tố chuối,1,trẻ em,cá,,334,697,749,0,0
+870,canh su hào thái sợi,0,trẻ em,lợn,,138,0,0,0,0
+870,bún bung,0,trẻ em,lợn,,246,788,0,0,0
+871,sữa cao cao nóng,0,người già,xôi,,638,0,0,0,0
+871,canh đậu phụ nấu tôm,0,người già,xôi,,440,0,0,0,0
+872,canh bí đỏ thịt bằm,0,người già,lợn,,438,553,829,0,0
+872,thịt quay giòn bì,0,người già,lợn,,94,0,0,0,0
+873,canh rau ngót nấu cá rô đồng,1,trẻ em,súp,,705,0,0,0,0
+873,cải thìa xào nấm,1,trẻ em,súp,,299,399,930,0,0
+874,măng tươi luộc,1,người già,vịt,,125,0,0,0,0
+874,cá kèo chiên xù,1,người già,vịt,,728,0,0,0,0
+875,trứng đút hẹ,0,người già,tôm,,418,924,0,0,0
+875,"nước ép táo, nam việt quất",0,người già,tôm,,170,0,0,0,0
+876,đậu hũ dồn thịt xốt cà chua,0,người lớn,lợn,,161,0,0,0,0
+876,thịt viên xiên nướng,0,người lớn,lợn,,117,0,0,0,0
+877,nộm xoài xanh,1,người già,cá,,55,0,0,0,0
+877,pizza hải sản,1,người già,cá,,735,0,0,0,0
+878,cá sốt chanh dây,0,người già,mì,,228,784,917,0,0
+878,canh trứng bí ngòi,0,người già,mì,,674,0,0,0,0
+879,bưởi ép nho,1,người lớn,quả,,319,0,0,0,0
+879,chả lá lốt,1,người lớn,quả,,93,98,111,142,0
+880,canh cải chua hải sản,1,người lớn,cá,,859,0,0,0,0
+880,sữa cacao,1,người lớn,cá,,215,0,0,0,0
+881,cải thìa xào nấm,1,trẻ em,cá,,299,399,930,0,0
+881,nước ép cốc ổi,1,trẻ em,cá,,728,0,0,0,0
+882,bò nhúng giấm,1,trẻ em,tôm,,649,0,0,0,0
+882,thạch trà đường,1,trẻ em,tôm,,685,0,0,0,0
+883,cơm tấm bì chay,0,người già,lợn,,394,932,0,0,0
+883,sữa đậu nành nóng,0,người già,lợn,,712,0,0,0,0
+884,chả đùm thịt gà,1,người già,củ,,669,0,0,0,0
+884,măng xào hành tỏi,1,người già,củ,,149,0,0,0,0
+885,gỏi sen tôm thịt,1,người già,tôm,,565,0,0,0,0
+885,cá bông lau kho,1,người già,tôm,,860,0,0,0,0
+886,bí xanh luộc chấm vừng,1,người lớn,bún,,21,0,0,0,0
+886,cá điêu hồng hấp xì dầu,1,người lớn,bún,,968,0,0,0,0
+887,vịt quay om nước tương,1,trẻ em,vịt,,280,0,0,0,0
+887,đậu phụ tứ xuyên,1,trẻ em,vịt,,89,0,0,0,0
+888,chè tàu hũ ky,0,người lớn,lẩu,,581,706,0,0,0
+888,ngồng cải luộc,0,người lớn,lẩu,,153,412,931,0,0
+889,hải sản xào rau củ,0,người già,bún,,227,359,575,786,937
+889,mì gói xào sò điệp,0,người già,bún,,697,0,0,0,0
+890,spaghetti trộn trứng cá cay,1,trẻ em,phở,,289,833,0,0,0
+890,canh gà nấu hến,1,trẻ em,phở,,470,0,0,0,0
+891,cải rổ xào tỏi,1,trẻ em,gà,,892,0,0,0,0
+891,canh sườn heo đậu đỏ,1,trẻ em,gà,,706,581,0,0,0
+892,bánh mì pa tê,1,trẻ em,cháo,,426,456,0,0,0
+892,gà hầm cam mỹ bánh mì,1,trẻ em,cháo,,745,0,0,0,0
+893,trứng cút xào chua ngọt,0,người già,súp,,44,0,0,0,0
+893,cá lóc kho xốt tương gừng,0,người già,súp,,288,392,0,0,0
+894,canh cải xoong nấu bò,0,người già,củ,,301,611,0,0,0
+894,súp lơ luộc,0,người già,củ,,69,127,141,145,0
+895,cá thu sốt cà chua,0,người lớn,vịt,,95,970,0,0,0
+895,canh nấm rau củ,0,người lớn,vịt,,173,0,0,0,0
+896,mãng cầu giằm,1,trẻ em,rau,,584,667,692,0,0
+896,su hào luộc,1,trẻ em,rau,,431,925,182,0,0
+897,súp cua bắp non,1,trẻ em,xôi,,266,849,0,0,0
+897,cá chép kho riềng,1,trẻ em,xôi,,839,0,0,0,0
+898,chuối cau tươi,1,người già,bún,,760,0,0,0,0
+898,thịt bò xào cải xanh,1,người già,bún,,5,0,0,0,0
+899,canh khoai tím nấu mướp,1,trẻ em,vịt,,782,0,0,0,0
+899,rau mồng tơi xào tỏi,1,trẻ em,vịt,,144,248,0,0,0
+900,tép rim thịt heo,1,trẻ em,bánh mì,,356,0,0,0,0
+900,canh dưa chua,1,trẻ em,bánh mì,,51,0,0,0,0
+901,trứng cút kho tàu,1,người lớn,phở,,154,0,0,0,0
+901,cam tươi,1,người lớn,phở,,535,0,0,0,0
+902,mực trứng hấp xả,0,người lớn,gà,,71,0,0,0,0
+902,canh mướp,0,người lớn,gà,,27,0,0,0,0
+903,thịt heo nướng tiêu,1,trẻ em,quả,,515,879,0,0,0
+903,sữa tươi,1,trẻ em,quả,,165,177,178,218,240
+904,canh cải xooang cá thác lác,1,người lớn,bánh mì,,196,0,0,0,0
+904,canh mướp nấu thịt,1,người lớn,bánh mì,,69,0,0,0,0
+905,bún bánh tráng rau sống,0,người già,tôm,,912,0,0,0,0
+905,cá bống kho tộ,0,người già,tôm,,430,939,0,0,0
+906,cải thảo xào,0,trẻ em,lợn,,76,0,0,0,0
+906,canh mướp hương nấm rơm,0,trẻ em,lợn,,186,0,0,0,0
+907,sườn sốt cam,1,người già,phở,,61,0,0,0,0
+907,canh rau má thịt bằm,1,người già,phở,,457,0,0,0,0
+908,thiên lý xào bò,1,người lớn,mì,,522,0,0,0,0
+908,rau lang luộc,1,người lớn,mì,,112,166,300,438,473
+909,cơm tấm sườn nướng,1,người lớn,vịt,,635,682,0,0,0
+909,bánh pudding xoài,1,người lớn,vịt,,727,0,0,0,0
+910,canh cải xooang nấu bò,0,người già,rau,,884,0,0,0,0
+910,canh cải xanh nấu cá rô,0,người già,rau,,686,0,0,0,0
+911,đậu rán giòn,1,trẻ em,tôm,,23,120,0,0,0
+911,gỏi gà rau đắng,1,trẻ em,tôm,,607,722,0,0,0
+912,bưởi ép nho,1,người già,bánh mì,,319,0,0,0,0
+912,bông thiên lý xào thịt bò,1,người già,bánh mì,,391,0,0,0,0
+913,canh giò sống nấu ngót,1,người lớn,xôi,,365,918,0,0,0
+913,bún bánh tráng rau sống,1,người lớn,xôi,,912,0,0,0,0
+914,gỏi tôm ngó sen,0,trẻ em,xôi,,397,0,0,0,0
+914,xà lách trộn dầu giấm,0,trẻ em,xôi,,253,270,401,467,581
+915,rong chân vịt trộn gà,1,người lớn,lợn,,840,0,0,0,0
+915,rau cải xanh xào,1,người lớn,lợn,,736,0,0,0,0
+916,đậu phụ rán,0,trẻ em,bún,,63,71,0,0,0
+916,ức gà xào nấm,0,trẻ em,bún,,382,957,0,0,0
+917,cải ngồng xào tỏi,1,người lớn,lợn,,899,0,0,0,0
+917,trà gừng,1,người lớn,lợn,,219,257,501,555,558
+918,nộm đu đủ,0,người lớn,gà,,86,0,0,0,0
+918,canh cua khoai môn,0,người lớn,gà,,408,952,0,0,0
+919,mực xào ớt chuông,0,trẻ em,phở,,140,966,0,0,0
+919,thiên lý xào bò,0,trẻ em,phở,,522,0,0,0,0
+920,bò trộn càng cua,0,người già,mì,,365,918,0,0,0
+920,nước trà nóng,0,người già,mì,,492,0,0,0,0
+921,cá diếc chiên ròn,1,người lớn,lẩu,,100,142,0,0,0
+921,sơ ri ướp lạnh,1,người lớn,lẩu,,192,350,487,506,610
+922,canh khoai môn nấu giò heo,0,trẻ em,mì,,774,0,0,0,0
+922,chim cút chiên bơ,0,trẻ em,mì,,726,0,0,0,0
+923,chè táo xọn,1,trẻ em,rau,,248,441,690,805,0
+923,đậu hũ chiên giòn,1,trẻ em,rau,,1,0,0,0,0
+924,canh cá thác lác nấu cải thìa,0,người lớn,xôi,,876,0,0,0,0
+924,canh rau ngót nấu thịt,0,người lớn,xôi,,15,0,0,0,0
+925,cà phê sữa nóng,1,trẻ em,xôi,,328,0,0,0,0
+925,canh mướp lòng gà,1,trẻ em,xôi,,22,0,0,0,0
+926,canh thịt bò rau răm,0,người lớn,vịt,,263,366,0,0,0
+926,dưa xào cà chua,0,người lớn,vịt,,63,0,0,0,0
+927,rau lang luộc chấm tương,1,người già,vịt,,158,0,0,0,0
+927,canh củ năng thịt gà,1,người già,vịt,,571,0,0,0,0
+928,xôi xiêm,1,trẻ em,bò,,264,0,0,0,0
+928,sandwich kẹp xúc xích,1,trẻ em,bò,,711,0,0,0,0
+929,giá hẹ ngâm chua,0,trẻ em,bún,,714,0,0,0,0
+929,nộm sứa,0,trẻ em,bún,,89,0,0,0,0
+930,thịt heo kho tiêu,1,người lớn,phở,,313,525,797,0,0
+930,canh chua hoa so đũa nấu tôm,1,người lớn,phở,,595,0,0,0,0
+931,nước trà gừng,1,người già,lợn,,235,0,0,0,0
+931,cà phê sữa,1,người già,lợn,,272,326,435,578,619
+932,cà ri bắp bò sanwich,0,người già,quả,,167,0,0,0,0
+932,kèo nèo xào tôm thịt,0,người già,quả,,563,0,0,0,0
+933,cá tẩm bột chiên,1,người già,mì,,104,0,0,0,0
+933,canh cà nấu hến,1,người già,mì,,694,0,0,0,0
+934,canh rau muống chua,1,người già,bánh mì,,64,0,0,0,0
+934,canh cải thảo thịt bò,1,người già,bánh mì,,70,0,0,0,0
+935,xôi mặn,1,người già,bánh mì,,232,375,0,0,0
+935,kem sầu riêng,1,người già,bánh mì,,225,521,0,0,0
+936,hàu nướng phô mai,1,người già,vịt,,420,919,0,0,0
+936,bún mọc,1,người già,vịt,,206,352,353,471,632
+937,gan luộc,0,người già,lẩu,,106,0,0,0,0
+937,bún mắm,0,người già,lẩu,,229,0,0,0,0
+938,trứng ốp lết,1,người lớn,bánh mì,,61,0,0,0,0
+938,bánh su nhân trà xanh,1,người lớn,bánh mì,,859,0,0,0,0
+939,thịt bò xào bông cải,1,người lớn,lợn,,628,0,0,0,0
+939,salad nga,1,người lớn,lợn,,515,879,0,0,0
+940,canh tôm bí xanh,1,trẻ em,lợn,,748,0,0,0,0
+940,canh su hào thịt bằm,1,trẻ em,lợn,,980,0,0,0,0
+941,hải sản xào rau củ,0,trẻ em,lẩu,,227,359,575,786,937
+941,canh rau má nấu thịt bò,0,trẻ em,lẩu,,852,0,0,0,0
+942,canh bông cải nấu thịt bằm,1,trẻ em,quả,,826,0,0,0,0
+942,gan heo xốt tỏi,1,trẻ em,quả,,864,0,0,0,0
+943,nước ép ổi xá lị,0,trẻ em,bánh mì,,633,0,0,0,0
+943,tôm cuộn khoai tây chiên,0,trẻ em,bánh mì,,156,0,0,0,0
+944,ếch rim sả ớt,1,người lớn,rau,,270,401,581,834,0
+944,chả giò nghêu,1,người lớn,rau,,280,0,0,0,0
+945,mực xào thơm,1,trẻ em,quả,,292,807,0,0,0
+945,rau dền luộc,1,trẻ em,quả,,161,286,491,579,730
+946,rau muống xào,1,người lớn,xôi,,66,126,262,306,557
+946,bánh bò hấp,1,người lớn,xôi,,467,497,0,0,0
+947,canh củ dền nấu thịt,1,người già,vịt,,552,0,0,0,0
+947,bò xào cà ri,1,người già,vịt,,192,0,0,0,0
+948,cá lóc kho nghệ,1,trẻ em,củ,,772,0,0,0,0
+948,canh cải xoong thịt bằm,1,trẻ em,củ,,454,0,0,0,0
+949,cá tẩm bột chiên,0,người già,lẩu,,104,0,0,0,0
+949,bánh xếp quai vạc,0,người già,lẩu,,460,0,0,0,0
+950,bông bí xào ức gà,1,trẻ em,lẩu,,193,0,0,0,0
+950,cá viên chiên,1,trẻ em,lẩu,,138,0,0,0,0
+951,hến nấu thì là,0,người già,súp,,216,0,0,0,0
+951,bò nướng lá lốt,0,người già,súp,,419,947,0,0,0
+952,nước mía,0,trẻ em,cháo,,953,243,481,545,729
+952,tôm nõn rim mắm,0,trẻ em,cháo,,19,0,0,0,0
+953,canh khoai môn nấu tôm khô,0,trẻ em,cá,,902,0,0,0,0
+953,ếch rim sả ớt,0,trẻ em,cá,,270,401,581,834,0
+954,đu đủ trộn tôm,0,người già,rau,,625,0,0,0,0
+954,gà xào chua ngọt,0,người già,rau,,78,0,0,0,0
+955,bắp bò hấp hành,0,người lớn,mì,,736,0,0,0,0
+955,cơm tấm sườn nướng,0,người lớn,mì,,635,682,0,0,0
+956,canh rau muống nấu me,1,người lớn,xôi,,916,0,0,0,0
+956,ngồng cải chấm nước mắm trứng,1,người lớn,xôi,,0,0,0,0,0
+957,rau mồng tơi luộc,0,trẻ em,cá,,24,0,0,0,0
+957,canh cải cúc nấu mọc,0,trẻ em,cá,,369,0,0,0,0
+958,canh mướp thịt băm,0,người lớn,mì,,987,0,0,0,0
+958,thịt ba rọi chiên xả ớt,0,người lớn,mì,,307,0,0,0,0
+959,tàu hủ đá đường,0,trẻ em,lẩu,,654,0,0,0,0
+959,thịt gà rang gừng,0,trẻ em,lẩu,,21,75,141,0,0
+960,bánh hỏi thịt nướng,1,người già,củ,,220,484,0,0,0
+960,dâu giằm,1,người già,củ,,186,602,0,0,0
+961,bánh mì cá ngừ,1,trẻ em,cháo,,386,945,0,0,0
+961,sò huyết hấp rượu,1,trẻ em,cháo,,693,0,0,0,0
+962,táo ướp lạnh,1,trẻ em,lợn,,329,576,679,0,0
+962,đậu phụ sốt cà chua,1,trẻ em,lợn,,60,0,0,0,0
+963,bông cải xào tôm,0,trẻ em,lẩu,,407,853,940,0,0
+963,đậu que xào tỏi,0,trẻ em,lẩu,,239,0,0,0,0
+964,gỏi hoa chuối bò khô,1,trẻ em,bò,,380,950,0,0,0
+964,vịt khìa,1,trẻ em,bò,,766,0,0,0,0
+965,cá tẩm bột chiên,1,trẻ em,cá,,104,0,0,0,0
+965,dưa chuột chẻ,1,trẻ em,cá,,108,116,35,47,59
+966,spaghetti xúc xích,1,người già,củ,,644,0,0,0,0
+966,cá tìm nhồi thịt,1,người già,củ,,497,0,0,0,0
+967,bánh bò hấp,0,người lớn,cá,,497,467,0,0,0
+967,thịt bò xào bông cải,0,người lớn,cá,,628,0,0,0,0
+968,nước sâm,1,người lớn,cháo,,703,417,423,466,550
+968,dưa chuột góp,1,người lớn,cháo,,19,0,0,0,0
+969,canh bí xanh nấu sườn,1,trẻ em,súp,,769,0,0,0,0
+969,bông bí xào tỏi,1,trẻ em,súp,,433,504,561,588,648
+970,ốc móng tay xào,1,người lớn,phở,,30,0,0,0,0
+970,xôi chiên gà rôti,1,người lớn,phở,,936,0,0,0,0
+971,cá tìm nhồi thịt,0,người lớn,quả,,497,0,0,0,0
+971,nước mơ ngâm,0,người lớn,quả,,231,800,0,0,0
+972,cà muối,1,người lớn,tôm,,119,124,14,15,0
+972,bắp cải trắng luộc,1,người lớn,tôm,,582,752,0,0,0
+973,lươn sốt cay,1,người già,cháo,,105,0,0,0,0
+973,dưa chuột chẻ,1,người già,cháo,,35,47,59,74,84
+974,nước bưởi,0,trẻ em,cá,,759,0,0,0,0
+974,canh cải cá rô,0,trẻ em,cá,,452,556,0,0,0
+975,sườn sụn xào,0,trẻ em,gà,,19,0,0,0,0
+975,nước ép dứa,0,trẻ em,gà,,664,0,0,0,0
+976,nước dừa xiêm,1,người già,phở,,480,761,0,0,0
+976,canh đậu,1,người già,phở,,958,0,0,0,0
+977,măng tươi luộc,1,người lớn,phở,,125,0,0,0,0
+977,gà cuộn lá chanh,1,người lớn,phở,,312,0,0,0,0
+978,hoa mướp xào ức gà,0,người lớn,cháo,,609,707,0,0,0
+978,"rau càng cua trộn,trứng giấm đường",0,người lớn,cháo,,338,0,0,0,0
+979,hàu nướng phô mai,1,trẻ em,bánh mì,,420,919,0,0,0
+979,mướp luộc,1,trẻ em,bánh mì,,125,0,0,0,0
+980,sườn lợn xào ngũ sắc,0,người lớn,bún,,674,0,0,0,0
+980,canh bí nhồi thịt,0,người lớn,bún,,13,0,0,0,0
+981,nấm xào trứng,0,người già,quả,,483,0,0,0,0
+981,gỏi cuốn bỗng,0,người già,quả,,600,0,0,0,0
+982,bánh ướt thịt nướng,0,người già,quả,,490,0,0,0,0
+982,lươn um nước dừa,0,người già,quả,,166,0,0,0,0
+983,tôm rang chua ngọt,0,trẻ em,bánh mì,,158,0,0,0,0
+983,rau củ luộc chấm tương hạt kho sả,0,trẻ em,bánh mì,,751,0,0,0,0
+984,gỏi ngó sen chay,0,trẻ em,gà,,392,0,0,0,0
+984,"hoa quả (xoài, đu đủ?)",0,trẻ em,gà,,981,0,0,0,0
+985,nước dừa tươi,0,người già,bánh mì,,281,519,0,0,0
+985,canh bí đỏ thịt nạc,0,người già,bánh mì,,153,0,0,0,0
+986,cà tím tẩm bột chiên,0,trẻ em,súp,,37,0,0,0,0
+986,bánh canh thịt bằm,0,trẻ em,súp,,466,0,0,0,0
+987,đậu phụ chiên sả ớt,0,người lớn,xôi,,598,653,0,0,0
+987,cải thìa xào tôm,0,người lớn,xôi,,221,320,0,0,0
+988,ếch chiên sả ớt,1,người lớn,phở,,901,0,0,0,0
+988,thịt nướng,1,người lớn,phở,,970,975,0,0,0
+989,nước ép cà rốt,0,trẻ em,rau,,273,366,835,203,268
+989,cá rô kho tộ,0,trẻ em,rau,,360,438,829,489,0
+990,rau càng cua trộn thịt bò,0,người lớn,rau,,307,758,910,0,0
+990,canh rau đay mướp,0,người lớn,rau,,51,0,0,0,0
+991,cải thìa xào tôm thịt,1,trẻ em,súp,,334,0,0,0,0
+991,khổ qua dồn hải sản,1,trẻ em,súp,,553,0,0,0,0
+992,bánh cuốn,1,người già,bún,,319,759,0,0,0
+992,cháo vịt,1,người già,bún,,308,0,0,0,0
+993,trứng tráng cuộn,1,người lớn,gà,,66,0,0,0,0
+993,mướp luộc,1,người lớn,gà,,125,0,0,0,0
+994,đậu hủ chiên sả,1,trẻ em,bánh mì,,259,780,0,0,0
+994,hến xào xúc bánh tráng,1,trẻ em,bánh mì,,611,0,0,0,0
+995,rau đay nấu cua,0,người lớn,cá,,570,259,780,0,0
+995,trứng cút sốt chua ngọt,0,người lớn,cá,,968,0,0,0,0
+996,sandwich tươi nhân thịt gà,1,người lớn,lợn,,551,0,0,0,0
+996,canh rau mồng tơi nấu ngao,1,người lớn,lợn,,33,0,0,0,0
+997,canh chua tôm ngó sen,0,trẻ em,tôm,,203,401,584,692,0
+997,cá om dưa,0,trẻ em,tôm,,96,0,0,0,0
+998,cá om dưa,1,người lớn,xôi,,96,0,0,0,0
+998,cá diếc chiên giòn,1,người lớn,xôi,,151,0,0,0,0
+999,sinh tố sa-pô-chê,0,người già,bò,,380,950,189,468,0
+999,cải chua xào trứng,0,người già,bò,,252,569,0,0,0
