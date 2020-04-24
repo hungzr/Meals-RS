@@ -46,7 +46,7 @@ def load_data(file_path, user_infor):
 
     :param file_path: folder path to information files
     :param user_infor: DataFrame of user information with the demand
-    :return: merged DataFrame if can find suitable meals, else is 0 result flow
+    :return: merged DataFrame if can find suitable meals, else is "0 result" flow
     '''
 
     recipes = pd.read_csv(os.path.join(file_path, 'recipe_information.csv'))
@@ -63,8 +63,32 @@ def load_data(file_path, user_infor):
 
     return df
 
+def get_meal_infor(dir_path):
+    '''
+    Get all meals and the corresponding average scores
 
-def find_meal(df):
+    :param dir_path: folder path to meal information
+    :return: 3 array meal_id, meal_menu, meal_score
+    '''
+
+    meal_menu = []
+    meal_id = []
+    meal_score = []
+    with open(dir_path + 'meal_information.csv', encoding='utf-8') as mealFile:
+        lines = csv.reader(mealFile)
+        for line in lines:
+            menu = line[2].split(',')
+            id = line[0]
+            score = line[4]
+            if id != 'meal_id':
+                # print(line)
+                meal_menu.append(menu)
+                meal_id.append(int(id))
+                meal_score.append(float(score))
+    
+    return meal_id, meal_menu, meal_score
+
+def find_meal(meal_label_id, meals_label,df):
     '''
     Load user information and mapping with 15 meals in DB
 
@@ -82,20 +106,6 @@ def find_meal(df):
         except:
             temp = []
         hobbies_arr.append(temp)
-
-    # Label for mapping
-    meals_label = []
-    meal_label_id = []
-    dir_path = '../../dataset/csv_file/food/'
-    with open(dir_path + 'meal_information.csv', encoding='utf-8') as mealFile:
-        lines = csv.reader(mealFile)
-        for line in lines:
-            menu = line[2].split(',')
-            id = line[0]
-            if menu != '[]' and menu != 'recipes':
-                # print(line)
-                meals_label.append(menu)
-                meal_label_id.append(id)
 
     # Mapping for each user demand
     user_meal_arr = []
@@ -141,8 +151,7 @@ def ranking_meals(df, input_meal_arr):
     '''
 
     # Load saved_model
-    model = tf.saved_model.load(
-        '../deep_learning/tmp/1587121355_new/')
+    model = tf.saved_model.load('../deep_learning/tmp/1587121355_new/')
 
     # Prepare data columns
 
@@ -202,40 +211,81 @@ def ranking_meals(df, input_meal_arr):
             print('Score of user {0} with demand {1} for meal {2} is: {3}'.format(user_id[i], recipe_id[i], meals[i], result * 5))
         print('------------------------END FOR 1 USER DEMAND-------------------------------')
 
-
     # Get top 3 highest rating
-    k = Counter(result_dict)
+    top_k = get_top_k(result_dict, 3)
 
-    # Finding 3 highest values
-    top_high = k.most_common(3)
+    return top_k
+
+def get_top_k(dic, k):
+    '''
+    Get top K highest values from input
+
+    :param dic: dictionary needs find top K
+    :return: array top K highest values
+    
+    '''
+    
+    # Get top K highest rating
+    prepare = Counter(dic)
+
+    top_high = prepare.most_common(k)
     top_k = [i[0] for i in top_high]
 
     return top_k
 
+def find_best_meal(meal_id_found, df, meal_id, meal_score):
+    
+    top_rating = []
+    # 3 result
+    if len(meal_id_found) <=3:
+        print(meal_id_found)
 
-def main():
-    file_path = '../../dataset/csv_file/food/'
-
-    tic = time.time()
-    user_infor = check_user_infor(file_path, 16, 'canh cá thu nấu ngót')
-
-    df = load_data(file_path, user_infor)
-    if str(df.at[0, 'recipe_id']) != 'nan': #If can find suitable meals
-        input_meal_arr = find_meal(df)
-        # 3 result
-        if len(input_meal_arr) <=3:
-            print(input_meal_arr)
-
-        # More than 3 results -> ranking
-        else:
+    # More than 3 results -> ranking by DW ( or most general)
+    else:
+        if df.at[0, 'user_id'] == -1: # most general
+            meal_score_found = [meal_score[meal_id.index(meal)] for meal in meal_id_found]
+            result_dict = dict(zip(meal_id_found, meal_score_found))
+            top_rating = get_top_k(result_dict, 3)
+            print('Non-user information score: ', top_rating)
+        
+        else: # ranking by DW
             df = meals.integerize_hobbies(dataframe=df)
 
-            top_rating = ranking_meals(df, input_meal_arr)
-            print(top_rating)
+            top_rating = ranking_meals(df, meal_id_found)
+            print('User information score: ', top_rating)
 
+def main():
+    dir_path = '../../dataset/csv_file/food/'
 
-    else:# Use other way to find meals -> most general
-        print('0 result')
+    tic = time.time()
+    meal_id, meal_menu, meal_score = get_meal_infor(dir_path)
+
+    user = {
+        "user_id": 1,
+        "user_demand": "canh cá thu nấu ngót1"
+    }
+    user_infor = check_user_infor(dir_path, user["user_id"], user["user_demand"])
+    df = load_data(dir_path, user_infor)
+
+    #If can find suitable meals
+    if str(df.at[0, 'recipe_id']) != 'nan': 
+        meal_id_found = find_meal(meal_id, meal_menu, df)
+
+        find_best_meal(meal_id_found, df, meal_id, meal_score)
+        
+    # Use other way to find meals -> use FastText for generating meals (or most general)
+    else:
+        meal_dict = dict(zip(meal_id, meal_score))
+
+        # Shuffle dictionary
+        import random
+        temp = list(meal_dict.items())
+        random.shuffle(temp)
+        new_meal_dict = dict(temp)
+        meal_id_found = get_top_k(new_meal_dict, 50)
+        print('user_meal found : ', meal_id_found)
+
+        find_best_meal(meal_id_found, df, meal_id, meal_score)
 
     toc = time.time()
     print('The process end in :', toc - tic)
