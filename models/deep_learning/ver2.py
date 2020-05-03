@@ -6,6 +6,7 @@ import pandas as pd
 import os
 from collections import Counter
 import time
+from models.base_line import ver1
 
 def check_user_infor(file_path, user_id, user_demand):
     '''
@@ -234,7 +235,15 @@ def get_top_k(dic, k):
     return top_k
 
 def find_best_meal(meal_id_found, df, meal_id, meal_score):
-    
+    """
+    Get the final results based on user_information and meals existed or not
+
+    :param meal_id_found: array of meals found
+    :param meal_id: array of origin meal ID
+    :param meal_score: array of origin meal average score
+    :return :final array TOP 3 suitable meal ID
+    """
+
     top_rating = []
     # 3 result
     if len(meal_id_found) <=3:
@@ -254,18 +263,19 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
             top_rating = ranking_meals(df, meal_id_found)
             print('User information score: ', top_rating)
 
-def main():
-    dir_path = '../../dataset/csv_file/food/'
+def main_ver2():
+    csv_dir_path = '../../dataset/csv_file/food/'
+    bin_dir_path = '/media/hungdo/SYSTEM/Users/HungDo/Documents/GitHub/FinalProject_RecommendationSys/dataset/bin_file/'
 
     tic = time.time()
-    meal_id, meal_menu, meal_score = get_meal_infor(dir_path)
+    meal_id, meal_menu, meal_score = get_meal_infor(csv_dir_path)
 
     user = {
         "user_id": 1,
         "user_demand": "canh cá thu nấu ngót1"
     }
-    user_infor = check_user_infor(dir_path, user["user_id"], user["user_demand"])
-    df = load_data(dir_path, user_infor)
+    user_infor = check_user_infor(csv_dir_path, user["user_id"], user["user_demand"])
+    df = load_data(csv_dir_path, user_infor)
 
     #If can find suitable meals
     if str(df.at[0, 'recipe_id']) != 'nan': 
@@ -275,21 +285,35 @@ def main():
         
     # Use other way to find meals -> use FastText for generating meals (or most general)
     else:
-        meal_dict = dict(zip(meal_id, meal_score))
+        if df.at[0, 'user_id'] == -1: # most general
+            meal_dict = dict(zip(meal_id, meal_score))
 
-        # Shuffle dictionary
-        import random
-        temp = list(meal_dict.items())
-        random.shuffle(temp)
-        new_meal_dict = dict(temp)
-        meal_id_found = get_top_k(new_meal_dict, 50)
-        print('user_meal found : ', meal_id_found)
+            # Shuffle dictionary
+            import random
+            temp = list(meal_dict.items())
+            random.shuffle(temp)
+            new_meal_dict = dict(temp)
+            meal_id_found = get_top_k(new_meal_dict, 3)
+            # print('user_meal found : ', meal_id_found)
 
-        find_best_meal(meal_id_found, df, meal_id, meal_score)
+        else: # Use FastText like ver1
+            # Load model_category to classify meal
+            model_category = load_model_category(bin_dir_path)
+
+            category = ver1.classify_meal(user["user_demand"], model_category)
+            print('Nhóm được phân loại: ',category)
+
+            category = category[0]
+            recipe_result = ver1.recommendation(bin_dir_path, category, user["user_demand"])
+            print('Món ăn có sự tương đồng:', recipe_result)
+
+
+
+        # find_best_meal(meal_id_found, df, meal_id, meal_score)
 
     toc = time.time()
     print('The process end in :', toc - tic)
 
 if __name__ == '__main__':
-    main()
+    main_ver2()
 

@@ -61,7 +61,7 @@ def recommendation(model_dir_path, category, input_txt):
     final_result = final_result[0][1].replace('_', ' ')
     return final_result
 
-def main(input_txt):
+def main_ver1(input_txt):
     model_dir_path = '../../dataset/bin_file/'
     #
     # # Train model
@@ -103,6 +103,6 @@ def main(input_txt):
 
 if __name__ == '__main__':
     tic = time.time()
-    main('cháo')
+    main_ver1('cháo')
     toc = time.time()
     print('Thời gian tìm kiếm: ', toc-tic)
