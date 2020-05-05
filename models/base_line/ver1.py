@@ -57,8 +57,8 @@ def recommendation(model_dir_path, category, input_txt):
     # print(model_name)
     # Load the corresponding model and find nearest neighbor recipe
     model = fasttext.load_model(os.path.join(model_dir_path, model_name))
-    final_result = model.get_nearest_neighbors(input_txt.replace(' ', '_'))
-    final_result = final_result[0][1].replace('_', ' ')
+    final_result = model.get_nearest_neighbors(input_txt.replace(' ', '_'), k=2)
+    final_result = [result[1].replace('_', ' ') for result in final_result]
     return final_result
 
 def main_ver1(input_txt):

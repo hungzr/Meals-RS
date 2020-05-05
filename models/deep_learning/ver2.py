@@ -6,7 +6,9 @@ import pandas as pd
 import os
 from collections import Counter
 import time
-from models.base_line import ver1
+import sys
+sys.path.append('../base_line/')
+from ver1 import load_model_category, classify_meal, recommendation
 
 def check_user_infor(file_path, user_id, user_demand):
     '''
@@ -238,16 +240,17 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
     """
     Get the final results based on user_information and meals existed or not
 
-    :param meal_id_found: array of meals found
-    :param meal_id: array of origin meal ID
-    :param meal_score: array of origin meal average score
-    :return :final array TOP 3 suitable meal ID
+    :param meal_id_found: Array of meals found
+    :param meal_id: Array of origin meal ID
+    :param meal_score: Array of origin meal average score
+    :return :final Array TOP 3 suitable meal ID
     """
 
     top_rating = []
     # 3 result
     if len(meal_id_found) <=3:
-        print(meal_id_found)
+        print('TOP suitable meals: ',meal_id_found)
+        top_rating = meal_id_found
 
     # More than 3 results -> ranking by DW ( or most general)
     else:
@@ -263,25 +266,26 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
             top_rating = ranking_meals(df, meal_id_found)
             print('User information score: ', top_rating)
 
-def main_ver2():
+    return top_rating
+
+def main_ver2(user_id, user_demand):
     csv_dir_path = '../../dataset/csv_file/food/'
-    bin_dir_path = '/media/hungdo/SYSTEM/Users/HungDo/Documents/GitHub/FinalProject_RecommendationSys/dataset/bin_file/'
+    # bin_dir_path = '/media/hungdo/SYSTEM/Users/HungDo/Documents/GitHub/FinalProject_RecommendationSys/dataset/bin_file/'
+    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
     meal_id, meal_menu, meal_score = get_meal_infor(csv_dir_path)
 
-    user = {
-        "user_id": 1,
-        "user_demand": "canh cá thu nấu ngót1"
-    }
-    user_infor = check_user_infor(csv_dir_path, user["user_id"], user["user_demand"])
+    
+    user_infor = check_user_infor(csv_dir_path, user_id, user_demand)
     df = load_data(csv_dir_path, user_infor)
 
+    top_rating = []
     #If can find suitable meals
     if str(df.at[0, 'recipe_id']) != 'nan': 
         meal_id_found = find_meal(meal_id, meal_menu, df)
 
-        find_best_meal(meal_id_found, df, meal_id, meal_score)
+        top_rating = find_best_meal(meal_id_found, df, meal_id, meal_score)
         
     # Use other way to find meals -> use FastText for generating meals (or most general)
     else:
@@ -293,27 +297,36 @@ def main_ver2():
             temp = list(meal_dict.items())
             random.shuffle(temp)
             new_meal_dict = dict(temp)
-            meal_id_found = get_top_k(new_meal_dict, 3)
-            # print('user_meal found : ', meal_id_found)
+            top_rating = get_top_k(new_meal_dict, 3)
+            # print('Non-user information score: ', top_rating)
 
         else: # Use FastText like ver1
             # Load model_category to classify meal
             model_category = load_model_category(bin_dir_path)
 
-            category = ver1.classify_meal(user["user_demand"], model_category)
+            category = classify_meal(user_demand, model_category)
             print('Nhóm được phân loại: ',category)
 
             category = category[0]
-            recipe_result = ver1.recommendation(bin_dir_path, category, user["user_demand"])
+            recipe_result = recommendation(bin_dir_path, category, user_demand)
             print('Món ăn có sự tương đồng:', recipe_result)
 
-
+            main_ver2(user_id, recipe_result[0])
 
         # find_best_meal(meal_id_found, df, meal_id, meal_score)
+
+    final_menu_array = [meal_menu[meal_id.index(i)] for i in top_rating]
+    for i in range(len(final_menu_array)):
+        print('Thực đơn thứ {0} gồm {1}: '.format(i+1, final_menu_array[i]))
 
     toc = time.time()
     print('The process end in :', toc - tic)
 
 if __name__ == '__main__':
-    main_ver2()
+    user = {
+        "user_id": 1,
+        "user_demand": "bún chả"
+    }
+
+    main_ver2(user["user_id"], user["user_demand"])
 
