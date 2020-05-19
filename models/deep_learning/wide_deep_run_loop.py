@@ -73,6 +73,7 @@ def export_model(model, model_type, export_dir, model_column_fn):
   feature_spec = tf.feature_column.make_parse_example_spec(columns)
   example_input_fn = (
       tf.estimator.export.build_parsing_serving_input_receiver_fn(feature_spec))
+  print('model saved in : ', export_dir)
   model.export_savedmodel(export_dir, example_input_fn,
                           strip_default_attrs=True)
 
@@ -138,6 +139,5 @@ def run_loop(name, train_input_fn, eval_input_fn, model_column_fn,
     export_model(model, flags_obj.model_type, flags_obj.export_dir,
                  model_column_fn)
 
-  model.load_weights()
 
   return average_loss_arr, label_mean_arr, loss_arr, prediction_mean_arr
