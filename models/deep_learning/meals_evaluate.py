@@ -90,7 +90,7 @@ def find_meal(df):
 
     return meal_arr
 
-def evaluate_data(df, input_meal_arr):
+def pred_meal(df, input_meal_arr):
     # Load saved_model
     model = tf.saved_model.load(
         '../deep_learning/tmp/1587121355_deep/')
@@ -158,7 +158,31 @@ def evaluate_data(df, input_meal_arr):
 
     return rating
 
-def cal_acc(rating_arr, df_label):
+def cal_map(pred, actual):
+    num_actual_add = len(actual)
+    recoms = []
+    for id in pred:
+        if id in actual:
+            recoms.append(1)
+        else:
+            recoms.append(0)
+    print(recoms)
+    
+    precs = []
+    recalls = []
+
+    for indx, rec in enumerate(recoms):
+        precs.append(sum(recoms[:indx+1])/(indx+1))
+        recalls.append(sum(recoms[:indx+1])/num_actual_add)
+    ap = (1/num_actual_add) * (sum(precs[i]*recoms[i] for i in range(len(recoms))))
+
+    print('precision: ',precs)
+    print('recall: ', recalls)
+    print('AP: ', ap)
+    
+    return ap
+
+def evaluate_model(rating_arr, df_label):
     # Get top 3 score in rating array
     top_k = 3
     top_arr = []
@@ -173,6 +197,7 @@ def cal_acc(rating_arr, df_label):
 
     # Get 3 labels for checking
     count = 0
+    ap_arr = []
     for index, row in df_label.iterrows():
         label_arr = []
         label_arr.append(row['top1_meals'])
@@ -187,7 +212,12 @@ def cal_acc(rating_arr, df_label):
             count += 1
         print('label: ',label_arr)
         print('predict: ', top_arr[index])
+
+        if len(label_arr) != 0:
+            ap = cal_map(top_arr[index], label_arr)
+            ap_arr.append(ap)
         print('----------------END 1 ROW--------------')
+    print('Mean Average Precision is: ', sum(i for i in ap_arr)/ len(top_arr))
     print('Accuracy of TOP {0} is {1}: '.format(top_k, count /len(rating_arr)))
 
 def main():
@@ -197,9 +227,9 @@ def main():
     input_meal_arr = find_meal(df)
     df = meals.integerize_hobbies(dataframe=df)
 
-    rating = evaluate_data(df, input_meal_arr)
+    rating = pred_meal(df, input_meal_arr)
 
-    cal_acc(rating, df_label)
+    evaluate_model(rating, df_label)
 
 if __name__ == '__main__':
     main()
