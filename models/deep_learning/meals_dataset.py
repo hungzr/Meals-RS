@@ -99,8 +99,8 @@ def build_model_columns(dataset):
     meals_embedding = tf.feature_column.embedding_column(
               meals_id, _MEALS_EMBEDDING_DIM, max_norm=np.sqrt(_MEALS_EMBEDDING_DIM))
 
-    deep_columns = [user_embedding, item_embedding, user_gender, user_age, user_hobbies, user_health]
-    wide_columns = [meals_embedding]
+    deep_columns = [user_embedding, item_embedding, user_gender, user_hobbies, user_health]
+    wide_columns = [user_age, meals_embedding]
 
     return wide_columns, deep_columns
 

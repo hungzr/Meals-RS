@@ -580,7 +580,7 @@ node {
     key: "f"
     value {
       func {
-        name: "__inference_Dataset_flat_map_read_one_file_98024"
+        name: "__inference_Dataset_flat_map_read_one_file_102722"
       }
     }
   }
@@ -764,7 +764,7 @@ node {
     key: "f"
     value {
       func {
-        name: "__inference_Dataset_map__deserialize_98067"
+        name: "__inference_Dataset_map__deserialize_102765"
       }
     }
   }
@@ -5868,339 +5868,6 @@ node {
   }
 }
 node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/Cast"
-  op: "Cast"
-  input: "IteratorGetNext:3"
-  attr {
-    key: "DstT"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "SrcT"
-    value {
-      type: DT_INT64
-    }
-  }
-  attr {
-    key: "Truncate"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/Shape"
-  op: "Shape"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/Cast"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 2
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "out_type"
-    value {
-      type: DT_INT32
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice/stack"
-  op: "Const"
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_INT32
-        tensor_shape {
-          dim {
-            size: 1
-          }
-        }
-        int_val: 0
-      }
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice/stack_1"
-  op: "Const"
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_INT32
-        tensor_shape {
-          dim {
-            size: 1
-          }
-        }
-        int_val: 1
-      }
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice/stack_2"
-  op: "Const"
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_INT32
-        tensor_shape {
-          dim {
-            size: 1
-          }
-        }
-        int_val: 1
-      }
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice"
-  op: "StridedSlice"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/Shape"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice/stack"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice/stack_1"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice/stack_2"
-  attr {
-    key: "Index"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "T"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "begin_mask"
-    value {
-      i: 0
-    }
-  }
-  attr {
-    key: "ellipsis_mask"
-    value {
-      i: 0
-    }
-  }
-  attr {
-    key: "end_mask"
-    value {
-      i: 0
-    }
-  }
-  attr {
-    key: "new_axis_mask"
-    value {
-      i: 0
-    }
-  }
-  attr {
-    key: "shrink_axis_mask"
-    value {
-      i: 1
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/Reshape/shape/1"
-  op: "Const"
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_INT32
-        tensor_shape {
-        }
-        int_val: 3
-      }
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/Reshape/shape"
-  op: "Pack"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/strided_slice"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/Reshape/shape/1"
-  attr {
-    key: "N"
-    value {
-      i: 2
-    }
-  }
-  attr {
-    key: "T"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 2
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "axis"
-    value {
-      i: 0
-    }
-  }
-}
-node {
-  name: "dnn/input_from_feature_columns/input_layer/user_age/Reshape"
-  op: "Reshape"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/Cast"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/Reshape/shape"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "Tshape"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
   name: "dnn/input_from_feature_columns/input_layer/user_gender/Cast"
   op: "Cast"
   input: "IteratorGetNext:4"
@@ -10606,7 +10273,6 @@ node {
   name: "dnn/input_from_feature_columns/input_layer/concat"
   op: "ConcatV2"
   input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/Reshape"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/Reshape"
   input: "dnn/input_from_feature_columns/input_layer/user_gender/Reshape"
   input: "dnn/input_from_feature_columns/input_layer/user_health/Reshape"
   input: "dnn/input_from_feature_columns/input_layer/user_hobbies/Reshape"
@@ -10615,7 +10281,7 @@ node {
   attr {
     key: "N"
     value {
-      i: 6
+      i: 5
     }
   }
   attr {
@@ -10639,7 +10305,7 @@ node {
             size: -1
           }
           dim {
-            size: 106
+            size: 103
           }
         }
       }
@@ -10685,7 +10351,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "j\000\000\000\000\001\000\000"
+        tensor_content: "g\000\000\000\000\001\000\000"
       }
     }
   }
@@ -10723,7 +10389,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.12874232232570648
+        float_val: -0.12927912175655365
       }
     }
   }
@@ -10761,7 +10427,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.12874232232570648
+        float_val: 0.12927912175655365
       }
     }
   }
@@ -10790,7 +10456,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -10872,7 +10538,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -10907,7 +10573,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -10954,7 +10620,7 @@ node {
     value {
       shape {
         dim {
-          size: 106
+          size: 103
         }
         dim {
           size: 256
@@ -11021,7 +10687,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -11205,7 +10871,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -11237,7 +10903,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -19213,6 +18879,176 @@ node {
   }
 }
 node {
+  name: "linear/linear_model/user_age/weights/part_0/Initializer/zeros"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0"
+  op: "VarHandleOp"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 3
+        }
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: "linear/linear_model/user_age/weights/part_0"
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/IsInitialized/VarIsInitializedOp"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Assign"
+  op: "AssignVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  input: "linear/linear_model/user_age/weights/part_0/Initializer/zeros"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Read/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
   name: "linear/linear_model/bias_weights/part_0/Initializer/zeros"
   op: "Const"
   attr {
@@ -22835,9 +22671,440 @@ node {
   }
 }
 node {
-  name: "linear/linear_model/linear_model/linear_model/weighted_sum_no_bias"
+  name: "linear/linear_model/linear_model/linear_model/user_age/Cast"
+  op: "Cast"
+  input: "IteratorGetNext:3"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "Truncate"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 3
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/Shape"
+  op: "Shape"
+  input: "linear/linear_model/linear_model/linear_model/user_age/Cast"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 2
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "out_type"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/strided_slice/stack"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        int_val: 0
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/strided_slice/stack_1"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        int_val: 1
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/strided_slice/stack_2"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        int_val: 1
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/strided_slice"
+  op: "StridedSlice"
+  input: "linear/linear_model/linear_model/linear_model/user_age/Shape"
+  input: "linear/linear_model/linear_model/linear_model/user_age/strided_slice/stack"
+  input: "linear/linear_model/linear_model/linear_model/user_age/strided_slice/stack_1"
+  input: "linear/linear_model/linear_model/linear_model/user_age/strided_slice/stack_2"
+  attr {
+    key: "Index"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "begin_mask"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "ellipsis_mask"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "end_mask"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "new_axis_mask"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "shrink_axis_mask"
+    value {
+      i: 1
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/Reshape/shape/1"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 3
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/Reshape/shape"
+  op: "Pack"
+  input: "linear/linear_model/linear_model/linear_model/user_age/strided_slice"
+  input: "linear/linear_model/linear_model/linear_model/user_age/Reshape/shape/1"
+  attr {
+    key: "N"
+    value {
+      i: 2
+    }
+  }
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 2
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "axis"
+    value {
+      i: 0
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/Reshape"
+  op: "Reshape"
+  input: "linear/linear_model/linear_model/linear_model/user_age/Cast"
+  input: "linear/linear_model/linear_model/linear_model/user_age/Reshape/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 3
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights"
   op: "Identity"
+  input: "linear/linear_model/user_age/weights/ReadVariableOp"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/user_age/weighted_sum"
+  op: "MatMul"
+  input: "linear/linear_model/linear_model/linear_model/user_age/Reshape"
+  input: "linear/linear_model/user_age/weights"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "linear/linear_model/linear_model/linear_model/weighted_sum_no_bias"
+  op: "AddN"
   input: "linear/linear_model/linear_model/linear_model/meals_embedding/weighted_sum"
+  input: "linear/linear_model/linear_model/linear_model/user_age/weighted_sum"
+  attr {
+    key: "N"
+    value {
+      i: 2
+    }
+  }
   attr {
     key: "T"
     value {
@@ -23293,14 +23560,71 @@ node {
   }
 }
 node {
+  name: "linear/zero_fraction/total_size/Size_2/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_size/Size_2"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT64
+        tensor_shape {
+        }
+        int64_val: 3
+      }
+    }
+  }
+}
+node {
   name: "linear/zero_fraction/total_size/AddN"
   op: "AddN"
   input: "linear/zero_fraction/total_size/Size"
   input: "linear/zero_fraction/total_size/Size_1"
+  input: "linear/zero_fraction/total_size/Size_2"
   attr {
     key: "N"
     value {
-      i: 2
+      i: 3
     }
   }
   attr {
@@ -25532,14 +25856,1121 @@ node {
   }
 }
 node {
-  name: "linear/zero_fraction/total_zero/AddN"
-  op: "AddN"
-  input: "linear/zero_fraction/total_zero/zero_count/Merge"
-  input: "linear/zero_fraction/total_zero/zero_count_1/Merge"
+  name: "linear/zero_fraction/total_zero/Const_2"
+  op: "Const"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT64
+        tensor_shape {
+        }
+        int64_val: 0
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/Equal_2"
+  op: "Equal"
+  input: "linear/zero_fraction/total_size/Size_2"
+  input: "linear/zero_fraction/total_zero/Const_2"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/Switch"
+  op: "Switch"
+  input: "linear/zero_fraction/total_zero/Equal_2"
+  input: "linear/zero_fraction/total_zero/Equal_2"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/switch_t"
+  op: "Identity"
+  input: "linear/zero_fraction/total_zero/zero_count_2/Switch:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/switch_f"
+  op: "Identity"
+  input: "linear/zero_fraction/total_zero/zero_count_2/Switch"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/pred_id"
+  op: "Identity"
+  input: "linear/zero_fraction/total_zero/Equal_2"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/Const"
+  op: "Const"
+  input: "^linear/zero_fraction/total_zero/zero_count_2/switch_t"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/ReadVariableOp/Switch"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/ReadVariableOp/Switch"
+  op: "Switch"
+  input: "linear/linear_model/user_age/weights/part_0"
+  input: "linear/zero_fraction/total_zero/zero_count_2/pred_id"
+  attr {
+    key: "T"
+    value {
+      type: DT_RESOURCE
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/Size"
+  op: "Const"
+  input: "^linear/zero_fraction/total_zero/zero_count_2/switch_f"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT64
+        tensor_shape {
+        }
+        int64_val: 3
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/LessEqual/y"
+  op: "Const"
+  input: "^linear/zero_fraction/total_zero/zero_count_2/switch_f"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT64
+        tensor_shape {
+        }
+        int64_val: 2147483647
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/LessEqual"
+  op: "LessEqual"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/Size"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/LessEqual/y"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/Switch"
+  op: "Switch"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/LessEqual"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/LessEqual"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/switch_t"
+  op: "Identity"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/Switch:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/switch_f"
+  op: "Identity"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/Switch"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/pred_id"
+  op: "Identity"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/LessEqual"
+  attr {
+    key: "T"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/zeros"
+  op: "Const"
+  input: "^linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/switch_t"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/NotEqual"
+  op: "NotEqual"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/NotEqual/Switch:1"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/zeros"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/NotEqual/Switch"
+  op: "Switch"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/ReadVariableOp"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/pred_id"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/zero_fraction/total_zero/zero_count_2/zero_fraction/ReadVariableOp"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/Cast"
+  op: "Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/NotEqual"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "Truncate"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/Const"
+  op: "Const"
+  input: "^linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/switch_t"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 2
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\000\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/nonzero_count"
+  op: "Sum"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/Cast"
+  op: "Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero/nonzero_count"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "Truncate"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/zeros"
+  op: "Const"
+  input: "^linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/switch_f"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/NotEqual"
+  op: "NotEqual"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/NotEqual/Switch"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/zeros"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/NotEqual/Switch"
+  op: "Switch"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/ReadVariableOp"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/pred_id"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/zero_fraction/total_zero/zero_count_2/zero_fraction/ReadVariableOp"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/Cast"
+  op: "Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/NotEqual"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_BOOL
+    }
+  }
+  attr {
+    key: "Truncate"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/Const"
+  op: "Const"
+  input: "^linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/switch_f"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 2
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\000\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/nonzero_count"
+  op: "Sum"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/Merge"
+  op: "Merge"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/count_nonzero_1/nonzero_count"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/Cast"
   attr {
     key: "N"
     value {
       i: 2
+    }
+  }
+  attr {
+    key: "T"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/sub"
+  op: "Sub"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/Size"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/cond/Merge"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/Cast"
+  op: "Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/sub"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "Truncate"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/Cast_1"
+  op: "Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/Size"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "Truncate"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/truediv"
+  op: "RealDiv"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/Cast_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/fraction"
+  op: "Identity"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/counts_to_fraction/truediv"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/ToFloat"
+  op: "Cast"
+  input: "linear/zero_fraction/total_zero/zero_count_2/ToFloat/Switch"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "Truncate"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/ToFloat/Switch"
+  op: "Switch"
+  input: "linear/zero_fraction/total_size/Size_2"
+  input: "linear/zero_fraction/total_zero/zero_count_2/pred_id"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT64
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/zero_fraction/total_size/Size_2"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/mul"
+  op: "Mul"
+  input: "linear/zero_fraction/total_zero/zero_count_2/zero_fraction/fraction"
+  input: "linear/zero_fraction/total_zero/zero_count_2/ToFloat"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/zero_count_2/Merge"
+  op: "Merge"
+  input: "linear/zero_fraction/total_zero/zero_count_2/mul"
+  input: "linear/zero_fraction/total_zero/zero_count_2/Const"
+  attr {
+    key: "N"
+    value {
+      i: 2
+    }
+  }
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/zero_fraction/total_zero/AddN"
+  op: "AddN"
+  input: "linear/zero_fraction/total_zero/zero_count/Merge"
+  input: "linear/zero_fraction/total_zero/zero_count_1/Merge"
+  input: "linear/zero_fraction/total_zero/zero_count_2/Merge"
+  attr {
+    key: "N"
+    value {
+      i: 3
     }
   }
   attr {
@@ -30731,7 +32162,7 @@ node {
             size: -1
           }
           dim {
-            size: 106
+            size: 103
           }
         }
       }
@@ -30767,7 +32198,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -30823,7 +32254,7 @@ node {
             size: -1
           }
           dim {
-            size: 106
+            size: 103
           }
         }
       }
@@ -30855,7 +32286,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -30949,7 +32380,6 @@ node {
   name: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ShapeN"
   op: "ShapeN"
   input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/Reshape"
-  input: "dnn/input_from_feature_columns/input_layer/user_age/Reshape"
   input: "dnn/input_from_feature_columns/input_layer/user_gender/Reshape"
   input: "dnn/input_from_feature_columns/input_layer/user_health/Reshape"
   input: "dnn/input_from_feature_columns/input_layer/user_hobbies/Reshape"
@@ -30957,7 +32387,7 @@ node {
   attr {
     key: "N"
     value {
-      i: 6
+      i: 5
     }
   }
   attr {
@@ -30970,11 +32400,6 @@ node {
     key: "_output_shapes"
     value {
       list {
-        shape {
-          dim {
-            size: 2
-          }
-        }
         shape {
           dim {
             size: 2
@@ -31019,22 +32444,16 @@ node {
   input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ShapeN:2"
   input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ShapeN:3"
   input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ShapeN:4"
-  input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ShapeN:5"
   attr {
     key: "N"
     value {
-      i: 6
+      i: 5
     }
   }
   attr {
     key: "_output_shapes"
     value {
       list {
-        shape {
-          dim {
-            size: 2
-          }
-        }
         shape {
           dim {
             size: 2
@@ -31125,7 +32544,7 @@ node {
             size: -1
           }
           dim {
-            size: 3
+            size: 1
           }
         }
       }
@@ -31159,7 +32578,7 @@ node {
             size: -1
           }
           dim {
-            size: 1
+            size: 5
           }
         }
       }
@@ -31193,7 +32612,7 @@ node {
             size: -1
           }
           dim {
-            size: 5
+            size: 17
           }
         }
       }
@@ -31206,40 +32625,6 @@ node {
   input: "head/gradients/dnn/hiddenlayer_0/MatMul_grad/tuple/control_dependency"
   input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ConcatOffset:4"
   input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ShapeN:4"
-  attr {
-    key: "Index"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 17
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_5"
-  op: "Slice"
-  input: "head/gradients/dnn/hiddenlayer_0/MatMul_grad/tuple/control_dependency"
-  input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ConcatOffset:5"
-  input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/ShapeN:5"
   attr {
     key: "Index"
     value {
@@ -31276,7 +32661,6 @@ node {
   input: "^head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_2"
   input: "^head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_3"
   input: "^head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_4"
-  input: "^head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_5"
 }
 node {
   name: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/tuple/control_dependency"
@@ -31341,7 +32725,7 @@ node {
             size: -1
           }
           dim {
-            size: 3
+            size: 1
           }
         }
       }
@@ -31376,7 +32760,7 @@ node {
             size: -1
           }
           dim {
-            size: 1
+            size: 5
           }
         }
       }
@@ -31411,7 +32795,7 @@ node {
             size: -1
           }
           dim {
-            size: 5
+            size: 17
           }
         }
       }
@@ -31434,41 +32818,6 @@ node {
     value {
       list {
         s: "loc:@head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_4"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 17
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/tuple/control_dependency_5"
-  op: "Identity"
-  input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_5"
-  input: "^head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/Slice_5"
       }
     }
   }
@@ -31582,7 +32931,7 @@ node {
 node {
   name: "head/gradients/dnn/input_from_feature_columns/input_layer/user_id_embedding/Reshape_grad/Reshape"
   op: "Reshape"
-  input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/tuple/control_dependency_5"
+  input: "head/gradients/dnn/input_from_feature_columns/input_layer/concat_grad/tuple/control_dependency_4"
   input: "head/gradients/dnn/input_from_feature_columns/input_layer/user_id_embedding/Reshape_grad/Shape"
   attr {
     key: "T"
@@ -38897,7 +40246,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -38919,7 +40268,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -38967,7 +40316,7 @@ node {
     value {
       shape {
         dim {
-          size: 106
+          size: 103
         }
         dim {
           size: 256
@@ -39042,7 +40391,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -43463,9 +44812,84 @@ node {
   }
 }
 node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_grad/tuple/control_dependency"
+}
+node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_grad/tuple/control_dependency"
+  input: "^head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@head/gradients_1/add_grad/Reshape_1"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_grad/tuple/control_dependency"
+  input: "^head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@head/gradients_1/add_grad/Reshape_1"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
   name: "head/gradients_1/linear/linear_model/linear_model/linear_model/meals_embedding/weighted_sum_grad/MatMul"
   op: "MatMul"
-  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_grad/tuple/control_dependency"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/control_dependency"
   input: "linear/linear_model/meals_embedding/weights"
   attr {
     key: "T"
@@ -43505,7 +44929,7 @@ node {
   name: "head/gradients_1/linear/linear_model/linear_model/linear_model/meals_embedding/weighted_sum_grad/MatMul_1"
   op: "MatMul"
   input: "linear/linear_model/linear_model/linear_model/meals_embedding/Reshape"
-  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_grad/tuple/control_dependency"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/control_dependency"
   attr {
     key: "T"
     value {
@@ -43607,6 +45031,160 @@ node {
         shape {
           dim {
             size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul"
+  op: "MatMul"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/control_dependency_1"
+  input: "linear/linear_model/user_age/weights"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 3
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul_1"
+  op: "MatMul"
+  input: "linear/linear_model/linear_model/linear_model/user_age/Reshape"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/weighted_sum_no_bias_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul"
+  input: "^head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul_1"
+}
+node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul"
+  input: "^head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: -1
+          }
+          dim {
+            size: 3
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul_1"
+  input: "^head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/MatMul_1"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
           }
           dim {
             size: 1
@@ -47926,6 +49504,362 @@ node {
     key: "_class"
     value {
       list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+        float_val: 0.10000000149011612
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  op: "VarHandleOp"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 3
+        }
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: "linear/linear_model/user_age/weights/part_0/Ftrl"
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl/IsInitialized/VarIsInitializedOp"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl/Assign"
+  op: "AssignVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  input: "head/Const_2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl/Read/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl_1/Initializer/zeros"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  op: "VarHandleOp"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 3
+        }
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl_1/IsInitialized/VarIsInitializedOp"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl_1/Assign"
+  op: "AssignVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1/Initializer/zeros"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "linear/linear_model/user_age/weights/part_0/Ftrl_1/Read/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "head/Const_3"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
         s: "loc:@linear/linear_model/bias_weights/part_0"
       }
     }
@@ -48038,7 +49972,7 @@ node {
   name: "linear/linear_model/bias_weights/part_0/Ftrl/Assign"
   op: "AssignVariableOp"
   input: "linear/linear_model/bias_weights/part_0/Ftrl"
-  input: "head/Const_2"
+  input: "head/Const_3"
   attr {
     key: "_class"
     value {
@@ -48799,6 +50733,38 @@ node {
   }
 }
 node {
+  name: "head/Ftrl/update_linear/linear_model/user_age/weights/part_0/ResourceApplyFtrl"
+  op: "ResourceApplyFtrl"
+  input: "linear/linear_model/user_age/weights/part_0"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  input: "head/gradients_1/linear/linear_model/linear_model/linear_model/user_age/weighted_sum_grad/tuple/control_dependency_1"
+  input: "head/Ftrl/learning_rate"
+  input: "head/Ftrl/l1_regularization_strength"
+  input: "head/Ftrl/l2_regularization_strength"
+  input: "head/Ftrl/learning_rate_power"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@linear/linear_model/user_age/weights/part_0"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
   name: "head/Ftrl/update_linear/linear_model/bias_weights/part_0/ResourceApplyFtrl"
   op: "ResourceApplyFtrl"
   input: "linear/linear_model/bias_weights/part_0"
@@ -48836,6 +50802,7 @@ node {
   input: "^head/Ftrl/update_linear/linear_model/bias_weights/part_0/ResourceApplyFtrl"
   input: "^head/Ftrl/update_linear/linear_model/meals_embedding/embedding_weights/part_0/ResourceSparseApplyFtrl"
   input: "^head/Ftrl/update_linear/linear_model/meals_embedding/weights/part_0/ResourceApplyFtrl"
+  input: "^head/Ftrl/update_linear/linear_model/user_age/weights/part_0/ResourceApplyFtrl"
 }
 node {
   name: "head/group_deps"
@@ -49059,7 +51026,7 @@ node {
   }
 }
 node {
-  name: "head/Const_3"
+  name: "head/Const_4"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -49098,7 +51065,7 @@ node {
   name: "head/Sum"
   op: "Sum"
   input: "head/mul"
-  input: "head/Const_3"
+  input: "head/Const_4"
   attr {
     key: "T"
     value {
@@ -49287,6 +51254,9 @@ node {
   input: "^linear/linear_model/meals_embedding/weights/part_0/Assign"
   input: "^linear/linear_model/meals_embedding/weights/part_0/Ftrl/Assign"
   input: "^linear/linear_model/meals_embedding/weights/part_0/Ftrl_1/Assign"
+  input: "^linear/linear_model/user_age/weights/part_0/Assign"
+  input: "^linear/linear_model/user_age/weights/part_0/Ftrl/Assign"
+  input: "^linear/linear_model/user_age/weights/part_0/Ftrl_1/Assign"
 }
 node {
   name: "init_1"
@@ -49525,7 +51495,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_14"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/bias_weights/part_0"
+  input: "linear/linear_model/user_age/weights/part_0"
   attr {
     key: "_output_shapes"
     value {
@@ -49539,7 +51509,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_15"
   op: "VarIsInitializedOp"
-  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
+  input: "linear/linear_model/bias_weights/part_0"
   attr {
     key: "_output_shapes"
     value {
@@ -49553,7 +51523,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_16"
   op: "VarIsInitializedOp"
-  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
+  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49567,7 +51537,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_17"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_0/kernel/part_0/Adagrad"
+  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49581,7 +51551,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_18"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_0/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_0/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49595,7 +51565,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_19"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_1/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_0/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49609,7 +51579,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_20"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_1/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_1/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49623,7 +51593,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_21"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_2/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_1/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49637,7 +51607,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_22"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_2/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_2/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49651,7 +51621,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_23"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_3/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_2/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49665,7 +51635,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_24"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_3/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_3/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49679,7 +51649,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_25"
   op: "VarIsInitializedOp"
-  input: "dnn/logits/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_3/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49693,7 +51663,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_26"
   op: "VarIsInitializedOp"
-  input: "dnn/logits/bias/part_0/Adagrad"
+  input: "dnn/logits/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49707,7 +51677,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_27"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl"
+  input: "dnn/logits/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -49721,7 +51691,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_28"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
+  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl"
   attr {
     key: "_output_shapes"
     value {
@@ -49735,7 +51705,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_29"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
+  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
   attr {
     key: "_output_shapes"
     value {
@@ -49749,7 +51719,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_30"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
+  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
   attr {
     key: "_output_shapes"
     value {
@@ -49763,7 +51733,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_31"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/bias_weights/part_0/Ftrl"
+  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
   attr {
     key: "_output_shapes"
     value {
@@ -49776,6 +51746,48 @@ node {
 }
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_32"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables/VarIsInitializedOp_33"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables/VarIsInitializedOp_34"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/bias_weights/part_0/Ftrl"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables/VarIsInitializedOp_35"
   op: "VarIsInitializedOp"
   input: "linear/linear_model/bias_weights/part_0/Ftrl_1"
   attr {
@@ -49825,11 +51837,14 @@ node {
   input: "report_uninitialized_variables/VarIsInitializedOp_30"
   input: "report_uninitialized_variables/VarIsInitializedOp_31"
   input: "report_uninitialized_variables/VarIsInitializedOp_32"
+  input: "report_uninitialized_variables/VarIsInitializedOp_33"
+  input: "report_uninitialized_variables/VarIsInitializedOp_34"
+  input: "report_uninitialized_variables/VarIsInitializedOp_35"
   device: "/device:CPU:0"
   attr {
     key: "N"
     value {
-      i: 34
+      i: 37
     }
   }
   attr {
@@ -49844,7 +51859,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -49868,7 +51883,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -49885,7 +51900,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -49904,7 +51919,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 34
+            size: 37
           }
         }
         string_val: "global_step"
@@ -49922,6 +51937,7 @@ node {
         string_val: "dnn/logits/bias/part_0"
         string_val: "linear/linear_model/meals_embedding/embedding_weights/part_0"
         string_val: "linear/linear_model/meals_embedding/weights/part_0"
+        string_val: "linear/linear_model/user_age/weights/part_0"
         string_val: "linear/linear_model/bias_weights/part_0"
         string_val: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
         string_val: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
@@ -49939,6 +51955,8 @@ node {
         string_val: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
         string_val: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
         string_val: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
+        string_val: "linear/linear_model/user_age/weights/part_0/Ftrl"
+        string_val: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
         string_val: "linear/linear_model/bias_weights/part_0/Ftrl"
         string_val: "linear/linear_model/bias_weights/part_0/Ftrl_1"
       }
@@ -49977,7 +51995,7 @@ node {
             size: 1
           }
         }
-        int_val: 34
+        int_val: 37
       }
     }
   }
@@ -50259,7 +52277,7 @@ node {
             size: 1
           }
         }
-        int_val: 34
+        int_val: 37
       }
     }
   }
@@ -50469,7 +52487,7 @@ node {
             size: 1
           }
         }
-        int_val: 34
+        int_val: 37
       }
     }
   }
@@ -50777,7 +52795,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -50845,7 +52863,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -51314,7 +53332,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_14"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/bias_weights/part_0"
+  input: "linear/linear_model/user_age/weights/part_0"
   attr {
     key: "_output_shapes"
     value {
@@ -51328,7 +53346,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_15"
   op: "VarIsInitializedOp"
-  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
+  input: "linear/linear_model/bias_weights/part_0"
   attr {
     key: "_output_shapes"
     value {
@@ -51342,7 +53360,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_16"
   op: "VarIsInitializedOp"
-  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
+  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51356,7 +53374,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_17"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_0/kernel/part_0/Adagrad"
+  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51370,7 +53388,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_18"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_0/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_0/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51384,7 +53402,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_19"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_1/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_0/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51398,7 +53416,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_20"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_1/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_1/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51412,7 +53430,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_21"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_2/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_1/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51426,7 +53444,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_22"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_2/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_2/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51440,7 +53458,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_23"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_3/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_2/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51454,7 +53472,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_24"
   op: "VarIsInitializedOp"
-  input: "dnn/hiddenlayer_3/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_3/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51468,7 +53486,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_25"
   op: "VarIsInitializedOp"
-  input: "dnn/logits/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_3/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51482,7 +53500,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_26"
   op: "VarIsInitializedOp"
-  input: "dnn/logits/bias/part_0/Adagrad"
+  input: "dnn/logits/kernel/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51496,7 +53514,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_27"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl"
+  input: "dnn/logits/bias/part_0/Adagrad"
   attr {
     key: "_output_shapes"
     value {
@@ -51510,7 +53528,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_28"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
+  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl"
   attr {
     key: "_output_shapes"
     value {
@@ -51524,7 +53542,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_29"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
+  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
   attr {
     key: "_output_shapes"
     value {
@@ -51538,7 +53556,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_30"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
+  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
   attr {
     key: "_output_shapes"
     value {
@@ -51552,7 +53570,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_31"
   op: "VarIsInitializedOp"
-  input: "linear/linear_model/bias_weights/part_0/Ftrl"
+  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
   attr {
     key: "_output_shapes"
     value {
@@ -51565,6 +53583,48 @@ node {
 }
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_32"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables_1/VarIsInitializedOp_33"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables_1/VarIsInitializedOp_34"
+  op: "VarIsInitializedOp"
+  input: "linear/linear_model/bias_weights/part_0/Ftrl"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "report_uninitialized_variables_1/VarIsInitializedOp_35"
   op: "VarIsInitializedOp"
   input: "linear/linear_model/bias_weights/part_0/Ftrl_1"
   attr {
@@ -51614,11 +53674,14 @@ node {
   input: "report_uninitialized_variables_1/VarIsInitializedOp_30"
   input: "report_uninitialized_variables_1/VarIsInitializedOp_31"
   input: "report_uninitialized_variables_1/VarIsInitializedOp_32"
+  input: "report_uninitialized_variables_1/VarIsInitializedOp_33"
+  input: "report_uninitialized_variables_1/VarIsInitializedOp_34"
+  input: "report_uninitialized_variables_1/VarIsInitializedOp_35"
   device: "/device:CPU:0"
   attr {
     key: "N"
     value {
-      i: 34
+      i: 37
     }
   }
   attr {
@@ -51633,7 +53696,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -51657,7 +53720,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -51674,7 +53737,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -51693,7 +53756,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 34
+            size: 37
           }
         }
         string_val: "global_step"
@@ -51711,6 +53774,7 @@ node {
         string_val: "dnn/logits/bias/part_0"
         string_val: "linear/linear_model/meals_embedding/embedding_weights/part_0"
         string_val: "linear/linear_model/meals_embedding/weights/part_0"
+        string_val: "linear/linear_model/user_age/weights/part_0"
         string_val: "linear/linear_model/bias_weights/part_0"
         string_val: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
         string_val: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
@@ -51728,6 +53792,8 @@ node {
         string_val: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
         string_val: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
         string_val: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
+        string_val: "linear/linear_model/user_age/weights/part_0/Ftrl"
+        string_val: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
         string_val: "linear/linear_model/bias_weights/part_0/Ftrl"
         string_val: "linear/linear_model/bias_weights/part_0/Ftrl_1"
       }
@@ -51766,7 +53832,7 @@ node {
             size: 1
           }
         }
-        int_val: 34
+        int_val: 37
       }
     }
   }
@@ -52048,7 +54114,7 @@ node {
             size: 1
           }
         }
-        int_val: 34
+        int_val: 37
       }
     }
   }
@@ -52258,7 +54324,7 @@ node {
             size: 1
           }
         }
-        int_val: 34
+        int_val: 37
       }
     }
   }
@@ -52566,7 +54632,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -52634,7 +54700,7 @@ node {
       list {
         shape {
           dim {
-            size: 34
+            size: 37
           }
         }
       }
@@ -53167,7 +55233,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -53199,7 +55265,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -53226,7 +55292,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -53246,7 +55312,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -53278,7 +55344,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -53305,7 +55371,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -55508,6 +57574,243 @@ node {
   }
 }
 node {
+  name: "save/Read_33/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_66"
+  op: "Identity"
+  input: "save/Read_33/ReadVariableOp"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_67"
+  op: "Identity"
+  input: "save/Identity_66"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_34/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_68"
+  op: "Identity"
+  input: "save/Read_34/ReadVariableOp"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_69"
+  op: "Identity"
+  input: "save/Identity_68"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_35/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_70"
+  op: "Identity"
+  input: "save/Read_35/ReadVariableOp"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_71"
+  op: "Identity"
+  input: "save/Identity_70"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
   name: "save/StringJoin/inputs_1"
   op: "Const"
   attr {
@@ -55532,7 +57835,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "_temp_9b7972b27e5543a49ce6a77875fcb926/part"
+        string_val: "_temp_1e7d7a98a3174b84900ec4db8b6f680a/part"
       }
     }
   }
@@ -55812,7 +58115,7 @@ node {
   }
 }
 node {
-  name: "save/Read_33/ReadVariableOp"
+  name: "save/Read_36/ReadVariableOp"
   op: "ReadVariableOp"
   input: "dnn/hiddenlayer_0/bias/part_0"
   device: "/device:CPU:0"
@@ -55821,234 +58124,6 @@ node {
     value {
       list {
         shape {
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "save/Identity_66"
-  op: "Identity"
-  input: "save/Read_33/ReadVariableOp"
-  device: "/device:CPU:0"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "save/Identity_67"
-  op: "Identity"
-  input: "save/Identity_66"
-  device: "/device:CPU:0"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "save/Read_34/ReadVariableOp"
-  op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_0/bias/part_0/Adagrad"
-  device: "/device:CPU:0"
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "save/Identity_68"
-  op: "Identity"
-  input: "save/Read_34/ReadVariableOp"
-  device: "/device:CPU:0"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "save/Identity_69"
-  op: "Identity"
-  input: "save/Identity_68"
-  device: "/device:CPU:0"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "save/Read_35/ReadVariableOp"
-  op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_0/kernel/part_0"
-  device: "/device:CPU:0"
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 106
-          }
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "save/Identity_70"
-  op: "Identity"
-  input: "save/Read_35/ReadVariableOp"
-  device: "/device:CPU:0"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 106
-          }
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "save/Identity_71"
-  op: "Identity"
-  input: "save/Identity_70"
-  device: "/device:CPU:0"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 106
-          }
-          dim {
-            size: 256
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "save/Read_36/ReadVariableOp"
-  op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_0/kernel/part_0/Adagrad"
-  device: "/device:CPU:0"
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 106
-          }
           dim {
             size: 256
           }
@@ -56080,9 +58155,6 @@ node {
       list {
         shape {
           dim {
-            size: 106
-          }
-          dim {
             size: 256
           }
         }
@@ -56107,9 +58179,6 @@ node {
       list {
         shape {
           dim {
-            size: 106
-          }
-          dim {
             size: 256
           }
         }
@@ -56120,7 +58189,7 @@ node {
 node {
   name: "save/Read_37/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_1/bias/part_0"
+  input: "dnn/hiddenlayer_0/bias/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -56192,13 +58261,16 @@ node {
 node {
   name: "save/Read_38/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_1/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_0/kernel/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
+          dim {
+            size: 103
+          }
           dim {
             size: 256
           }
@@ -56230,6 +58302,9 @@ node {
       list {
         shape {
           dim {
+            size: 103
+          }
+          dim {
             size: 256
           }
         }
@@ -56254,6 +58329,9 @@ node {
       list {
         shape {
           dim {
+            size: 103
+          }
+          dim {
             size: 256
           }
         }
@@ -56264,7 +58342,7 @@ node {
 node {
   name: "save/Read_39/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_1/kernel/part_0"
+  input: "dnn/hiddenlayer_0/kernel/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -56272,7 +58350,7 @@ node {
       list {
         shape {
           dim {
-            size: 256
+            size: 103
           }
           dim {
             size: 256
@@ -56305,7 +58383,7 @@ node {
       list {
         shape {
           dim {
-            size: 256
+            size: 103
           }
           dim {
             size: 256
@@ -56332,7 +58410,7 @@ node {
       list {
         shape {
           dim {
-            size: 256
+            size: 103
           }
           dim {
             size: 256
@@ -56345,16 +58423,13 @@ node {
 node {
   name: "save/Read_40/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_1/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_1/bias/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
-          dim {
-            size: 256
-          }
           dim {
             size: 256
           }
@@ -56388,9 +58463,6 @@ node {
           dim {
             size: 256
           }
-          dim {
-            size: 256
-          }
         }
       }
     }
@@ -56415,9 +58487,6 @@ node {
           dim {
             size: 256
           }
-          dim {
-            size: 256
-          }
         }
       }
     }
@@ -56426,7 +58495,7 @@ node {
 node {
   name: "save/Read_41/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_2/bias/part_0"
+  input: "dnn/hiddenlayer_1/bias/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -56498,13 +58567,16 @@ node {
 node {
   name: "save/Read_42/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_2/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_1/kernel/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
+          dim {
+            size: 256
+          }
           dim {
             size: 256
           }
@@ -56538,6 +58610,9 @@ node {
           dim {
             size: 256
           }
+          dim {
+            size: 256
+          }
         }
       }
     }
@@ -56562,6 +58637,9 @@ node {
           dim {
             size: 256
           }
+          dim {
+            size: 256
+          }
         }
       }
     }
@@ -56570,7 +58648,7 @@ node {
 node {
   name: "save/Read_43/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_2/kernel/part_0"
+  input: "dnn/hiddenlayer_1/kernel/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -56651,16 +58729,13 @@ node {
 node {
   name: "save/Read_44/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_2/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_2/bias/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
-          dim {
-            size: 256
-          }
           dim {
             size: 256
           }
@@ -56694,9 +58769,6 @@ node {
           dim {
             size: 256
           }
-          dim {
-            size: 256
-          }
         }
       }
     }
@@ -56721,9 +58793,6 @@ node {
           dim {
             size: 256
           }
-          dim {
-            size: 256
-          }
         }
       }
     }
@@ -56732,7 +58801,7 @@ node {
 node {
   name: "save/Read_45/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_3/bias/part_0"
+  input: "dnn/hiddenlayer_2/bias/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -56740,7 +58809,7 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 256
           }
         }
       }
@@ -56770,7 +58839,7 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 256
           }
         }
       }
@@ -56794,7 +58863,7 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 256
           }
         }
       }
@@ -56804,7 +58873,7 @@ node {
 node {
   name: "save/Read_46/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_3/bias/part_0/Adagrad"
+  input: "dnn/hiddenlayer_2/kernel/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -56812,7 +58881,10 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 256
+          }
+          dim {
+            size: 256
           }
         }
       }
@@ -56842,7 +58914,10 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 256
+          }
+          dim {
+            size: 256
           }
         }
       }
@@ -56866,7 +58941,10 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 256
+          }
+          dim {
+            size: 256
           }
         }
       }
@@ -56876,7 +58954,7 @@ node {
 node {
   name: "save/Read_47/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_3/kernel/part_0"
+  input: "dnn/hiddenlayer_2/kernel/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -56887,7 +58965,7 @@ node {
             size: 256
           }
           dim {
-            size: 128
+            size: 256
           }
         }
       }
@@ -56920,7 +58998,7 @@ node {
             size: 256
           }
           dim {
-            size: 128
+            size: 256
           }
         }
       }
@@ -56947,7 +59025,7 @@ node {
             size: 256
           }
           dim {
-            size: 128
+            size: 256
           }
         }
       }
@@ -56957,16 +59035,13 @@ node {
 node {
   name: "save/Read_48/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/hiddenlayer_3/kernel/part_0/Adagrad"
+  input: "dnn/hiddenlayer_3/bias/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
-          dim {
-            size: 256
-          }
           dim {
             size: 128
           }
@@ -56998,9 +59073,6 @@ node {
       list {
         shape {
           dim {
-            size: 256
-          }
-          dim {
             size: 128
           }
         }
@@ -57025,9 +59097,6 @@ node {
       list {
         shape {
           dim {
-            size: 256
-          }
-          dim {
             size: 128
           }
         }
@@ -57038,7 +59107,7 @@ node {
 node {
   name: "save/Read_49/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0"
+  input: "dnn/hiddenlayer_3/bias/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57046,10 +59115,7 @@ node {
       list {
         shape {
           dim {
-            size: 3354
-          }
-          dim {
-            size: 64
+            size: 128
           }
         }
       }
@@ -57079,10 +59145,7 @@ node {
       list {
         shape {
           dim {
-            size: 3354
-          }
-          dim {
-            size: 64
+            size: 128
           }
         }
       }
@@ -57106,10 +59169,7 @@ node {
       list {
         shape {
           dim {
-            size: 3354
-          }
-          dim {
-            size: 64
+            size: 128
           }
         }
       }
@@ -57119,7 +59179,7 @@ node {
 node {
   name: "save/Read_50/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
+  input: "dnn/hiddenlayer_3/kernel/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57127,10 +59187,10 @@ node {
       list {
         shape {
           dim {
-            size: 3354
+            size: 256
           }
           dim {
-            size: 64
+            size: 128
           }
         }
       }
@@ -57160,10 +59220,10 @@ node {
       list {
         shape {
           dim {
-            size: 3354
+            size: 256
           }
           dim {
-            size: 64
+            size: 128
           }
         }
       }
@@ -57187,10 +59247,10 @@ node {
       list {
         shape {
           dim {
-            size: 3354
+            size: 256
           }
           dim {
-            size: 64
+            size: 128
           }
         }
       }
@@ -57200,7 +59260,7 @@ node {
 node {
   name: "save/Read_51/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0"
+  input: "dnn/hiddenlayer_3/kernel/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57208,10 +59268,10 @@ node {
       list {
         shape {
           dim {
-            size: 1000
+            size: 256
           }
           dim {
-            size: 16
+            size: 128
           }
         }
       }
@@ -57241,10 +59301,10 @@ node {
       list {
         shape {
           dim {
-            size: 1000
+            size: 256
           }
           dim {
-            size: 16
+            size: 128
           }
         }
       }
@@ -57268,10 +59328,10 @@ node {
       list {
         shape {
           dim {
-            size: 1000
+            size: 256
           }
           dim {
-            size: 16
+            size: 128
           }
         }
       }
@@ -57281,7 +59341,7 @@ node {
 node {
   name: "save/Read_52/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
+  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57289,10 +59349,10 @@ node {
       list {
         shape {
           dim {
-            size: 1000
+            size: 3354
           }
           dim {
-            size: 16
+            size: 64
           }
         }
       }
@@ -57322,10 +59382,10 @@ node {
       list {
         shape {
           dim {
-            size: 1000
+            size: 3354
           }
           dim {
-            size: 16
+            size: 64
           }
         }
       }
@@ -57349,10 +59409,10 @@ node {
       list {
         shape {
           dim {
-            size: 1000
+            size: 3354
           }
           dim {
-            size: 16
+            size: 64
           }
         }
       }
@@ -57362,7 +59422,7 @@ node {
 node {
   name: "save/Read_53/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/logits/bias/part_0"
+  input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57370,7 +59430,10 @@ node {
       list {
         shape {
           dim {
-            size: 1
+            size: 3354
+          }
+          dim {
+            size: 64
           }
         }
       }
@@ -57400,7 +59463,10 @@ node {
       list {
         shape {
           dim {
-            size: 1
+            size: 3354
+          }
+          dim {
+            size: 64
           }
         }
       }
@@ -57424,7 +59490,10 @@ node {
       list {
         shape {
           dim {
-            size: 1
+            size: 3354
+          }
+          dim {
+            size: 64
           }
         }
       }
@@ -57434,7 +59503,7 @@ node {
 node {
   name: "save/Read_54/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/logits/bias/part_0/Adagrad"
+  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57442,7 +59511,10 @@ node {
       list {
         shape {
           dim {
-            size: 1
+            size: 1000
+          }
+          dim {
+            size: 16
           }
         }
       }
@@ -57472,7 +59544,10 @@ node {
       list {
         shape {
           dim {
-            size: 1
+            size: 1000
+          }
+          dim {
+            size: 16
           }
         }
       }
@@ -57496,7 +59571,10 @@ node {
       list {
         shape {
           dim {
-            size: 1
+            size: 1000
+          }
+          dim {
+            size: 16
           }
         }
       }
@@ -57506,7 +59584,7 @@ node {
 node {
   name: "save/Read_55/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/logits/kernel/part_0"
+  input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57514,10 +59592,10 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 1000
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -57547,10 +59625,10 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 1000
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -57574,10 +59652,10 @@ node {
       list {
         shape {
           dim {
-            size: 128
+            size: 1000
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -57587,16 +59665,13 @@ node {
 node {
   name: "save/Read_56/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dnn/logits/kernel/part_0/Adagrad"
+  input: "dnn/logits/bias/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
-          dim {
-            size: 128
-          }
           dim {
             size: 1
           }
@@ -57628,9 +59703,6 @@ node {
       list {
         shape {
           dim {
-            size: 128
-          }
-          dim {
             size: 1
           }
         }
@@ -57655,9 +59727,6 @@ node {
       list {
         shape {
           dim {
-            size: 128
-          }
-          dim {
             size: 1
           }
         }
@@ -57668,7 +59737,7 @@ node {
 node {
   name: "save/Read_57/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/bias_weights/part_0"
+  input: "dnn/logits/bias/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57740,13 +59809,16 @@ node {
 node {
   name: "save/Read_58/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/bias_weights/part_0/Ftrl"
+  input: "dnn/logits/kernel/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
+          dim {
+            size: 128
+          }
           dim {
             size: 1
           }
@@ -57778,6 +59850,9 @@ node {
       list {
         shape {
           dim {
+            size: 128
+          }
+          dim {
             size: 1
           }
         }
@@ -57802,6 +59877,9 @@ node {
       list {
         shape {
           dim {
+            size: 128
+          }
+          dim {
             size: 1
           }
         }
@@ -57812,13 +59890,16 @@ node {
 node {
   name: "save/Read_59/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/bias_weights/part_0/Ftrl_1"
+  input: "dnn/logits/kernel/part_0/Adagrad"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
     value {
       list {
         shape {
+          dim {
+            size: 128
+          }
           dim {
             size: 1
           }
@@ -57850,6 +59931,9 @@ node {
       list {
         shape {
           dim {
+            size: 128
+          }
+          dim {
             size: 1
           }
         }
@@ -57874,6 +59958,9 @@ node {
       list {
         shape {
           dim {
+            size: 128
+          }
+          dim {
             size: 1
           }
         }
@@ -57884,7 +59971,7 @@ node {
 node {
   name: "save/Read_60/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/meals_embedding/embedding_weights/part_0"
+  input: "linear/linear_model/bias_weights/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57892,10 +59979,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -57925,10 +60009,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -57952,10 +60033,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -57965,7 +60043,7 @@ node {
 node {
   name: "save/Read_61/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl"
+  input: "linear/linear_model/bias_weights/part_0/Ftrl"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -57973,10 +60051,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -58006,10 +60081,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -58033,10 +60105,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -58046,7 +60115,7 @@ node {
 node {
   name: "save/Read_62/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
+  input: "linear/linear_model/bias_weights/part_0/Ftrl_1"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -58054,10 +60123,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -58087,10 +60153,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -58114,10 +60177,7 @@ node {
       list {
         shape {
           dim {
-            size: 988
-          }
-          dim {
-            size: 16
+            size: 1
           }
         }
       }
@@ -58127,7 +60187,7 @@ node {
 node {
   name: "save/Read_63/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/meals_embedding/weights/part_0"
+  input: "linear/linear_model/meals_embedding/embedding_weights/part_0"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -58135,10 +60195,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58168,10 +60228,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58195,10 +60255,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58208,7 +60268,7 @@ node {
 node {
   name: "save/Read_64/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
+  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -58216,10 +60276,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58249,10 +60309,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58276,10 +60336,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58289,7 +60349,7 @@ node {
 node {
   name: "save/Read_65/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
+  input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
   device: "/device:CPU:0"
   attr {
     key: "_output_shapes"
@@ -58297,10 +60357,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58330,10 +60390,10 @@ node {
       list {
         shape {
           dim {
-            size: 16
+            size: 988
           }
           dim {
-            size: 1
+            size: 16
           }
         }
       }
@@ -58344,6 +60404,60 @@ node {
   name: "save/Identity_131"
   op: "Identity"
   input: "save/Identity_130"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 988
+          }
+          dim {
+            size: 16
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_66/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/meals_embedding/weights/part_0"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_132"
+  op: "Identity"
+  input: "save/Read_66/ReadVariableOp"
   device: "/device:CPU:0"
   attr {
     key: "T"
@@ -58368,6 +60482,438 @@ node {
   }
 }
 node {
+  name: "save/Identity_133"
+  op: "Identity"
+  input: "save/Identity_132"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_67/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_134"
+  op: "Identity"
+  input: "save/Read_67/ReadVariableOp"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_135"
+  op: "Identity"
+  input: "save/Identity_134"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_68/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_136"
+  op: "Identity"
+  input: "save/Read_68/ReadVariableOp"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_137"
+  op: "Identity"
+  input: "save/Identity_136"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_69/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_138"
+  op: "Identity"
+  input: "save/Read_69/ReadVariableOp"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_139"
+  op: "Identity"
+  input: "save/Identity_138"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_70/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_140"
+  op: "Identity"
+  input: "save/Read_70/ReadVariableOp"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_141"
+  op: "Identity"
+  input: "save/Identity_140"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Read_71/ReadVariableOp"
+  op: "ReadVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  device: "/device:CPU:0"
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_142"
+  op: "Identity"
+  input: "save/Read_71/ReadVariableOp"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/Identity_143"
+  op: "Identity"
+  input: "save/Identity_142"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
   name: "save/SaveV2_1/tensor_names"
   op: "Const"
   device: "/device:CPU:0"
@@ -58377,7 +60923,7 @@ node {
       list {
         shape {
           dim {
-            size: 33
+            size: 36
           }
         }
       }
@@ -58396,7 +60942,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 33
+            size: 36
           }
         }
         string_val: "dnn/hiddenlayer_0/bias"
@@ -58432,6 +60978,9 @@ node {
         string_val: "linear/linear_model/meals_embedding/weights"
         string_val: "linear/linear_model/meals_embedding/weights/Ftrl"
         string_val: "linear/linear_model/meals_embedding/weights/Ftrl_1"
+        string_val: "linear/linear_model/user_age/weights"
+        string_val: "linear/linear_model/user_age/weights/Ftrl"
+        string_val: "linear/linear_model/user_age/weights/Ftrl_1"
       }
     }
   }
@@ -58446,7 +60995,7 @@ node {
       list {
         shape {
           dim {
-            size: 33
+            size: 36
           }
         }
       }
@@ -58465,13 +61014,13 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 33
+            size: 36
           }
         }
         string_val: "256 0,256"
         string_val: "256 0,256"
-        string_val: "106 256 0,106:0,256"
-        string_val: "106 256 0,106:0,256"
+        string_val: "103 256 0,103:0,256"
+        string_val: "103 256 0,103:0,256"
         string_val: "256 0,256"
         string_val: "256 0,256"
         string_val: "256 256 0,256:0,256"
@@ -58501,6 +61050,9 @@ node {
         string_val: "16 1 0,16:0,1"
         string_val: "16 1 0,16:0,1"
         string_val: "16 1 0,16:0,1"
+        string_val: "3 1 0,3:0,1"
+        string_val: "3 1 0,3:0,1"
+        string_val: "3 1 0,3:0,1"
       }
     }
   }
@@ -58511,9 +61063,6 @@ node {
   input: "save/ShardedFilename_1"
   input: "save/SaveV2_1/tensor_names"
   input: "save/SaveV2_1/shape_and_slices"
-  input: "save/Identity_67"
-  input: "save/Identity_69"
-  input: "save/Identity_71"
   input: "save/Identity_73"
   input: "save/Identity_75"
   input: "save/Identity_77"
@@ -58544,11 +61093,20 @@ node {
   input: "save/Identity_127"
   input: "save/Identity_129"
   input: "save/Identity_131"
+  input: "save/Identity_133"
+  input: "save/Identity_135"
+  input: "save/Identity_137"
+  input: "save/Identity_139"
+  input: "save/Identity_141"
+  input: "save/Identity_143"
   device: "/device:CPU:0"
   attr {
     key: "dtypes"
     value {
       list {
+        type: DT_FLOAT
+        type: DT_FLOAT
+        type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
@@ -58669,7 +61227,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_132"
+  name: "save/Identity_144"
   op: "Identity"
   input: "save/Const"
   input: "^save/MergeV2Checkpoints"
@@ -58848,7 +61406,7 @@ node {
       list {
         shape {
           dim {
-            size: 33
+            size: 36
           }
         }
       }
@@ -58867,7 +61425,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 33
+            size: 36
           }
         }
         string_val: "dnn/hiddenlayer_0/bias"
@@ -58903,6 +61461,9 @@ node {
         string_val: "linear/linear_model/meals_embedding/weights"
         string_val: "linear/linear_model/meals_embedding/weights/Ftrl"
         string_val: "linear/linear_model/meals_embedding/weights/Ftrl_1"
+        string_val: "linear/linear_model/user_age/weights"
+        string_val: "linear/linear_model/user_age/weights/Ftrl"
+        string_val: "linear/linear_model/user_age/weights/Ftrl_1"
       }
     }
   }
@@ -58917,7 +61478,7 @@ node {
       list {
         shape {
           dim {
-            size: 33
+            size: 36
           }
         }
       }
@@ -58936,13 +61497,13 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 33
+            size: 36
           }
         }
         string_val: "256 0,256"
         string_val: "256 0,256"
-        string_val: "106 256 0,106:0,256"
-        string_val: "106 256 0,106:0,256"
+        string_val: "103 256 0,103:0,256"
+        string_val: "103 256 0,103:0,256"
         string_val: "256 0,256"
         string_val: "256 0,256"
         string_val: "256 256 0,256:0,256"
@@ -58972,6 +61533,9 @@ node {
         string_val: "16 1 0,16:0,1"
         string_val: "16 1 0,16:0,1"
         string_val: "16 1 0,16:0,1"
+        string_val: "3 1 0,3:0,1"
+        string_val: "3 1 0,3:0,1"
+        string_val: "3 1 0,3:0,1"
       }
     }
   }
@@ -58999,7 +61563,7 @@ node {
         }
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -59007,7 +61571,7 @@ node {
         }
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -59207,6 +61771,30 @@ node {
         shape {
           dim {
             size: 16
+          }
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+        shape {
+          dim {
+            size: 3
           }
           dim {
             size: 1
@@ -59252,12 +61840,15 @@ node {
         type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
+        type: DT_FLOAT
+        type: DT_FLOAT
+        type: DT_FLOAT
       }
     }
   }
 }
 node {
-  name: "save/Identity_133"
+  name: "save/Identity_145"
   op: "Identity"
   input: "save/RestoreV2_1"
   device: "/device:CPU:0"
@@ -59284,7 +61875,7 @@ node {
   name: "save/AssignVariableOp"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_0/bias/part_0"
-  input: "save/Identity_133"
+  input: "save/Identity_145"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59294,7 +61885,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_134"
+  name: "save/Identity_146"
   op: "Identity"
   input: "save/RestoreV2_1:1"
   device: "/device:CPU:0"
@@ -59321,7 +61912,7 @@ node {
   name: "save/AssignVariableOp_1"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_0/bias/part_0/Adagrad"
-  input: "save/Identity_134"
+  input: "save/Identity_146"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59331,7 +61922,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_135"
+  name: "save/Identity_147"
   op: "Identity"
   input: "save/RestoreV2_1:2"
   device: "/device:CPU:0"
@@ -59347,7 +61938,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -59361,7 +61952,7 @@ node {
   name: "save/AssignVariableOp_2"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_0/kernel/part_0"
-  input: "save/Identity_135"
+  input: "save/Identity_147"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59371,7 +61962,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_136"
+  name: "save/Identity_148"
   op: "Identity"
   input: "save/RestoreV2_1:3"
   device: "/device:CPU:0"
@@ -59387,7 +61978,7 @@ node {
       list {
         shape {
           dim {
-            size: 106
+            size: 103
           }
           dim {
             size: 256
@@ -59401,7 +61992,7 @@ node {
   name: "save/AssignVariableOp_3"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_0/kernel/part_0/Adagrad"
-  input: "save/Identity_136"
+  input: "save/Identity_148"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59411,7 +62002,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_137"
+  name: "save/Identity_149"
   op: "Identity"
   input: "save/RestoreV2_1:4"
   device: "/device:CPU:0"
@@ -59438,7 +62029,7 @@ node {
   name: "save/AssignVariableOp_4"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_1/bias/part_0"
-  input: "save/Identity_137"
+  input: "save/Identity_149"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59448,7 +62039,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_138"
+  name: "save/Identity_150"
   op: "Identity"
   input: "save/RestoreV2_1:5"
   device: "/device:CPU:0"
@@ -59475,7 +62066,7 @@ node {
   name: "save/AssignVariableOp_5"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_1/bias/part_0/Adagrad"
-  input: "save/Identity_138"
+  input: "save/Identity_150"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59485,7 +62076,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_139"
+  name: "save/Identity_151"
   op: "Identity"
   input: "save/RestoreV2_1:6"
   device: "/device:CPU:0"
@@ -59515,7 +62106,7 @@ node {
   name: "save/AssignVariableOp_6"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_1/kernel/part_0"
-  input: "save/Identity_139"
+  input: "save/Identity_151"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59525,7 +62116,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_140"
+  name: "save/Identity_152"
   op: "Identity"
   input: "save/RestoreV2_1:7"
   device: "/device:CPU:0"
@@ -59555,7 +62146,7 @@ node {
   name: "save/AssignVariableOp_7"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_1/kernel/part_0/Adagrad"
-  input: "save/Identity_140"
+  input: "save/Identity_152"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59565,7 +62156,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_141"
+  name: "save/Identity_153"
   op: "Identity"
   input: "save/RestoreV2_1:8"
   device: "/device:CPU:0"
@@ -59592,7 +62183,7 @@ node {
   name: "save/AssignVariableOp_8"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_2/bias/part_0"
-  input: "save/Identity_141"
+  input: "save/Identity_153"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59602,7 +62193,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_142"
+  name: "save/Identity_154"
   op: "Identity"
   input: "save/RestoreV2_1:9"
   device: "/device:CPU:0"
@@ -59629,7 +62220,7 @@ node {
   name: "save/AssignVariableOp_9"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_2/bias/part_0/Adagrad"
-  input: "save/Identity_142"
+  input: "save/Identity_154"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59639,7 +62230,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_143"
+  name: "save/Identity_155"
   op: "Identity"
   input: "save/RestoreV2_1:10"
   device: "/device:CPU:0"
@@ -59669,7 +62260,7 @@ node {
   name: "save/AssignVariableOp_10"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_2/kernel/part_0"
-  input: "save/Identity_143"
+  input: "save/Identity_155"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59679,7 +62270,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_144"
+  name: "save/Identity_156"
   op: "Identity"
   input: "save/RestoreV2_1:11"
   device: "/device:CPU:0"
@@ -59709,7 +62300,7 @@ node {
   name: "save/AssignVariableOp_11"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_2/kernel/part_0/Adagrad"
-  input: "save/Identity_144"
+  input: "save/Identity_156"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59719,7 +62310,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_145"
+  name: "save/Identity_157"
   op: "Identity"
   input: "save/RestoreV2_1:12"
   device: "/device:CPU:0"
@@ -59746,7 +62337,7 @@ node {
   name: "save/AssignVariableOp_12"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_3/bias/part_0"
-  input: "save/Identity_145"
+  input: "save/Identity_157"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59756,7 +62347,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_146"
+  name: "save/Identity_158"
   op: "Identity"
   input: "save/RestoreV2_1:13"
   device: "/device:CPU:0"
@@ -59783,7 +62374,7 @@ node {
   name: "save/AssignVariableOp_13"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_3/bias/part_0/Adagrad"
-  input: "save/Identity_146"
+  input: "save/Identity_158"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59793,7 +62384,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_147"
+  name: "save/Identity_159"
   op: "Identity"
   input: "save/RestoreV2_1:14"
   device: "/device:CPU:0"
@@ -59823,7 +62414,7 @@ node {
   name: "save/AssignVariableOp_14"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_3/kernel/part_0"
-  input: "save/Identity_147"
+  input: "save/Identity_159"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59833,7 +62424,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_148"
+  name: "save/Identity_160"
   op: "Identity"
   input: "save/RestoreV2_1:15"
   device: "/device:CPU:0"
@@ -59863,7 +62454,7 @@ node {
   name: "save/AssignVariableOp_15"
   op: "AssignVariableOp"
   input: "dnn/hiddenlayer_3/kernel/part_0/Adagrad"
-  input: "save/Identity_148"
+  input: "save/Identity_160"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59873,7 +62464,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_149"
+  name: "save/Identity_161"
   op: "Identity"
   input: "save/RestoreV2_1:16"
   device: "/device:CPU:0"
@@ -59903,7 +62494,7 @@ node {
   name: "save/AssignVariableOp_16"
   op: "AssignVariableOp"
   input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0"
-  input: "save/Identity_149"
+  input: "save/Identity_161"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59913,7 +62504,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_150"
+  name: "save/Identity_162"
   op: "Identity"
   input: "save/RestoreV2_1:17"
   device: "/device:CPU:0"
@@ -59943,7 +62534,7 @@ node {
   name: "save/AssignVariableOp_17"
   op: "AssignVariableOp"
   input: "dnn/input_from_feature_columns/input_layer/recipe_id_embedding/embedding_weights/part_0/Adagrad"
-  input: "save/Identity_150"
+  input: "save/Identity_162"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59953,7 +62544,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_151"
+  name: "save/Identity_163"
   op: "Identity"
   input: "save/RestoreV2_1:18"
   device: "/device:CPU:0"
@@ -59983,7 +62574,7 @@ node {
   name: "save/AssignVariableOp_18"
   op: "AssignVariableOp"
   input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0"
-  input: "save/Identity_151"
+  input: "save/Identity_163"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -59993,7 +62584,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_152"
+  name: "save/Identity_164"
   op: "Identity"
   input: "save/RestoreV2_1:19"
   device: "/device:CPU:0"
@@ -60023,7 +62614,7 @@ node {
   name: "save/AssignVariableOp_19"
   op: "AssignVariableOp"
   input: "dnn/input_from_feature_columns/input_layer/user_id_embedding/embedding_weights/part_0/Adagrad"
-  input: "save/Identity_152"
+  input: "save/Identity_164"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60033,7 +62624,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_153"
+  name: "save/Identity_165"
   op: "Identity"
   input: "save/RestoreV2_1:20"
   device: "/device:CPU:0"
@@ -60060,7 +62651,7 @@ node {
   name: "save/AssignVariableOp_20"
   op: "AssignVariableOp"
   input: "dnn/logits/bias/part_0"
-  input: "save/Identity_153"
+  input: "save/Identity_165"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60070,7 +62661,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_154"
+  name: "save/Identity_166"
   op: "Identity"
   input: "save/RestoreV2_1:21"
   device: "/device:CPU:0"
@@ -60097,7 +62688,7 @@ node {
   name: "save/AssignVariableOp_21"
   op: "AssignVariableOp"
   input: "dnn/logits/bias/part_0/Adagrad"
-  input: "save/Identity_154"
+  input: "save/Identity_166"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60107,7 +62698,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_155"
+  name: "save/Identity_167"
   op: "Identity"
   input: "save/RestoreV2_1:22"
   device: "/device:CPU:0"
@@ -60137,7 +62728,7 @@ node {
   name: "save/AssignVariableOp_22"
   op: "AssignVariableOp"
   input: "dnn/logits/kernel/part_0"
-  input: "save/Identity_155"
+  input: "save/Identity_167"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60147,7 +62738,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_156"
+  name: "save/Identity_168"
   op: "Identity"
   input: "save/RestoreV2_1:23"
   device: "/device:CPU:0"
@@ -60177,7 +62768,7 @@ node {
   name: "save/AssignVariableOp_23"
   op: "AssignVariableOp"
   input: "dnn/logits/kernel/part_0/Adagrad"
-  input: "save/Identity_156"
+  input: "save/Identity_168"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60187,7 +62778,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_157"
+  name: "save/Identity_169"
   op: "Identity"
   input: "save/RestoreV2_1:24"
   device: "/device:CPU:0"
@@ -60214,7 +62805,7 @@ node {
   name: "save/AssignVariableOp_24"
   op: "AssignVariableOp"
   input: "linear/linear_model/bias_weights/part_0"
-  input: "save/Identity_157"
+  input: "save/Identity_169"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60224,7 +62815,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_158"
+  name: "save/Identity_170"
   op: "Identity"
   input: "save/RestoreV2_1:25"
   device: "/device:CPU:0"
@@ -60251,7 +62842,7 @@ node {
   name: "save/AssignVariableOp_25"
   op: "AssignVariableOp"
   input: "linear/linear_model/bias_weights/part_0/Ftrl"
-  input: "save/Identity_158"
+  input: "save/Identity_170"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60261,7 +62852,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_159"
+  name: "save/Identity_171"
   op: "Identity"
   input: "save/RestoreV2_1:26"
   device: "/device:CPU:0"
@@ -60288,7 +62879,7 @@ node {
   name: "save/AssignVariableOp_26"
   op: "AssignVariableOp"
   input: "linear/linear_model/bias_weights/part_0/Ftrl_1"
-  input: "save/Identity_159"
+  input: "save/Identity_171"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60298,7 +62889,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_160"
+  name: "save/Identity_172"
   op: "Identity"
   input: "save/RestoreV2_1:27"
   device: "/device:CPU:0"
@@ -60328,7 +62919,7 @@ node {
   name: "save/AssignVariableOp_27"
   op: "AssignVariableOp"
   input: "linear/linear_model/meals_embedding/embedding_weights/part_0"
-  input: "save/Identity_160"
+  input: "save/Identity_172"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60338,7 +62929,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_161"
+  name: "save/Identity_173"
   op: "Identity"
   input: "save/RestoreV2_1:28"
   device: "/device:CPU:0"
@@ -60368,7 +62959,7 @@ node {
   name: "save/AssignVariableOp_28"
   op: "AssignVariableOp"
   input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl"
-  input: "save/Identity_161"
+  input: "save/Identity_173"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60378,7 +62969,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_162"
+  name: "save/Identity_174"
   op: "Identity"
   input: "save/RestoreV2_1:29"
   device: "/device:CPU:0"
@@ -60408,7 +62999,7 @@ node {
   name: "save/AssignVariableOp_29"
   op: "AssignVariableOp"
   input: "linear/linear_model/meals_embedding/embedding_weights/part_0/Ftrl_1"
-  input: "save/Identity_162"
+  input: "save/Identity_174"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60418,7 +63009,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_163"
+  name: "save/Identity_175"
   op: "Identity"
   input: "save/RestoreV2_1:30"
   device: "/device:CPU:0"
@@ -60448,7 +63039,7 @@ node {
   name: "save/AssignVariableOp_30"
   op: "AssignVariableOp"
   input: "linear/linear_model/meals_embedding/weights/part_0"
-  input: "save/Identity_163"
+  input: "save/Identity_175"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60458,7 +63049,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_164"
+  name: "save/Identity_176"
   op: "Identity"
   input: "save/RestoreV2_1:31"
   device: "/device:CPU:0"
@@ -60488,7 +63079,7 @@ node {
   name: "save/AssignVariableOp_31"
   op: "AssignVariableOp"
   input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl"
-  input: "save/Identity_164"
+  input: "save/Identity_176"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60498,7 +63089,7 @@ node {
   }
 }
 node {
-  name: "save/Identity_165"
+  name: "save/Identity_177"
   op: "Identity"
   input: "save/RestoreV2_1:32"
   device: "/device:CPU:0"
@@ -60528,7 +63119,127 @@ node {
   name: "save/AssignVariableOp_32"
   op: "AssignVariableOp"
   input: "linear/linear_model/meals_embedding/weights/part_0/Ftrl_1"
-  input: "save/Identity_165"
+  input: "save/Identity_177"
+  device: "/device:CPU:0"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_178"
+  op: "Identity"
+  input: "save/RestoreV2_1:33"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/AssignVariableOp_33"
+  op: "AssignVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0"
+  input: "save/Identity_178"
+  device: "/device:CPU:0"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_179"
+  op: "Identity"
+  input: "save/RestoreV2_1:34"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/AssignVariableOp_34"
+  op: "AssignVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl"
+  input: "save/Identity_179"
+  device: "/device:CPU:0"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "save/Identity_180"
+  op: "Identity"
+  input: "save/RestoreV2_1:35"
+  device: "/device:CPU:0"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_output_shapes"
+    value {
+      list {
+        shape {
+          dim {
+            size: 3
+          }
+          dim {
+            size: 1
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "save/AssignVariableOp_35"
+  op: "AssignVariableOp"
+  input: "linear/linear_model/user_age/weights/part_0/Ftrl_1"
+  input: "save/Identity_180"
   device: "/device:CPU:0"
   attr {
     key: "dtype"
@@ -60567,6 +63278,9 @@ node {
   input: "^save/AssignVariableOp_30"
   input: "^save/AssignVariableOp_31"
   input: "^save/AssignVariableOp_32"
+  input: "^save/AssignVariableOp_33"
+  input: "^save/AssignVariableOp_34"
+  input: "^save/AssignVariableOp_35"
   input: "^save/AssignVariableOp_4"
   input: "^save/AssignVariableOp_5"
   input: "^save/AssignVariableOp_6"
@@ -60595,7 +63309,7 @@ node {
 library {
   function {
     signature {
-      name: "__inference_Dataset_flat_map_read_one_file_98024"
+      name: "__inference_Dataset_flat_map_read_one_file_102722"
       input_arg {
         name: "args_0"
         type: DT_STRING
@@ -60734,7 +63448,7 @@ library {
   }
   function {
     signature {
-      name: "__inference_Dataset_map__deserialize_98067"
+      name: "__inference_Dataset_map__deserialize_102765"
       input_arg {
         name: "args_0"
         type: DT_STRING

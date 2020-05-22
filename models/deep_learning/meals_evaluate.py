@@ -93,7 +93,7 @@ def find_meal(df):
 def pred_meal(df, input_meal_arr):
     # Load saved_model
     model = tf.saved_model.load(
-        '../deep_learning/tmp/1587121355_deep/')
+        '../deep_learning/tmp/1590133554_wide_deep_update/')
 
     # Prepare data columns
     rating = []
@@ -158,16 +158,18 @@ def pred_meal(df, input_meal_arr):
 
     return rating
 
-def cal_map(pred, actual):
-    num_actual_add = len(actual)
+
+def cal_recoms(pred, actual):
     recoms = []
     for id in pred:
         if id in actual:
             recoms.append(1)
         else:
             recoms.append(0)
-    print(recoms)
-    
+
+    return recoms
+
+def cal_ap(recoms, num_actual_add):
     precs = []
     recalls = []
 
@@ -176,15 +178,15 @@ def cal_map(pred, actual):
         recalls.append(sum(recoms[:indx+1])/num_actual_add)
     ap = (1/num_actual_add) * (sum(precs[i]*recoms[i] for i in range(len(recoms))))
 
-    print('precision: ',precs)
-    print('recall: ', recalls)
-    print('AP: ', ap)
+    # print('Precision final: ',precs)
+    # print('Recall final: ', recalls)
+    print('AP final: ', ap)
     
     return ap
 
 def evaluate_model(rating_arr, df_label):
-    # Get top 3 score in rating array
-    top_k = 3
+    # Get top K score in rating array
+    top_k = 1
     top_arr = []
     for rating in rating_arr: # For each user's demand
         k = Counter(rating)
@@ -195,8 +197,9 @@ def evaluate_model(rating_arr, df_label):
         top_arr.append(temp)
 
 
-    # Get 3 labels for checking
+    # Get K labels for checking
     count = 0
+    recoms_arr = []
     ap_arr = []
     for index, row in df_label.iterrows():
         label_arr = []
@@ -214,10 +217,19 @@ def evaluate_model(rating_arr, df_label):
         print('predict: ', top_arr[index])
 
         if len(label_arr) != 0:
-            ap = cal_map(top_arr[index], label_arr)
+            recoms = cal_recoms(top_arr[index], label_arr)
+
+            # Calculate AP for each record
+            ap = cal_ap(recoms, len(label_arr))
             ap_arr.append(ap)
+
+            # Calculate Precision, Recall, AP for all data
+            recoms_arr.extend(recoms)
+            
         print('----------------END 1 ROW--------------')
-    print('Mean Average Precision is: ', sum(i for i in ap_arr)/ len(top_arr))
+
+    final_ap = cal_ap(recoms_arr, len(recoms_arr))
+    print('Mean Average Precision for each record is: ', sum(i for i in ap_arr)/ len(top_arr))
     print('Accuracy of TOP {0} is {1}: '.format(top_k, count /len(rating_arr)))
 
 def main():

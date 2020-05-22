@@ -63,8 +63,7 @@ def build_estimator(model_dir, model_type, model_column_fn, inter_op, intra_op):
           model_dir=model_dir,
           linear_feature_columns= wide_columns,
           dnn_feature_columns= deep_columns,
-          dnn_hidden_units= hidden_units,         
-          config=run_config)
+          dnn_hidden_units= hidden_units)
 
 
 def run_meal(flags_obj):
