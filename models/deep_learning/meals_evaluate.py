@@ -160,6 +160,15 @@ def pred_meal(df, input_meal_arr):
 
 
 def cal_recoms(pred, actual):
+    '''
+    Calculate recoms array
+
+    :param pred: Array of meal_id predicted [meal_id_found, ...]
+    :param actual: Array of meal_id label
+
+    :return: Array of binary [1,0,0] with 1 is True
+    '''
+
     recoms = []
     for id in pred:
         if id in actual:
@@ -170,6 +179,15 @@ def cal_recoms(pred, actual):
     return recoms
 
 def cal_ap(recoms, num_actual_add):
+    '''
+    Calculate AP by calculating Precision and Recall
+
+    :param recoms: Array of binary [1,0,0] with 1 is True
+    :param num_actual_add: number of labels
+
+    :return: result of AP
+    '''
+
     precs = []
     recalls = []
 
@@ -180,13 +198,25 @@ def cal_ap(recoms, num_actual_add):
 
     # print('Precision final: ',precs)
     # print('Recall final: ', recalls)
-    print('AP final: ', ap)
+    # print('AP final: ', ap)
     
     return ap
 
 def evaluate_model(rating_arr, df_label):
+    '''
+    Get Top K rating to compare with K labels and calculate evaluation metrics
+
+    :param rating_arr: Array of dict - [{meal_id: meal_score}, {}]
+    :param df_label: DataFrame contain labels to extract
+
+    :return : + AP: if calculate in all dataset
+              + mAP: if calculate AP for each record (row)
+              + Acc: Accuracy of TOP K 
+    '''
+
+
     # Get top K score in rating array
-    top_k = 1
+    top_k = 3
     top_arr = []
     for rating in rating_arr: # For each user's demand
         k = Counter(rating)
@@ -213,8 +243,8 @@ def evaluate_model(rating_arr, df_label):
         label_arr = [int(i) for i in label_arr if str(i) != 'nan']
         if (set(label_arr) == set(top_arr[index])) and (len(label_arr) == len(top_arr[index])):
             count += 1
-        print('label: ',label_arr)
-        print('predict: ', top_arr[index])
+        # print('label: ',label_arr)
+        # print('predict: ', top_arr[index])
 
         if len(label_arr) != 0:
             recoms = cal_recoms(top_arr[index], label_arr)
@@ -226,22 +256,73 @@ def evaluate_model(rating_arr, df_label):
             # Calculate Precision, Recall, AP for all data
             recoms_arr.extend(recoms)
             
-        print('----------------END 1 ROW--------------')
+        # print('----------------END 1 ROW--------------')
 
     final_ap = cal_ap(recoms_arr, len(recoms_arr))
-    print('Mean Average Precision for each record is: ', sum(i for i in ap_arr)/ len(top_arr))
-    print('Accuracy of TOP {0} is {1}: '.format(top_k, count /len(rating_arr)))
+    print('Accuracy of TOP {0} is: {1} '.format(top_k, round((count /len(rating_arr)) * 100, 2)))
+    print('AP for all dataset is: ', round(final_ap * 100, 2))
+    print('Mean Average Precision for each record is: ', round((sum(i for i in ap_arr)/ len(top_arr)) * 100, 2))
+    
+
+def get_meal_infor(dir_path):
+    '''
+    Get all meals and the corresponding average scores
+
+    :param dir_path: folder path to meal information
+    :return: 3 array meal_id, meal_menu, meal_score
+    '''
+
+    meal_menu = []
+    meal_id = []
+    meal_score = []
+    with open(dir_path + 'meal_information.csv', encoding='utf-8') as mealFile:
+        lines = csv.reader(mealFile)
+        for line in lines:
+            menu = line[2].split(',')
+            id = line[0]
+            score = line[4]
+            if id != 'meal_id':
+                # print(line)
+                meal_menu.append(menu)
+                meal_id.append(int(id))
+                meal_score.append(float(score))
+    
+    return meal_id, meal_menu, meal_score
+
+def pred_meal_baseline(input_meal_arr, file_path):
+    '''
+    Find all possible meal_id and following score
+
+    :param input_meal_arr: Array of meal_id found - [meal_id_found, ...]
+    :param file_path: Path to CSV file to extract corresponding meal_id, meal_score
+    :return:  Array of dict - [{meal_id: meal_score}, {}]
+    '''
+
+    meal_id, _, meal_score = get_meal_infor(file_path)
+
+    rating_arr = []
+    for meal_id_found in input_meal_arr:
+        meal_score_found = [meal_score[meal_id.index(i)] for i in meal_id_found ]
+        rating_arr.append(dict(zip(meal_id_found, meal_score_found)))
+
+    return rating_arr
 
 def main():
     file_path = '../../dataset/csv_file/food/'
 
     df, df_label = load_data(file_path)
     input_meal_arr = find_meal(df)
+
+    # Evaluate model
+    print('---------------------Results of deep learning model----------------')
     df = meals.integerize_hobbies(dataframe=df)
+    rating_model = pred_meal(df, input_meal_arr)
+    evaluate_model(rating_model, df_label)
 
-    rating = pred_meal(df, input_meal_arr)
-
-    evaluate_model(rating, df_label)
+    # Evaluate baseline
+    print('---------------------Results of baseline model----------------')
+    rating_baseline = pred_meal_baseline(input_meal_arr, file_path)
+    evaluate_model(rating_baseline, df_label)
 
 if __name__ == '__main__':
     main()
