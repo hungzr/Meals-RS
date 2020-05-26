@@ -319,7 +319,92 @@ def evaluate_model(rating_arr, df_label):
     print('Accuracy of TOP {0} is: {1} '.format(top_k, round((count /len(rating_arr)) * 100, 2)))
     print('AP for all dataset is: ', round(final_ap * 100, 2))
     print('Mean Average Precision for each record is: ', round((sum(i for i in ap_arr)/ len(top_arr)) * 100, 2))
+
+
+def get_top_k(dict_val ,top_k):
+    # Get top value by rank rating
+    k = Counter(dict_val)
+
+    # Finding K highest values
+    top_high = k.most_common(top_k)
+    top_values = [i[0] for i in top_high]
+
+    return top_values
+
+def prepare_class_probs(rating, top_k, num_of_rating):
+    class_probs = []              
+    top_value = get_top_k(rating, top_k)
+
+    for i in range(num_of_rating):
+        # Number of pred < label
+        if len(top_value) < num_of_rating:
+            class_probs.append(rating)
+
+        # Number of pred > label
+        else:
+            if i!= 0:
+                rating[top_value[i-1]] = 0
+            # print('new_rating: ', rating)
+            class_probs.append(rating)
+
+    return top_value, class_probs
+
+def cal_acc(class_probs, labels, top_k):
+    top1 = 0.0
+    top3 = 0.0
     
+    for i, l in enumerate(labels):
+        class_prob = class_probs[i]
+
+        top_values = get_top_k(class_prob, top_k)
+
+        if top_values[0] == l:
+            top1 += 1.0
+        if np.isin(np.array([l]), top_values):
+            top3 += 1.0
+
+    print("top1 acc", top1/len(labels))
+    print("top3 acc", top3/len(labels))
+    return top1, top3
+
+def evaluate_model1(rating_arr, df_label):
+    top_k = 3
+
+    # Label
+    label_arr = []
+    for index, row in df_label.iterrows():
+        label_per_row = []
+        label_per_row.append(row['top1_meals'])
+        label_per_row.append(row['top2_meals'])
+        label_per_row.append(row['top3_meals'])
+
+        label_per_row = [int(i) for i in label_per_row if str(i) != 'nan']
+        label_arr.append(label_per_row)
+
+
+    # Predicted
+    top1_arr = []
+    top3_arr = []
+    for index, rating in enumerate(rating_arr): # For each user's demand
+        print('pred: ', rating)
+        print('label: ', label_arr[index])
+        if not bool(rating):
+            top1, top3 = 0, 0
+            print("top1 acc", top1)
+            print("top3 acc", top3)
+        else:
+            top_value, class_probs = prepare_class_probs(rating, top_k, len(label_arr[index]))
+
+            top1, top3 = cal_acc(class_probs, label_arr[index], top_k)
+        
+        top1_arr.append(top1)
+        top3_arr.append(top3)
+
+        print('-------------------END 1 ROW------------------')
+    print(len(top1_arr), len(top3_arr))
+    print('Accuracy of TOP 1 is: ', sum(i for i in top1_arr) / len(top1_arr))
+    print('Accuracy of TOP 3 is: ', sum(i for i in top3_arr) / len(top3_arr))
+
 
 def get_meal_infor(dir_path):
     '''
@@ -374,12 +459,12 @@ def main():
     print('---------------------Results of deep learning model----------------')
     df = meals.integerize_hobbies(dataframe=df)
     rating_model = pred_meal(df, input_meal_arr)
-    evaluate_model(rating_model, df_label)
+    evaluate_model1(rating_model, df_label)
 
     # Evaluate baseline
-    print('---------------------Results of baseline model----------------')
-    rating_baseline = pred_meal_baseline(input_meal_arr, file_path)
-    evaluate_model(rating_baseline, df_label)
+    # print('---------------------Results of baseline model----------------')
+    # rating_baseline = pred_meal_baseline(input_meal_arr, file_path)
+    # evaluate_model1(rating_baseline, df_label)
 
 if __name__ == '__main__':
     main()
