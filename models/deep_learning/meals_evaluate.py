@@ -93,7 +93,7 @@ def find_meal(df):
 def pred_meal(df, input_meal_arr):
     # Load saved_model
     model = tf.saved_model.load(
-        '../deep_learning/tmp/1590133554_wide_deep_update/')
+        '../deep_learning/tmp/1587121355_deep/')
 
     # Prepare data columns
     rating = []
@@ -351,6 +351,7 @@ def prepare_class_probs(rating, top_k, num_of_rating):
 
 def cal_acc(class_probs, labels, top_k):
     top1 = 0.0
+    top2 = 0.0
     top3 = 0.0
     
     for i, l in enumerate(labels):
@@ -360,12 +361,15 @@ def cal_acc(class_probs, labels, top_k):
 
         if top_values[0] == l:
             top1 += 1.0
+        if np.isin(np.array([l]), top_values[:2]):
+            top2 += 1.0
         if np.isin(np.array([l]), top_values):
             top3 += 1.0
 
-    print("top1 acc", top1/len(labels))
-    print("top3 acc", top3/len(labels))
-    return top1, top3
+    # print("top1 acc", top1/len(labels))
+    # print("top2 acc", top2/len(labels))
+    # print("top3 acc", top3/len(labels))
+    return top1/len(labels), top2/len(labels), top3/len(labels)
 
 def evaluate_model1(rating_arr, df_label):
     top_k = 3
@@ -384,26 +388,29 @@ def evaluate_model1(rating_arr, df_label):
 
     # Predicted
     top1_arr = []
+    top2_arr = []
     top3_arr = []
     for index, rating in enumerate(rating_arr): # For each user's demand
-        print('pred: ', rating)
-        print('label: ', label_arr[index])
+        # print('pred: ', rating)
+        # print('label: ', label_arr[index])
         if not bool(rating):
-            top1, top3 = 0, 0
-            print("top1 acc", top1)
-            print("top3 acc", top3)
+            top1, top2, top3 = 0, 0, 0
+            # print("top1 acc", top1)
+            # print("top3 acc", top3)
         else:
             top_value, class_probs = prepare_class_probs(rating, top_k, len(label_arr[index]))
 
-            top1, top3 = cal_acc(class_probs, label_arr[index], top_k)
+            top1, top2, top3 = cal_acc(class_probs, label_arr[index], top_k)
         
         top1_arr.append(top1)
+        top2_arr.append(top2)
         top3_arr.append(top3)
 
-        print('-------------------END 1 ROW------------------')
-    print(len(top1_arr), len(top3_arr))
-    print('Accuracy of TOP 1 is: ', sum(i for i in top1_arr) / len(top1_arr))
-    print('Accuracy of TOP 3 is: ', sum(i for i in top3_arr) / len(top3_arr))
+        # print('-------------------END 1 ROW------------------')
+
+    print('Accuracy of TOP 1 is: ', round((sum(i for i in top1_arr) / len(top1_arr)) *100, 2))
+    print('Accuracy of TOP 2 is: ', round((sum(i for i in top2_arr) / len(top2_arr)) *100, 2))
+    print('Accuracy of TOP 3 is: ', round((sum(i for i in top3_arr) / len(top3_arr)) *100, 2))
 
 
 def get_meal_infor(dir_path):
@@ -462,9 +469,9 @@ def main():
     evaluate_model1(rating_model, df_label)
 
     # Evaluate baseline
-    # print('---------------------Results of baseline model----------------')
-    # rating_baseline = pred_meal_baseline(input_meal_arr, file_path)
-    # evaluate_model1(rating_baseline, df_label)
+    print('---------------------Results of baseline model----------------')
+    rating_baseline = pred_meal_baseline(input_meal_arr, file_path)
+    evaluate_model1(rating_baseline, df_label)
 
 if __name__ == '__main__':
     main()
