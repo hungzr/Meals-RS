@@ -361,9 +361,9 @@ def cal_acc(class_probs, labels, top_k):
 
         if top_values[0] == l:
             top1 += 1.0
-        if np.isin(np.array([l]), top_values[:2]):
+        if np.isin(np.array([l]), top_values[:2]) and top_k > 1:
             top2 += 1.0
-        if np.isin(np.array([l]), top_values):
+        if np.isin(np.array([l]), top_values) and top_k > 2:
             top3 += 1.0
 
     # print("top1 acc", top1/len(labels))
@@ -372,7 +372,7 @@ def cal_acc(class_probs, labels, top_k):
     return top1/len(labels), top2/len(labels), top3/len(labels)
 
 def evaluate_model1(rating_arr, df_label):
-    top_k = 3
+    top_k = 2
 
     # Label
     label_arr = []
@@ -390,28 +390,45 @@ def evaluate_model1(rating_arr, df_label):
     top1_arr = []
     top2_arr = []
     top3_arr = []
+    recoms_arr = []
+    ap_arr = []
     for index, rating in enumerate(rating_arr): # For each user's demand
         # print('pred: ', rating)
         # print('label: ', label_arr[index])
+
+        # Calculate accuracy
         if not bool(rating):
             top1, top2, top3 = 0, 0, 0
-            # print("top1 acc", top1)
-            # print("top3 acc", top3)
         else:
             top_value, class_probs = prepare_class_probs(rating, top_k, len(label_arr[index]))
-
             top1, top2, top3 = cal_acc(class_probs, label_arr[index], top_k)
         
         top1_arr.append(top1)
         top2_arr.append(top2)
         top3_arr.append(top3)
 
+        # Calculate mAP, AP
+        if len(label_arr[index]) != 0:
+            recoms = cal_recoms(top_value, label_arr[index])
+
+            # Calculate AP for each record
+            ap = cal_ap(recoms, len(label_arr[index]))
+            # ap = apk(label_arr[index], top_value, top_k)
+            ap_arr.append(ap)
+
+            # Calculate Precision, Recall, AP for all data
+            recoms_arr.extend(recoms)
+
         # print('-------------------END 1 ROW------------------')
+    
+    final_ap = cal_ap(recoms_arr, len(recoms_arr))
 
     print('Accuracy of TOP 1 is: ', round((sum(i for i in top1_arr) / len(top1_arr)) *100, 2))
     print('Accuracy of TOP 2 is: ', round((sum(i for i in top2_arr) / len(top2_arr)) *100, 2))
     print('Accuracy of TOP 3 is: ', round((sum(i for i in top3_arr) / len(top3_arr)) *100, 2))
-
+    
+    print('AP for all dataset is: ', round(final_ap * 100, 2))
+    print('Mean Average Precision for each record is: ', round((sum(i for i in ap_arr)/ len(label_arr)) * 100, 2))
 
 def get_meal_infor(dir_path):
     '''

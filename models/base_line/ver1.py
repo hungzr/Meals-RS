@@ -10,9 +10,9 @@ import time
 from pymongo import MongoClient
 import numpy as np
 
-client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
-db = client['menu_list']
-collection = db['list_menu']
+# client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
+# db = client['menu_list']
+# collection = db['list_menu']
 
 def find_menu(input_txt):
     temp_arr = []
