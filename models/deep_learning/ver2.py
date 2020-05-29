@@ -154,7 +154,7 @@ def ranking_meals(df, input_meal_arr):
     '''
 
     # Load saved_model
-    model = tf.saved_model.load('../deep_learning/tmp/1587121355_new/')
+    model = tf.saved_model.load('../deep_learning/tmp/1590133554_wide_deep_update/')
 
     # Prepare data columns
 

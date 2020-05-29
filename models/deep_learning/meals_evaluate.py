@@ -93,7 +93,7 @@ def find_meal(df):
 def pred_meal(df, input_meal_arr):
     # Load saved_model
     model = tf.saved_model.load(
-        '../deep_learning/tmp/1587121355_deep/')
+        '../deep_learning/tmp/1590133554_wide_deep_update/')
 
     # Prepare data columns
     rating = []
@@ -226,8 +226,8 @@ def cal_recoms(pred, actual):
     '''
 
     recoms = []
-    for id in pred:
-        if id in actual:
+    for id_pred in pred:
+        if id_pred in actual:
             recoms.append(1)
         else:
             recoms.append(0)
@@ -372,19 +372,22 @@ def cal_acc(class_probs, labels, top_k):
     return top1/len(labels), top2/len(labels), top3/len(labels)
 
 def evaluate_model1(rating_arr, df_label):
-    top_k = 2
+    top_k = 1
 
     # Label
     label_arr = []
     for index, row in df_label.iterrows():
         label_per_row = []
         label_per_row.append(row['top1_meals'])
-        label_per_row.append(row['top2_meals'])
-        label_per_row.append(row['top3_meals'])
+        if top_k == 2:
+            label_per_row.append(row['top2_meals'])
+        if top_k == 3:
+            label_per_row.append(row['top2_meals'])
+            label_per_row.append(row['top3_meals'])
 
         label_per_row = [int(i) for i in label_per_row if str(i) != 'nan']
         label_arr.append(label_per_row)
-
+    total_count = len(label_arr)
 
     # Predicted
     topk_arr = []
@@ -405,12 +408,16 @@ def evaluate_model1(rating_arr, df_label):
         # top2_arr.append(top2)
         # top3_arr.append(top3)
 
+        
         if len(label_arr[index]) != 0:
             top_value = get_top_k(rating, top_k)
             recoms = cal_recoms(top_value, label_arr[index])
 
             # Calculate accuracy
-            acc_topk = (sum(i for i in recoms)) / len(recoms)
+            if len(recoms) == 0:
+                acc_topk = 0
+            else:
+                acc_topk = (sum(i for i in recoms)) / len(recoms)
             topk_arr.append(acc_topk)
 
 
@@ -423,6 +430,10 @@ def evaluate_model1(rating_arr, df_label):
             recoms_arr.extend(recoms)
 
         # print('-------------------END 1 ROW------------------')
+        else:
+            total_count -= 1
+    
+    # print(len(label_arr), total_count)
     
     final_ap = cal_ap(recoms_arr, len(recoms_arr))
 
@@ -432,7 +443,7 @@ def evaluate_model1(rating_arr, df_label):
     
     print('Accuracy of TOP {0} is: {1}'.format(top_k, round((sum(i for i in topk_arr) / len(topk_arr)) *100, 2)))
     print('AP for all dataset is: ', round(final_ap * 100, 2))
-    print('Mean Average Precision for each record is: ', round((sum(i for i in ap_arr)/ len(label_arr)) * 100, 2))
+    print('Mean Average Precision for each record is: ', round((sum(i for i in ap_arr)/ total_count) * 100, 2))
 
 def get_meal_infor(dir_path):
     '''
