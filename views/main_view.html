@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./meals.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="./css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="./meals.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="./js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="./js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+
+</head>
+
+<body class='bg'>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <h3 style="text-align: center">Hệ thống gợi ý thực đơn</h4></br>
+      <h5 style="text-align: center">Thông tin người dùng</h5>
+
+      <!--Contents-->
+      <!--User ID-->
+      <div class="form-group row">
+        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_id">ID</label>
+        <div class="col-sm-8">
+          <label type="text" class="form-control"  name="user_id" id="user_id">{{user_id}}</label>
+        </div>
+      </div>
+      <!--User Gender-->
+      <div class="form-group row">
+        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_gender">Giới tính</label>
+        <div class="col-sm-8">
+          <select class="browser-default custom-select" name="user_gender" id="user_gender">
+            <option selected></option>
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+          </select>
+        </div>
+      </div>
+      <!--User Age-->
+      <div class="form-group row">
+        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_age">Độ tuổi</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control"  name="user_age" id="user_age">
+          <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+        </div>
+      </div>
+      <!--User Health-->
+      <div class="form-group row">
+        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_health">Nhóm đối tượng</label>
+        <div class="col-sm-8">
+          <select class="browser-default custom-select" name="user_health" id="user_health">
+            <option selected></option>
+            <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
+            <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
+            <option value="bệnh tim mạch">Bệnh tim mạch</option>
+            <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
+            <option value="bệnh dạ dày">Bệnh dạ dày</option>
+          </select>
+        </div>
+      </div>
+      <!--User Hobbies-->
+      <div class="form-group row">
+        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_hobbies">Sở thích</label>
+        <div class="col-sm-8">
+          <select class="mdb-select md-form colorful-select dropdown-danger" name="user_hobbies" id="user_hobbies" multiple>
+            <option value="" disabled selected>Lựa chọn sở thích của bạn</option>
+            <option value="gà">Thịt gà</option>
+            <option value="bò">Thịt bò</option>
+            <option value="lợn">Thịt lợn</option>
+            <option value="cá">Cá</option>
+            <option value="tôm">Tôm</option>
+            <option value="rau">Rau</option>
+            <option value="củ">Củ</option>
+            <option value="quả">Quả</option>
+            <option value="bánh mì">Bánh mì</option>
+            <option value="mì">Mì</option>
+            <option value="cháo">Cháo</option>
+            <option value="súp">Soup</option>
+            <option value="xôi">Xôi</option>
+            <option value="lẩu">Lẩu</option>
+            <option value="vịt">Thịt vịt</option>
+            <option value="bún">Bún</option>
+            <option value="phở">Phở</option>
+          </select>
+          <button class="btn-save btn btn-primary btn-sm">Xác nhận</button>
+        </div>
+      </div>
+
+      
+    </div>
+    
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
+    
+    <img src="https://www.mybee.life/static/logo-a9fe68f128e542e8b55c57609fd6e080.png" class="MuiAvatar-img jss147">
+    <div class="col-sm-5">
+      <div class="md-form input-with-pre-icon">
+        <i class="fas fa-search input-prefix"></i>
+        <input type="text" id="prefixInside" class="form-control">
+        <label for="prefixInside">Search</label>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+    </div>
+    
+  </nav>
+  
+  
+      
+</body>
+<!-- <script>
+  function acceptData(){
+    var rate_num = 1
+    if($('#Radios1').is(':checked')){
+          rate_num = 3;
+    }else if($('#Radios2').is(':checked')){
+          rate_num = 2;
+    }
+    $.ajax({
+        type: 'POST',
+        url: '/rating',
+        contentType: 'charset=utf-8',
+        dataType: 'json',
+        data: {
+            recipe_name: $('#recipe_name').val(),
+            category: $('#category').text(),
+            correspond: $('#correspond').text(),
+            result_menu: $('#resultMenu').text(),
+            rate_num: rate_num
+        },
+        success: function(data){
+            window.location.href = '/find';
+        },
+    })
+  }
+</script>
+<script>
+  if ($('#resultMenu').text()) {
+	$('#Radios1').attr('disabled', false);
+	$('#Radios2').attr('disabled', false);
+	$('#Radios3').attr('disabled', false);
+  }
+  else {
+    $('#Radios1').attr('disabled', true);
+    $('#Radios2').attr('disabled', true);
+    $('#Radios3').attr('disabled', true);
+  }
+</script>
+<script>
+   var form = document.querySelector('.needs-validation');
+   form.addEventListener('submit', function(event) {
+        if(form.checkValidity() == false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+   })
+</script> -->
+
+</html>
