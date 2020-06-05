@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="./meals.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./css/fontAwesome.css">
+  <link rel="stylesheet" href="./css/templatemo-style.css">
+  <link rel="stylesheet" href="./meals.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="./css/mdb.min.css">
   <!-- Your custom styles (optional) -->
@@ -27,106 +33,183 @@
   <script type="text/javascript" src="./js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
   <script type="text/javascript"></script>
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 </head>
 
 <body class='bg'>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div id="mySidepanel" class="sidepanel">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <h3 style="text-align: center">Hệ thống gợi ý thực đơn</h4></br>
-      <h5 style="text-align: center">Thông tin người dùng</h5>
-
-      <!--Contents-->
-      <!--User ID-->
-      <div class="form-group row">
-        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_id">ID</label>
-        <div class="col-sm-8">
-          <label type="text" class="form-control"  name="user_id" id="user_id">{{user_id}}</label>
-        </div>
-      </div>
-      <!--User Gender-->
-      <div class="form-group row">
-        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_gender">Giới tính</label>
-        <div class="col-sm-8">
-          <select class="browser-default custom-select" name="user_gender" id="user_gender">
-            <option selected></option>
-            <option value="1">Nam</option>
-            <option value="0">Nữ</option>
-          </select>
-        </div>
-      </div>
-      <!--User Age-->
-      <div class="form-group row">
-        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_age">Độ tuổi</label>
-        <div class="col-sm-8">
-          <input type="text" class="form-control"  name="user_age" id="user_age">
-          <div class="invalid-feedback">Trường này không được bỏ trống.</div>
-        </div>
-      </div>
-      <!--User Health-->
-      <div class="form-group row">
-        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_health">Nhóm đối tượng</label>
-        <div class="col-sm-8">
-          <select class="browser-default custom-select" name="user_health" id="user_health">
-            <option selected></option>
-            <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
-            <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
-            <option value="bệnh tim mạch">Bệnh tim mạch</option>
-            <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
-            <option value="bệnh dạ dày">Bệnh dạ dày</option>
-          </select>
-        </div>
-      </div>
-      <!--User Hobbies-->
-      <div class="form-group row">
-        <label style="text-align: right" class="col-sm-3 col-form-label" for="user_hobbies">Sở thích</label>
-        <div class="col-sm-8">
-          <select class="mdb-select md-form colorful-select dropdown-danger" name="user_hobbies" id="user_hobbies" multiple>
-            <option value="" disabled selected>Lựa chọn sở thích của bạn</option>
-            <option value="gà">Thịt gà</option>
-            <option value="bò">Thịt bò</option>
-            <option value="lợn">Thịt lợn</option>
-            <option value="cá">Cá</option>
-            <option value="tôm">Tôm</option>
-            <option value="rau">Rau</option>
-            <option value="củ">Củ</option>
-            <option value="quả">Quả</option>
-            <option value="bánh mì">Bánh mì</option>
-            <option value="mì">Mì</option>
-            <option value="cháo">Cháo</option>
-            <option value="súp">Soup</option>
-            <option value="xôi">Xôi</option>
-            <option value="lẩu">Lẩu</option>
-            <option value="vịt">Thịt vịt</option>
-            <option value="bún">Bún</option>
-            <option value="phở">Phở</option>
-          </select>
-          <button class="btn-save btn btn-primary btn-sm">Xác nhận</button>
-        </div>
-      </div>
-
-      
-    </div>
+  <div class="header">
+    <div class="container">
+        <div id="mySidepanel" class="sidepanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <h3 style="text-align: center">Hệ thống gợi ý thực đơn</h4></br>
+          <h5 style="text-align: center">Thông tin người dùng</h5>
     
-    <button class="openbtn" onclick="openNav()">&#9776;</button>
+          <!--Contents-->
+          <!--User ID-->
+          <div class="form-group row">
+            <label style="text-align: right" class="col-sm-3 col-form-label" for="user_id">ID</label>
+            <div class="col-sm-8">
+              <label type="text" class="form-control"  name="user_id" id="user_id">{{user_id}}</label>
+            </div>
+          </div>
+          <!--User Gender-->
+          <div class="form-group row">
+            <label style="text-align: right" class="col-sm-3 col-form-label" for="user_gender">Giới tính</label>
+            <div class="col-sm-8">
+              <select class="browser-default custom-select" name="user_gender" id="user_gender">
+                <option selected></option>
+                <option value="1">Nam</option>
+                <option value="0">Nữ</option>
+              </select>
+            </div>
+          </div>
+          <!--User Age-->
+          <div class="form-group row">
+            <label style="text-align: right" class="col-sm-3 col-form-label" for="user_age">Độ tuổi</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control"  name="user_age" id="user_age">
+              <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+            </div>
+          </div>
+          <!--User Health-->
+          <div class="form-group row">
+            <label style="text-align: right" class="col-sm-3 col-form-label" for="user_health">Nhóm đối tượng</label>
+            <div class="col-sm-8">
+              <select class="browser-default custom-select" name="user_health" id="user_health">
+                <option selected></option>
+                <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
+                <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
+                <option value="bệnh tim mạch">Bệnh tim mạch</option>
+                <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
+                <option value="bệnh dạ dày">Bệnh dạ dày</option>
+              </select>
+            </div>
+          </div>
+          <!--User Hobbies-->
+          <div class="form-group row">
+            <label style="text-align: right" class="col-sm-3 col-form-label" for="user_hobbies">Sở thích</label>
+            <div class="col-sm-8">
+              <select class="mdb-select md-form colorful-select dropdown-danger" name="user_hobbies" id="user_hobbies" multiple>
+                <option value="" disabled selected>Lựa chọn sở thích của bạn</option>
+                <option value="gà">Thịt gà</option>
+                <option value="bò">Thịt bò</option>
+                <option value="lợn">Thịt lợn</option>
+                <option value="cá">Cá</option>
+                <option value="tôm">Tôm</option>
+                <option value="rau">Rau</option>
+                <option value="củ">Củ</option>
+                <option value="quả">Quả</option>
+                <option value="bánh mì">Bánh mì</option>
+                <option value="mì">Mì</option>
+                <option value="cháo">Cháo</option>
+                <option value="súp">Soup</option>
+                <option value="xôi">Xôi</option>
+                <option value="lẩu">Lẩu</option>
+                <option value="vịt">Thịt vịt</option>
+                <option value="bún">Bún</option>
+                <option value="phở">Phở</option>
+              </select>
+              <button class="btn-save btn btn-primary btn-sm">Xác nhận</button>
+            </div>
+          </div>
     
-    <img src="https://www.mybee.life/static/logo-a9fe68f128e542e8b55c57609fd6e080.png" class="MuiAvatar-img jss147">
-    <div class="col-sm-5">
-      <div class="md-form input-with-pre-icon">
-        <i class="fas fa-search input-prefix"></i>
-        <input type="text" id="prefixInside" class="form-control">
-        <label for="prefixInside">Search</label>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-    </div>
-    
-  </nav>
+          
+        </div>
+        
+        <div class="col-sm-3">
+          <button class="openbtn" onclick="openNav()">&#9776;</button>
+          <img src="https://www.mybee.life/static/logo-a9fe68f128e542e8b55c57609fd6e080.png">
+        </div>
+        <div class="col-sm-6">
+          <div class="md-form input-with-pre-icon">
+            <i class="fas fa-search input-prefix"></i>
+            <input type="text" id="prefixInside" class="form-control">
+            <label for="prefixInside">Search</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+        </div>
+        
+    </div> 
+  </div>
   
   
-      
+  <section class="featured-food">
+    <div class="container" style="width: 80%;">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="food-item">
+                    <h2>Bữa sáng</h2>
+                    <img src="img/breakfast_item.jpg" alt="">
+                    <div class="price">4.50</div>
+                    <div class="text-content">
+                        <h4>Thực đơn số 1</h4>
+                        <p>Bánh mì ốp la,sữa tươi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="food-item">
+                    <h2>Bữa trưa</h2>
+                    <img src="img/lunch_item.jpg" alt="">
+                    <div class="price">7.50</div>
+                    <div class="text-content">
+                        <h4>Thực đơn số 2</h4>
+                        <p>Cá cơm chiên bột,đậu bắp xào nấm rơm,canh tần ô thịt bò,dưa hấu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="food-item">
+                    <h2>Bữa tối</h2>
+                    <img src="img/dinner_item.jpg" alt="">
+                    <div class="price">12.50</div>
+                    <div class="text-content">
+                        <h4>Thực đơn số 3</h4>
+                        <p>Cá chim chiên tỏi,trứng hấp tôm,canh nấm rau củ,sữa chua</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="sign-up">
+  </section>
+
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <p>Copyright &copy; 2020 Recommendation System</p>
+              </div>
+              <div class="col-md-4">
+                  <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <p>Designed by <em>HungDo</em></p>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+  <script src="js/vendor/bootstrap.min.js"></script>
+
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>   
 </body>
 <!-- <script>
   function acceptData(){
