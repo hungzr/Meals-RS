@@ -86,15 +86,15 @@
             </div>
             <div class="modal-body mx-3">
                 <div class="md-form mb-5">
-                <i class="fas fa-envelope prefix grey-text"></i>
-                <input type="email" id="defaultForm-email" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-email">Tài khoản</label>
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="email" id="defaultForm-email" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Tài khoản</label>
                 </div>
 
                 <div class="md-form mb-4">
-                <i class="fas fa-lock prefix grey-text"></i>
-                <input type="password" id="defaultForm-pass" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-pass">Mật khẩu</label>
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-pass" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Mật khẩu</label>
                 </div>
 
             </div>
@@ -165,7 +165,8 @@
                         <div class="col-sm-8">
                             <!-- Search form -->
                             <div class=" active-cyan-2 md-form">
-                                <input class="form-control " type="text" placeholder="Search" aria-label="Search">
+                                <input class="form-control " type="text"  aria-label="Search">
+                                <label data-error="wrong" data-success="right" for="Search">Tìm kiếm</label>
                             </div>
                         </div>
 
@@ -241,9 +242,9 @@
             <!--User Hobbies-->
             <div class="form-group row">
                 <label style="text-align: right" class="col-sm-4 col-form-label" for="user_hobbies">Sở thích</label>
-                <div class="col-sm-8">
+                <div class="col-sm-8 ">
                         <!-- Multiselect dropdown -->
-                    <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker my-form-control" name="user_hobbies" id="user_hobbies" data-live-search="true">
+                    <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control " name="user_hobbies" id="user_hobbies" data-live-search="true">
                         <option value="gà">Thịt gà</option>
                         <option value="bò">Thịt bò</option>
                         <option value="lợn">Thịt lợn</option>
@@ -265,16 +266,17 @@
                 </div>
             </div>
 
+            <br>
             <!--Button-->
-            <div class="fixed-button form-group row">
+            <div class=" form-group row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-5">
-                    <a data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md" style="color: black;">Lưu
+                    <a data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn" style="color: black;">Lưu
                         <i class="fas fa-cloud ml-2"></i>
                     </a>
                 </div>
                 <div class="col-sm-5">
-                    <a data-toggle="modal" data-target="#canel_modal" class="btn btn-info btn-md" style="color: black;">Hủy bỏ
+                    <a data-toggle="modal" data-target="#canel_modal" class="btn btn-info btn-md my-btn" style="color: black;">Hủy bỏ
                         <i class="fas fa-ban ml-2"></i>
                     </a>
                 </div>
@@ -289,7 +291,7 @@
         <div class="container ">
 
             <!--Section: Cards-->
-            <section class="text-center">
+            <section class="text-center wow fadeIn">
 
                 <!--Grid row-->
                 <div class="row mb-4 wow fadeIn">
@@ -399,14 +401,15 @@
     </main>
     <!--Main layout-->
 
+    <br><br><br><br>
     <!--Footer-->
     <footer class="page-footer fixed text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
 
 
-        <hr class="my-3">
+        <hr class="my-2">
 
         <!-- Social icons -->
-        <div class="pb-4">
+        <div class="pb-3">
             <a href="#" target="_blank">
                 <i class="fab fa-facebook-f mr-3"></i>
             </a>
@@ -444,7 +447,7 @@
         <!--Copyright-->
         <div class="footer-copyright py-3">
             © 2020 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> Meal Recommendation System </a>
+            <a href="#" target="_blank"> Meal Recommendation System </a>
         </div>
         <!--/.Copyright-->
 
@@ -470,10 +473,12 @@
     <!-- MDB core JavaScript -->
     
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script> -->
     
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
     
+    </script>
     <script src="./meals.js"></script>
     
 </body>

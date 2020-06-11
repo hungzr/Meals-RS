@@ -13,7 +13,7 @@ body {
   outline: none !important;
 }
 .sidenav {
-  height: 90%;
+  height: 85%;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -58,7 +58,7 @@ body {
 }
 
 .fixed-button {
-  position: absolute;
+  position: relative;
   bottom: 3em;
   width: 100%;
 }
@@ -103,6 +103,7 @@ body {
 
 .my-btn {
   border-radius: 15px;
+  margin: 0;
 }
 
 
@@ -123,3 +124,4 @@ button.btn.dropdown-toggle {
 .filter-option-inner-inner {
   font-size: 16px;
 }
+
