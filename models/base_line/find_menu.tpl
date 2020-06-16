@@ -86,7 +86,7 @@
           </div>
         </div>
         <div class="col-sm-2 text-center">
-            <button type="submit" class="btn btn-primary">Tìm kiếm</button
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
         </div>
        </div>
 

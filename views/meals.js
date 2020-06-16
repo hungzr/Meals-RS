@@ -3,7 +3,7 @@
 function openNav() {
   document.getElementById("mySidenav").style.width = "30%";
   document.getElementById("main").style.marginLeft = "30%";
-  document.getElementById("option-sign").style.marginLeft = "-22%";
+  document.getElementById("option-sign").style.marginLeft = "-28%";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 

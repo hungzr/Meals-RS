@@ -125,3 +125,15 @@ button.btn.dropdown-toggle {
   font-size: 16px;
 }
 
+.price {
+  letter-spacing: 0.5px;
+  padding: 8px 5px;
+  position: absolute;
+  right: 0px;
+  margin-top: -35px;
+  /* background-color: rgba(250, 250, 250, 0.9); */
+}
+
+.my-detail {
+  border-radius: 10px;
+}
