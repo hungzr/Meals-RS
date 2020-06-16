@@ -270,8 +270,8 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
 
 def main_ver2(user_id, user_demand):
     csv_dir_path = '../../dataset/csv_file/food/'
-    # bin_dir_path = '/media/hungdo/SYSTEM/Users/HungDo/Documents/GitHub/FinalProject_RecommendationSys/dataset/bin_file/'
-    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
+    # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
     meal_id, meal_menu, meal_score = get_meal_infor(csv_dir_path)
@@ -321,6 +321,8 @@ def main_ver2(user_id, user_demand):
 
     toc = time.time()
     print('The process end in :', toc - tic)
+
+    return user_demand, top_rating
 
 if __name__ == '__main__':
     user = {
