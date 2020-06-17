@@ -39,7 +39,7 @@ def check_user_infor(file_path, user_id, user_demand):
 
     new_user_df = pd.DataFrame([user_infor])
 
-    print(new_user_df)
+    # print(new_user_df.T)
 
     return new_user_df
 
@@ -77,19 +77,25 @@ def get_meal_infor(dir_path):
     meal_menu = []
     meal_id = []
     meal_score = []
+    meal_image = []
+    meal_actual_id = []
     with open(dir_path + 'meal_information.csv', encoding='utf-8') as mealFile:
         lines = csv.reader(mealFile)
         for line in lines:
             menu = line[2].split(',')
             id = line[0]
+            actual_id = line[1]
             score = line[4]
+            image = line[3]
             if id != 'meal_id':
                 # print(line)
                 meal_menu.append(menu)
                 meal_id.append(int(id))
                 meal_score.append(float(score))
+                meal_image.append(image)
+                meal_actual_id.append(actual_id)
     
-    return meal_id, meal_menu, meal_score
+    return meal_id, meal_actual_id, meal_menu, meal_image, meal_score
 
 def find_meal(meal_label_id, meals_label,df):
     '''
@@ -270,11 +276,11 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
 
 def main_ver2(user_id, user_demand):
     csv_dir_path = '../../dataset/csv_file/food/'
-    bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
-    # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    # bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
+    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
-    meal_id, meal_menu, meal_score = get_meal_infor(csv_dir_path)
+    meal_id, meal_actual_id, meal_menu, meal_image, meal_score = get_meal_infor(csv_dir_path)
 
     
     user_infor = check_user_infor(csv_dir_path, user_id, user_demand)
@@ -322,7 +328,7 @@ def main_ver2(user_id, user_demand):
     toc = time.time()
     print('The process end in :', toc - tic)
 
-    return user_demand, top_rating
+    return top_rating
 
 if __name__ == '__main__':
     user = {

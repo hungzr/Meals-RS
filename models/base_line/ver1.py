@@ -10,9 +10,9 @@ import time
 from pymongo import MongoClient
 import numpy as np
 
-# client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
-# db = client['menu_list']
-# collection = db['list_menu']
+client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
+db = client['menu_list']
+collection = db['list_menu']
 
 def find_menu(input_txt):
     temp_arr = []
@@ -62,7 +62,7 @@ def recommendation(model_dir_path, category, input_txt):
     return final_result
 
 def main_ver1(input_txt):
-    model_dir_path = '../../dataset/bin_file/'
+    model_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
     #
     # # Train model
     # train_dir_path = '../../dataset/txt_file/txt_recipe/'

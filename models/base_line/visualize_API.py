@@ -26,7 +26,7 @@ def get_recipe_name():
         return template('find_menu', recipe_input='', category='',
                     recipe_result='', menu='')
 
-    category, recipe_result, title_result, string_menu = ver1.main(recipe_input)
+    category, recipe_result, title_result, string_menu = ver1.main_ver1(recipe_input)
 
     print(category, recipe_result)
     print(title_result, string_menu)

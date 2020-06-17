@@ -1,6 +1,8 @@
 from bottle import post, run, request, template, route
-import ver1
+import ver2
 import json
+
+meal_id, meal_actual_id, meal_menu, meal_image, meal_score = ver2.get_meal_infor('../../dataset/csv_file/food/')
 
 @post('/rating')
 def get_rating():
@@ -22,21 +24,41 @@ def get_rating():
 @post('/find')
 def get_recipe_name():
     recipe_input = request.forms.recipe_name
+    print(recipe_input)
+
     if recipe_input == '':
-        return template('find_menu', recipe_input='', category='',
-                    recipe_result='', menu='')
+        return template('/home/ti1070/HungDo/Meals-RS/views/index.tpl', recipe_input='')
 
-    category, recipe_result, title_result, string_menu = ver1.main(recipe_input)
+    else:
+        top_rating = ver2.main_ver2(1, recipe_input)
 
-    print(category, recipe_result)
-    print(title_result, string_menu)
-    return template('find_menu', recipe_input=recipe_input, category=category.replace('__label__',''),
-                    recipe_result=recipe_result, menu=string_menu)
+        # Get detail recommended meals
+        # Menu
+        menu_array = [meal_menu[meal_id.index(i)] for i in top_rating]
+        print(menu_array)
+        recom_menu_1, recom_menu_2, recom_menu_3 = menu_array
+
+        # Images
+        image_array = [meal_image[meal_id.index(i)] for i in top_rating]
+        recom_image_1, recom_image_2, recom_image_3 = image_array
+
+        # Ratings
+        rating_array = [meal_score[meal_id.index(i)] for i in top_rating]
+        recom_rating_1, recom_rating_2, recom_rating_3 = rating_array
+        
+        return template('/home/ti1070/HungDo/Meals-RS/views/index.tpl', recipe_input=recipe_input,
+        recom_image_1 = recom_image_1, recom_rating_1 = recom_rating_1, recom_menu_1= recom_menu_1,
+        recom_image_2 = recom_image_2, recom_rating_2 = recom_rating_2, recom_menu_2= recom_menu_2,
+        recom_image_3 = recom_image_3, recom_rating_3 = recom_rating_3, recom_menu_3= recom_menu_3
+        )
 
 @route('/find')
 def find_menu_form():
-    return template('find_menu', recipe_input='', category='',
-                    recipe_result='', menu='')
-    # return template('<h2>hung</h2>')
+    # Top most general meals
+
+    return template('/home/ti1070/HungDo/Meals-RS/views/index.tpl', recipe_input='',
+    recom_image_1 = recom_image_1, recom_rating_1 = recom_rating_1, recom_menu_1= recom_menu_1,
+    recom_image_2 = recom_image_2, recom_rating_2 = recom_rating_2, recom_menu_2= recom_menu_2,
+    recom_image_3 = recom_image_3, recom_rating_3 = recom_rating_3, recom_menu_3= recom_menu_3)
 
 run(host='localhost', port=8086)
