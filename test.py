@@ -21,4 +21,9 @@ def cal_ap(recoms, num_actual_add):
     print('AP final: ', ap)
     
     return ap
-cal_ap([1,1,1], 3)
+# cal_ap([1,1,1], 3)
+
+menu_array = [['bún sứa', 'nước ép lê'], ['bánh pizza nấm', 'sữa tươi']]
+menu_array = [', '.join(recipe for recipe in menu).capitalize() for menu in menu_array]
+print(menu_array)
+

@@ -91,11 +91,8 @@ def main_ver1(input_txt):
         menu_result = np.array(menu_result)
         menu_result = np.where(menu_result == recipe_result, input_txt.lower(), menu_result)
 
-    string_menu = ''
-    for i in menu_result:
-        string_menu += i + '; '
+    string_menu = ', '.join(i for i in menu_result)
 
-    string_menu = string_menu[:-2]
     # print('Tìm thấy thực đơn: {0}; bao gồm các món: {1}'.format(title_result, string_menu))
     return category, recipe_result, title_result, string_menu
 

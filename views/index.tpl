@@ -519,7 +519,7 @@
                 <img src="{{recom_image_1}}" class="card-img-top" alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:whitesmoke; ">{{recom_rating_1}}/5</strong>
+                  <strong style="color:black; ">{{recom_rating_1}}/5</strong>
                 </div>
                 <a href="../views/detail.html">
                   <div class="mask rgba-white-slight"></div>
@@ -555,7 +555,7 @@
                 <img src="{{recom_image_2}}" class="card-img-top" alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:whitesmoke; ">{{recom_rating_2}}/5</strong>
+                  <strong style="color:black; ">{{recom_rating_2}}/5</strong>
                 </div>
                 <a href="../views/detail.html">
                   <div class="mask rgba-white-slight"></div>
@@ -589,7 +589,7 @@
                 <img src="{{recom_image_3}}" class="card-img-top" alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:whitesmoke; ">{{recom_rating_3}}/5</strong>
+                  <strong style="color:black; ">{{recom_rating_3}}/5</strong>
                 </div>
                 <a href="../views/detail.html">
                   <div class="mask rgba-white-slight"></div>
@@ -637,10 +637,10 @@
             <div class="card">
               <!--Card image-->
               <div class="view overlay">
-                <img src="http://elinerfood.com/wp-content/uploads/2016/05/mam-com-5-365-mam-com-gia-dinh.jpg" class="card-img-top" alt="">
+                <img src="{{more_image_1}}" class="card-img-top" alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:whitesmoke; ">3.4/5</strong>
+                  <strong style="color:black; ">{{more_rating_1}}/5</strong>
                 </div>
                 <a href="../views/detail.html">
                   <div class="mask rgba-white-slight"></div>
@@ -648,13 +648,12 @@
                 
               </div>
 
-              
               <!--Card content-->
               <div class="card-body">
                 <!--Title-->
                 <h4 class="card-title">Thực đơn số 1</h4>
                 <!--Text-->
-                <p class="card-text">Bánh mì ốp la,sữa tươi</p>
+                <p class="card-text">{{more_menu_1}}</p>
                 <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
@@ -674,10 +673,10 @@
             <div class="card">
               <!--Card image-->
               <div class="view overlay">
-                <img src="http://elinerfood.com/wp-content/uploads/2016/05/mam-com-6-365-mam-com-gia-dinh.jpg" class="card-img-top" alt="">
+                <img src="{{more_image_2}}" class="card-img-top" alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:whitesmoke; ">4.2/5</strong>
+                  <strong style="color:black; ">{{more_rating_2}}/5</strong>
                 </div>
                 <a href="../views/detail.html">
                   <div class="mask rgba-white-slight"></div>
@@ -689,7 +688,7 @@
                 <!--Title-->
                 <h4 class="card-title">Thực đơn số 2</h4>
                 <!--Text-->
-                <p class="card-text">Cá cơm chiên bột,đậu bắp xào nấm rơm,canh tần ô thịt bò,dưa hấu</p>
+                <p class="card-text">{{more_menu_2}}</p>
                 <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
@@ -708,10 +707,10 @@
             <div class="card">
               <!--Card image-->
               <div class="view overlay">
-                <img src="http://elinerfood.com/wp-content/uploads/2016/05/mam-com-7-365-mam-com-gia-dinh.jpg" class="card-img-top" alt="">
+                <img src="{{more_image_3}}" class="card-img-top" alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:whitesmoke; ">4.5/5</strong>
+                  <strong style="color:black; ">{{more_rating_3}}/5</strong>
                 </div>
                 <a href="../views/detail.html">
                   <div class="mask rgba-white-slight"></div>
@@ -723,7 +722,7 @@
                 <!--Title-->
                 <h4 class="card-title">Thực đơn số 3</h4>
                 <!--Text-->
-                <p class="card-text">Cá chim chiên tỏi,trứng hấp tôm,canh nấm rau củ,sữa chua</p>
+                <p class="card-text">{{more_menu_3}}</p>
                 <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>

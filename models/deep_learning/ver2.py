@@ -253,8 +253,24 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
     """
 
     top_rating = []
-    # 3 result
-    if len(meal_id_found) <=3:
+    # < 3 result
+    if len(meal_id_found) < 3:
+        # Fill untill 3 meals
+        meal_dict = dict(zip(meal_id, meal_score))
+
+        # Shuffle dictionary
+        import random
+        temp = list(meal_dict.items())
+        random.shuffle(temp)
+        new_meal_dict = dict(temp)
+        top_rating_fill = get_top_k(new_meal_dict, 3 - len(meal_id_found))
+
+        meal_id_found.extend(top_rating_fill)
+        top_rating = meal_id_found
+        print('TOP suitable meals filled: ',top_rating)
+
+    # 3 results
+    elif len(meal_id_found) == 3:
         print('TOP suitable meals: ',meal_id_found)
         top_rating = meal_id_found
 
@@ -276,8 +292,8 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
 
 def main_ver2(user_id, user_demand):
     csv_dir_path = '../../dataset/csv_file/food/'
-    # bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
-    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
+    # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
     meal_id, meal_actual_id, meal_menu, meal_image, meal_score = get_meal_infor(csv_dir_path)
@@ -317,7 +333,7 @@ def main_ver2(user_id, user_demand):
             recipe_result = recommendation(bin_dir_path, category, user_demand)
             print('Món ăn có sự tương đồng:', recipe_result)
 
-            main_ver2(user_id, recipe_result[0])
+            top_rating = main_ver2(user_id, recipe_result[0])
 
         # find_best_meal(meal_id_found, df, meal_id, meal_score)
 
@@ -333,8 +349,9 @@ def main_ver2(user_id, user_demand):
 if __name__ == '__main__':
     user = {
         "user_id": 1,
-        "user_demand": "bún chả"
+        "user_demand": "canh bí"
     }
 
-    main_ver2(user["user_id"], user["user_demand"])
+    top_rating = main_ver2(user["user_id"], user["user_demand"])
+    print('abc: ', top_rating)
 
