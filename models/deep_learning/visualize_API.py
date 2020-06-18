@@ -1,6 +1,6 @@
 from bottle import post, run, request, template, route
-import sys
-sys.path.append('/home/hungdo/HungDo/Meals-RS/views/')
+# import sys
+# sys.path.append('/home/hungdo/HungDo/Meals-RS/views/')
 import ver2
 import json
 import random
@@ -68,7 +68,7 @@ def get_recipe_name():
         image_array = [element or default_image for element in image_array]
         print('new_image: ', image_array)
 
-        return template('/home/hungdo/HungDo/Meals-RS/views/index.tpl', recipe_input='',
+        return template('index', recipe_input='',
         recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
@@ -92,7 +92,7 @@ def get_recipe_name():
         image_array_more = [element or default_image for element in image_array_more]
         print('new_image: ', image_array_more)
         
-        return template('/home/hungdo/HungDo/Meals-RS/views/index.tpl', recipe_input=recipe_input,
+        return template('index', recipe_input=recipe_input,
         recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
@@ -109,7 +109,7 @@ def find_menu_form():
     image_array = [element or default_image for element in image_array]
     print('new_image: ', image_array)
 
-    return template('/home/hungdo/HungDo/Meals-RS/views/index.tpl', recipe_input='',
+    return template('index', recipe_input='',
     recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
     recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
     recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],

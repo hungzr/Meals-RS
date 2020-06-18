@@ -159,6 +159,11 @@
       border-radius: 10px;
     }
 
+    .card-img-top {
+      height: 227px;
+      width:100%;
+    }
+
   </style>
 </head>
 
@@ -516,7 +521,7 @@
             <div class="card">
               <!--Card image-->
               <div class="view overlay">
-                <img src="{{recom_image_1}}" class="card-img-top" alt="">
+                <img src="{{recom_image_1}}" class="card-img-top " alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_1}}/5</strong>
