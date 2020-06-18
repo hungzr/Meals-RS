@@ -376,12 +376,12 @@
               <!-- Search form -->
               <div class=" active-cyan-2 md-form">
                 <input value= "{{recipe_input}}" name="recipe_name" id="recipe_name" class="form-control " type="text" aria-label="Search">
-                <label data-error="wrong" data-success="right" for="Search">Tìm kiếm</label>
+                <label data-error="wrong" data-success="right" for="Search">Nhập tên món ăn...</label>
                 
               </div>
 
             </div>
-            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            <button type="submit" class="btn btn-primary my-btn">Tìm kiếm</button>
           </div>
 
         </div>
@@ -518,7 +518,7 @@
           <div class="col-sm-4 col-lg-4 col-md-6 mb-4">
 
             <!--Card-->
-            <div class="card">
+            <div action="/detail" class="card">
               <!--Card image-->
               <div class="view overlay">
                 <img src="{{recom_image_1}}" class="card-img-top " alt="">
@@ -526,7 +526,7 @@
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_1}}/5</strong>
                 </div>
-                <a href="../views/detail.html">
+                <a action="/detail/{{meal_id_1}}" method="get">
                   <div class="mask rgba-white-slight"></div>
                 </a>
                 
@@ -538,7 +538,7 @@
                 <h4 class="card-title">Thực đơn số 1</h4>
                 <!--Text-->
                 <p class="card-text">{{recom_menu_1}}</p>
-                <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
+                <a class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
 
@@ -814,7 +814,6 @@
   <!-- Bootstrap core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
 
   <script>

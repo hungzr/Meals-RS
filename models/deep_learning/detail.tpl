@@ -11,16 +11,161 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
   <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
 
 
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" /> -->
   
   <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
+  <style>
+      body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    }
+    .bootstrap-select .bs-ok-default::after {
+      width: 0.3em;
+      height: 0.6em;
+      border-width: 0 0.1em 0.1em 0;
+      transform: rotate(45deg) translateY(0.5rem);
+    }
+
+    .btn.dropdown-toggle:focus {
+      outline: none !important;
+    }
+    .sidenav {
+      height: 85%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 5em;
+      left: 0;
+      background-color: rgb(218, 212, 212);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 15px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+
+    .fixed {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .fixed-button {
+      position: relative;
+      bottom: 3em;
+      width: 100%;
+    }
+
+    .my-form-control{
+      width: 100%;
+      height: 50%;
+    }
+
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .card {
+      height: 100%;
+    }
+
+    .card-text {
+      height: 28%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .header-container {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    #option-sign {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    #main {
+      width: 80%;
+    }
+
+    .md-form {
+      margin: 10px 0;
+    }
+
+    .my-btn {
+      border-radius: 15px;
+      margin: 0;
+    }
+
+
+    button.btn.dropdown-toggle {
+      margin: 0;
+      text-transform: lowercase;
+      font-family: 15px;
+    }
+
+    .inner.show {
+      font-family: 12px;
+    }
+
+    .my-scroll {
+      overflow-y: auto;
+    }
+
+    .filter-option-inner-inner {
+      font-size: 16px;
+    }
+
+    .price {
+      letter-spacing: 0.5px;
+      padding: 8px 5px;
+      position: absolute;
+      right: 0px;
+      margin-top: -35px;
+      /* background-color: rgba(250, 250, 250, 0.9); */
+    }
+
+    .my-detail {
+      border-radius: 10px;
+    }
+
+    .card-img-top {
+      height: 227px;
+      width:100%;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -166,10 +311,10 @@
                         <!-- Search form -->
                         <div class=" active-cyan-2 md-form">
                             <input class="form-control " type="text"  aria-label="Search">
-                            <label data-error="wrong" data-success="right" for="Search">Tìm kiếm</label>
+                            <label data-error="wrong" data-success="right" for="Search">Nhập tên món ăn...</label>
                         </div>
                     </div>
-
+                    <button type="submit" class="btn btn-primary my-btn">Tìm kiếm</button>
                 </div>
 
             </div>
@@ -513,13 +658,163 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
   
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script src="js/addons/rating.js"></script>
-  <script src="./meals.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+  <script>
+    (function ($) {
+      $.fn.mdbRate = function () {
+        var $stars;
+        // Custom whitelist to allow for using HTML tags in popover content
+        var myDefaultWhiteList = $.fn.tooltip.Constructor.Default.whiteList
+        myDefaultWhiteList.textarea = [];
+        myDefaultWhiteList.button = [];
+
+        var $container = $(this);
+
+        var titles = ['Very bad', 'Poor', 'OK', 'Good', 'Excellent'];
+
+        for (var i = 0; i < 5; i++) {
+          $container.append(`<i class="py-2 px-1 rate-popover" data-index="${i}" data-html="true" data-toggle="popover"
+          data-placement="top" title="${titles[i]}"></i>`);
+        }
+
+        $stars = $container.children();
+
+        if ($container.hasClass('rating-faces')) {
+          $stars.addClass('far fa-meh-blank');
+        } else if ($container.hasClass('empty-stars')) {
+          $stars.addClass('far fa-star');
+        } else {
+          $stars.addClass('fas fa-star');
+        }
+
+        $stars.on('mouseover', function () {
+          var index = $(this).attr('data-index');
+          markStarsAsActive(index);
+        });
+
+        function markStarsAsActive(index) {
+          unmarkActive();
+
+          for (var i = 0; i <= index; i++) {
+
+            if ($container.hasClass('rating-faces')) {
+              $($stars.get(i)).removeClass('fa-meh-blank');
+              $($stars.get(i)).addClass('live');
+
+              switch (index) {
+                case '0':
+                  $($stars.get(i)).addClass('fa-angry');
+                  break;
+                case '1':
+                  $($stars.get(i)).addClass('fa-frown');
+                  break;
+                case '2':
+                  $($stars.get(i)).addClass('fa-meh');
+                  break;
+                case '3':
+                  $($stars.get(i)).addClass('fa-smile');
+                  break;
+                case '4':
+                  $($stars.get(i)).addClass('fa-laugh');
+                  break;
+              }
+
+            } else if ($container.hasClass('empty-stars')) {
+              $($stars.get(i)).addClass('fas');
+              switch (index) {
+                case '0':
+                  $($stars.get(i)).addClass('oneStar');
+                  break;
+                case '1':
+                  $($stars.get(i)).addClass('twoStars');
+                  break;
+                case '2':
+                  $($stars.get(i)).addClass('threeStars');
+                  break;
+                case '3':
+                  $($stars.get(i)).addClass('fourStars');
+                  break;
+                case '4':
+                  $($stars.get(i)).addClass('fiveStars');
+                  break;
+              }
+            } else {
+              $($stars.get(i)).addClass('amber-text');
+
+            }
+          }
+        }
+
+        function unmarkActive() {
+          $stars.parent().hasClass('rating-faces') ? $stars.addClass('fa-meh-blank') : $stars;
+          $container.hasClass('empty-stars') ? $stars.removeClass('fas') : $container;
+          $stars.removeClass('fa-angry fa-frown fa-meh fa-smile fa-laugh live oneStar twoStars threeStars fourStars fiveStars amber-text');
+        }
+
+        $stars.on('click', function () {
+          $stars.popover('hide');
+        });
+
+        // Submit, you can add some extra custom code here
+        // ex. to send the information to the server
+        $container.on('click', '#voteSubmitButton', function () {
+          $stars.popover('hide');
+        });
+
+        // Cancel, just close the popover
+        $container.on('click', '#closePopoverButton', function () {
+          $stars.popover('hide');
+        });
+
+        if ($container.hasClass('feedback')) {
+
+          $(function () {
+            $stars.popover({
+              // Append popover to #rateMe to allow handling form inside the popover
+              container: $container,
+              // Custom content for popover
+              content: `<div class="my-0 py-0"> <textarea type="text" style="font-size: 0.78rem" class="md-textarea form-control py-0" placeholder="Write us what can we improve" rows="3"></textarea> <button id="voteSubmitButton" type="submit" class="btn btn-sm btn-primary">Submit!</button> <button id="closePopoverButton" class="btn btn-flat btn-sm">Close</button>  </div>`
+            });
+          })
+        }
+
+        $stars.tooltip();
+      }
+    })(jQuery);
+  </script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "30%";
+      document.getElementById("main").style.marginLeft = "30%";
+      document.getElementById("option-sign").style.marginLeft = "-28%";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.getElementById("option-sign").style.marginLeft= "auto";
+      document.getElementById("option-sign").style.marginRight= "0";
+      document.body.style.backgroundColor = "white";
+    }
+
+    // Rating Initialization
+    $(document).ready(function() {
+      $('#rateMe4').mdbRate();
+    });
+
+
+    $(function () {
+        $('.selectpicker').selectpicker();
+    });
+
+    // Animations initialization
+    new WOW().init();
+  </script>
 </body>
 
 </html>

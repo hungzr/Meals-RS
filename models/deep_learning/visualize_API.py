@@ -1,4 +1,4 @@
-from bottle import post, run, request, template, route
+from bottle import post,get, run, request, template, route, redirect
 # import sys
 # sys.path.append('/home/hungdo/HungDo/Meals-RS/views/')
 import ver2
@@ -56,7 +56,7 @@ def get_rating():
     return json.dumps(data)
 
 @post('/find')
-def get_recipe_name():
+def get_recommeded_meals():
     recipe_input = request.forms.recipe_name
     print(recipe_input)
 
@@ -69,7 +69,7 @@ def get_recipe_name():
         print('new_image: ', image_array)
 
         return template('index', recipe_input='',
-        recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
+        meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
         more_image_1 = image_array[3], more_rating_1 = rating_array[3], more_menu_1= menu_array[3],
@@ -93,13 +93,18 @@ def get_recipe_name():
         print('new_image: ', image_array_more)
         
         return template('index', recipe_input=recipe_input,
-        recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
+        meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
         more_image_1 = image_array_more[0], more_rating_1 = rating_array_more[0], more_menu_1= menu_array_more[0],
         more_image_2 = image_array_more[1], more_rating_2 = rating_array_more[1], more_menu_2= menu_array_more[1],
         more_image_3 = image_array_more[2], more_rating_3 = rating_array_more[2], more_menu_3= menu_array_more[2]
         )
+
+@route('/detail')
+def visual_detail():
+    # print('id: ', meal_id)
+    return template('detail',recipe_input='')
 
 @route('/find')
 def find_menu_form():
@@ -110,7 +115,7 @@ def find_menu_form():
     print('new_image: ', image_array)
 
     return template('index', recipe_input='',
-    recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
+    meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
     recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
     recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
     more_image_1 = image_array[3], more_rating_1 = rating_array[3], more_menu_1= menu_array[3],
