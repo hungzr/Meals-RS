@@ -106,7 +106,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-          <button type="button" action="/rating" class="btn btn-success" id="btn-accept" data-dismiss="modal" onclick="acceptData()">Đồng ý</button>
+          <button type="button"  class="btn btn-success" id="btn-accept" data-dismiss="modal" onclick="acceptData()">Đồng ý</button>
         </div>
       </div>
 

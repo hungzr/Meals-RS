@@ -101,9 +101,11 @@ def get_recommeded_meals():
         more_image_3 = image_array_more[2], more_rating_3 = rating_array_more[2], more_menu_3= menu_array_more[2]
         )
 
-@route('/detail')
+@get('/detail')
 def visual_detail():
-    # print('id: ', meal_id)
+    meal_id = request.GET.get('meal_id_1')
+    print('id: ', meal_id)
+    # return '<p> Success. </p>'
     return template('detail',recipe_input='')
 
 @route('/find')

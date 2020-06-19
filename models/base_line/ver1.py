@@ -63,7 +63,7 @@ def recommendation(model_dir_path, category, input_txt):
 
 def main_ver1(input_txt):
     model_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
-    model_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
+    # model_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
     #
     # # Train model
     # train_dir_path = '../../dataset/txt_file/txt_recipe/'
