@@ -518,15 +518,15 @@
           <div class="col-sm-4 col-lg-4 col-md-6 mb-4">
 
             <!--Card-->
-            <div id="meal_id_1" value="{{meal_id_1}}" class="card">
+            <div class="card">
               <!--Card image-->
-              <div class="view overlay">
+              <div class="view overlay" >
                 <img src="{{recom_image_1}}" class="card-img-top " alt="">
                 <div class="price">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_1}}/5</strong>
                 </div>
-                <a onclick="getDetail()">
+                <a href="/detail/{{meal_id_1}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
                 
@@ -538,10 +538,11 @@
                 <h4 class="card-title">Thực đơn số 1</h4>
                 <!--Text-->
                 <p class="card-text">{{recom_menu_1}}</p>
-                <button onclick="getDetail()" class="btn btn-primary btn-md row-bottom">Chi tiết
-                  <i class="fas fa-play ml-2"></i>
-                </button>
-
+                <a href="/detail/{{meal_id_1}}">
+                  <button  class="btn btn-primary btn-md row-bottom">Chi tiết
+                    <i class="fas fa-play ml-2"></i>
+                  </button>
+                </a>
               </div>
 
             </div>
@@ -562,7 +563,7 @@
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_2}}/5</strong>
                 </div>
-                <a href="../views/detail.html">
+                <a href="/detail/{{meal_id_2}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -573,7 +574,7 @@
                 <h4 class="card-title">Thực đơn số 2</h4>
                 <!--Text-->
                 <p class="card-text">{{recom_menu_2}}</p>
-                <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
+                <a href="/detail/{{meal_id_2}}" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
               </div>
@@ -596,7 +597,7 @@
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_3}}/5</strong>
                 </div>
-                <a href="../views/detail.html">
+                <a href="/detail/{{meal_id_3}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -607,7 +608,7 @@
                 <h4 class="card-title">Thực đơn số 3</h4>
                 <!--Text-->
                 <p class="card-text">{{recom_menu_3}}</p>
-                <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
+                <a href="/detail/{{meal_id_3}}" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
               </div>
@@ -625,8 +626,8 @@
       <!--Section: Recommened-->
 
       <br><hr>
-      <h5 class="font-weight-bold">
-        <a>Có thể bạn quan tâm</a>
+      <h5  class="font-weight-bold">
+        <span id= "show_more">Có thể bạn quan tâm</span>
       </h5>
       <br>
       <!--Section: More-->
@@ -647,7 +648,7 @@
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{more_rating_1}}/5</strong>
                 </div>
-                <a href="../views/detail.html">
+                <a href="/detail/{{meal_id_4}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
                 
@@ -656,10 +657,10 @@
               <!--Card content-->
               <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title">Thực đơn số 1</h4>
+                <h4 class="card-title">Thực đơn số 4</h4>
                 <!--Text-->
                 <p class="card-text">{{more_menu_1}}</p>
-                <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
+                <a href="/detail/{{meal_id_4}}" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
 
@@ -683,7 +684,7 @@
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{more_rating_2}}/5</strong>
                 </div>
-                <a href="../views/detail.html">
+                <a href="/detail/{{meal_id_5}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -691,10 +692,10 @@
               <!--Card content-->
               <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title">Thực đơn số 2</h4>
+                <h4 class="card-title">Thực đơn số 5</h4>
                 <!--Text-->
                 <p class="card-text">{{more_menu_2}}</p>
-                <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
+                <a href="/detail/{{meal_id_5}}" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
               </div>
@@ -717,7 +718,7 @@
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{more_rating_3}}/5</strong>
                 </div>
-                <a href="../views/detail.html">
+                <a href="/detail/{{meal_id_6}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -725,10 +726,10 @@
               <!--Card content-->
               <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title">Thực đơn số 3</h4>
+                <h4 class="card-title">Thực đơn số 6</h4>
                 <!--Text-->
                 <p class="card-text">{{more_menu_3}}</p>
-                <a href="../views/detail.html" class="btn btn-primary btn-md row-bottom">Chi tiết
+                <a href="/detail/{{meal_id_6}}" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
               </div>
@@ -816,22 +817,12 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
 
-  <script>
-    function getDetail(){
-      $.ajax({
-          type: 'GET',
-          url: './detail',
-          contentType: 'charset=utf-8',
-          dataType: 'json',
-          data: {
-              meal_id_1: 7
-          },
-      })
-      // window.location.assign('./detail')
-    }
-  </script>
 
   <script>
+    if (document.getElementById('recipe_name').value == "") {
+      document.getElementById("show_more").style.visibility = "hidden";
+    }
+
     function openNav() {
       document.getElementById("mySidenav").style.width = "30%";
       document.getElementById("main").style.marginLeft = "30%";
@@ -859,6 +850,8 @@
 
     // Animations initialization
     new WOW().init();
+
+    
   </script>
 
 </body>

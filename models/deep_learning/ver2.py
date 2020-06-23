@@ -6,9 +6,46 @@ import pandas as pd
 import os
 from collections import Counter
 import time
-import sys
-sys.path.append('../base_line/')
-from ver1 import load_model_category, classify_meal, recommendation
+import fasttext
+
+def load_model_category(dir_path):
+    model_category = fasttext.load_model(os.path.join(dir_path, 'label_model_training.bin'))
+    return model_category
+
+def classify_meal(input_recipe, model_category):
+    '''
+    Classify input recipe
+
+    :param input_recipe: input recipe name
+    :param model_category: the loaded fasttext model category
+    :return: the name of category  that input recipe belong
+    '''
+
+    result = model_category.predict(input_recipe, k=2)
+    # print(result[0])
+    return result[0]
+
+def get_similarity(model_dir_path, category, input_txt):
+    '''
+    Find similarity recipe after classify
+
+    :param model_dir_path: folder path to bin files
+    :param category: category of input recipe after classify
+    :param input_txt: input recipe name
+    :return: the similarity recipe name
+
+    '''
+    category_label_arr = [('__label__com', 'model_com.bin'), ('__label__khaivi', 'model_khaivi.bin'), ('__label__chay', 'model_chay.bin'),
+                          ('__label__man', 'model_man.bin'), ('__label__canh', 'model_canh.bin'), ('__label__trangmieng', 'model_trangmieng.bin'),
+                          ('__label__khac', 'model_khac.bin')]
+
+    model_name = next(model for (label, model) in category_label_arr if label == category)
+    # print(model_name)
+    # Load the corresponding model and find nearest neighbor recipe
+    model = fasttext.load_model(os.path.join(model_dir_path, model_name))
+    final_result = model.get_nearest_neighbors(input_txt.replace(' ', '_'), k=2)
+    final_result = [result[1].replace('_', ' ') for result in final_result]
+    return final_result
 
 def check_user_infor(file_path, user_id, user_demand):
     '''
@@ -79,14 +116,19 @@ def get_meal_infor(dir_path):
     meal_score = []
     meal_image = []
     meal_actual_id = []
+    meal_ingre = []
+    meal_methods = []
     with open(dir_path + 'meal_information.csv', encoding='utf-8') as mealFile:
         lines = csv.reader(mealFile)
         for line in lines:
             menu = line[2].split(',')
             id = line[0]
             actual_id = line[1]
-            score = line[4]
-            image = line[3]
+            score = line[6]
+            image = line[5]
+            ingredients = line[3]
+            methods = line[4]
+            # Except title columns
             if id != 'meal_id':
                 # print(line)
                 meal_menu.append(menu)
@@ -94,8 +136,10 @@ def get_meal_infor(dir_path):
                 meal_score.append(float(score))
                 meal_image.append(image)
                 meal_actual_id.append(actual_id)
+                meal_ingre.append(ingredients)
+                meal_methods.append(methods)
     
-    return meal_id, meal_actual_id, meal_menu, meal_image, meal_score
+    return meal_id, meal_actual_id, meal_menu, meal_ingre, meal_methods, meal_image, meal_score
 
 def find_meal(meal_label_id, meals_label,df):
     '''
@@ -293,10 +337,10 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
 def main_ver2(user_id, user_demand):
     csv_dir_path = '../../dataset/csv_file/food/'
     bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
-    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
-    meal_id, meal_actual_id, meal_menu, meal_image, meal_score = get_meal_infor(csv_dir_path)
+    meal_id, _, meal_menu, _, _, _, meal_score = get_meal_infor(csv_dir_path)
 
     
     user_infor = check_user_infor(csv_dir_path, user_id, user_demand)
@@ -330,7 +374,7 @@ def main_ver2(user_id, user_demand):
             print('Nhóm được phân loại: ',category)
 
             category = category[0]
-            recipe_result = recommendation(bin_dir_path, category, user_demand)
+            recipe_result = get_similarity(bin_dir_path, category, user_demand)
             print('Món ăn có sự tương đồng:', recipe_result)
 
             top_rating = main_ver2(user_id, recipe_result[0])

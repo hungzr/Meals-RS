@@ -297,29 +297,32 @@
         <!-- SideNav slide-out -->
         <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i><span class="sr-only" aria-hidden="true">Toggle side navigation</span></a> -->
         <span style="font-size:30px;cursor:pointer; color: #4285f4;" onclick="openNav()"><i class="fas fa-bars"></i></span>
-        <div id="main">
-            <div class="container header-container">
+        <form action="/find" method="post" id="main">
+        <div class="container header-container">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <img src="https://www.mybee.life/static/logo-a9fe68f128e542e8b55c57609fd6e080.png" style="height: 55px; width: 55px;">
-                    <div class="col-sm-6">
-                        <!-- Search form -->
-                        <div class=" active-cyan-2 md-form">
-                            <input class="form-control " type="text"  aria-label="Search">
-                            <label data-error="wrong" data-success="right" for="Search">Nhập tên món ăn...</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary my-btn">Tìm kiếm</button>
-                </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <img src="https://www.mybee.life/static/logo-a9fe68f128e542e8b55c57609fd6e080.png"
+              style="height: 55px; width: 55px;">
+            <div class="col-sm-6">
+              <!-- Search form -->
+              <div class=" active-cyan-2 md-form">
+                <input value= "{{recipe_input}}" name="recipe_name" id="recipe_name" class="form-control " type="text" aria-label="Search">
+                <label data-error="wrong" data-success="right" for="Search">Nhập tên món ăn...</label>
+                
+              </div>
 
             </div>
-            
+            <button type="submit" class="btn btn-primary my-btn">Tìm kiếm</button>
+          </div>
+
         </div>
+
+      </form>
         <!--/. SideNav slide-out -->
 
         <!-- Sign Button-->
@@ -447,7 +450,7 @@
 
             <!--Image-->
             <div class="view overlay rounded z-depth-1-half mb-3">
-              <img src="http://elinerfood.com/wp-content/uploads/2016/05/mam-com-1-365-mam-com-gia-dinh.jpg" class="img-fluid" style = "display: block; margin: 0 auto;" alt="Sample post image">
+              <img src="{{detail_image}}" class="img-fluid" style = "display: block; margin: 0 auto;" alt="Sample post image">
               <a>
                 <div class="mask rgba-white-slight"></div>
               </a>
@@ -477,94 +480,133 @@
             <div class="row">
               <h5 class="font-weight-bold">
                 <a>
-                   1. Tôm rang 
+                   {{detail_recipe_1}} 
                 </a>
               </h5>
-              <p><strong>_ Nguyên liệu: </strong>  Tôm tươi 3 lạng (chúy ý chọn những con tôm còn tươi). Hành, tỏi khô, hành lá.  
-                Các loại gia vị cần dùng cho món ăn: 1 thìa canh nước mắm, 2 thìa cà phê đường, 1 thìa cà phê bột ngọt, hạt tiêu, dầu ăn.
-              </p>
+              <div id="ingre_1">
+                <p>{{detail_ingre_1}}</p>
 
-              <p>_ Các bước nấu: </p>
-              <div class="col-md-12">
+                <!--Steps-->
+                <p>_ Các bước nấu: </p>
+                <div class="col-md-12">
 
-                <!-- Stepers Wrapper -->
-                <ul class="stepper stepper-vertical mb-0">
+                  <!-- Stepers Wrapper -->
+                  <ul class="stepper stepper-vertical mb-0">
 
-                    <!-- First Step -->
-                    <li class="completed">
-                        <!--Section Title -->
-                        <a >
-                            <span class="circle">1</span>
-                            <span class="label">Bước 1</span>
-                        </a>
+                      <!-- First Step -->
+                      <li class="completed">
+                          <!--Section Title -->
+                          <a >
+                              <span class="circle">1</span>
+                              <span class="label">Bước 1</span>
+                          </a>
 
-                        <!-- Section Description -->
-                        <div class="step-content grey lighten-3">
-                          <p>Tôm mua về rửa sạch rồi thực hiện cắt bỏ phần râu và đầu nhọn của tôm. Tiếp đến dùng chút muối để xóc đều lên
-                             trong khoảng 15 phút để có được món ăn đậm đà hơn nhé.</p>
-                      </div>
-                    </li>
-
-                    <!-- Second Step -->
-                    <li class="active">
-                        <!--Section Title -->
-                        <a >
-                            <span class="circle">2</span>
-                            <span class="label">Bước 2</span>
-                        </a>
-
-                        <!-- Section Description -->
-                        <div class="step-content grey lighten-3">
-                            <p>Bắc chảo lên bếp rồi cho vào chảo 1 thìa cà phê đường, đun đến khi đường tan chảy hoàn 
-                              toàn chuyển snag màu nâu cánh gián đẹp mắt thì thêm vào 2 thìa canh nước lọc, tiếp tục đun sôi.</p>
+                          <!-- Section Description -->
+                          <div class="step-content grey lighten-3">
+                            <p>Tôm mua về rửa sạch rồi thực hiện cắt bỏ phần râu và đầu nhọn của tôm. Tiếp đến dùng chút muối để xóc đều lên
+                              trong khoảng 15 phút để có được món ăn đậm đà hơn nhé.</p>
                         </div>
-                    </li>
+                      </li>
 
-                    <!-- Third Step -->
-                    <li class="completed">
-                        <!--Section Title -->
-                        <a >
-                          <span class="circle">3</span>
-                          <span class="label">Bước 3</span>
-                        </a>
+                      <!-- Second Step -->
+                      <li class="active">
+                          <!--Section Title -->
+                          <a >
+                              <span class="circle">2</span>
+                              <span class="label">Bước 2</span>
+                          </a>
 
-                        <!-- Section Description -->
-                        <div class="step-content grey lighten-3">
-                            <p>Hành, tỏi khô lột bỏ vỏ rồi đem băm nhỏ. Thực hiện phi thơm hành tỏi băm đến khi dậy mùi thì 
-                              cho tôm vào, đảo đều tay vài lượt thì thêm chút nước mắm, đường cùng với nước màu đã chế ở trên.
-                               Đến khi phần nước sốt đã cạn thì cho hành lá thái nhỏ và ít mì chính vào, đảo lên lần cuối rồi tắt bếp luôn.</p>
-                        </div>
-                    </li>
+                          <!-- Section Description -->
+                          <div class="step-content grey lighten-3">
+                              <p>Bắc chảo lên bếp rồi cho vào chảo 1 thìa cà phê đường, đun đến khi đường tan chảy hoàn 
+                                toàn chuyển snag màu nâu cánh gián đẹp mắt thì thêm vào 2 thìa canh nước lọc, tiếp tục đun sôi.</p>
+                          </div>
+                      </li>
 
-                    <!-- Fourth Step -->
-                    <li class="completed">
-                        <!--Section Title -->
-                        <a >
-                          <span class="circle">4</span>
-                          <span class="label">Bước 4</span>
-                        </a>
+                      <!-- Third Step -->
+                      <li class="completed">
+                          <!--Section Title -->
+                          <a >
+                            <span class="circle">3</span>
+                            <span class="label">Bước 3</span>
+                          </a>
 
-                        <!-- Section Description -->
-                        <div class="step-content grey lighten-3">
-                            <p>Trình bày món ăn ra đĩa rồi rắc chút hạt tiêu lên trên và thưởng thức luôn nhé.</p>
-                        </div>
-                    </li>
+                          <!-- Section Description -->
+                          <div class="step-content grey lighten-3">
+                              <p>Hành, tỏi khô lột bỏ vỏ rồi đem băm nhỏ. Thực hiện phi thơm hành tỏi băm đến khi dậy mùi thì 
+                                cho tôm vào, đảo đều tay vài lượt thì thêm chút nước mắm, đường cùng với nước màu đã chế ở trên.
+                                Đến khi phần nước sốt đã cạn thì cho hành lá thái nhỏ và ít mì chính vào, đảo lên lần cuối rồi tắt bếp luôn.</p>
+                          </div>
+                      </li>
 
-                </ul>
-                <!-- /.Stepers Wrapper -->
+                      <!-- Fourth Step -->
+                      <li class="completed">
+                          <!--Section Title -->
+                          <a >
+                            <span class="circle">4</span>
+                            <span class="label">Bước 4</span>
+                          </a>
 
+                          <!-- Section Description -->
+                          <div class="step-content grey lighten-3">
+                              <p>Trình bày món ăn ra đĩa rồi rắc chút hạt tiêu lên trên và thưởng thức luôn nhé.</p>
+                          </div>
+                      </li>
+
+                  </ul>
+                  <!-- /.Stepers Wrapper -->
+
+                </div>
+                
               </div>
+
+              
 
             </div>
 
             <div class="row">
               <h5 class="font-weight-bold">
                 <a>
-                   2. Rau muống luộc 
+                   {{detail_recipe_2}}  
                 </a>
               </h5>
-              
+              <div id="ingre_2">
+                <p>{{detail_ingre_2}}</p>
+              </div>
 
+            </div>
+
+            <div class="row" id="recipe_3">
+              <h5 class="font-weight-bold">
+                <a>
+                   {{detail_recipe_3}}  
+                </a>
+              </h5>
+              <div id="ingre_3">
+                <p>{{detail_ingre_3}}</p>
+              </div>
+            </div>
+
+            <div class="row" id="recipe_4">
+              <h5 class="font-weight-bold">
+                <a>
+                   {{detail_recipe_4}}  
+                </a>
+              </h5>
+              <div id="ingre_4">
+                <p>{{detail_ingre_4}}</p>
+              </div>
+            </div>
+
+            <div class="row" id="recipe_5">
+              <h5 class="font-weight-bold">
+                <a>
+                   {{detail_recipe_5}}  
+                </a>
+              </h5>
+              <div id="ingre_5">
+                <p>{{detail_ingre_5}}</p>
+              </div>
             </div>
             <!--/Ingredients-->
 
@@ -582,19 +624,14 @@
               <button class="btn btn-default btn-rounded btn-md waves-effect waves-light">Gửi</button>
             </div>
             <!--/. Comments-->
-
-
           </div>
           <!--Grid column-->
 
         </div>
         <!--Grid row-->
 
-        
-
       </section>
       <!--/Section: -->
-
 
     </div>
   </main>
@@ -663,6 +700,34 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+  <script>
+    if (document.getElementById('recipe_3').value == "") {
+      document.getElementById("recipe_3").style.visibility = "hidden";
+    }
+    if (document.getElementById('recipe_4').value == "") {
+      document.getElementById("recipe_4").style.visibility = "hidden";
+    }
+    if (document.getElementById('recipe_5').value == "") {
+      document.getElementById("recipe_5").style.visibility = "hidden";
+    }
+  </script>
+  <script>
+    if (document.getElementById('ingre_1').value == "") {
+      document.getElementById("ingre_1").style.visibility = "hidden";
+    }
+    if (document.getElementById('ingre_2').value == "") {
+      document.getElementById("ingre_2").style.visibility = "hidden";
+    }
+    if (document.getElementById('ingre_3').value == "") {
+      document.getElementById("ingre_3").style.visibility = "hidden";
+    }
+    if (document.getElementById('ingre_4').value == "") {
+      document.getElementById("ingre_4").style.visibility = "hidden";
+    }
+    if (document.getElementById('ingre_5').value == "") {
+      document.getElementById("ingre_5").style.visibility = "hidden";
+    }
+  </script>
   <script>
     (function ($) {
       $.fn.mdbRate = function () {
