@@ -1,92 +1,86 @@
-# def cal_ap(recoms, num_actual_add):
-#     '''
-#     Calculate AP by calculating Precision and Recall
 
-#     :param recoms: Array of binary [1,0,0] with 1 is True
-#     :param num_actual_add: number of labels
+# #coding: utf-8
+# from bottle import route, error, post, get, run, static_file, abort, redirect, response, request, template
 
-#     :return: result of AP
-#     '''
+# @route('/')
+# @route('/index.html')
+# def index():
+#     return '<a href="/hello">Go to Hello World page</a>'
 
-#     precs = []
-#     recalls = []
+# @route('/hello')
+# def hello():
+#     return '<h1>HELLO WOLRD</h1>'
 
-#     for indx, rec in enumerate(recoms):
-#         precs.append(sum(recoms[:indx+1])/(indx+1))
-#         recalls.append(sum(recoms[:indx+1])/num_actual_add)
-#     ap = (1/num_actual_add) * (sum(precs[i]*recoms[i] for i in range(len(recoms))))
+# @route('/hello/:name')
+# def hello_name(name):
+#     page = request.GET.get('page', '1')
+#     return '<h1>HELLO %s <br/>(%s)</h1>' % (name, page)
 
-#     print('Precision final: ',precs)
-# #     print('Recall final: ', recalls)
-# #     print('AP final: ', ap)
-    
-# #     return ap
-# # # cal_ap([1,1,1], 3)
+# @route('/static/:filename')
+# def serve_static(filename):
+#     return static_file(filename, root='/home/arthur/workspace/my_python_codes/src/')
 
-# # menu_array = [['bún sứa', 'nước ép lê'], ['bánh pizza nấm', 'sữa tươi']]
-# # menu_array = [', '.join(recipe for recipe in menu).capitalize() for menu in menu_array]
-# # print(menu_array)
+# @route('/raise_error')
+# def raise_error():
+#     abort(404, "error...")
 
-#coding: utf-8
-from bottle import route, error, post, get, run, static_file, abort, redirect, response, request, template
+# @route('/redirect')
+# def redirect_to_hello():
+#     redirect('/hello')
 
-@route('/')
-@route('/index.html')
-def index():
-    return '<a href="/hello">Go to Hello World page</a>'
+# @route('/ajax')
+# def ajax_response():
+#     return {'dictionary': 'you will see ajax response right? Content-Type will be "application/json"'}
 
-@route('/hello')
-def hello():
-    return '<h1>HELLO WOLRD</h1>'
+# @error(404)
+# def error404(error):
+#     return '404 error !!!!!'
 
-@route('/hello/:name')
-def hello_name(name):
-    page = request.GET.get('page', '1')
-    return '<h1>HELLO %s <br/>(%s)</h1>' % (name, page)
+# @get('/upload')
+# def upload_view():
+#     return """
+#         <form action="/upload" method="post" enctype="multipart/form-data">
+#           <input type="text" name="name" />
+#           <input type="file" name="data" />
+#           <input type="submit" name="submit" value="upload now" />
+#         </form>
+#         """    
 
-@route('/static/:filename')
-def serve_static(filename):
-    return static_file(filename, root='/home/arthur/workspace/my_python_codes/src/')
+# @post('/upload')
+# def do_upload():
+#     name = request.forms.get('name')
+#     data = request.files.get('data')
+#     if name is not None and data is not None:
+#         raw = data.file.read() # small files =.=
+#         filename = data.filename
+#         return "Hello %s! You uploaded %s (%d bytes)." % (name, filename, len(raw))
+#     return "You missed a field."
 
-@route('/raise_error')
-def raise_error():
-    abort(404, "error...")
+# @route('/tpl')
+# def tpl():
+#     return template('test')
 
-@route('/redirect')
-def redirect_to_hello():
-    redirect('/hello')
+# run(host='localhost', port=8085, reloader=True)
 
-@route('/ajax')
-def ajax_response():
-    return {'dictionary': 'you will see ajax response right? Content-Type will be "application/json"'}
+from pymongo import MongoClient
+import json
+import random
 
-@error(404)
-def error404(error):
-    return '404 error !!!!!'
+client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
+db = client['user']
+collection = db['user_info']
 
-@get('/upload')
-def upload_view():
-    return """
-        <form action="/upload" method="post" enctype="multipart/form-data">
-          <input type="text" name="name" />
-          <input type="file" name="data" />
-          <input type="submit" name="submit" value="upload now" />
-        </form>
-        """    
+user_account_pass = []
+user_id = []
+for user in collection.find():
+    user_account_pass.append((user['user_account'], 
+                                 user['user_password']))
+    user_id.append(user['user_id'])
 
-@post('/upload')
-def do_upload():
-    name = request.forms.get('name')
-    data = request.files.get('data')
-    if name is not None and data is not None:
-        raw = data.file.read() # small files =.=
-        filename = data.filename
-        return "Hello %s! You uploaded %s (%d bytes)." % (name, filename, len(raw))
-    return "You missed a field."
-
-@route('/tpl')
-def tpl():
-    return template('test')
-
-run(host='localhost', port=8085, reloader=True)
-
+# check = ('user1', '1')
+# if check in user_account_pass:
+#     id = user_id[user_account_pass.index(check)]
+#     print(id)
+user_id.sort()
+print(user_id[len(user_id) - 1])
+# print(len(user_account_pass))

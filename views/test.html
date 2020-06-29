@@ -32,30 +32,71 @@
 </head>
 
 <body>
-    <div class="container py-5">
-        
-        <div class="row">
-            <div class="col-lg-6 mx-auto">
-                <label class="text-white mb-3 lead">Where do you live?</label>
-                <!-- Multiselect dropdown -->
-                <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100">
-                    <option>United Kingdom</option>
-                    <option>United States</option>
-                    <option>France</option>
-                    <option>Germany</option>
-                    <option>Italy</option>
-                </select><!-- End -->
-            </div>
+    <!-- SideNav slide-out button -->
+    <a href="#" data-activates="slide-out" class="btn btn-dark p-3 button-collapse"><i
+        class="fas fa-bars"></i></a>
+
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav fixed special-color-dark">
+    <ul class="custom-scrollbar">
+        <!-- Logo -->
+        <li>
+        <div class="logo-wrapper waves-light">
+            <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png"
+                class="img-fluid flex-center"></a>
         </div>
-        
+        </li>
+        <!--/. Logo -->
+        <!--Social-->
+        <li>
+        <ul class="social">
+            <li><a href="#" class="icons-sm fb-ic"><i class="fab fa-facebook-f"> </i></a></li>
+            <li><a href="#" class="icons-sm pin-ic"><i class="fab fa-pinterest"> </i></a></li>
+            <li><a href="#" class="icons-sm gplus-ic"><i class="fab fa-google-plus-g"> </i></a></li>
+            <li><a href="#" class="icons-sm tw-ic"><i class="fab fa-twitter"> </i></a></li>
+        </ul>
+        </li>
+        <!--/Social-->
+        <!--Search Form-->
+        <li>
+        <form class="search-form" role="search">
+            <div class="form-group md-form mt-0 pt-1 waves-light">
+            <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        </li>
+        <!--/.Search Form-->
+        <!-- Side navigation links -->
+        <li>
+        <ul class="collapsible collapsible-accordion">
+            <li><a class="collapsible-header waves-effect"><i class="fas fa-chevron-right"></i> Submit
+                blog</a>
+            </li>
+            <li><a class="collapsible-header waves-effect"><i class="far fa-hand-pointer"></i>
+                Instruction</a>
+            </li>
+            <li><a class="collapsible-header waves-effect"><i class="fas fa-eye"></i> About</a>
+            </li>
+            <li><a class="collapsible-header waves-effect"><i class="far fa-envelope"></i> Contact me</a>
+            </li>
+        </ul>
+        </li>
+        <!--/. Side navigation links -->
+    </ul>
+    <div class="sidenav-bg"></div>
     </div>
+    <!--/. Sidebar navigation -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script>
-        $(function () {
-            $('.selectpicker').selectpicker();
+        $(document).ready(function() {
+        // SideNav Button Initialization
+        $(".button-collapse").sideNav();
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
         });
     </script>
 </body>

@@ -5,12 +5,53 @@ import json
 import random
 
 client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
-db = client['menu_list']
-collection = db['list_menu']
+db = client['user']
+collection = db['user_info']
+collection1 = db['user_info1']
 
 meal_id_arr, meal_actual_id, meal_menu, meal_ingre, meal_methods,meal_image, meal_score = ver2.get_meal_infor('../../dataset/csv_file/food/')
 default_image = 'https://deptuoi30.com/wp-content/uploads/2019/04/thuc-don-bua-com-gia-dinh-9-600x400.jpg'
-total_top_rating = []
+
+def get_user_infor():
+    user_account_pass = []
+    user_id = []
+    for user in collection.find():
+        user_account_pass.append((user['user_account'], 
+                                    user['user_password']))
+        user_id.append(user['user_id'])
+    return user_account_pass, user_id
+
+@post('/login')
+def do_login():
+    username = request.forms.get('username')
+    password = request.forms.get('password')
+
+    user_account_pass, user_id = get_user_infor()
+    if (username, password) in user_account_pass:
+        id = user_id[user_account_pass.index((username, password))]
+        print('login with ID %s' % id)
+        redirect('/find')
+    else:
+        print('fail')
+
+@post('/register')
+def do_register():
+    user_account = request.forms.get('register_user_account')
+    user_password = request.forms.get('register_user_password')
+    user_name = request.forms.get('register_user_name')
+
+    # Find next ID to init
+    _, user_id = get_user_infor()
+    user_id.sort()
+    new_user_id = str(int(user_id[len(user_id) - 1]) + 1)
+    dic = {'user_account': user_account, 'user_password': user_password, 
+            'user_id': new_user_id, 'user_name': user_name, 'user_gender': '',
+            'user_age': '','user_hobbies': [], 'user_group': [], 'user_history': []}
+
+    x = collection1.insert_one(dic)
+    print(dic)
+    redirect('/find')
+
 
 def get_detail(top_rating):
     # Get detail recommended meals
@@ -50,7 +91,6 @@ def get_recommeded_meals():
     if recipe_input == '':
         # Most general
         top_rating = get_topk_rating(6)
-        total_top_rating = top_rating
 
         menu_array, image_array, rating_array = get_detail(top_rating)
         image_array = [element or default_image for element in image_array]
@@ -68,7 +108,6 @@ def get_recommeded_meals():
     else:
         # Recommended
         top_rating = ver2.main_ver2(1, recipe_input)
-        total_top_rating = top_rating
 
         # Get detail recommended meals
         menu_array, image_array, rating_array = get_detail(top_rating)
@@ -77,7 +116,6 @@ def get_recommeded_meals():
 
         # Might care
         top_rating_more = get_topk_rating(3)
-        total_top_rating.extend(top_rating_more)
         menu_array_more, image_array_more, rating_array_more = get_detail(top_rating_more)
         image_array_more = [element or default_image for element in image_array_more]
         print('new_image: ', image_array_more)
@@ -94,7 +132,6 @@ def get_recommeded_meals():
 @route('/detail/:meal_id')
 def meal_detail(meal_id):
     print("id: ", meal_id)
-    print('total_id: ', total_top_rating)
     
     
     # Get image
@@ -130,28 +167,28 @@ def meal_detail(meal_id):
                     detail_recipe_4= detail_recipes[3], detail_ingre_4 = detail_ingre[3],
                     detail_recipe_5= detail_recipes[4], detail_ingre_5 = detail_ingre[4])
 
-@post('/rating')
-def get_rating():
-    input_name = request.POST.get('recipe_name')
-    category = request.POST.get('category')
-    correspond = request.POST.get('correspond')
-    result_menu = request.POST.get('result_menu')
-    rate_num = request.POST.get('rate_num')
-    print('------------------')
-    print(input_name)
-    print(category)
-    print(correspond)
-    print(result_menu)
-    print(rate_num)
-    data = {'input_name': input_name, 'category': category,
-            'correspond': correspond, 'result_menu': result_menu, 'rate_nume': rate_num}
-    return json.dumps(data)
+@get('/rating/:value')
+def get_rating(value):
+    # input_name = request.POST.get('recipe_name')
+    # category = request.POST.get('category')
+    # correspond = request.POST.get('correspond')
+    # result_menu = request.POST.get('result_menu')
+    # rate_num = request.POST.get('rate_num')
+    # print('------------------')
+    # print(input_name)
+    # print(category)
+    # print(correspond)
+    # print(result_menu)
+    # print(rate_num)
+    # data = {'input_name': input_name, 'category': category,
+    #         'correspond': correspond, 'result_menu': result_menu, 'rate_nume': rate_num}
+    # return json.dumps(data)
+    print(value)
 
 
 @route('/find')
 def find_menu_form():
     top_rating = get_topk_rating(6)
-    total_top_rating = top_rating
 
     menu_array, image_array, rating_array = get_detail(top_rating)
     image_array = [element or default_image for element in image_array]

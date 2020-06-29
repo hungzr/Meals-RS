@@ -35,7 +35,7 @@
       outline: none !important;
     }
     .sidenav {
-      height: 85%;
+      height: 100%;
       width: 0;
       position: fixed;
       z-index: 1;
@@ -219,73 +219,78 @@
     </div>
 
     <!-- Login Modal-->
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <form action="/login" method="post" class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-        <div class="modal-header text-center">
+          <div class="modal-header text-center">
             <h4 class="modal-title w-100 font-weight-bold">Đăng nhập</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">&times;</span>
             </button>
-        </div>
-        <div class="modal-body mx-3">
+          </div>
+          <div class="modal-body mx-3">
             <div class="md-form mb-5">
-                <i class="fas fa-envelope prefix grey-text"></i>
-                <input type="email" id="defaultForm-email" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-email">Tài khoản</label>
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <input name="username" type="text" id="defaultForm-email" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">Tài khoản</label>
             </div>
 
             <div class="md-form mb-4">
-                <i class="fas fa-lock prefix grey-text"></i>
-                <input type="password" id="defaultForm-pass" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-pass">Mật khẩu</label>
+              <i class="fas fa-lock prefix grey-text"></i>
+              <input name="password" type="password" id="defaultForm-pass" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="defaultForm-pass">Mật khẩu</label>
             </div>
 
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type= "submit" class="btn btn-default">Đăng nhập</button>
+          </div>
         </div>
-        <div class="modal-footer d-flex justify-content-center">
-            <button class="btn btn-default">Login</button>
-        </div>
-        </div>
-    </div>
-    </div>
+      </div>
+    </form>
 
     <!-- Register Modal-->
-    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <form action="/register" method="post" class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-        <div class="modal-header text-center">
+          <div class="modal-header text-center">
             <h4 class="modal-title w-100 font-weight-bold">Đăng ký</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">&times;</span>
             </button>
-        </div>
-        <div class="modal-body mx-3">
+          </div>
+          <div class="modal-body mx-3">
+            <!--User Account-->
             <div class="md-form mb-5">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" id="orangeForm-name" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <input name="register_user_account" type="text" id="user_account" class="form-control validate" required>
+              <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+              <label data-error="wrong" data-success="right" for="user_account">Tài khoản</label>
             </div>
-            <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="email" id="orangeForm-email" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
-            </div>
-
+            <!--User Password-->
             <div class="md-form mb-4">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <input type="password" id="orangeForm-pass" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+              <i class="fas fa-lock prefix grey-text"></i>
+              <input name="register_user_password" type="password" id="user_password" class="form-control validate" required>
+              <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+              <label data-error="wrong" data-success="right" for="user_password">Mật khẩu</label>
             </div>
-
+            
+            <!--User Name-->
+            <div class="md-form mb-3">
+              <i class="fas fa-user prefix grey-text"></i>
+              <input name="register_user_name" type="text" id="user_name" class="form-control validate" >
+              <label data-error="wrong" data-success="right" for="user_name">Tên người dùng</label>
+            </div>
+            
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button class="btn btn-deep-orange" type="submit">Đăng ký</button>
+          </div>
         </div>
-        <div class="modal-footer d-flex justify-content-center">
-            <button class="btn btn-deep-orange">Đăng ký</button>
-        </div>
-        </div>
-    </div>
-    </div>
+      </div>
+    </form>
 
     <!-- /. Modal -->
 
@@ -439,7 +444,7 @@
       <section class="wow fadeIn">
 
         <!--Section heading-->
-        <h1 class="text-center my-5 font-weight-bold">Thực đơn số 1</h1>
+        <h1 class="text-center my-5 font-weight-bold">Thực đơn thuần Việt đơn giản</h1>
 
         <!--Grid row-->
         <div class="row text-left">
@@ -468,6 +473,7 @@
                 <span id="rateMe4"  class=" feedback "></span>
               </p>
             </div>
+
             <h4 class="my-5 font-weight-bold">
               <a>
                 Danh sách các món ăn gồm: 
@@ -842,7 +848,7 @@
               // Append popover to #rateMe to allow handling form inside the popover
               container: $container,
               // Custom content for popover
-              content: `<div class="my-0 py-0"> <textarea type="text" style="font-size: 0.78rem" class="md-textarea form-control py-0" placeholder="Write us what can we improve" rows="3"></textarea> <button id="voteSubmitButton" type="submit" class="btn btn-sm btn-primary">Submit!</button> <button id="closePopoverButton" class="btn btn-flat btn-sm">Close</button>  </div>`
+              content: `<div class="my-0 py-0"> <textarea type="text" style="font-size: 0.78rem" class="md-textarea form-control py-0" placeholder="Write us what can we improve" rows="3"></textarea> <button href="/rating/index" id="voteSubmitButton" type="submit" class="btn btn-sm btn-primary">Submit!</button> <button id="closePopoverButton" class="btn btn-flat btn-sm">Close</button>  </div>`
             });
           })
         }

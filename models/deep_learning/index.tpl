@@ -34,7 +34,7 @@
       outline: none !important;
     }
     .sidenav {
-      height: 85%;
+      height: 100%;
       width: 0;
       position: fixed;
       z-index: 1;
@@ -218,7 +218,7 @@
     </div>
 
     <!-- Login Modal-->
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <form action="/login" method="post" class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -231,26 +231,26 @@
           <div class="modal-body mx-3">
             <div class="md-form mb-5">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="email" id="defaultForm-email" class="form-control validate">
+              <input name="username" type="text" id="defaultForm-email" class="form-control validate">
               <label data-error="wrong" data-success="right" for="defaultForm-email">Tài khoản</label>
             </div>
 
             <div class="md-form mb-4">
               <i class="fas fa-lock prefix grey-text"></i>
-              <input type="password" id="defaultForm-pass" class="form-control validate">
+              <input name="password" type="password" id="defaultForm-pass" class="form-control validate">
               <label data-error="wrong" data-success="right" for="defaultForm-pass">Mật khẩu</label>
             </div>
 
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button class="btn btn-default">Đăng nhập</button>
+            <button type= "submit" class="btn btn-default">Đăng nhập</button>
           </div>
         </div>
       </div>
-    </div>
+    </form>
 
     <!-- Register Modal-->
-    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <form action="/register" method="post" class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -262,94 +262,34 @@
           </div>
           <div class="modal-body mx-3">
             <!--User Account-->
-            <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_account">Tài khoản <span style="color:red;">*</span></label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" name="user_account" id="user_account" required>
-                <div class="invalid-feedback">Trường này không được bỏ trống.</div>
-              </div>
+            <div class="md-form mb-5">
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <input name="register_user_account" type="text" id="user_account" class="form-control validate" required>
+              <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+              <label data-error="wrong" data-success="right" for="user_account">Tài khoản</label>
             </div>
             <!--User Password-->
-            <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_password">Mật khẩu <span style="color:red;">*</span></label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" name="user_password" id="user_password" required>
-                <div class="invalid-feedback">Trường này không được bỏ trống.</div>
-              </div>
+            <div class="md-form mb-4">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <input name="register_user_password" type="password" id="user_password" class="form-control validate" required>
+              <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+              <label data-error="wrong" data-success="right" for="user_password">Mật khẩu</label>
             </div>
+            
             <!--User Name-->
-            <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_name">Tên người dùng</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" name="user_name" id="user_name">
-              </div>
+            <div class="md-form mb-3">
+              <i class="fas fa-user prefix grey-text"></i>
+              <input name="register_user_name" type="text" id="user_name" class="form-control validate" >
+              <label data-error="wrong" data-success="right" for="user_name">Tên người dùng</label>
             </div>
-            <!--User Gender-->
-            <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
-              <div class="col-sm-8 my-detail">
-                <select class="browser-default custom-select" name="user_gender" id="user_gender">
-                  <option selected value="1">Nam</option>
-                  <option value="0">Nữ</option>
-                </select>
-              </div>
-            </div>
-            <!--User Age-->
-            <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" name="user_age" id="user_age">
-              </div>
-            </div>
-            <!--User Health-->
-            <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
-              <div class="col-sm-8">
-                <select class="browser-default custom-select" name="user_health" id="user_health">
-                  <option selected value=""></option>
-                  <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
-                  <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
-                  <option value="bệnh tim mạch">Bệnh tim mạch</option>
-                  <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
-                  <option value="bệnh dạ dày">Bệnh dạ dày</option>
-                </select>
-              </div>
-            </div>
-            <!--User Hobbies-->
-            <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_hobbies">Sở thích</label>
-              <div class="col-sm-8 ">
-                <!-- Multiselect dropdown -->
-                <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-                  name="user_hobbies" id="user_hobbies" data-live-search="true">
-                  <option value="gà">Thịt gà</option>
-                  <option value="bò">Thịt bò</option>
-                  <option value="lợn">Thịt lợn</option>
-                  <option value="cá">Cá</option>
-                  <option value="tôm">Tôm</option>
-                  <option value="rau">Rau</option>
-                  <option value="củ">Củ</option>
-                  <option value="quả">Quả</option>
-                  <option value="bánh mì">Bánh mì</option>
-                  <option value="mì">Mì</option>
-                  <option value="cháo">Cháo</option>
-                  <option value="súp">Soup</option>
-                  <option value="xôi">Xôi</option>
-                  <option value="lẩu">Lẩu</option>
-                  <option value="vịt">Thịt vịt</option>
-                  <option value="bún">Bún</option>
-                  <option value="phở">Phở</option>
-                </select><!-- End -->
-              </div>
-            </div>
-
+            
           </div>
           <div class="modal-footer d-flex justify-content-center">
             <button class="btn btn-deep-orange" type="submit">Đăng ký</button>
           </div>
         </div>
       </div>
-    </div>
+    </form>
 
     <!-- /. Modal -->
 
@@ -436,15 +376,15 @@
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="user_age" id="user_age">
-            <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+            <input type="date" class="form-control" name="user_age" id="user_age">
           </div>
         </div>
         <!--User Health-->
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
           <div class="col-sm-8">
-            <select class="browser-default custom-select" name="user_health" id="user_health">
+            <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
+             name="user_health" id="user_health" data-live-search="true">
               <option selected value=""></option>
               <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
               <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
@@ -482,7 +422,7 @@
           </div>
         </div>
 
-        <br>
+        <br><br><hr><br>
         <!--Button-->
         <div class=" form-group row">
           <div class="col-sm-1"></div>
@@ -522,7 +462,7 @@
               <!--Card image-->
               <div class="view overlay" >
                 <img src="{{recom_image_1}}" class="card-img-top " alt="">
-                <div class="price">
+                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_1}}/5</strong>
                 </div>
@@ -559,7 +499,7 @@
               <!--Card image-->
               <div class="view overlay">
                 <img src="{{recom_image_2}}" class="card-img-top" alt="">
-                <div class="price">
+                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_2}}/5</strong>
                 </div>
@@ -593,7 +533,7 @@
               <!--Card image-->
               <div class="view overlay">
                 <img src="{{recom_image_3}}" class="card-img-top" alt="">
-                <div class="price">
+                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{recom_rating_3}}/5</strong>
                 </div>
@@ -644,7 +584,7 @@
               <!--Card image-->
               <div class="view overlay">
                 <img src="{{more_image_1}}" class="card-img-top" alt="">
-                <div class="price">
+                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{more_rating_1}}/5</strong>
                 </div>
@@ -680,7 +620,7 @@
               <!--Card image-->
               <div class="view overlay">
                 <img src="{{more_image_2}}" class="card-img-top" alt="">
-                <div class="price">
+                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{more_rating_2}}/5</strong>
                 </div>
@@ -714,7 +654,7 @@
               <!--Card image-->
               <div class="view overlay">
                 <img src="{{more_image_3}}" class="card-img-top" alt="">
-                <div class="price">
+                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
                   <strong style="color:black; ">{{more_rating_3}}/5</strong>
                 </div>
