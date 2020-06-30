@@ -848,7 +848,7 @@
               // Append popover to #rateMe to allow handling form inside the popover
               container: $container,
               // Custom content for popover
-              content: `<div class="my-0 py-0"> <textarea type="text" style="font-size: 0.78rem" class="md-textarea form-control py-0" placeholder="Write us what can we improve" rows="3"></textarea> <button href="/rating/index" id="voteSubmitButton" type="submit" class="btn btn-sm btn-primary">Submit!</button> <button id="closePopoverButton" class="btn btn-flat btn-sm">Close</button>  </div>`
+              content: `<div class="my-0 py-0"> <textarea type="text" style="font-size: 0.78rem" class="md-textarea form-control py-0" placeholder="Write us what can we improve" rows="3"></textarea> <a href="/rating/index"><button  id="voteSubmitButton" type="submit" class="btn btn-sm btn-primary">Submit!</button></a> <button id="closePopoverButton" class="btn btn-flat btn-sm">Close</button>  </div>`
             });
           })
         }

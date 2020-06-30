@@ -11,6 +11,7 @@ collection1 = db['user_info1']
 
 meal_id_arr, meal_actual_id, meal_menu, meal_ingre, meal_methods,meal_image, meal_score = ver2.get_meal_infor('../../dataset/csv_file/food/')
 default_image = 'https://deptuoi30.com/wp-content/uploads/2019/04/thuc-don-bua-com-gia-dinh-9-600x400.jpg'
+id = -1
 
 def get_user_infor():
     user_account_pass = []
@@ -86,7 +87,8 @@ def get_topk_rating(k):
 @post('/find')
 def get_recommeded_meals():
     recipe_input = request.forms.recipe_name
-    print(recipe_input)
+    print('user_id: ', id)
+    print('input: ', recipe_input)
 
     if recipe_input == '':
         # Most general
@@ -96,7 +98,7 @@ def get_recommeded_meals():
         image_array = [element or default_image for element in image_array]
         # print('new_image: ', image_array)
 
-        return template('index', recipe_input='',
+        return template('index', recipe_input='', user_login_id = '',
         meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
@@ -120,7 +122,7 @@ def get_recommeded_meals():
         image_array_more = [element or default_image for element in image_array_more]
         print('new_image: ', image_array_more)
         
-        return template('index', recipe_input=recipe_input,
+        return template('index', recipe_input=recipe_input, user_login_id = '',
         meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
@@ -131,7 +133,7 @@ def get_recommeded_meals():
 
 @route('/detail/:meal_id')
 def meal_detail(meal_id):
-    print("id: ", meal_id)
+    print("meal_id: ", meal_id)
     
     
     # Get image
@@ -160,7 +162,7 @@ def meal_detail(meal_id):
 
     # Get all methods
 
-    return template('detail',recipe_input='', detail_image=detail_image,
+    return template('detail',recipe_input='', user_login_id = '', detail_image=detail_image,
                     detail_recipe_1= detail_recipes[0], detail_ingre_1 = detail_ingre[0],
                     detail_recipe_2= detail_recipes[1], detail_ingre_2 = detail_ingre[1],
                     detail_recipe_3= detail_recipes[2], detail_ingre_3 = detail_ingre[2],
@@ -188,13 +190,14 @@ def get_rating(value):
 
 @route('/find')
 def find_menu_form():
+    print('user_id: ', id)
     top_rating = get_topk_rating(6)
 
     menu_array, image_array, rating_array = get_detail(top_rating)
     image_array = [element or default_image for element in image_array]
     # print('new_image: ', image_array)
 
-    return template('index', recipe_input='',
+    return template('index', recipe_input='',user_login_id = '1',
     meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
     meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
     meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],

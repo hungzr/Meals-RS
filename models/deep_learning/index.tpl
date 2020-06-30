@@ -336,7 +336,13 @@
         <a id="navbar-static-login"
           class="btn btn-info btn-rounded btn-sm waves-effect waves-light auth-modal-toggle my-btn" data-toggle="modal"
           data-target="#modalRegisterForm">ĐĂNG KÝ</a>
+
+        <label id="logined" value = "{{user_login_id}}" style="visibility:hidden;">
+          <img src="https://i.pinimg.com/564x/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.jpg" style="width:55px;">
+        </label>
       </div>
+
+      
       <!--/. Sign Button-->
     </nav>
     <!-- Navbar -->
@@ -359,7 +365,8 @@
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_id">ID</label>
           <div class="col-sm-8 my-detail">
-            <label type="text" class="form-control" name="user_id" id="user_id">1</label>
+            <input type="text" class="form-control" name="user_id" id="user_id" value="{{user_login_id}}" style="height:100%;" disabled>
+      
           </div>
         </div>
         <!--User Gender-->
@@ -761,6 +768,12 @@
   <script>
     if (document.getElementById('recipe_name').value == "") {
       document.getElementById("show_more").style.visibility = "hidden";
+    }
+    if (document.getElementById('user_id').value != "") {
+      console.log($('#user_id').text())
+      document.getElementById("logined").style.visibility = "visible";
+      document.getElementById("navbar-static-signin").style.display = "none";
+      document.getElementById("navbar-static-login").style.display = "none";
     }
 
     function openNav() {
