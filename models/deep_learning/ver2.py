@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-import meals
+from training import meals
 import csv
 import pandas as pd
 import os
