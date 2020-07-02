@@ -165,6 +165,19 @@
       width:100%;
     }
 
+    .login-btn {
+      border-radius:25px;
+      padding: 0;
+    }
+
+    .dropdown-toggle::after {
+      content: none;
+    }
+
+    .my-dropdown-menu {
+      padding:0;
+    }
+
   </style>
 </head>
 
@@ -299,10 +312,10 @@
         <!--Main Navigation-->
 
 
-        <!-- SideNav slide-out -->
-        <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i><span class="sr-only" aria-hidden="true">Toggle side navigation</span></a> -->
-        <span style="font-size:30px;cursor:pointer; color: #4285f4;" onclick="openNav()"><i class="fas fa-bars"></i></span>
-        <form action="/find" method="post" id="main">
+      <!-- SideNav slide-out -->
+      <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i><span class="sr-only" aria-hidden="true">Toggle side navigation</span></a> -->
+      <span style="font-size:30px;cursor:pointer; color: #4285f4;" onclick="openNav()"><i class="fas fa-bars"></i></span>
+      <form action="/find" method="post" id="main">
         <div class="container header-container">
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -330,12 +343,26 @@
       </form>
         <!--/. SideNav slide-out -->
 
-        <!-- Sign Button-->
-        <div id="option-sign">
-            <a id="navbar-static-signin"  class="text-info align-self-center ml-2 auth-modal-toggle " data-toggle="modal" data-target="#modalLoginForm">Đăng nhập</a>
-            <a id="navbar-static-login"  class="btn btn-info btn-rounded btn-sm waves-effect waves-light auth-modal-toggle my-btn" data-toggle="modal" data-target="#modalRegisterForm">ĐĂNG KÝ</a>
+      <!-- Sign Button-->
+      <div id="option-sign">
+        <a id="navbar-static-signin" class="text-info align-self-center ml-2 auth-modal-toggle " data-toggle="modal"
+          data-target="#modalLoginForm">Đăng nhập</a>
+        <a id="navbar-static-login"
+          class="btn btn-info btn-rounded btn-sm waves-effect waves-light auth-modal-toggle my-btn" data-toggle="modal"
+          data-target="#modalRegisterForm">ĐĂNG KÝ</a>
+      </div>
+      <!-- Basic dropdown -->
+      <div class="dropdown" id="logined" style="visibility:hidden;">
+        <button class="btn btn-primary dropdown-toggle mr-4 login-btn" type="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" >
+          <img src="https://i.pinimg.com/564x/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.jpg" style="width:50px;">
+        </button>
+
+        <div class="dropdown-menu my-dropdown-menu">
+          <a class="dropdown-item my-dropdown-item" href="/logout">Đăng xuất</a>
         </div>
-        <!--/. Sign Button-->
+      </div>
+        <!-- Basic dropdown -->
     </nav>
     <!-- Navbar -->
 
@@ -348,92 +375,96 @@
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-      <h3 style="text-align: center">Hệ thống gợi ý thực đơn</h4><br><br>
-      <h5 style="text-align: center">Thông tin người dùng</h5><br>
+      <h3 style="text-align: center">Hệ thống gợi ý thực đơn</h4><br><hr>
+        <h5 style="text-align: center">Thông tin người dùng</h5><br>
 
-      <!--Contents-->
-      <!--User ID-->
-      <div class="form-group row">
+        <!--Contents-->
+        <!--User ID-->
+        <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_id">ID</label>
-          <div class="col-sm-8">
-          <label type="text" class="form-control"  name="user_id" id="user_id">1</label>
+          <div class="col-sm-8 my-detail">
+            <input type="text" class="form-control" name="user_id" id="user_id" value="{{user_login_id}}" style="height:100%;" disabled>
+      
           </div>
-      </div>
-      <!--User Gender-->
-      <div class="form-group row">
+        </div>
+        <!--User Gender-->
+        <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
-          <div class="col-sm-8">
-          <select class="browser-default custom-select" name="user_gender" id="user_gender">
+          <div class="col-sm-8 my-detail">
+            <select class="browser-default custom-select" name="user_gender" id="user_gender">
               <option selected value="1">Nam</option>
               <option value="0">Nữ</option>
-          </select>
+            </select>
           </div>
-      </div>
-      <!--User Age-->
-      <div class="form-group row">
+        </div>
+        <!--User Age-->
+        <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
           <div class="col-sm-8">
-          <input type="text" class="form-control"  name="user_age" id="user_age">
-          <div class="invalid-feedback">Trường này không được bỏ trống.</div>
+            <input type="date" class="form-control" name="user_age" id="user_age">
           </div>
-      </div>
-      <!--User Health-->
-      <div class="form-group row">
+        </div>
+        <!--User Health-->
+        <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
           <div class="col-sm-8">
-              <select class="browser-default custom-select" name="user_health" id="user_health">
-                  <option selected value=""></option>
-                  <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
-                  <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
-                  <option value="bệnh tim mạch">Bệnh tim mạch</option>
-                  <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
-                  <option value="bệnh dạ dày">Bệnh dạ dày</option>
-              </select>
+            <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
+             name="user_health" id="user_health" data-live-search="true">
+              <option selected value=""></option>
+              <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
+              <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
+              <option value="bệnh tim mạch">Bệnh tim mạch</option>
+              <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
+              <option value="bệnh dạ dày">Bệnh dạ dày</option>
+            </select>
           </div>
-      </div>
-      <!--User Hobbies-->
-      <div class="form-group row">
+        </div>
+        <!--User Hobbies-->
+        <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_hobbies">Sở thích</label>
           <div class="col-sm-8 ">
-                  <!-- Multiselect dropdown -->
-              <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control " name="user_hobbies" id="user_hobbies" data-live-search="true">
-                  <option value="gà">Thịt gà</option>
-                  <option value="bò">Thịt bò</option>
-                  <option value="lợn">Thịt lợn</option>
-                  <option value="cá">Cá</option>
-                  <option value="tôm">Tôm</option>
-                  <option value="rau">Rau</option>
-                  <option value="củ">Củ</option>
-                  <option value="quả">Quả</option>
-                  <option value="bánh mì">Bánh mì</option>
-                  <option value="mì">Mì</option>
-                  <option value="cháo">Cháo</option>
-                  <option value="súp">Soup</option>
-                  <option value="xôi">Xôi</option>
-                  <option value="lẩu">Lẩu</option>
-                  <option value="vịt">Thịt vịt</option>
-                  <option value="bún">Bún</option>
-                  <option value="phở">Phở</option>
-              </select><!-- End -->
+            <!-- Multiselect dropdown -->
+            <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
+              name="user_hobbies" id="user_hobbies" data-live-search="true">
+              <option value="gà">Thịt gà</option>
+              <option value="bò">Thịt bò</option>
+              <option value="lợn">Thịt lợn</option>
+              <option value="cá">Cá</option>
+              <option value="tôm">Tôm</option>
+              <option value="rau">Rau</option>
+              <option value="củ">Củ</option>
+              <option value="quả">Quả</option>
+              <option value="bánh mì">Bánh mì</option>
+              <option value="mì">Mì</option>
+              <option value="cháo">Cháo</option>
+              <option value="súp">Soup</option>
+              <option value="xôi">Xôi</option>
+              <option value="lẩu">Lẩu</option>
+              <option value="vịt">Thịt vịt</option>
+              <option value="bún">Bún</option>
+              <option value="phở">Phở</option>
+            </select><!-- End -->
           </div>
-      </div>
+        </div>
 
-      <br>
-      <!--Button-->
-      <div class=" form-group row">
+        <br><br><hr><br>
+        <!--Button-->
+        <div class=" form-group row">
           <div class="col-sm-1"></div>
           <div class="col-sm-5">
-              <a data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn" style="color: black;">Lưu
-                  <i class="fas fa-cloud ml-2"></i>
-              </a>
+            <a data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn"
+              style="color: black;">Lưu
+              <i class="fas fa-cloud ml-2"></i>
+            </a>
           </div>
           <div class="col-sm-5">
-              <a data-toggle="modal" data-target="#canel_modal" class="btn btn-info btn-md my-btn" style="color: black;">Hủy bỏ
-                  <i class="fas fa-ban ml-2"></i>
-              </a>
+            <a data-toggle="modal" data-target="#canel_modal" class="btn btn-info btn-md my-btn"
+              style="color: black;">Hủy bỏ
+              <i class="fas fa-ban ml-2"></i>
+            </a>
           </div>
           <div class="col-sm-1"></div>
-      </div>
+        </div>
 
     </div>
     <!--/. Sidebar navigation -->
@@ -483,137 +514,95 @@
             <hr>
 
             <!--Ingredients-->
-            <div class="row">
-              <h5 class="font-weight-bold">
-                <a>
-                   {{detail_recipe_1}} 
-                </a>
-              </h5>
-              <div id="ingre_1">
-                <p>{{detail_ingre_1}}</p>
+            %for i in range(len(detail_recipe)):
+              <div class="row">
+                <h5 class="font-weight-bold">
+                  <a>
+                    {{detail_recipe[i]}} 
+                  </a>
+                </h5>
+                %if detail_ingre[i] != '':
+                  <div id="ingre">
+                    <p>
+                      _Nguyên liệu gồm: {{detail_ingre[i]}}
+                    </p>
 
-                <!--Steps-->
-                <p>_ Các bước nấu: </p>
-                <div class="col-md-12">
+                    <!--Steps-->
+                    <p>_ Các bước nấu: </p>
+                    <div class="col-md-12">
 
-                  <!-- Stepers Wrapper -->
-                  <ul class="stepper stepper-vertical mb-0">
+                      <!-- Stepers Wrapper -->
+                      <ul class="stepper stepper-vertical mb-0">
 
-                      <!-- First Step -->
-                      <li class="completed">
-                          <!--Section Title -->
-                          <a >
-                              <span class="circle">1</span>
-                              <span class="label">Bước 1</span>
-                          </a>
+                          <!-- First Step -->
+                          <li class="completed">
+                              <!--Section Title -->
+                              <a >
+                                  <span class="circle">1</span>
+                                  <span class="label">Bước 1</span>
+                              </a>
 
-                          <!-- Section Description -->
-                          <div class="step-content grey lighten-3">
-                            <p>Tôm mua về rửa sạch rồi thực hiện cắt bỏ phần râu và đầu nhọn của tôm. Tiếp đến dùng chút muối để xóc đều lên
-                              trong khoảng 15 phút để có được món ăn đậm đà hơn nhé.</p>
-                        </div>
-                      </li>
+                              <!-- Section Description -->
+                              <div class="step-content grey lighten-3">
+                                <p>Tôm mua về rửa sạch rồi thực hiện cắt bỏ phần râu và đầu nhọn của tôm. Tiếp đến dùng chút muối để xóc đều lên
+                                  trong khoảng 15 phút để có được món ăn đậm đà hơn nhé.</p>
+                            </div>
+                          </li>
 
-                      <!-- Second Step -->
-                      <li class="active">
-                          <!--Section Title -->
-                          <a >
-                              <span class="circle">2</span>
-                              <span class="label">Bước 2</span>
-                          </a>
+                          <!-- Second Step -->
+                          <li class="active">
+                              <!--Section Title -->
+                              <a >
+                                  <span class="circle">2</span>
+                                  <span class="label">Bước 2</span>
+                              </a>
 
-                          <!-- Section Description -->
-                          <div class="step-content grey lighten-3">
-                              <p>Bắc chảo lên bếp rồi cho vào chảo 1 thìa cà phê đường, đun đến khi đường tan chảy hoàn 
-                                toàn chuyển snag màu nâu cánh gián đẹp mắt thì thêm vào 2 thìa canh nước lọc, tiếp tục đun sôi.</p>
-                          </div>
-                      </li>
+                              <!-- Section Description -->
+                              <div class="step-content grey lighten-3">
+                                  <p>Bắc chảo lên bếp rồi cho vào chảo 1 thìa cà phê đường, đun đến khi đường tan chảy hoàn 
+                                    toàn chuyển snag màu nâu cánh gián đẹp mắt thì thêm vào 2 thìa canh nước lọc, tiếp tục đun sôi.</p>
+                              </div>
+                          </li>
 
-                      <!-- Third Step -->
-                      <li class="completed">
-                          <!--Section Title -->
-                          <a >
-                            <span class="circle">3</span>
-                            <span class="label">Bước 3</span>
-                          </a>
+                          <!-- Third Step -->
+                          <li class="completed">
+                              <!--Section Title -->
+                              <a >
+                                <span class="circle">3</span>
+                                <span class="label">Bước 3</span>
+                              </a>
 
-                          <!-- Section Description -->
-                          <div class="step-content grey lighten-3">
-                              <p>Hành, tỏi khô lột bỏ vỏ rồi đem băm nhỏ. Thực hiện phi thơm hành tỏi băm đến khi dậy mùi thì 
-                                cho tôm vào, đảo đều tay vài lượt thì thêm chút nước mắm, đường cùng với nước màu đã chế ở trên.
-                                Đến khi phần nước sốt đã cạn thì cho hành lá thái nhỏ và ít mì chính vào, đảo lên lần cuối rồi tắt bếp luôn.</p>
-                          </div>
-                      </li>
+                              <!-- Section Description -->
+                              <div class="step-content grey lighten-3">
+                                  <p>Hành, tỏi khô lột bỏ vỏ rồi đem băm nhỏ. Thực hiện phi thơm hành tỏi băm đến khi dậy mùi thì 
+                                    cho tôm vào, đảo đều tay vài lượt thì thêm chút nước mắm, đường cùng với nước màu đã chế ở trên.
+                                    Đến khi phần nước sốt đã cạn thì cho hành lá thái nhỏ và ít mì chính vào, đảo lên lần cuối rồi tắt bếp luôn.</p>
+                              </div>
+                          </li>
 
-                      <!-- Fourth Step -->
-                      <li class="completed">
-                          <!--Section Title -->
-                          <a >
-                            <span class="circle">4</span>
-                            <span class="label">Bước 4</span>
-                          </a>
+                          <!-- Fourth Step -->
+                          <li class="completed">
+                              <!--Section Title -->
+                              <a >
+                                <span class="circle">4</span>
+                                <span class="label">Bước 4</span>
+                              </a>
 
-                          <!-- Section Description -->
-                          <div class="step-content grey lighten-3">
-                              <p>Trình bày món ăn ra đĩa rồi rắc chút hạt tiêu lên trên và thưởng thức luôn nhé.</p>
-                          </div>
-                      </li>
+                              <!-- Section Description -->
+                              <div class="step-content grey lighten-3">
+                                  <p>Trình bày món ăn ra đĩa rồi rắc chút hạt tiêu lên trên và thưởng thức luôn nhé.</p>
+                              </div>
+                          </li>
 
-                  </ul>
-                  <!-- /.Stepers Wrapper -->
+                      </ul>
+                      <!-- /.Stepers Wrapper -->
 
-                </div>
-                
+                    </div>
+                    
+                  </div>
+                %end
               </div>
-
-              
-
-            </div>
-
-            <div class="row">
-              <h5 class="font-weight-bold">
-                <a>
-                   {{detail_recipe_2}}  
-                </a>
-              </h5>
-              <div id="ingre_2">
-                <p>{{detail_ingre_2}}</p>
-              </div>
-
-            </div>
-
-            <div class="row" id="recipe_3">
-              <h5 class="font-weight-bold">
-                <a>
-                   {{detail_recipe_3}}  
-                </a>
-              </h5>
-              <div id="ingre_3">
-                <p>{{detail_ingre_3}}</p>
-              </div>
-            </div>
-
-            <div class="row" id="recipe_4">
-              <h5 class="font-weight-bold">
-                <a>
-                   {{detail_recipe_4}}  
-                </a>
-              </h5>
-              <div id="ingre_4">
-                <p>{{detail_ingre_4}}</p>
-              </div>
-            </div>
-
-            <div class="row" id="recipe_5">
-              <h5 class="font-weight-bold">
-                <a>
-                   {{detail_recipe_5}}  
-                </a>
-              </h5>
-              <div id="ingre_5">
-                <p>{{detail_ingre_5}}</p>
-              </div>
-            </div>
+            %end
             <!--/Ingredients-->
 
             <hr>
@@ -706,34 +695,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
-  <script>
-    if (document.getElementById('recipe_3').value == "") {
-      document.getElementById("recipe_3").style.visibility = "hidden";
-    }
-    if (document.getElementById('recipe_4').value == "") {
-      document.getElementById("recipe_4").style.visibility = "hidden";
-    }
-    if (document.getElementById('recipe_5').value == "") {
-      document.getElementById("recipe_5").style.visibility = "hidden";
-    }
-  </script>
-  <script>
-    if (document.getElementById('ingre_1').value == "") {
-      document.getElementById("ingre_1").style.visibility = "hidden";
-    }
-    if (document.getElementById('ingre_2').value == "") {
-      document.getElementById("ingre_2").style.visibility = "hidden";
-    }
-    if (document.getElementById('ingre_3').value == "") {
-      document.getElementById("ingre_3").style.visibility = "hidden";
-    }
-    if (document.getElementById('ingre_4').value == "") {
-      document.getElementById("ingre_4").style.visibility = "hidden";
-    }
-    if (document.getElementById('ingre_5').value == "") {
-      document.getElementById("ingre_5").style.visibility = "hidden";
-    }
-  </script>
+  
   <script>
     (function ($) {
       $.fn.mdbRate = function () {
@@ -765,6 +727,7 @@
         $stars.on('mouseover', function () {
           var index = $(this).attr('data-index');
           markStarsAsActive(index);
+          $('#rating_start').val(index)
         });
 
         function markStarsAsActive(index) {
@@ -834,6 +797,7 @@
         // ex. to send the information to the server
         $container.on('click', '#voteSubmitButton', function () {
           $stars.popover('hide');
+          
         });
 
         // Cancel, just close the popover
@@ -848,7 +812,7 @@
               // Append popover to #rateMe to allow handling form inside the popover
               container: $container,
               // Custom content for popover
-              content: `<div class="my-0 py-0"> <textarea type="text" style="font-size: 0.78rem" class="md-textarea form-control py-0" placeholder="Write us what can we improve" rows="3"></textarea> <a href="/rating/index"><button  id="voteSubmitButton" type="submit" class="btn btn-sm btn-primary">Submit!</button></a> <button id="closePopoverButton" class="btn btn-flat btn-sm">Close</button>  </div>`
+              content: `<div class="my-0 py-0"> <input id = "rating_start" value="" type="hidden"><textarea type="text" style="font-size: 0.78rem" class="md-textarea form-control py-0" placeholder="Write us what can we improve" rows="3"></textarea> <button  id="voteSubmitButton" type="submit" class="btn btn-sm btn-primary">Submit!</button> <button id="closePopoverButton" class="btn btn-flat btn-sm">Close</button>  </div>`
             });
           })
         }
@@ -858,6 +822,12 @@
     })(jQuery);
   </script>
   <script>
+    if (document.getElementById('user_id').value != "") {
+      document.getElementById("logined").style.visibility = "visible";
+      document.getElementById("navbar-static-signin").style.display = "none";
+      document.getElementById("navbar-static-login").style.display = "none";
+    }
+
     function openNav() {
       document.getElementById("mySidenav").style.width = "30%";
       document.getElementById("main").style.marginLeft = "30%";

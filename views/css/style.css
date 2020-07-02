@@ -1,6 +1,7 @@
-body {
-    font-family: "Lato", sans-serif;
-    transition: background-color .5s;
+
+  body {
+font-family: "Lato", sans-serif;
+transition: background-color .5s;
 }
 .bootstrap-select .bs-ok-default::after {
   width: 0.3em;
@@ -13,7 +14,7 @@ body {
   outline: none !important;
 }
 .sidenav {
-  height: 85%;
+  height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -136,4 +137,22 @@ button.btn.dropdown-toggle {
 
 .my-detail {
   border-radius: 10px;
+}
+
+.card-img-top {
+  height: 227px;
+  width:100%;
+}
+
+.login-btn {
+  border-radius:25px;
+  padding: 0;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.my-dropdown-menu {
+  padding:0;
 }

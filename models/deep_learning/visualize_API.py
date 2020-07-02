@@ -1,4 +1,4 @@
-from bottle import post,get, run, request, template, route, redirect
+from bottle import post,get, run, request, template, route, redirect, response
 from pymongo import MongoClient
 import ver2
 import json
@@ -11,7 +11,6 @@ collection1 = db['user_info1']
 
 meal_id_arr, meal_actual_id, meal_menu, meal_ingre, meal_methods,meal_image, meal_score = ver2.get_meal_infor('../../dataset/csv_file/food/')
 default_image = 'https://deptuoi30.com/wp-content/uploads/2019/04/thuc-don-bua-com-gia-dinh-9-600x400.jpg'
-id = -1
 
 def get_user_infor():
     user_account_pass = []
@@ -29,11 +28,18 @@ def do_login():
 
     user_account_pass, user_id = get_user_infor()
     if (username, password) in user_account_pass:
-        id = user_id[user_account_pass.index((username, password))]
-        print('login with ID %s' % id)
+        get_user_id = user_id[user_account_pass.index((username, password))]
+        response.set_cookie("user_id", get_user_id, secret='some-secret-key')
+        print('login with ID %s' % get_user_id)
         redirect('/find')
     else:
         print('fail')
+
+@get('/logout')
+def do_logout():
+    response.set_cookie("user_id", None, secret='some-secret-key')
+    print('logout successful' )
+    redirect('/find')
 
 @post('/register')
 def do_register():
@@ -87,8 +93,11 @@ def get_topk_rating(k):
 @post('/find')
 def get_recommeded_meals():
     recipe_input = request.forms.recipe_name
-    print('user_id: ', id)
     print('input: ', recipe_input)
+
+    get_user_id = request.get_cookie("user_id", secret='some-secret-key')
+    if get_user_id is None: get_user_id = ''
+    print('user_id: ', get_user_id)
 
     if recipe_input == '':
         # Most general
@@ -98,7 +107,7 @@ def get_recommeded_meals():
         image_array = [element or default_image for element in image_array]
         # print('new_image: ', image_array)
 
-        return template('index', recipe_input='', user_login_id = '',
+        return template('index', recipe_input='', user_login_id = get_user_id,
         meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
@@ -109,7 +118,9 @@ def get_recommeded_meals():
 
     else:
         # Recommended
-        top_rating = ver2.main_ver2(1, recipe_input)
+        temp_id = get_user_id
+        if get_user_id is None: temp_id = -1
+        top_rating = ver2.main_ver2(temp_id, recipe_input)
 
         # Get detail recommended meals
         menu_array, image_array, rating_array = get_detail(top_rating)
@@ -122,7 +133,7 @@ def get_recommeded_meals():
         image_array_more = [element or default_image for element in image_array_more]
         print('new_image: ', image_array_more)
         
-        return template('index', recipe_input=recipe_input, user_login_id = '',
+        return template('index', recipe_input=recipe_input, user_login_id = get_user_id,
         meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
         meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
         meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
@@ -134,6 +145,9 @@ def get_recommeded_meals():
 @route('/detail/:meal_id')
 def meal_detail(meal_id):
     print("meal_id: ", meal_id)
+    get_user_id = request.get_cookie("user_id", secret='some-secret-key')
+    if get_user_id is None: get_user_id = ''
+    print('user_id: ', get_user_id)
     
     
     # Get image
@@ -144,32 +158,28 @@ def meal_detail(meal_id):
     # Get all recipes in menu
     detail_recipes = meal_menu[meal_id_arr.index(int(meal_id))]
     detail_recipes = [str(i + 1) + '. ' + j.capitalize() for i, j in enumerate(detail_recipes)]
-    count_recipe  = 5 - len(detail_recipes)
-    if count_recipe != 0:
-        for i in range(count_recipe):
-            detail_recipes.append('')
-    print(detail_recipes)
+    # count_recipe  = 5 - len(detail_recipes)
+    # if count_recipe != 0:
+    #     for i in range(count_recipe):
+    #         detail_recipes.append('')
+    print('recipe: ', detail_recipes)
 
     # Get all ingredients
     detail_ingre = meal_ingre[meal_id_arr.index(int(meal_id))]
     detail_ingre = detail_ingre.split('|')
-    detail_ingre = ['_ Nguyên liệu: ' + i for i in detail_ingre if i != '']
-    count_ingre  = 5 - len(detail_ingre)
-    if count_ingre != 0:
-        for i in range(count_ingre):
-            detail_ingre.append('')
-    print(detail_ingre)
+    # detail_ingre = ['_ Nguyên liệu: ' + i for i in detail_ingre if i != '']
+    # count_ingre  = 5 - len(detail_ingre)
+    # if count_ingre != 0:
+    #     for i in range(count_ingre):
+    #         detail_ingre.append('')
+    print('ingre: ', detail_ingre)
 
     # Get all methods
 
-    return template('detail',recipe_input='', user_login_id = '', detail_image=detail_image,
-                    detail_recipe_1= detail_recipes[0], detail_ingre_1 = detail_ingre[0],
-                    detail_recipe_2= detail_recipes[1], detail_ingre_2 = detail_ingre[1],
-                    detail_recipe_3= detail_recipes[2], detail_ingre_3 = detail_ingre[2],
-                    detail_recipe_4= detail_recipes[3], detail_ingre_4 = detail_ingre[3],
-                    detail_recipe_5= detail_recipes[4], detail_ingre_5 = detail_ingre[4])
+    return template('detail',recipe_input='', user_login_id = get_user_id, detail_image=detail_image,
+                    detail_recipe= detail_recipes, detail_ingre = detail_ingre)
 
-@get('/rating/:value')
+@get('/rating')
 def get_rating(value):
     # input_name = request.POST.get('recipe_name')
     # category = request.POST.get('category')
@@ -190,14 +200,16 @@ def get_rating(value):
 
 @route('/find')
 def find_menu_form():
-    print('user_id: ', id)
+    get_user_id = request.get_cookie("user_id", secret='some-secret-key')
+    if get_user_id is None: get_user_id = ''
+    print('user_id: ', get_user_id)
     top_rating = get_topk_rating(6)
 
     menu_array, image_array, rating_array = get_detail(top_rating)
     image_array = [element or default_image for element in image_array]
     # print('new_image: ', image_array)
 
-    return template('index', recipe_input='',user_login_id = '1',
+    return template('index', recipe_input='',user_login_id = get_user_id,
     meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
     meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
     meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],

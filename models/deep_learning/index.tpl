@@ -164,6 +164,21 @@
       width:100%;
     }
 
+    .login-btn {
+      border-radius:25px;
+      padding: 0;
+    }
+
+    .dropdown-toggle::after {
+      content: none;
+    }
+
+    .my-dropdown-menu {
+      padding:0;
+    }
+
+  
+
   </style>
 </head>
 
@@ -336,11 +351,19 @@
         <a id="navbar-static-login"
           class="btn btn-info btn-rounded btn-sm waves-effect waves-light auth-modal-toggle my-btn" data-toggle="modal"
           data-target="#modalRegisterForm">ĐĂNG KÝ</a>
-
-        <label id="logined" value = "{{user_login_id}}" style="visibility:hidden;">
-          <img src="https://i.pinimg.com/564x/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.jpg" style="width:55px;">
-        </label>
       </div>
+      <!-- Basic dropdown -->
+      <div class="dropdown" id="logined" style="visibility:hidden;">
+        <button class="btn btn-primary dropdown-toggle mr-4 login-btn" type="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" >
+          <img src="https://i.pinimg.com/564x/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.jpg" style="width:50px;">
+        </button>
+
+        <div class="dropdown-menu my-dropdown-menu">
+          <a class="dropdown-item my-dropdown-item" href="/logout">Đăng xuất</a>
+        </div>
+      </div>
+        <!-- Basic dropdown -->
 
       
       <!--/. Sign Button-->
@@ -770,7 +793,6 @@
       document.getElementById("show_more").style.visibility = "hidden";
     }
     if (document.getElementById('user_id').value != "") {
-      console.log($('#user_id').text())
       document.getElementById("logined").style.visibility = "visible";
       document.getElementById("navbar-static-signin").style.display = "none";
       document.getElementById("navbar-static-login").style.display = "none";
