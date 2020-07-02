@@ -210,28 +210,6 @@
       </div>
     </div>
 
-    <!-- Cancel Modal -->
-    <div class="modal fade" id="canel_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Lưu thay đổi</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Bạn có chắc chắn muốn hủy thay đổi thông tin cá nhân?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-            <button type="button" class="btn btn-primary">Xác nhận</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Login Modal-->
     <form action="/login" method="post" class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       aria-hidden="true">
@@ -294,13 +272,97 @@
             <!--User Name-->
             <div class="md-form mb-3">
               <i class="fas fa-user prefix grey-text"></i>
-              <input name="register_user_name" type="text" id="user_name" class="form-control validate" >
+              <input name="register_user_name" type="text" id="user_name" class="form-control validate" required>
               <label data-error="wrong" data-success="right" for="user_name">Tên người dùng</label>
             </div>
             
           </div>
           <div class="modal-footer d-flex justify-content-center">
             <button class="btn btn-deep-orange" type="submit">Đăng ký</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Advance Search Modal-->
+    <form action="" method="post" class="modal fade" id="modal-advance-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Tìm kiếm nâng cao</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <!--User Gender-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
+              <div class="col-sm-8 my-detail">
+                <select class="browser-default custom-select" name="user_gender" id="user_gender">
+                  <option selected value="1">Nam</option>
+                  <option value="0">Nữ</option>
+                </select>
+              </div>
+            </div>
+            <!--User Age-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
+              <div class="col-sm-8 my-detail">
+            <select class="browser-default custom-select" name="user_age" id="user_age">
+              <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
+              <option value="người lớn">17-50 tuổi: Người lớn</option>
+              <option value="người già">> 50 tuổi: Người già</option>
+            </select>
+          </div>
+            </div>
+            <!--User Health-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
+              <div class="col-sm-8">
+                <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
+                name="user_health" id="user_health" data-live-search="true">
+                  <option selected value=""></option>
+                  <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
+                  <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
+                  <option value="bệnh tim mạch">Bệnh tim mạch</option>
+                  <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
+                  <option value="bệnh dạ dày">Bệnh dạ dày</option>
+                </select>
+              </div>
+            </div>
+            <!--User Hobbies-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_hobbies">Sở thích</label>
+              <div class="col-sm-8 ">
+                <!-- Multiselect dropdown -->
+                <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
+                  name="user_hobbies" id="user_hobbies" data-live-search="true">
+                  <option value="gà">Thịt gà</option>
+                  <option value="bò">Thịt bò</option>
+                  <option value="lợn">Thịt lợn</option>
+                  <option value="cá">Cá</option>
+                  <option value="tôm">Tôm</option>
+                  <option value="rau">Rau</option>
+                  <option value="củ">Củ</option>
+                  <option value="quả">Quả</option>
+                  <option value="bánh mì">Bánh mì</option>
+                  <option value="mì">Mì</option>
+                  <option value="cháo">Cháo</option>
+                  <option value="súp">Soup</option>
+                  <option value="xôi">Xôi</option>
+                  <option value="lẩu">Lẩu</option>
+                  <option value="vịt">Thịt vịt</option>
+                  <option value="bún">Bún</option>
+                  <option value="phở">Phở</option>
+                </select><!-- End -->
+              </div>
+            </div>
+            
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button class="btn btn-deep-orange" type="submit">Tìm kiếm</button>
           </div>
         </div>
       </div>
@@ -337,6 +399,9 @@
 
             </div>
             <button type="submit" class="btn btn-primary my-btn">Tìm kiếm</button>
+            <a id="advance-search" class="text-info align-self-center ml-2 auth-modal-toggle" data-toggle="modal" data-target="#modal-advance-search">
+              Tìm kiếm nâng cao
+            </a>
           </div>
 
         </div>
@@ -405,8 +470,12 @@
         <!--User Age-->
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
-          <div class="col-sm-8">
-            <input type="date" class="form-control" name="user_age" id="user_age">
+          <div class="col-sm-8 my-detail">
+            <select class="browser-default custom-select" name="user_age" id="user_age">
+              <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
+              <option value="người lớn">17-50 tuổi: Người lớn</option>
+              <option value="người già">> 50 tuổi: Người già</option>
+            </select>
           </div>
         </div>
         <!--User Health-->
@@ -455,22 +524,13 @@
         <br><br><hr><br>
         <!--Button-->
         <div class=" form-group row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-5">
-            <a data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn"
-              style="color: black;">Lưu
+          <div class="col-sm-12 text-center">
+            <button id="save_infor_btn" data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn"
+              style="color: black;width:35%;" disabled>Lưu
               <i class="fas fa-cloud ml-2"></i>
-            </a>
+            </button>
           </div>
-          <div class="col-sm-5">
-            <a data-toggle="modal" data-target="#canel_modal" class="btn btn-info btn-md my-btn"
-              style="color: black;">Hủy bỏ
-              <i class="fas fa-ban ml-2"></i>
-            </a>
-          </div>
-          <div class="col-sm-1"></div>
         </div>
-
     </div>
     <!--/. Sidebar navigation -->
 
@@ -485,18 +545,19 @@
         <div class="row mb-4 wow fadeIn">
 
           <!--Grid column-->
-          <div class="col-sm-4 col-lg-4 col-md-6 mb-4">
+          %for i in range(len(meal_id)):
+          <div class=" col-lg-4 col-md-6 mb-4">
 
             <!--Card-->
             <div class="card">
               <!--Card image-->
               <div class="view overlay" >
-                <img src="{{recom_image_1}}" class="card-img-top " alt="">
+                <img src="{{recom_image[i]}}" class="card-img-top " alt="">
                 <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:black; ">{{recom_rating_1}}/5</strong>
+                  <strong style="color:black; ">{{recom_rating[i]}}/5</strong>
                 </div>
-                <a href="/detail/{{meal_id_1}}">
+                <a href="/detail/{{meal_id[i]}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
                 
@@ -505,10 +566,10 @@
               <!--Card content-->
               <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title">Thực đơn số 1</h4>
+                <h4 class="card-title">Thực đơn số {{i+1}}</h4>
                 <!--Text-->
-                <p class="card-text">{{recom_menu_1}}</p>
-                <a href="/detail/{{meal_id_1}}">
+                <p class="card-text">{{recom_menu[i]}}</p>
+                <a href="/detail/{{meal_id[i]}}">
                   <button  class="btn btn-primary btn-md row-bottom">Chi tiết
                     <i class="fas fa-play ml-2"></i>
                   </button>
@@ -519,76 +580,8 @@
             <!--/.Card-->
 
           </div>
+          %end
           <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-              <!--Card image-->
-              <div class="view overlay">
-                <img src="{{recom_image_2}}" class="card-img-top" alt="">
-                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
-                  <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:black; ">{{recom_rating_2}}/5</strong>
-                </div>
-                <a href="/detail/{{meal_id_2}}">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Thực đơn số 2</h4>
-                <!--Text-->
-                <p class="card-text">{{recom_menu_2}}</p>
-                <a href="/detail/{{meal_id_2}}" class="btn btn-primary btn-md row-bottom">Chi tiết
-                  <i class="fas fa-play ml-2"></i>
-                </a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-              <!--Card image-->
-              <div class="view overlay">
-                <img src="{{recom_image_3}}" class="card-img-top" alt="">
-                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
-                  <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:black; ">{{recom_rating_3}}/5</strong>
-                </div>
-                <a href="/detail/{{meal_id_3}}">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Thực đơn số 3</h4>
-                <!--Text-->
-                <p class="card-text">{{recom_menu_3}}</p>
-                <a href="/detail/{{meal_id_3}}" class="btn btn-primary btn-md row-bottom">Chi tiết
-                  <i class="fas fa-play ml-2"></i>
-                </a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-
-          </div>
-          <!--Grid column-->
-
         </div>
         <!--Grid row-->
 
@@ -607,18 +600,19 @@
         <div class="row mb-4 wow fadeIn">
 
           <!--Grid column-->
-          <div class="col-sm-4 col-lg-4 col-md-6 mb-4">
+          %for i in range(len(more_meal_id)):
+          <div class="col-lg-4 col-md-6 mb-4">
 
             <!--Card-->
             <div class="card">
               <!--Card image-->
               <div class="view overlay">
-                <img src="{{more_image_1}}" class="card-img-top" alt="">
+                <img src="{{more_image[i]}}" class="card-img-top" alt="">
                 <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
                   <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:black; ">{{more_rating_1}}/5</strong>
+                  <strong style="color:black; ">{{more_rating[i]}}/5</strong>
                 </div>
-                <a href="/detail/{{meal_id_4}}">
+                <a href="/detail/{{more_meal_id[i]}}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
                 
@@ -627,10 +621,10 @@
               <!--Card content-->
               <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title">Thực đơn số 4</h4>
+                <h4 class="card-title">Thực đơn số {{i+4}}</h4>
                 <!--Text-->
-                <p class="card-text">{{more_menu_1}}</p>
-                <a href="/detail/{{meal_id_4}}" class="btn btn-primary btn-md row-bottom">Chi tiết
+                <p class="card-text">{{more_menu[i]}}</p>
+                <a href="/detail/{{more_meal_id[i]}}" class="btn btn-primary btn-md row-bottom">Chi tiết
                   <i class="fas fa-play ml-2"></i>
                 </a>
 
@@ -640,74 +634,7 @@
             <!--/.Card-->
 
           </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-              <!--Card image-->
-              <div class="view overlay">
-                <img src="{{more_image_2}}" class="card-img-top" alt="">
-                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
-                  <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:black; ">{{more_rating_2}}/5</strong>
-                </div>
-                <a href="/detail/{{meal_id_5}}">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Thực đơn số 5</h4>
-                <!--Text-->
-                <p class="card-text">{{more_menu_2}}</p>
-                <a href="/detail/{{meal_id_5}}" class="btn btn-primary btn-md row-bottom">Chi tiết
-                  <i class="fas fa-play ml-2"></i>
-                </a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-              <!--Card image-->
-              <div class="view overlay">
-                <img src="{{more_image_3}}" class="card-img-top" alt="">
-                <div class="price" style="background-color: rgba(250, 250, 250, 0.9);">
-                  <i class="fas fa-star" style="color:yellow; "></i>
-                  <strong style="color:black; ">{{more_rating_3}}/5</strong>
-                </div>
-                <a href="/detail/{{meal_id_6}}">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Thực đơn số 6</h4>
-                <!--Text-->
-                <p class="card-text">{{more_menu_3}}</p>
-                <a href="/detail/{{meal_id_6}}" class="btn btn-primary btn-md row-bottom">Chi tiết
-                  <i class="fas fa-play ml-2"></i>
-                </a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-
-          </div>
+          %end
           <!--Grid column-->
 
         </div>
@@ -794,8 +721,11 @@
     }
     if (document.getElementById('user_id').value != "") {
       document.getElementById("logined").style.visibility = "visible";
+      document.getElementById("advance-search").style.display = "none";
       document.getElementById("navbar-static-signin").style.display = "none";
       document.getElementById("navbar-static-login").style.display = "none";
+      document.getElementById("save_infor_btn").disabled = false;
+      
     }
 
     function openNav() {

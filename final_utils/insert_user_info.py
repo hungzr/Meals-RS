@@ -42,5 +42,8 @@ def insert_info():
                 
                 print(dic)
                 print('----------------------------------------')
-            
-insert_info()
+
+def insert_hobbies():
+    return
+
+# insert_info()

@@ -7,7 +7,7 @@ import random
 client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
 db = client['user']
 collection = db['user_info']
-collection1 = db['user_info1']
+collection_test = db['user_info_test']
 
 meal_id_arr, meal_actual_id, meal_menu, meal_ingre, meal_methods,meal_image, meal_score = ver2.get_meal_infor('../../dataset/csv_file/food/')
 default_image = 'https://deptuoi30.com/wp-content/uploads/2019/04/thuc-don-bua-com-gia-dinh-9-600x400.jpg'
@@ -31,9 +31,10 @@ def do_login():
         get_user_id = user_id[user_account_pass.index((username, password))]
         response.set_cookie("user_id", get_user_id, secret='some-secret-key')
         print('login with ID %s' % get_user_id)
-        redirect('/find')
     else:
         print('fail')
+
+    redirect('/find')
 
 @get('/logout')
 def do_logout():
@@ -55,7 +56,7 @@ def do_register():
             'user_id': new_user_id, 'user_name': user_name, 'user_gender': '',
             'user_age': '','user_hobbies': [], 'user_group': [], 'user_history': []}
 
-    x = collection1.insert_one(dic)
+    x = collection_test.insert_one(dic)
     print(dic)
     redirect('/find')
 
@@ -108,12 +109,8 @@ def get_recommeded_meals():
         # print('new_image: ', image_array)
 
         return template('index', recipe_input='', user_login_id = get_user_id,
-        meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
-        meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
-        meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
-        meal_id_4 = top_rating[3],more_image_1 = image_array[3], more_rating_1 = rating_array[3], more_menu_1= menu_array[3],
-        meal_id_5 = top_rating[4],more_image_2 = image_array[4], more_rating_2 = rating_array[4], more_menu_2= menu_array[4],
-        meal_id_6 = top_rating[5],more_image_3 = image_array[5], more_rating_3 = rating_array[5], more_menu_3= menu_array[5]
+        meal_id = top_rating[:3], recom_image = image_array[:3], recom_rating = rating_array[:3], recom_menu= menu_array[:3],
+        more_meal_id = top_rating[3:],more_image = image_array[3:], more_rating = rating_array[3:], more_menu= menu_array[3:]
         )
 
     else:
@@ -134,12 +131,8 @@ def get_recommeded_meals():
         print('new_image: ', image_array_more)
         
         return template('index', recipe_input=recipe_input, user_login_id = get_user_id,
-        meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
-        meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
-        meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
-        meal_id_4 = top_rating_more[0],more_image_1 = image_array_more[0], more_rating_1 = rating_array_more[0], more_menu_1= menu_array_more[0],
-        meal_id_5 = top_rating_more[1],more_image_2 = image_array_more[1], more_rating_2 = rating_array_more[1], more_menu_2= menu_array_more[1],
-        meal_id_6 = top_rating_more[2],more_image_3 = image_array_more[2], more_rating_3 = rating_array_more[2], more_menu_3= menu_array_more[2]
+        meal_id = top_rating, recom_image = image_array, recom_rating = rating_array, recom_menu= menu_array,
+        more_meal_id = top_rating_more,more_image = image_array_more, more_rating = rating_array_more, more_menu= menu_array_more
         )
 
 @route('/detail/:meal_id')
@@ -158,26 +151,27 @@ def meal_detail(meal_id):
     # Get all recipes in menu
     detail_recipes = meal_menu[meal_id_arr.index(int(meal_id))]
     detail_recipes = [str(i + 1) + '. ' + j.capitalize() for i, j in enumerate(detail_recipes)]
-    # count_recipe  = 5 - len(detail_recipes)
-    # if count_recipe != 0:
-    #     for i in range(count_recipe):
-    #         detail_recipes.append('')
     print('recipe: ', detail_recipes)
 
     # Get all ingredients
     detail_ingre = meal_ingre[meal_id_arr.index(int(meal_id))]
     detail_ingre = detail_ingre.split('|')
     # detail_ingre = ['_ Nguyên liệu: ' + i for i in detail_ingre if i != '']
-    # count_ingre  = 5 - len(detail_ingre)
-    # if count_ingre != 0:
-    #     for i in range(count_ingre):
-    #         detail_ingre.append('')
     print('ingre: ', detail_ingre)
 
     # Get all methods
+    temp_detail_method = meal_methods[meal_id_arr.index(int(meal_id))]
+    temp_detail_method = temp_detail_method.split('|')
+    detail_method = []
+    for i in temp_detail_method:
+        if i != '':
+            detail_method.append(i.split(';'))
+        else:
+            detail_method.append([])
+    print('method: ', detail_method)
 
-    return template('detail',recipe_input='', user_login_id = get_user_id, detail_image=detail_image,
-                    detail_recipe= detail_recipes, detail_ingre = detail_ingre)
+    return template('detail',recipe_input='', user_login_id = get_user_id, detail_image= detail_image,
+                    detail_recipe= detail_recipes, detail_ingre= detail_ingre, detail_method= detail_method)
 
 @get('/rating')
 def get_rating(value):
@@ -187,11 +181,6 @@ def get_rating(value):
     # result_menu = request.POST.get('result_menu')
     # rate_num = request.POST.get('rate_num')
     # print('------------------')
-    # print(input_name)
-    # print(category)
-    # print(correspond)
-    # print(result_menu)
-    # print(rate_num)
     # data = {'input_name': input_name, 'category': category,
     #         'correspond': correspond, 'result_menu': result_menu, 'rate_nume': rate_num}
     # return json.dumps(data)
@@ -210,12 +199,8 @@ def find_menu_form():
     # print('new_image: ', image_array)
 
     return template('index', recipe_input='',user_login_id = get_user_id,
-    meal_id_1 = top_rating[0], recom_image_1 = image_array[0], recom_rating_1 = rating_array[0], recom_menu_1= menu_array[0],
-    meal_id_2 = top_rating[1],recom_image_2 = image_array[1], recom_rating_2 = rating_array[1], recom_menu_2= menu_array[1],
-    meal_id_3 = top_rating[2],recom_image_3 = image_array[2], recom_rating_3 = rating_array[2], recom_menu_3= menu_array[2],
-    meal_id_4 = top_rating[3],more_image_1 = image_array[3], more_rating_1 = rating_array[3], more_menu_1= menu_array[3],
-    meal_id_5 = top_rating[4],more_image_2 = image_array[4], more_rating_2 = rating_array[4], more_menu_2= menu_array[4],
-    meal_id_6 = top_rating[5],more_image_3 = image_array[5], more_rating_3 = rating_array[5], more_menu_3= menu_array[5]
+    meal_id = top_rating[:3], recom_image = image_array[:3], recom_rating = rating_array[:3], recom_menu= menu_array[:3],
+    more_meal_id = top_rating[3:],more_image = image_array[3:], more_rating = rating_array[3:], more_menu= menu_array[3:]
     )
 
 run(host='localhost', port=8086)

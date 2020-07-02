@@ -209,28 +209,6 @@
         </div>
     </div>
 
-    <!-- Cancel Modal -->
-    <div class="modal fade" id="canel_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Lưu thay đổi</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    Bạn có chắc chắn muốn hủy thay đổi thông tin cá nhân?
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                <button type="button" class="btn btn-primary">Xác nhận</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Login Modal-->
     <form action="/login" method="post" class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       aria-hidden="true">
@@ -305,6 +283,89 @@
       </div>
     </form>
 
+    <!-- Advance Search Modal-->
+    <form action="" method="post" class="modal fade" id="modal-advance-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Tìm kiếm nâng cao</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <!--User Gender-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
+              <div class="col-sm-8 my-detail">
+                <select class="browser-default custom-select" name="user_gender" id="user_gender">
+                  <option selected value="1">Nam</option>
+                  <option value="0">Nữ</option>
+                </select>
+              </div>
+            </div>
+            <!--User Age-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
+              <div class="col-sm-8 my-detail">
+                <select class="browser-default custom-select" name="user_age" id="user_age">
+                  <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
+                  <option value="người lớn">17-50 tuổi: Người lớn</option>
+                  <option value="người già">> 50 tuổi: Người già</option>
+                </select>
+              </div>
+            </div>
+            <!--User Health-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
+              <div class="col-sm-8">
+                <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
+                name="user_health" id="user_health" data-live-search="true">
+                  <option selected value=""></option>
+                  <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
+                  <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
+                  <option value="bệnh tim mạch">Bệnh tim mạch</option>
+                  <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
+                  <option value="bệnh dạ dày">Bệnh dạ dày</option>
+                </select>
+              </div>
+            </div>
+            <!--User Hobbies-->
+            <div class="form-group row">
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_hobbies">Sở thích</label>
+              <div class="col-sm-8 ">
+                <!-- Multiselect dropdown -->
+                <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
+                  name="user_hobbies" id="user_hobbies" data-live-search="true">
+                  <option value="gà">Thịt gà</option>
+                  <option value="bò">Thịt bò</option>
+                  <option value="lợn">Thịt lợn</option>
+                  <option value="cá">Cá</option>
+                  <option value="tôm">Tôm</option>
+                  <option value="rau">Rau</option>
+                  <option value="củ">Củ</option>
+                  <option value="quả">Quả</option>
+                  <option value="bánh mì">Bánh mì</option>
+                  <option value="mì">Mì</option>
+                  <option value="cháo">Cháo</option>
+                  <option value="súp">Soup</option>
+                  <option value="xôi">Xôi</option>
+                  <option value="lẩu">Lẩu</option>
+                  <option value="vịt">Thịt vịt</option>
+                  <option value="bún">Bún</option>
+                  <option value="phở">Phở</option>
+                </select><!-- End -->
+              </div>
+            </div>
+            
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button class="btn btn-deep-orange" type="submit">Tìm kiếm</button>
+          </div>
+        </div>
+      </div>
+    </form>
     <!-- /. Modal -->
 
     <!-- Navbar -->
@@ -336,6 +397,9 @@
 
             </div>
             <button type="submit" class="btn btn-primary my-btn">Tìm kiếm</button>
+            <a id="advance-search" class="text-info align-self-center ml-2 auth-modal-toggle" data-toggle="modal" data-target="#modal-advance-search">
+              Tìm kiếm nâng cao
+            </a>
           </div>
 
         </div>
@@ -400,8 +464,12 @@
         <!--User Age-->
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
-          <div class="col-sm-8">
-            <input type="date" class="form-control" name="user_age" id="user_age">
+          <div class="col-sm-8 my-detail">
+            <select class="browser-default custom-select" name="user_age" id="user_age">
+              <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
+              <option value="người lớn">17-50 tuổi: Người lớn</option>
+              <option value="người già">> 50 tuổi: Người già</option>
+            </select>
           </div>
         </div>
         <!--User Health-->
@@ -450,20 +518,12 @@
         <br><br><hr><br>
         <!--Button-->
         <div class=" form-group row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-5">
-            <a data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn"
-              style="color: black;">Lưu
+          <div class="col-sm-12 text-center">
+            <button id="save_infor_btn" data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn"
+              style="color: black;width:35%;" disabled>Lưu
               <i class="fas fa-cloud ml-2"></i>
-            </a>
+            </button>
           </div>
-          <div class="col-sm-5">
-            <a data-toggle="modal" data-target="#canel_modal" class="btn btn-info btn-md my-btn"
-              style="color: black;">Hủy bỏ
-              <i class="fas fa-ban ml-2"></i>
-            </a>
-          </div>
-          <div class="col-sm-1"></div>
         </div>
 
     </div>
@@ -534,65 +594,21 @@
                       <!-- Stepers Wrapper -->
                       <ul class="stepper stepper-vertical mb-0">
 
-                          <!-- First Step -->
+                          <!-- Step -->
+                          %for j in range(len(detail_method[i])):
                           <li class="completed">
                               <!--Section Title -->
                               <a >
-                                  <span class="circle">1</span>
-                                  <span class="label">Bước 1</span>
+                                  <span class="circle">{{j+1}}</span>
+                                  <span class="label">Bước {{j+1}}</span>
                               </a>
 
                               <!-- Section Description -->
                               <div class="step-content grey lighten-3">
-                                <p>Tôm mua về rửa sạch rồi thực hiện cắt bỏ phần râu và đầu nhọn của tôm. Tiếp đến dùng chút muối để xóc đều lên
-                                  trong khoảng 15 phút để có được món ăn đậm đà hơn nhé.</p>
+                                <p>{{detail_method[i][j]}}</p>
                             </div>
                           </li>
-
-                          <!-- Second Step -->
-                          <li class="active">
-                              <!--Section Title -->
-                              <a >
-                                  <span class="circle">2</span>
-                                  <span class="label">Bước 2</span>
-                              </a>
-
-                              <!-- Section Description -->
-                              <div class="step-content grey lighten-3">
-                                  <p>Bắc chảo lên bếp rồi cho vào chảo 1 thìa cà phê đường, đun đến khi đường tan chảy hoàn 
-                                    toàn chuyển snag màu nâu cánh gián đẹp mắt thì thêm vào 2 thìa canh nước lọc, tiếp tục đun sôi.</p>
-                              </div>
-                          </li>
-
-                          <!-- Third Step -->
-                          <li class="completed">
-                              <!--Section Title -->
-                              <a >
-                                <span class="circle">3</span>
-                                <span class="label">Bước 3</span>
-                              </a>
-
-                              <!-- Section Description -->
-                              <div class="step-content grey lighten-3">
-                                  <p>Hành, tỏi khô lột bỏ vỏ rồi đem băm nhỏ. Thực hiện phi thơm hành tỏi băm đến khi dậy mùi thì 
-                                    cho tôm vào, đảo đều tay vài lượt thì thêm chút nước mắm, đường cùng với nước màu đã chế ở trên.
-                                    Đến khi phần nước sốt đã cạn thì cho hành lá thái nhỏ và ít mì chính vào, đảo lên lần cuối rồi tắt bếp luôn.</p>
-                              </div>
-                          </li>
-
-                          <!-- Fourth Step -->
-                          <li class="completed">
-                              <!--Section Title -->
-                              <a >
-                                <span class="circle">4</span>
-                                <span class="label">Bước 4</span>
-                              </a>
-
-                              <!-- Section Description -->
-                              <div class="step-content grey lighten-3">
-                                  <p>Trình bày món ăn ra đĩa rồi rắc chút hạt tiêu lên trên và thưởng thức luôn nhé.</p>
-                              </div>
-                          </li>
+                          %end
 
                       </ul>
                       <!-- /.Stepers Wrapper -->
@@ -824,8 +840,10 @@
   <script>
     if (document.getElementById('user_id').value != "") {
       document.getElementById("logined").style.visibility = "visible";
+      document.getElementById("advance-search").style.display = "none";
       document.getElementById("navbar-static-signin").style.display = "none";
       document.getElementById("navbar-static-login").style.display = "none";
+      document.getElementById("save_infor_btn").disabled = false;
     }
 
     function openNav() {
