@@ -27,7 +27,7 @@ _FEATURE_MAP = {
     meals.HOBBIES_COLUMN: tf.compat.v1.FixedLenFeature([meals.N_HOBBY], dtype=tf.int64),
     meals.HEALTH_COLUMN: tf.compat.v1.FixedLenFeature([meals.N_HEALTH], dtype=tf.int64),
     meals.ITEM_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.int64),
-    meals.TOP0_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.int64),
+    meals.MENU: tf.compat.v1.FixedLenFeature([1], dtype=tf.int64),
     meals.RATING_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.float32),
 }
 
@@ -73,7 +73,7 @@ _MEALS_EMBEDDING_DIM = 16
 
 def build_model_columns(dataset):
     """Builds a set of wide and deep feature columns."""
-    model_sen2vec = base_s2v.BaseSentence2VecModel.load('sent2vec')
+    # model_sen2vec = base_s2v.BaseSentence2VecModel.load('sent2vec')
     
     user_id = tf.feature_column.categorical_column_with_vocabulary_list(
               meals.USER_COLUMN, range(meals.NUM_USER_IDS))
@@ -98,7 +98,7 @@ def build_model_columns(dataset):
               item_id, _ITEM_EMBEDDING_DIM, max_norm=np.sqrt(_ITEM_EMBEDDING_DIM))
 
     meals_id = tf.feature_column.categorical_column_with_vocabulary_list(
-              meals.TOP0_COLUMN, range(meals.NUM_MEALS_MENU))
+              meals.MENU, meals.MEALS_MENU)
     meals_embedding = tf.feature_column.embedding_column(
               meals_id, _MEALS_EMBEDDING_DIM, max_norm=np.sqrt(_MEALS_EMBEDDING_DIM))
 
@@ -173,6 +173,11 @@ def construct_input_fns(dataset, data_dir, batch_size=16, repeat=1):
       df = meals.integerize_healths(dataframe=df)
 
       df = df.drop(columns=[meals.ITEM_NAME_COLUMN])
+      df = df.drop(columns=["actual_id"])
+      df = df.drop(columns=["ingredients"])
+      df = df.drop(columns=["methods"])
+      df = df.drop(columns=["image"])
+      df = df.drop(columns=["average_rating"])
       print('df: ', df)
 
       train_df = df.sample(frac=0.8, random_state=0)
@@ -196,11 +201,12 @@ def construct_input_fns(dataset, data_dir, batch_size=16, repeat=1):
 
 def main(_):
     # meals.download(dataset=flags.FLAGS.dataset, data_dir=flags.FLAGS.data_dir)
-    dir_path = "../../dataset/csv_file/"
+    # dir_path = "../../../dataset/csv_file/"
+    dir_path = "/home/hungdo/HungDo/Meals-RS/dataset/csv_file/"
     construct_input_fns("food", dir_path)
 
 if __name__ == "__main__":
-    tf.logging.set_verbosity(tf.logging.INFO)
+    # tf.logging.set_verbosity(tf.logging.INFO)
     # meals.define_data_download_flags()
     flags.adopt_module_key_flags(meals)
     # flags_core.set_defaults(dataset="food")

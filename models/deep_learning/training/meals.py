@@ -11,6 +11,7 @@ import zipfile
 
 # pylint: disable=g-bad-import-order
 import numpy as np
+import csv
 import pandas as pd
 import six
 from six.moves import urllib  # pylint: disable=redefined-builtin
@@ -25,6 +26,7 @@ DATASETS = [FOOD]
 
 USERS_FILE = "user_information_re.csv"
 RECIPES_FILE = "recipe_information.csv"
+MEALS_FILE = "meal_information.csv"
 
 USER_COLUMN = "user_id"
 GENDER_COLUMN = "user_gender"
@@ -35,7 +37,8 @@ ITEM_COLUMN = "recipe_id"
 ITEM_NAME_COLUMN = "recipe_name"
 RATING_COLUMN = 'rating'
 
-TOP0_COLUMN = "meals"
+TOP0_COLUMN = "meal_id"
+MENU = "recipes"
 
 HOBBIES = [
     'gà', 'bò', 'lợn', 'cá', 'tôm',
@@ -60,18 +63,29 @@ ITEM_COLUMNS = [ITEM_COLUMN, ITEM_NAME_COLUMN]
 
 # Note: Users are indexed [1, k], not [0, k-1]
 NUM_USER_IDS = 1000
-NUM_MEALS_MENU = 988
+MEALS_MENU = []
+# dir_path = '../../../dataset/csv_file/food/meal_information.csv'
+dir_path = '/home/hungdo/HungDo/Meals-RS/dataset/csv_file/food/meal_information.csv'
+with open(dir_path, encoding='utf-8') as mealFile:
+        lines = csv.reader(mealFile)
+        for line in lines:
+          if line[2] != 'recipes':
+            MEALS_MENU.append(line[2])
+
+#988
+NUM_MEALS_MENU = len(MEALS_MENU)
 NUM_ITEM_IDS = 3354
 
 MAX_RATING = 5
 
 
 def csv_to_joint_dataframe(data_dir, dataset):
-  meals = pd.read_csv(os.path.join(data_dir, dataset, USERS_FILE))
-
+  users = pd.read_csv(os.path.join(data_dir, dataset, USERS_FILE))
+  meals = pd.read_csv(os.path.join(data_dir, dataset, MEALS_FILE))
   recipes = pd.read_csv(os.path.join(data_dir, dataset, RECIPES_FILE))
 
-  df = meals.merge(recipes, on=ITEM_NAME_COLUMN)
+  df = users.merge(recipes, on=ITEM_NAME_COLUMN)
+  df = df.merge(meals, on=TOP0_COLUMN)
   df[RATING_COLUMN] = df[RATING_COLUMN].astype(np.float32)
 
   return df

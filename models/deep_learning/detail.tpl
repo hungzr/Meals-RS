@@ -322,12 +322,9 @@
               <div class="col-sm-8">
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
                 name="user_health" id="user_health" data-live-search="true">
-                  <option selected value=""></option>
-                  <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
-                  <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
-                  <option value="bệnh tim mạch">Bệnh tim mạch</option>
-                  <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
-                  <option value="bệnh dạ dày">Bệnh dạ dày</option>
+                  %for group in select_group:
+                  <option value="{{group}}">{{group}}</option>
+                  %end
                 </select>
               </div>
             </div>
@@ -338,23 +335,9 @@
                 <!-- Multiselect dropdown -->
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
                   name="user_hobbies" id="user_hobbies" data-live-search="true">
-                  <option value="gà">Thịt gà</option>
-                  <option value="bò">Thịt bò</option>
-                  <option value="lợn">Thịt lợn</option>
-                  <option value="cá">Cá</option>
-                  <option value="tôm">Tôm</option>
-                  <option value="rau">Rau</option>
-                  <option value="củ">Củ</option>
-                  <option value="quả">Quả</option>
-                  <option value="bánh mì">Bánh mì</option>
-                  <option value="mì">Mì</option>
-                  <option value="cháo">Cháo</option>
-                  <option value="súp">Soup</option>
-                  <option value="xôi">Xôi</option>
-                  <option value="lẩu">Lẩu</option>
-                  <option value="vịt">Thịt vịt</option>
-                  <option value="bún">Bún</option>
-                  <option value="phở">Phở</option>
+                  %for hobbie in select_hobbies:
+                  <option value="{{hobbie}}">{{hobbie}}</option>
+                  %end
                 </select><!-- End -->
               </div>
             </div>
@@ -456,8 +439,9 @@
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
           <div class="col-sm-8 my-detail">
             <select class="browser-default custom-select" name="user_gender" id="user_gender">
-              <option selected value="1">Nam</option>
-              <option value="0">Nữ</option>
+              <option selected value="" disabled hidden>{{user_gender}}</option>
+              <option value="0">Nam</option>
+              <option value="1">Nữ</option>
             </select>
           </div>
         </div>
@@ -466,7 +450,8 @@
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
           <div class="col-sm-8 my-detail">
             <select class="browser-default custom-select" name="user_age" id="user_age">
-              <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
+              <option selected value="" disabled hidden>{{user_age}}</option>
+              <option value="trẻ em">0-16 tuổi: Trẻ em</option>
               <option value="người lớn">17-50 tuổi: Người lớn</option>
               <option value="người già">> 50 tuổi: Người già</option>
             </select>
@@ -477,8 +462,8 @@
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
           <div class="col-sm-8">
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-             name="user_health" id="user_health" data-live-search="true">
-              <option selected value=""></option>
+             name="user_group" id="user_group" data-live-search="true">
+              <option selected value="" disabled hidden>{{user_group}}</option>
               <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
               <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
               <option value="bệnh tim mạch">Bệnh tim mạch</option>
@@ -494,23 +479,10 @@
             <!-- Multiselect dropdown -->
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
               name="user_hobbies" id="user_hobbies" data-live-search="true">
-              <option value="gà">Thịt gà</option>
-              <option value="bò">Thịt bò</option>
-              <option value="lợn">Thịt lợn</option>
-              <option value="cá">Cá</option>
-              <option value="tôm">Tôm</option>
-              <option value="rau">Rau</option>
-              <option value="củ">Củ</option>
-              <option value="quả">Quả</option>
-              <option value="bánh mì">Bánh mì</option>
-              <option value="mì">Mì</option>
-              <option value="cháo">Cháo</option>
-              <option value="súp">Soup</option>
-              <option value="xôi">Xôi</option>
-              <option value="lẩu">Lẩu</option>
-              <option value="vịt">Thịt vịt</option>
-              <option value="bún">Bún</option>
-              <option value="phở">Phở</option>
+              <option selected value="" disabled hidden>{{user_hobbies}}</option>
+              %for hobbie in select_hobbies:
+              <option value="{{hobbie}}">{{hobbie}}</option>
+              %end
             </select><!-- End -->
           </div>
         </div>

@@ -186,7 +186,7 @@
 
   <!--Main Navigation-->
   <header>
-
+    
     <!-- Modal -->
     <!-- Save Modal -->
     <div class="modal fade" id="save_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -203,8 +203,8 @@
             Bạn có chắc chắn muốn thay đổi thông tin cá nhân?
           </div>
           <div class="modal-footer">
+            <a href= "/saveinfor"><button type="submit" class="btn btn-primary">Xác nhận</button></a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-            <button type="button" class="btn btn-primary">Xác nhận</button>
           </div>
         </div>
       </div>
@@ -285,7 +285,7 @@
     </form>
 
     <!-- Advance Search Modal-->
-    <form action="" method="post" class="modal fade" id="modal-advance-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <form action="/advance_search" method="post" class="modal fade" id="modal-advance-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -300,9 +300,9 @@
             <div class="form-group row">
               <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
               <div class="col-sm-8 my-detail">
-                <select class="browser-default custom-select" name="user_gender" id="user_gender">
-                  <option selected value="1">Nam</option>
-                  <option value="0">Nữ</option>
+                <select class="browser-default custom-select" name="advance_user_gender" id="advance_user_gender">
+                  <option selected value="0">Nam</option>
+                  <option value="1">Nữ</option>
                 </select>
               </div>
             </div>
@@ -310,25 +310,23 @@
             <div class="form-group row">
               <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
               <div class="col-sm-8 my-detail">
-            <select class="browser-default custom-select" name="user_age" id="user_age">
+            <select class="browser-default custom-select" name="advance_user_age" id="advance_user_age">
               <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
               <option value="người lớn">17-50 tuổi: Người lớn</option>
               <option value="người già">> 50 tuổi: Người già</option>
             </select>
           </div>
             </div>
-            <!--User Health-->
+            <!--User Group-->
             <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_group">Nhóm đ/tượng</label>
               <div class="col-sm-8">
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-                name="user_health" id="user_health" data-live-search="true">
-                  <option selected value=""></option>
-                  <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
-                  <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
-                  <option value="bệnh tim mạch">Bệnh tim mạch</option>
-                  <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
-                  <option value="bệnh dạ dày">Bệnh dạ dày</option>
+                name="advance_user_group" id="advance_user_group" data-live-search="true">
+                  
+                  %for group in select_group:
+                  <option value="{{group}}">{{group}}</option>
+                  %end
                 </select>
               </div>
             </div>
@@ -338,24 +336,10 @@
               <div class="col-sm-8 ">
                 <!-- Multiselect dropdown -->
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-                  name="user_hobbies" id="user_hobbies" data-live-search="true">
-                  <option value="gà">Thịt gà</option>
-                  <option value="bò">Thịt bò</option>
-                  <option value="lợn">Thịt lợn</option>
-                  <option value="cá">Cá</option>
-                  <option value="tôm">Tôm</option>
-                  <option value="rau">Rau</option>
-                  <option value="củ">Củ</option>
-                  <option value="quả">Quả</option>
-                  <option value="bánh mì">Bánh mì</option>
-                  <option value="mì">Mì</option>
-                  <option value="cháo">Cháo</option>
-                  <option value="súp">Soup</option>
-                  <option value="xôi">Xôi</option>
-                  <option value="lẩu">Lẩu</option>
-                  <option value="vịt">Thịt vịt</option>
-                  <option value="bún">Bún</option>
-                  <option value="phở">Phở</option>
+                  name="advance_user_hobbies" id="advance_user_hobbies" data-live-search="true">
+                  %for hobbie in select_hobbies:
+                  <option value="{{hobbie}}">{{hobbie}}</option>
+                  %end
                 </select><!-- End -->
               </div>
             </div>
@@ -435,6 +419,22 @@
     </nav>
     <!-- Navbar -->
 
+    <!-- Notify -->
+    <div role="alert" id="notify-success" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="true">
+      <div class="toast-header">
+        <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+          <rect fill="#007aff" width="100%" height="100%" /></svg>
+        <strong class="mr-auto">Thành công</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Đăng nhập thành công.
+      </div>
+    </div>
+    <!-- /.Notify -->
   </header>
   <!--Main Navigation-->
 
@@ -442,7 +442,7 @@
   <!--Main layout-->
   <main class="mt-5 pt-5 my-scroll">
     <!-- Sidebar navigation -->
-    <div id="mySidenav" class="sidenav">
+    <form action ="/saveinfor" method="post" id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
       <h3 style="text-align: center">Hệ thống gợi ý thực đơn</h4><br><hr>
@@ -461,9 +461,10 @@
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
           <div class="col-sm-8 my-detail">
-            <select class="browser-default custom-select" name="user_gender" id="user_gender">
-              <option selected value="1">Nam</option>
-              <option value="0">Nữ</option>
+            <select class="browser-default custom-select" name="new_user_gender" id="new_user_gender">
+              <option selected value="" disabled hidden>{{user_gender}}</option>
+              <option value="0">Nam</option>
+              <option value="1">Nữ</option>
             </select>
           </div>
         </div>
@@ -471,8 +472,9 @@
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
           <div class="col-sm-8 my-detail">
-            <select class="browser-default custom-select" name="user_age" id="user_age">
-              <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
+            <select class="browser-default custom-select" name="new_user_age" id="new_user_age">
+              <option selected value="" disabled hidden>{{user_age}}</option>
+              <option value="trẻ em">0-16 tuổi: Trẻ em</option>
               <option value="người lớn">17-50 tuổi: Người lớn</option>
               <option value="người già">> 50 tuổi: Người già</option>
             </select>
@@ -483,13 +485,11 @@
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
           <div class="col-sm-8">
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-             name="user_health" id="user_health" data-live-search="true">
-              <option selected value=""></option>
-              <option value="phụ nữ mang thai">Phụ nữ mang thai</option>
-              <option value="bệnh tiểu đường">Bệnh tiểu đường</option>
-              <option value="bệnh tim mạch">Bệnh tim mạch</option>
-              <option value="bệnh huyết áp cao">Bệnh huyết áp cao</option>
-              <option value="bệnh dạ dày">Bệnh dạ dày</option>
+             name="new_user_group" id="new_user_group" data-live-search="true">
+              <option selected value="" hidden>{{user_group}}</option>
+              %for group in select_group:
+              <option value="{{group}}">{{group}}</option>
+              %end
             </select>
           </div>
         </div>
@@ -499,24 +499,11 @@
           <div class="col-sm-8 ">
             <!-- Multiselect dropdown -->
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-              name="user_hobbies" id="user_hobbies" data-live-search="true">
-              <option value="gà">Thịt gà</option>
-              <option value="bò">Thịt bò</option>
-              <option value="lợn">Thịt lợn</option>
-              <option value="cá">Cá</option>
-              <option value="tôm">Tôm</option>
-              <option value="rau">Rau</option>
-              <option value="củ">Củ</option>
-              <option value="quả">Quả</option>
-              <option value="bánh mì">Bánh mì</option>
-              <option value="mì">Mì</option>
-              <option value="cháo">Cháo</option>
-              <option value="súp">Soup</option>
-              <option value="xôi">Xôi</option>
-              <option value="lẩu">Lẩu</option>
-              <option value="vịt">Thịt vịt</option>
-              <option value="bún">Bún</option>
-              <option value="phở">Phở</option>
+              name="new_user_hobbies" id="new_user_hobbies" data-live-search="true">
+              <option selected value="" hidden>{{user_hobbies}}</option>
+              %for hobbie in select_hobbies:
+              <option value="{{hobbie}}">{{hobbie}}</option>
+              %end
             </select><!-- End -->
           </div>
         </div>
@@ -525,13 +512,13 @@
         <!--Button-->
         <div class=" form-group row">
           <div class="col-sm-12 text-center">
-            <button id="save_infor_btn" data-toggle="modal" data-target="#save_modal" class="btn btn-info btn-md my-btn"
+            <button id="save_infor_btn" type="submit" class="btn btn-info btn-md my-btn"
               style="color: black;width:35%;" disabled>Lưu
               <i class="fas fa-cloud ml-2"></i>
             </button>
           </div>
         </div>
-    </div>
+    </form>
     <!--/. Sidebar navigation -->
 
 
@@ -725,7 +712,7 @@
       document.getElementById("navbar-static-signin").style.display = "none";
       document.getElementById("navbar-static-login").style.display = "none";
       document.getElementById("save_infor_btn").disabled = false;
-      
+      document.getElementById("notify-success").attr("data-autohide","false");
     }
 
     function openNav() {
@@ -755,6 +742,7 @@
 
     // Animations initialization
     new WOW().init();
+    $('.toast').toast('show');
 
     
   </script>

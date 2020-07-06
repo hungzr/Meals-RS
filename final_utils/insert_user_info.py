@@ -4,6 +4,8 @@ import csv
 client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
 db = client['user']
 collection = db['user_info']
+collection_hobbies = db['recipe_groups']
+collection_group = db['user_group']
 
 def get_history(user_id):
     user_history = []
@@ -44,6 +46,35 @@ def insert_info():
                 print('----------------------------------------')
 
 def insert_hobbies():
+    hobbies = ['gà', 'bò', 'lợn', 'cá', 'tôm',
+           'rau', 'củ', 'quả', 'bánh mì', 'mì', 'cháo',
+           'súp', 'xôi', 'lẩu', 'vịt', 'bún', 'phở']
+    for i in hobbies:
+        dic = {'recipe_group':i}
+
+        x = collection_hobbies.insert_one(dic)
+                
+        print(dic)
+        print('----------------------------------------')
     return
 
+def insert_health():
+    health_arr = [
+        ('bệnh tim mạch', ['Nước ngọt','Cà Phê','Thịt lợn','Thịt trâu','Thịt đà điểu','Bánh quẩy']),
+        ('bệnh huyết áp cao', ['Ớt', 'Thịt gà ', 'Bia', 'Rượu', 'Cà phê', 'Trà đặc']),
+        ('phụ nữ mang thai', ['Ngải cứu', 'Cam thảo', 'Cá ngừ xanh', 'Đu đủ xanh', 'Bia', 'Rượu', 'Nem chua']),
+        ('bệnh tiểu đường', ['Bánh ngọt', 'Nước ngọt', 'Cà phê ', 'Bia', 'Rượu' ,'Mì tôm']),
+        ('bệnh dạ dày', ['Khế xanh', 'Cà phê ', 'Bia', 'Hạt tiêu', 'Ớt'])
+    ]
+
+    for health in health_arr:
+        dic = {'group_name': health[0], 'diet_food': [i.lower() for i in health[1]]}
+
+        x = collection_group.insert_one(dic)
+                
+        print(dic)
+        print('----------------------------------------')
+
 # insert_info()
+# insert_hobbies()
+insert_health()

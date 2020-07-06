@@ -62,25 +62,5 @@
 
 # run(host='localhost', port=8085, reloader=True)
 
-from pymongo import MongoClient
-import json
-import random
-
-client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
-db = client['user']
-collection = db['user_info']
-
-user_account_pass = []
-user_id = []
-for user in collection.find():
-    user_account_pass.append((user['user_account'], 
-                                 user['user_password']))
-    user_id.append(user['user_id'])
-
-# check = ('user1', '1')
-# if check in user_account_pass:
-#     id = user_id[user_account_pass.index(check)]
-#     print(id)
-user_id.sort()
-print(user_id[len(user_id) - 1])
-# print(len(user_account_pass))
+a = str('phá»¥ ná»¯ mang thai')
+print(a.decode('utf-8','strict'))
