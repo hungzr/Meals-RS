@@ -27,7 +27,7 @@ _FEATURE_MAP = {
     meals.HOBBIES_COLUMN: tf.compat.v1.FixedLenFeature([meals.N_HOBBY], dtype=tf.int64),
     meals.HEALTH_COLUMN: tf.compat.v1.FixedLenFeature([meals.N_HEALTH], dtype=tf.int64),
     meals.ITEM_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.int64),
-    meals.MENU: tf.compat.v1.FixedLenFeature([1], dtype=tf.int64),
+    meals.MENU: tf.compat.v1.FixedLenFeature([1], dtype=tf.float32),
     meals.RATING_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.float32),
 }
 
@@ -73,7 +73,6 @@ _MEALS_EMBEDDING_DIM = 16
 
 def build_model_columns(dataset):
     """Builds a set of wide and deep feature columns."""
-    # model_sen2vec = base_s2v.BaseSentence2VecModel.load('sent2vec')
     
     user_id = tf.feature_column.categorical_column_with_vocabulary_list(
               meals.USER_COLUMN, range(meals.NUM_USER_IDS))
@@ -109,7 +108,7 @@ def build_model_columns(dataset):
 
 
 def _deserialize(examples_serialized):
-    print('example: ', examples_serialized)
+    # print('example: ', examples_serialized)
     features = tf.parse_example(examples_serialized, _FEATURE_MAP)
     classes = features[meals.RATING_COLUMN]/meals.MAX_RATING
     # classes = tf.equal(classes)
@@ -134,7 +133,7 @@ def _df_to_input_fn(df, name, dataset, data_dir, batch_size, repeat, shuffle):
       dataset = tf.data.TFRecordDataset(buffer_path)
       # batch comes before map because map can deserialize multiple examples.
       dataset = dataset.batch(batch_size)
-      print('dataset: ', dataset)
+    #   print('dataset: ', dataset)
       dataset = dataset.map(_deserialize, num_parallel_calls=16)
       if shuffle:
           dataset = dataset.shuffle(shuffle)
@@ -173,12 +172,12 @@ def construct_input_fns(dataset, data_dir, batch_size=16, repeat=1):
       df = meals.integerize_healths(dataframe=df)
 
       df = df.drop(columns=[meals.ITEM_NAME_COLUMN])
-      df = df.drop(columns=["actual_id"])
-      df = df.drop(columns=["ingredients"])
-      df = df.drop(columns=["methods"])
-      df = df.drop(columns=["image"])
-      df = df.drop(columns=["average_rating"])
-      print('df: ', df)
+    #   df = df.drop(columns=["actual_id"])
+    #   df = df.drop(columns=["ingredients"])
+    #   df = df.drop(columns=["methods"])
+    #   df = df.drop(columns=["image"])
+    #   df = df.drop(columns=["average_rating"])
+      print(df.T)
 
       train_df = df.sample(frac=0.8, random_state=0)
       eval_df = df.drop(train_df.index)
@@ -201,8 +200,8 @@ def construct_input_fns(dataset, data_dir, batch_size=16, repeat=1):
 
 def main(_):
     # meals.download(dataset=flags.FLAGS.dataset, data_dir=flags.FLAGS.data_dir)
-    # dir_path = "../../../dataset/csv_file/"
-    dir_path = "/home/hungdo/HungDo/Meals-RS/dataset/csv_file/"
+    dir_path = "../../../dataset/csv_file/"
+    # dir_path = "/home/hungdo/HungDo/Meals-RS/dataset/csv_file/"
     construct_input_fns("food", dir_path)
 
 if __name__ == "__main__":

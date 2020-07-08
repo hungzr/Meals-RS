@@ -264,13 +264,16 @@ def save_user_infor():
     if new_user_age == '':
         new_user_age = get_user_age
     new_user_group = request.POST.getall('new_user_group')
+    new_user_group = [list_user_group[int(i)] for i in new_user_group]
+
     new_user_hobbies = request.forms.getlist('new_user_hobbies')
+    new_user_hobbies = [list_hobbies[int(i)] for i in new_user_hobbies]
     ab = {'gender':new_user_gender, 'age':new_user_age,
           'group': new_user_group, 'hobbies':new_user_hobbies}
     print('abc: ',ab)
 
     # Save new infor
-    collection_test.update(
+    collection_test.update_one(
         {'user_id': get_user_id},
         {
           '$set':
@@ -283,7 +286,7 @@ def save_user_infor():
         }
     )
 
-    redirect('/find')
+    redirect('/')
 
 @get('/rating')
 def get_rating(value):
@@ -309,6 +312,7 @@ def find_menu_form():
         # Clean user infor
         get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
 
+    # print(get_user_gender, get_user_age, get_user_group, get_user_hobbies)
     print('user_id: ', get_user_id)
 
     top_rating = get_topk_rating(6)

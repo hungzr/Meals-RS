@@ -346,7 +346,7 @@
             
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button class="btn btn-deep-orange" type="submit">Tìm kiếm</button>
+            <button class="btn btn-deep-orange" type="submit" >Tìm kiếm</button>
           </div>
         </div>
       </div>
@@ -480,15 +480,15 @@
             </select>
           </div>
         </div>
-        <!--User Health-->
+        <!--User Group-->
         <div class="form-group row">
           <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
           <div class="col-sm-8">
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
              name="new_user_group" id="new_user_group" data-live-search="true">
               <option selected value="" hidden>{{user_group}}</option>
-              %for group in select_group:
-              <option value="{{group}}">{{group}}</option>
+              %for index, group in enumerate(select_group):
+              <option id = "group_{{index}}" value="{{index}}">{{group}}</option>
               %end
             </select>
           </div>
@@ -501,8 +501,8 @@
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
               name="new_user_hobbies" id="new_user_hobbies" data-live-search="true">
               <option selected value="" hidden>{{user_hobbies}}</option>
-              %for hobbie in select_hobbies:
-              <option value="{{hobbie}}">{{hobbie}}</option>
+              %for index,hobbie in enumerate(select_hobbies):
+              <option id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
               %end
             </select><!-- End -->
           </div>
@@ -513,7 +513,7 @@
         <div class=" form-group row">
           <div class="col-sm-12 text-center">
             <button id="save_infor_btn" type="submit" class="btn btn-info btn-md my-btn"
-              style="color: black;width:35%;" disabled>Lưu
+              style="color: black;width:35%;" disabled >Lưu
               <i class="fas fa-cloud ml-2"></i>
             </button>
           </div>
@@ -700,7 +700,16 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
-
+  <script>
+    $("#new_user_gender").on('change', function() {
+      
+      if($("#new_user_gender").val() =="0") {
+        console.log("aba");
+        % del select_group[3]
+        
+      }
+    })
+  </script>
 
   <script>
     if (document.getElementById('recipe_name').value == "") {

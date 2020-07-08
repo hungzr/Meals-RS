@@ -74,9 +74,9 @@ def run_meal(flags_obj):
     """
 
 
-    print('dataset: ',flags_obj.dataset )
-    # dir_path = "../../dataset/csv_file/"
-    dir_path = "/home/hungdo/HungDo/Meals-RS/dataset/csv_file/"
+    # print('dataset: ',flags_obj.dataset )
+    dir_path = "../../../dataset/csv_file/"
+    # dir_path = "/home/hungdo/HungDo/Meals-RS/dataset/csv_file/"
     print('dir: ', flags_obj.data_dir )
     train_input_fn, eval_input_fn, model_column_fn = \
       meals_dataset.construct_input_fns(
@@ -106,10 +106,10 @@ def run_meal(flags_obj):
         tensors_to_log=tensors_to_log,
         early_stop=False)
 
-    print('average: ', average_loss_arr)
-    print('label: ', label_mean_arr)
-    print('loss: ', loss_arr)
-    print('prediction: ', prediction_mean_arr)
+    # print('average: ', average_loss_arr)
+    # print('label: ', label_mean_arr)
+    # print('loss: ', loss_arr)
+    # print('prediction: ', prediction_mean_arr)
 
     # Display Loss
     line_average_loss = plt.plot(average_loss_arr, label='Average Loss')
