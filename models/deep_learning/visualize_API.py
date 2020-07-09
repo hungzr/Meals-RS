@@ -25,23 +25,25 @@ list_user_group = []
 for detail in collection_group.find():
     list_user_group.append(detail['group_name'])
 
-# get_user_infor
-user_account_pass = []
-user_id = []
-user_gender = []
-user_age = []
-user_hobbies = []
-user_group = []
-for user in collection_test.find():
-    user_account_pass.append((user['user_account'], 
-                                user['user_password']))
-    user_id.append(user['user_id'])
-    user_gender.append(user['user_gender'])
-    user_age.append(user['user_age'])
-    user_hobbies.append(user['user_hobbies'])
-    user_group.append(user['user_group'])
+def get_user_infor():
+    user_account_pass = []
+    user_id = []
+    user_gender = []
+    user_age = []
+    user_hobbies = []
+    user_group = []
+    for user in collection_test.find():
+        user_account_pass.append((user['user_account'], 
+                                    user['user_password']))
+        user_id.append(user['user_id'])
+        user_gender.append(user['user_gender'])
+        user_age.append(user['user_age'])
+        user_hobbies.append(user['user_hobbies'])
+        user_group.append(user['user_group'])
+    return user_account_pass, user_id, user_gender, user_age, user_hobbies, user_group
 
 def clean_user_infor(get_user_id):
+    _, user_id, user_gender, user_age, user_hobbies, user_group = get_user_infor()
 
     get_user_gender = user_gender[user_id.index(get_user_id)]
     if get_user_gender == '0':
@@ -67,6 +69,8 @@ def clean_user_infor(get_user_id):
 
 @post('/login')
 def do_login():
+    user_account_pass, user_id, _, _, _, _ = get_user_infor()
+
     username = request.forms.get('username')
     password = request.forms.get('password')
 
@@ -75,12 +79,6 @@ def do_login():
         response.set_cookie("user_id", get_user_id, secret='some-secret-key')
         print('login with ID %s' % get_user_id)
 
-        # # Following infor
-        # get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
-        # response.set_cookie("user_gender", get_user_gender, secret='some-secret-key')
-        # response.set_cookie("user_age", get_user_age, secret='some-secret-key')
-        # response.set_cookie("user_group", get_user_group, secret='some-secret-key')
-        # response.set_cookie("user_hobbies", get_user_hobbies, secret='some-secret-key')
     else:
         print('fail')
 
@@ -94,6 +92,8 @@ def do_logout():
 
 @post('/register')
 def do_register():
+    _, user_id, _, _, _, _ = get_user_infor()
+
     user_account = request.forms.get('register_user_account')
     user_password = request.forms.get('register_user_password')
     user_name = request.forms.get('register_user_name')
@@ -141,13 +141,56 @@ def get_topk_rating(k):
 
 @post('/advance_search')
 def use_advance_search():
-    advance_user_gender = request.forms.advance_user_gender
-    advance_user_age = request.forms.advance_user_age
-    advance_user_group = request.POST.getall('advance_user_group')
-    advance_user_hobbies = request.forms.getlist('advance_user_hobbies')
-    ab = {'gender':advance_user_gender, 'age':advance_user_age,
+    _, user_id, _, _, _, _ = get_user_infor()
+    get_user_id = request.get_cookie("user_id", secret='some-secret-key')
+
+    advance_user_gender = request.forms.new_user_gender
+    advance_user_age = request.forms.new_user_age
+
+    advance_user_group = request.POST.getall('new_user_group')
+    if advance_user_group != ['']:
+        advance_user_group = [list_user_group[int(i)] for i in advance_user_group]
+
+    advance_user_hobbies = request.forms.getlist('new_user_hobbies')
+    if advance_user_hobbies != ['']:
+        advance_user_hobbies = [list_hobbies[int(i)] for i in advance_user_hobbies]
+
+    if get_user_id is None:
+        # Insert new advance user infor (id: -1,-2,..)
+        user_id.sort()
+        temp_id_arr = [int(i) for i in user_id if int(i) <= 0]
+        print('temp: ', temp_id_arr)
+
+        new_user_id = - (min(temp_id_arr) + 1)
+        user_name = 'anonymous_' + str(abs(new_user_id))
+        new_user_id = str(new_user_id)
+        dic = {'user_account': '', 'user_password': '', 
+            'user_id': new_user_id, 'user_name': user_name, 'user_gender': advance_user_gender,
+            'user_age': advance_user_age,'user_hobbies': advance_user_hobbies, 
+            'user_group': advance_user_group, 'user_history': []}
+        print('new anonymous: ', dic)
+
+        response.set_cookie("user_id", new_user_id, secret='some-secret-key')
+        x = collection_test.insert_one(dic)
+        
+    else:
+        ab = {'gender':advance_user_gender, 'age':advance_user_age,
           'group': advance_user_group, 'hobbies':advance_user_hobbies}
-    print('abc: ',ab)
+        print('update : ',ab)
+
+        # Save new infor
+        collection_test.update_one(
+            {'user_id': get_user_id},
+            {
+                '$set':
+                {
+                    'user_gender': advance_user_gender,
+                    'user_age': advance_user_age,
+                    'user_group': advance_user_group,
+                    'user_hobbies': advance_user_hobbies
+                }  
+            }
+        )
 
     redirect('/')
 
@@ -264,10 +307,12 @@ def save_user_infor():
     if new_user_age == '':
         new_user_age = get_user_age
     new_user_group = request.POST.getall('new_user_group')
-    new_user_group = [list_user_group[int(i)] for i in new_user_group]
+    if new_user_group != ['']:
+        new_user_group = [list_user_group[int(i)] for i in new_user_group]
 
     new_user_hobbies = request.forms.getlist('new_user_hobbies')
-    new_user_hobbies = [list_hobbies[int(i)] for i in new_user_hobbies]
+    if new_user_hobbies != ['']:
+        new_user_hobbies = [list_hobbies[int(i)] for i in new_user_hobbies]
     ab = {'gender':new_user_gender, 'age':new_user_age,
           'group': new_user_group, 'hobbies':new_user_hobbies}
     print('abc: ',ab)

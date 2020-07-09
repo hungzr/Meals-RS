@@ -300,8 +300,9 @@
             <div class="form-group row">
               <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
               <div class="col-sm-8 my-detail">
-                <select class="browser-default custom-select" name="advance_user_gender" id="advance_user_gender">
-                  <option selected value="0">Nam</option>
+                <select class="browser-default custom-select" name="new_user_gender" id="new_user_gender">
+                  <option selected value="" disabled hidden>{{user_gender}}</option>
+                  <option value="0">Nam</option>
                   <option value="1">Nữ</option>
                 </select>
               </div>
@@ -310,22 +311,23 @@
             <div class="form-group row">
               <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
               <div class="col-sm-8 my-detail">
-            <select class="browser-default custom-select" name="advance_user_age" id="advance_user_age">
-              <option selected value="trẻ em">0-16 tuổi: Trẻ em</option>
-              <option value="người lớn">17-50 tuổi: Người lớn</option>
-              <option value="người già">> 50 tuổi: Người già</option>
-            </select>
-          </div>
+                <select class="browser-default custom-select" name="new_user_age" id="new_user_age">
+                  <option selected value="" disabled hidden>{{user_age}}</option>
+                  <option value="trẻ em">0-16 tuổi: Trẻ em</option>
+                  <option value="người lớn">17-50 tuổi: Người lớn</option>
+                  <option value="người già">> 50 tuổi: Người già</option>
+                </select>
+              </div>
             </div>
             <!--User Group-->
             <div class="form-group row">
-              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_group">Nhóm đ/tượng</label>
+              <label style="text-align: right" class="col-sm-4 col-form-label" for="user_health">Nhóm đ/tượng</label>
               <div class="col-sm-8">
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-                name="advance_user_group" id="advance_user_group" data-live-search="true">
-                  
-                  %for group in select_group:
-                  <option value="{{group}}">{{group}}</option>
+                name="new_user_group" id="new_user_group" data-live-search="true">
+                  <option selected value="" hidden>{{user_group}}</option>
+                  %for index, group in enumerate(select_group):
+                  <option id = "group_{{index}}" value="{{index}}">{{group}}</option>
                   %end
                 </select>
               </div>
@@ -336,9 +338,10 @@
               <div class="col-sm-8 ">
                 <!-- Multiselect dropdown -->
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
-                  name="advance_user_hobbies" id="advance_user_hobbies" data-live-search="true">
-                  %for hobbie in select_hobbies:
-                  <option value="{{hobbie}}">{{hobbie}}</option>
+                  name="new_user_hobbies" id="new_user_hobbies" data-live-search="true">
+                  <option selected value="" hidden>{{user_hobbies}}</option>
+                  %for index,hobbie in enumerate(select_hobbies):
+                  <option id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
                   %end
                 </select><!-- End -->
               </div>
@@ -705,17 +708,17 @@
       
       if($("#new_user_gender").val() =="0") {
         console.log("aba");
-        % del select_group[3]
-        
+        // % del select_group[3]
       }
     })
   </script>
 
   <script>
-    if (document.getElementById('recipe_name').value == "") {
+    if (document.getElementById("recipe_name").value == "") {
       document.getElementById("show_more").style.visibility = "hidden";
     }
-    if (document.getElementById('user_id').value != "") {
+    var id = document.getElementById("user_id").value
+    if (id != "" ) {
       document.getElementById("logined").style.visibility = "visible";
       document.getElementById("advance-search").style.display = "none";
       document.getElementById("navbar-static-signin").style.display = "none";
