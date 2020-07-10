@@ -20,10 +20,13 @@ list_hobbies = []
 for detail in collection_hobbies.find():
     list_hobbies.append(detail['recipe_group'])
 
+
 #get_user_group
 list_user_group = []
 for detail in collection_group.find():
     list_user_group.append(detail['group_name'])
+
+
 
 def get_user_infor():
     user_account_pass = []
@@ -60,10 +63,10 @@ def clean_user_infor(get_user_id):
         get_user_age = "> 50 tuổi: Người già"
 
     get_user_group = user_group[user_id.index(get_user_id)]
-    get_user_group = ", ".join(i for i in get_user_group)
+    get_user_group = ", ".join(i for i in get_user_group )
 
     get_user_hobbies = user_hobbies[user_id.index(get_user_id)]
-    get_user_hobbies = ", ".join(i for i in get_user_hobbies)
+    get_user_hobbies = ", ".join(i for i in get_user_hobbies )
 
     return get_user_gender, get_user_age, get_user_group, get_user_hobbies
 
@@ -100,7 +103,10 @@ def do_register():
 
     # Find next ID to init
     user_id.sort()
-    new_user_id = str(int(user_id[len(user_id) - 1]) + 1)
+    temp_id_arr = [int(i) for i in user_id if int(i) >= 0]
+    new_user_id = max(temp_id_arr) + 1
+    new_user_id = str(new_user_id)
+
     dic = {'user_account': user_account, 'user_password': user_password, 
             'user_id': new_user_id, 'user_name': user_name, 'user_gender': '',
             'user_age': '','user_hobbies': [], 'user_group': [], 'user_history': []}
@@ -141,19 +147,33 @@ def get_topk_rating(k):
 
 @post('/advance_search')
 def use_advance_search():
-    _, user_id, _, _, _, _ = get_user_infor()
+    _, user_id, user_gender, user_age, user_hobbies, user_group = get_user_infor()
+
     get_user_id = request.get_cookie("user_id", secret='some-secret-key')
+    get_user_gender = user_gender[user_id.index(get_user_id)]
+    get_user_age = user_age[user_id.index(get_user_id)]
+    get_user_group = user_group[user_id.index(get_user_id)]
+    get_user_hobbies = user_hobbies[user_id.index(get_user_id)]
+
 
     advance_user_gender = request.forms.new_user_gender
+    if advance_user_gender == '':
+        advance_user_gender = get_user_gender
     advance_user_age = request.forms.new_user_age
+    if advance_user_age == '':
+        advance_user_age = get_user_age
 
     advance_user_group = request.POST.getall('new_user_group')
     if advance_user_group != ['']:
         advance_user_group = [list_user_group[int(i)] for i in advance_user_group]
+    else:
+        advance_user_group = get_user_group
 
     advance_user_hobbies = request.forms.getlist('new_user_hobbies')
     if advance_user_hobbies != ['']:
         advance_user_hobbies = [list_hobbies[int(i)] for i in advance_user_hobbies]
+    else:
+        advance_user_hobbies = get_user_hobbies
 
     if get_user_id is None:
         # Insert new advance user infor (id: -1,-2,..)
@@ -161,7 +181,7 @@ def use_advance_search():
         temp_id_arr = [int(i) for i in user_id if int(i) <= 0]
         print('temp: ', temp_id_arr)
 
-        new_user_id = - (min(temp_id_arr) + 1)
+        new_user_id = min(temp_id_arr) - 1
         user_name = 'anonymous_' + str(abs(new_user_id))
         new_user_id = str(new_user_id)
         dic = {'user_account': '', 'user_password': '', 
@@ -208,6 +228,10 @@ def get_recommeded_meals():
         get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
 
     print('user_id: ', get_user_id)
+    if '' in list_user_group:
+        list_user_group.remove('')
+    if '' in list_hobbies:
+        list_hobbies.remove("")
 
     if recipe_input == '':
         # Most general
@@ -269,13 +293,13 @@ def meal_detail(meal_id):
     # Get all recipes in menu
     detail_recipes = meal_menu[meal_id_arr.index(int(meal_id))]
     detail_recipes = [str(i + 1) + '. ' + j.capitalize() for i, j in enumerate(detail_recipes)]
-    print('recipe: ', detail_recipes)
+    # print('recipe: ', detail_recipes)
 
     # Get all ingredients
     detail_ingre = meal_ingre[meal_id_arr.index(int(meal_id))]
     detail_ingre = detail_ingre.split('|')
     # detail_ingre = ['_ Nguyên liệu: ' + i for i in detail_ingre if i != '']
-    print('ingre: ', detail_ingre)
+    # print('ingre: ', detail_ingre)
 
     # Get all methods
     temp_detail_method = meal_methods[meal_id_arr.index(int(meal_id))]
@@ -286,8 +310,12 @@ def meal_detail(meal_id):
             detail_method.append(i.split(';'))
         else:
             detail_method.append([])
-    print('method: ', detail_method)
+    # print('method: ', detail_method)
 
+    if '' in list_user_group:
+        list_user_group.remove('')
+    if '' in list_hobbies:
+        list_hobbies.remove("")
     return template('detail',recipe_input='', user_login_id = get_user_id, select_group = list_user_group, select_hobbies = list_hobbies,
                     user_gender = get_user_gender, user_age = get_user_age, 
                     user_group = get_user_group, user_hobbies = get_user_hobbies,
@@ -296,6 +324,8 @@ def meal_detail(meal_id):
 
 @post('/saveinfor')
 def save_user_infor():
+    _, user_id, user_gender, user_age, user_hobbies, user_group = get_user_infor()
+
     get_user_id = request.get_cookie("user_id", secret='some-secret-key')
     get_user_gender = user_gender[user_id.index(get_user_id)]
     get_user_age = user_age[user_id.index(get_user_id)]
@@ -357,7 +387,7 @@ def find_menu_form():
         # Clean user infor
         get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
 
-    # print(get_user_gender, get_user_age, get_user_group, get_user_hobbies)
+    print(get_user_gender, get_user_age, get_user_group, get_user_hobbies)
     print('user_id: ', get_user_id)
 
     top_rating = get_topk_rating(6)
@@ -365,7 +395,10 @@ def find_menu_form():
     menu_array, image_array, rating_array = get_detail(top_rating)
     image_array = [element or default_image for element in image_array]
     # print('new_image: ', image_array)
-
+    if '' in list_user_group:
+        list_user_group.remove('')
+    if '' in list_hobbies:
+        list_hobbies.remove("")
     return template('index', recipe_input='',user_login_id = get_user_id, select_group = list_user_group, select_hobbies = list_hobbies,
     user_gender = get_user_gender, user_age = get_user_age, 
     user_group = get_user_group, user_hobbies = get_user_hobbies,

@@ -325,9 +325,13 @@
               <div class="col-sm-8">
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
                 name="new_user_group" id="new_user_group" data-live-search="true">
-                  <option selected value="" hidden>{{user_group}}</option>
+                 
                   %for index, group in enumerate(select_group):
-                  <option id = "group_{{index}}" value="{{index}}">{{group}}</option>
+                    % if group in user_group:
+                      <option selected id = "group_{{index}}" value="{{index}}">{{group}}</option>
+                    %else:
+                      <option id = "group_{{index}}" value="{{index}}">{{group}}</option>
+                    %end
                   %end
                 </select>
               </div>
@@ -339,9 +343,13 @@
                 <!-- Multiselect dropdown -->
                 <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
                   name="new_user_hobbies" id="new_user_hobbies" data-live-search="true">
-                  <option selected value="" hidden>{{user_hobbies}}</option>
+                  
                   %for index,hobbie in enumerate(select_hobbies):
-                  <option id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
+                    %if hobbie in user_hobbies:
+                      <option selected id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
+                    %else:
+                      <option id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
+                    %end
                   %end
                 </select><!-- End -->
               </div>
@@ -489,9 +497,12 @@
           <div class="col-sm-8">
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
              name="new_user_group" id="new_user_group" data-live-search="true">
-              <option selected value="" hidden>{{user_group}}</option>
               %for index, group in enumerate(select_group):
-              <option id = "group_{{index}}" value="{{index}}">{{group}}</option>
+                % if group in user_group:
+                  <option selected id = "group_{{index}}" value="{{index}}">{{group}}</option>
+                %else:
+                  <option id = "group_{{index}}" value="{{index}}">{{group}}</option>
+                %end
               %end
             </select>
           </div>
@@ -503,9 +514,12 @@
             <!-- Multiselect dropdown -->
             <select multiple data-style="bg-white px-4 py-3 shadow-sm " class=" selectpicker  my-form-control "
               name="new_user_hobbies" id="new_user_hobbies" data-live-search="true">
-              <option selected value="" hidden>{{user_hobbies}}</option>
               %for index,hobbie in enumerate(select_hobbies):
-              <option id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
+                %if hobbie in user_hobbies:
+                  <option selected id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
+                %else:
+                  <option id = "hobby_{{index}}" value="{{index}}">{{hobbie}}</option>
+                %end
               %end
             </select><!-- End -->
           </div>
@@ -717,14 +731,17 @@
     if (document.getElementById("recipe_name").value == "") {
       document.getElementById("show_more").style.visibility = "hidden";
     }
-    var id = document.getElementById("user_id").value
-    if (id != "" ) {
+    var check_id = document.getElementById("user_id").value
+    if (check_id != "" ) {
+      if (parseInt(check_id) > 0 ){
       document.getElementById("logined").style.visibility = "visible";
       document.getElementById("advance-search").style.display = "none";
       document.getElementById("navbar-static-signin").style.display = "none";
       document.getElementById("navbar-static-login").style.display = "none";
       document.getElementById("save_infor_btn").disabled = false;
       document.getElementById("notify-success").attr("data-autohide","false");
+      }
+      
     }
 
     function openNav() {
