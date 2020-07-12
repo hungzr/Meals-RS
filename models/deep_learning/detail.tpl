@@ -299,7 +299,7 @@
             <div class="form-group row">
               <label style="text-align: right" class="col-sm-4 col-form-label" for="user_gender">Giới tính</label>
               <div class="col-sm-8 my-detail">
-                <select class="browser-default custom-select" name="new_user_gender" id="new_user_gender">
+                <select class="browser-default custom-select" name="new_user_gender" id="new_user_gender" required>
                   <option selected value="" disabled hidden>{{user_gender}}</option>
                   <option value="0">Nam</option>
                   <option value="1">Nữ</option>
@@ -310,7 +310,7 @@
             <div class="form-group row">
               <label style="text-align: right" class="col-sm-4 col-form-label" for="user_age">Độ tuổi</label>
               <div class="col-sm-8 my-detail">
-                <select class="browser-default custom-select" name="new_user_age" id="new_user_age">
+                <select class="browser-default custom-select" name="new_user_age" id="new_user_age" required>
                   <option selected value="" disabled hidden>{{user_age}}</option>
                   <option value="trẻ em">0-16 tuổi: Trẻ em</option>
                   <option value="người lớn">17-50 tuổi: Người lớn</option>
@@ -368,7 +368,9 @@
 
       <!-- SideNav slide-out -->
       <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i><span class="sr-only" aria-hidden="true">Toggle side navigation</span></a> -->
-      <span style="font-size:30px;cursor:pointer; color: #4285f4;" onclick="openNav()"><i class="fas fa-bars"></i></span>
+      <span style="font-size:30px;cursor:pointer; color: #4285f4;pointer-events:none;" onclick="openNav()">
+        <i class="fas fa-bars" id="user_infor_sidenav"></i>
+      </span>
       <form action="/find" method="post" id="main">
         <div class="container header-container">
 
@@ -851,12 +853,13 @@
     var check_id = document.getElementById("user_id").value
     if (check_id != "" ) {
       if (parseInt(check_id) > 0 ){
-      document.getElementById("logined").style.visibility = "visible";
-      document.getElementById("advance-search").style.display = "none";
-      document.getElementById("navbar-static-signin").style.display = "none";
-      document.getElementById("navbar-static-login").style.display = "none";
-      document.getElementById("save_infor_btn").disabled = false;
-      document.getElementById("notify-success").attr("data-autohide","false");
+        $("#user_infor_sidenav").css("pointer-events", "auto");
+        document.getElementById("logined").style.visibility = "visible";
+        document.getElementById("advance-search").style.display = "none";
+        document.getElementById("navbar-static-signin").style.display = "none";
+        document.getElementById("navbar-static-login").style.display = "none";
+        document.getElementById("save_infor_btn").disabled = false;
+        document.getElementById("notify-success").attr("data-autohide","false");
       }
       
     }

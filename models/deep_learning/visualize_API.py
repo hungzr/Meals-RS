@@ -112,7 +112,7 @@ def do_register():
             'user_age': '','user_hobbies': [], 'user_group': [], 'user_history': []}
 
     x = collection_test.insert_one(dic)
-    print(dic)
+    print('register: ', dic)
     redirect('/')
 
 # Get detail recommended meals
@@ -150,10 +150,14 @@ def use_advance_search():
     _, user_id, user_gender, user_age, user_hobbies, user_group = get_user_infor()
 
     get_user_id = request.get_cookie("user_id", secret='some-secret-key')
-    get_user_gender = user_gender[user_id.index(get_user_id)]
-    get_user_age = user_age[user_id.index(get_user_id)]
-    get_user_group = user_group[user_id.index(get_user_id)]
-    get_user_hobbies = user_hobbies[user_id.index(get_user_id)]
+
+    if get_user_id is None: 
+        get_user_gender, get_user_age, get_user_group, get_user_hobbies = '', '', '', ''
+    else:
+        get_user_gender = user_gender[user_id.index(get_user_id)]
+        get_user_age = user_age[user_id.index(get_user_id)]
+        get_user_group = user_group[user_id.index(get_user_id)]
+        get_user_hobbies = user_hobbies[user_id.index(get_user_id)]
 
 
     advance_user_gender = request.forms.new_user_gender
@@ -179,7 +183,7 @@ def use_advance_search():
         # Insert new advance user infor (id: -1,-2,..)
         user_id.sort()
         temp_id_arr = [int(i) for i in user_id if int(i) <= 0]
-        print('temp: ', temp_id_arr)
+        # print('temp: ', temp_id_arr)
 
         new_user_id = min(temp_id_arr) - 1
         user_name = 'anonymous_' + str(abs(new_user_id))
@@ -198,7 +202,7 @@ def use_advance_search():
           'group': advance_user_group, 'hobbies':advance_user_hobbies}
         print('update : ',ab)
 
-        # Save new infor
+        # Save anomynous infor
         collection_test.update_one(
             {'user_id': get_user_id},
             {
@@ -233,44 +237,26 @@ def get_recommeded_meals():
     if '' in list_hobbies:
         list_hobbies.remove("")
 
-    if recipe_input == '':
-        # Most general
-        top_rating = get_topk_rating(6)
+    
+    top_rating = ver2.main_ver2(get_user_id, recipe_input)
 
-        menu_array, image_array, rating_array = get_detail(top_rating)
-        image_array = [element or default_image for element in image_array]
-        # print('new_image: ', image_array)
+    # Get detail recommended meals
+    menu_array, image_array, rating_array = get_detail(top_rating)
+    image_array = [element or default_image for element in image_array]
+    # print('new_image: ', image_array)
 
-        return template('index', recipe_input='', user_login_id = get_user_id,select_group = list_user_group, select_hobbies = list_hobbies,
-        user_gender = get_user_gender, user_age = get_user_age, 
-        user_group = get_user_group, user_hobbies = get_user_hobbies,
-        meal_id = top_rating[:3], recom_image = image_array[:3], recom_rating = rating_array[:3], recom_menu= menu_array[:3],
-        more_meal_id = top_rating[3:],more_image = image_array[3:], more_rating = rating_array[3:], more_menu= menu_array[3:]
-        )
-
-    else:
-        # Recommended
-        temp_id = get_user_id
-        if get_user_id is None: temp_id = -1
-        top_rating = ver2.main_ver2(temp_id, recipe_input)
-
-        # Get detail recommended meals
-        menu_array, image_array, rating_array = get_detail(top_rating)
-        image_array = [element or default_image for element in image_array]
-        # print('new_image: ', image_array)
-
-        # Might care
-        top_rating_more = get_topk_rating(3)
-        menu_array_more, image_array_more, rating_array_more = get_detail(top_rating_more)
-        image_array_more = [element or default_image for element in image_array_more]
-        print('new_image: ', image_array_more)
-        
-        return template('index', recipe_input=recipe_input, user_login_id = get_user_id,select_group = list_user_group, select_hobbies = list_hobbies,
-        user_gender = get_user_gender, user_age = get_user_age, 
-        user_group = get_user_group, user_hobbies = get_user_hobbies,
-        meal_id = top_rating, recom_image = image_array, recom_rating = rating_array, recom_menu= menu_array,
-        more_meal_id = top_rating_more,more_image = image_array_more, more_rating = rating_array_more, more_menu= menu_array_more
-        )
+    # Might care
+    top_rating_more = get_topk_rating(3)
+    menu_array_more, image_array_more, rating_array_more = get_detail(top_rating_more)
+    image_array_more = [element or default_image for element in image_array_more]
+    # print('new_image: ', image_array_more)
+    
+    return template('index', recipe_input=recipe_input, user_login_id = get_user_id,select_group = list_user_group, select_hobbies = list_hobbies,
+    user_gender = get_user_gender, user_age = get_user_age, 
+    user_group = get_user_group, user_hobbies = get_user_hobbies,
+    meal_id = top_rating, recom_image = image_array, recom_rating = rating_array, recom_menu= menu_array,
+    more_meal_id = top_rating_more,more_image = image_array_more, more_rating = rating_array_more, more_menu= menu_array_more
+    )
 
 @route('/detail/:meal_id')
 def meal_detail(meal_id):
@@ -329,6 +315,8 @@ def save_user_infor():
     get_user_id = request.get_cookie("user_id", secret='some-secret-key')
     get_user_gender = user_gender[user_id.index(get_user_id)]
     get_user_age = user_age[user_id.index(get_user_id)]
+    get_user_group = user_group[user_id.index(get_user_id)]
+    get_user_hobbies = user_hobbies[user_id.index(get_user_id)]
 
     new_user_gender = request.forms.new_user_gender
     if new_user_gender == '':
@@ -339,13 +327,18 @@ def save_user_infor():
     new_user_group = request.POST.getall('new_user_group')
     if new_user_group != ['']:
         new_user_group = [list_user_group[int(i)] for i in new_user_group]
+    else:
+        new_user_group = get_user_group
 
     new_user_hobbies = request.forms.getlist('new_user_hobbies')
     if new_user_hobbies != ['']:
         new_user_hobbies = [list_hobbies[int(i)] for i in new_user_hobbies]
+    else:
+        new_user_hobbies = get_user_hobbies
+
     ab = {'gender':new_user_gender, 'age':new_user_age,
           'group': new_user_group, 'hobbies':new_user_hobbies}
-    print('abc: ',ab)
+    print('save_infor: ',ab)
 
     # Save new infor
     collection_test.update_one(
@@ -387,7 +380,7 @@ def find_menu_form():
         # Clean user infor
         get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
 
-    print(get_user_gender, get_user_age, get_user_group, get_user_hobbies)
+    # print(get_user_gender, get_user_age, get_user_group, get_user_hobbies)
     print('user_id: ', get_user_id)
 
     top_rating = get_topk_rating(6)

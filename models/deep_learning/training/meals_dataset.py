@@ -172,11 +172,6 @@ def construct_input_fns(dataset, data_dir, batch_size=16, repeat=1):
       df = meals.integerize_healths(dataframe=df)
 
       df = df.drop(columns=[meals.ITEM_NAME_COLUMN])
-    #   df = df.drop(columns=["actual_id"])
-    #   df = df.drop(columns=["ingredients"])
-    #   df = df.drop(columns=["methods"])
-    #   df = df.drop(columns=["image"])
-    #   df = df.drop(columns=["average_rating"])
       print(df.T)
 
       train_df = df.sample(frac=0.8, random_state=0)

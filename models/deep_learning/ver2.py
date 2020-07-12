@@ -7,6 +7,12 @@ import os
 from collections import Counter
 import time
 import fasttext
+from pymongo import MongoClient
+
+client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
+db = client['user']
+collection = db['user_info']
+collection_test = db['user_info1']
 
 def load_model_category(dir_path):
     model_category = fasttext.load_model(os.path.join(dir_path, 'label_model_training.bin'))
@@ -56,27 +62,50 @@ def check_user_infor(file_path, user_id, user_demand):
     :param user_demand: recipe name that user denamded
     :return: DataFrame of user information to merge with recipe_information
     '''
+    # Get all user infor from CSV file
+    # user_df = pd.read_csv(os.path.join(file_path, 'user_information.csv'))
 
-    user_df = pd.read_csv(os.path.join(file_path, 'user_information.csv'))
+    # user_gender = ''
+    # user_age = ''
+    # user_hobbies = ''
+    # user_health = ''
 
-    user_gender = ''
-    user_age = ''
-    user_hobbies = ''
-    user_health = ''
+    # for idx, row in user_df.iterrows():
+    #     if user_id == row['user_id']:
+    #         user_gender = row['user_gender']
+    #         user_age = row['user_age']
+    #         user_hobbies = row['user_hobbies']
+    #         user_health = row['user_health']
 
-    for idx, row in user_df.iterrows():
-        if user_id == row['user_id']:
-            user_gender = row['user_gender']
-            user_age = row['user_age']
-            user_hobbies = row['user_hobbies']
-            user_health = row['user_health']
+    if user_id != '':
+        user_id_arr = []
+        user_gender_arr = []
+        user_age_arr = []
+        user_hobbies_arr = []
+        user_group_arr = []
+        for user in collection_test.find():
+            user_id_arr.append(int(user['user_id']))
+            user_gender_arr.append(int(user['user_gender']))
+            user_age_arr.append(user['user_age'])
+            user_hobbies_arr.append(user['user_hobbies'])
+            user_group_arr.append(user['user_group'])
+        
+        # print(user_id_arr)
 
-    user_infor = {'user_id': user_id, 'recipe_name': user_demand, 'user_gender': user_gender,
-                  'user_age': user_age, 'user_hobbies': user_hobbies, 'user_health': user_health}
+        user_gender = user_gender_arr[user_id_arr.index(user_id)]
+        user_age = user_age_arr[user_id_arr.index(user_id)]
+        user_hobbies = user_hobbies_arr[user_id_arr.index(user_id)]
+        user_hobbies = '|'.join(i for i in user_hobbies)
+        user_group = user_group_arr[user_id_arr.index(user_id)]  
+        user_infor = {'user_id': user_id, 'recipe_name': user_demand, 'user_gender': user_gender,
+                    'user_age': user_age, 'user_hobbies': user_hobbies, 'user_health': user_group}
+    else:
+        user_infor = {'user_id': user_id, 'recipe_name': user_demand, 'user_gender': '',
+                    'user_age': '', 'user_hobbies': '', 'user_health': []}
 
     new_user_df = pd.DataFrame([user_infor])
 
-    # print(new_user_df.T)
+    print(new_user_df.T)
 
     return new_user_df
 
@@ -95,6 +124,7 @@ def load_data(file_path, user_infor):
     # Load it into df and preprocessing
     df = meals.integerize_ages(dataframe=df)
     df = meals.integerize_healths(dataframe=df)
+    df = meals.integerize_hobbies(dataframe=df)
 
     # df = df.drop(columns=[meals.ITEM_NAME_COLUMN])
 
@@ -102,6 +132,27 @@ def load_data(file_path, user_infor):
     print('------------------------------------------')
 
     return df
+
+def get_recipe_infor(dir_path):
+    '''
+    Get all recipes 
+
+    :param dir_path: folder path to recipe information
+    :return: 2 array recipe_id, recipe_name
+    '''
+
+    recipe_id = []
+    recipe_name = []
+    with open(dir_path + 'recipe_information.csv', encoding='utf-8') as mealFile:
+        lines = csv.reader(mealFile)
+        for line in lines:
+            temp_id = line[0]
+            if temp_id != 'recipe_id':
+                recipe_id.append(int(temp_id))
+                recipe_name.append(line[1])
+    # print(recipe_id)
+
+    return recipe_id, recipe_name
 
 def get_meal_infor(dir_path):
     '''
@@ -141,56 +192,64 @@ def get_meal_infor(dir_path):
     
     return meal_id, meal_actual_id, meal_menu, meal_ingre, meal_methods, meal_image, meal_score
 
-def find_meal(meal_label_id, meals_label,df):
+def find_meal(meal_id_arr, meal_menu_arr,df):
     '''
     Load user information and mapping with 15 meals in DB
 
-    :param df: user-demand DataFrame
-    :return (list): max 15 may suitable meals
+    :param df: User-demand DataFrame
+    :param meal_id_arr: Array of all meal_id
+    :param meal_menu_arr: Array of all meal menu
+    :return (list): Max 15 may suitable meals
     '''
 
-    demand_arr = []; hobbies_arr = []
+    
     for index, row in df.iterrows():
-        demand_arr.append(row['recipe_name'])
+        user_demand = row['recipe_name']
 
         temp = row['user_hobbies']
         try:
             temp = temp.split('|')
         except:
             temp = []
-        hobbies_arr.append(temp)
+        hobbies_arr = temp
 
     # Mapping for each user demand
     user_meal_arr = []
-    for j, user_demand in enumerate(demand_arr):
-        # print('user_demand: ', user_demand)
+    temp = 0; count_label = 15
+    for index, meals in enumerate(meal_menu_arr):
+        if temp == count_label: break
+        for meal in meals:
+            if (user_demand in meal) and any(check in meal for check in hobbies_arr):
+                # print('meal_hobbies - {0}: {1}'.format(meal_id_arr[index], meals))
+                user_meal_arr.append(meal_id_arr[index])
+                temp += 1
+                break
 
-        temp = 0; count_label = 15
-        for index, meals in enumerate(meals_label):
-            if temp == count_label: break
+    current = count_label - temp
+
+    temp1 = 0
+    for i in range(current):
+        for index, meals in enumerate(meal_menu_arr):
+            if temp1 == current: break
             for meal in meals:
-                if user_demand in meals and any(check in meal for check in hobbies_arr[j]):
-                    # print('meal_hobbies - {0}: {1}'.format(meal_label_id[index], meals))
-                    user_meal_arr.append(meal_label_id[index])
-                    temp += 1
+                if (user_demand in meal) and (meal_id_arr[index] not in user_meal_arr):
+                    # print('more meals - {0}: {1}'.format(meal_id_arr[index], meals))
+                    user_meal_arr.append(meal_id_arr[index])
+                    temp1 += 1
                     break
-
-        current = count_label - temp
-
-        for i in range(current):
-            check = False
-            for index, meals in enumerate(meals_label):
-                if user_demand in meals and meal_label_id[index] not in user_meal_arr:
-                    # print('more meals - {0}: {1}'.format(meal_label_id[index], meals))
-                    user_meal_arr.append(meal_label_id[index])
-                    check = True
+    
+    for i in range(current - temp1):
+        for index, meals in enumerate(meal_menu_arr):
+            for meal in meals:
+                if any(check in meal for check in hobbies_arr) and (meal_id_arr[index] not in user_meal_arr):
+                    # print('more meals - {0}: {1}'.format(meal_id_arr[index], meals))
+                    user_meal_arr.append(meal_id_arr[index])
                     break
-            if check == False:
-                user_meal_arr.append(-1)
+    
 
-        user_meal_arr = [int(i) for i in user_meal_arr if i != -1]
-        print('user_meal found : ', user_meal_arr)
-        # print('--------------------------------------END 1 DEMAND------------------------------------')
+    user_meal_arr = [int(i) for i in user_meal_arr]
+    print('user_meal found : ', user_meal_arr)
+    # print('--------------------------------------END 1 DEMAND------------------------------------')
 
     return user_meal_arr
 
@@ -204,7 +263,7 @@ def ranking_meals(df, input_meal_arr):
     '''
 
     # Load saved_model
-    model = tf.saved_model.load('../deep_learning/tmp/1590133554_wide_deep_update/')
+    model = tf.saved_model.load('../deep_learning/training/tmp/1587121355_deep/')
 
     # Prepare data columns
 
@@ -286,7 +345,7 @@ def get_top_k(dic, k):
 
     return top_k
 
-def find_best_meal(meal_id_found, df, meal_id, meal_score):
+def find_best_meal(meal_id_found, df, meal_id, meal_score,meal_menu, user_infor):
     """
     Get the final results based on user_information and meals existed or not
 
@@ -300,11 +359,25 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
     # < 3 result
     if len(meal_id_found) < 3:
         # Fill untill 3 meals
-        meal_dict = dict(zip(meal_id, meal_score))
+        temp_meal_id_found = []
+        try:
+            hobbies_arr = user_infor['user_hobbies'].item()
+            hobbies_arr = hobbies_arr.split('|')
+        except:
+            hobbies_arr = []
+        print(hobbies_arr)
+        for index, meals in enumerate(meal_menu):
+            for meal in meals:
+                if (meal_id[index] not in meal_id_found) and any(check in meal for check in hobbies_arr):
+                    temp_meal_id_found.append(meal_id[index])
+                    break
+        # print('Meals found by hobbies: ', temp_meal_id_found)
 
+        meal_score_found = [meal_score[meal_id.index(meal)] for meal in temp_meal_id_found]
+        result_dict = dict(zip(temp_meal_id_found, meal_score_found))
         # Shuffle dictionary
         import random
-        temp = list(meal_dict.items())
+        temp = list(result_dict.items())
         random.shuffle(temp)
         new_meal_dict = dict(temp)
         top_rating_fill = get_top_k(new_meal_dict, 3 - len(meal_id_found))
@@ -320,7 +393,7 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
 
     # More than 3 results -> ranking by DW ( or most general)
     else:
-        if df.at[0, 'user_id'] == -1: # most general
+        if df.at[0, 'user_id'] == '': # most general
             meal_score_found = [meal_score[meal_id.index(meal)] for meal in meal_id_found]
             result_dict = dict(zip(meal_id_found, meal_score_found))
             top_rating = get_top_k(result_dict, 3)
@@ -335,27 +408,23 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score):
     return top_rating
 
 def main_ver2(user_id, user_demand):
-    csv_dir_path = '../../dataset/csv_file/food/'
+    # For debug
+    csv_dir_path = '/home/hungdo/HungDo/Meals-RS/dataset/csv_file/food/'
+
+    # # For running
+    # csv_dir_path = '../../dataset/csv_file/food/'
+
     bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
-    # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    # # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
     meal_id, _, meal_menu, _, _, _, meal_score = get_meal_infor(csv_dir_path)
 
-    
-    user_infor = check_user_infor(csv_dir_path, user_id, user_demand)
-    df = load_data(csv_dir_path, user_infor)
-
     top_rating = []
-    #If can find suitable meals
-    if str(df.at[0, 'recipe_id']) != 'nan': 
-        meal_id_found = find_meal(meal_id, meal_menu, df)
-
-        top_rating = find_best_meal(meal_id_found, df, meal_id, meal_score)
-        
-    # Use other way to find meals -> use FastText for generating meals (or most general)
-    else:
-        if df.at[0, 'user_id'] == -1: # most general
+    # Check if input is Null
+    if user_demand == '':
+        # Most general
+        if user_id == '':
             meal_dict = dict(zip(meal_id, meal_score))
 
             # Shuffle dictionary
@@ -364,9 +433,44 @@ def main_ver2(user_id, user_demand):
             random.shuffle(temp)
             new_meal_dict = dict(temp)
             top_rating = get_top_k(new_meal_dict, 3)
-            # print('Non-user information score: ', top_rating)
+            print('Non-user infor and None-search score: ', top_rating)
 
-        else: # Use FastText like ver1
+        # Recommend by hobbies, health
+        else: 
+            meal_id_found = []
+            user_infor = check_user_infor(csv_dir_path, user_id, user_demand)
+            try:
+                hobbies_arr = user_infor['user_hobbies'].item()
+                hobbies_arr = hobbies_arr.split('|')
+            except:
+                hobbies_arr = []
+            print(hobbies_arr)
+            for index, meals in enumerate(meal_menu):
+                for meal in meals:
+                    if any(check in meal for check in hobbies_arr):
+                        meal_id_found.append(meal_id[index])
+                        break
+            # print('Meals found by hobbies: ', meal_id_found)
+
+            meal_score_found = [meal_score[meal_id.index(meal)] for meal in meal_id_found]
+            result_dict = dict(zip(meal_id_found, meal_score_found))
+            # Shuffle dictionary
+            import random
+            temp = list(result_dict.items())
+            random.shuffle(temp)
+            new_meal_dict = dict(temp)
+            top_rating = get_top_k(new_meal_dict, 3)
+            print('User infor and None-search score: ', top_rating)
+    
+    else:
+        recipe_id, recipe_name = get_recipe_infor(csv_dir_path)
+
+        user_infor = check_user_infor(csv_dir_path, user_id, user_demand)
+        df = load_data(csv_dir_path, user_infor)
+        meal_id_found = find_meal(meal_id, meal_menu, df)
+
+        #If can't find suitable meals - > Use FastText like ver1
+        if len(meal_id_found) == 0:
             # Load model_category to classify meal
             model_category = load_model_category(bin_dir_path)
 
@@ -374,12 +478,21 @@ def main_ver2(user_id, user_demand):
             print('Nhóm được phân loại: ',category)
 
             category = category[0]
-            recipe_result = get_similarity(bin_dir_path, category, user_demand)
-            print('Món ăn có sự tương đồng:', recipe_result)
+            similarity_result = get_similarity(bin_dir_path, category, user_demand)
+            user_demand = similarity_result[0]
+            print('Món ăn có sự tương đồng:', user_demand)
 
-            top_rating = main_ver2(user_id, recipe_result[0])
+            df['recipe_name'] = user_demand
+            df['recipe_id'] = recipe_name.index(user_demand)
+            print(df.T)
+            meal_id_found = find_meal(meal_id, meal_menu, df)
+        else:
+            if user_demand not in recipe_name:
+                df['recipe_id'] = -1
+                print(df.T)
 
-        # find_best_meal(meal_id_found, df, meal_id, meal_score)
+        top_rating = find_best_meal(meal_id_found, df, meal_id, meal_score, meal_menu, user_infor)
+        
 
     final_menu_array = [meal_menu[meal_id.index(i)] for i in top_rating]
     for i in range(len(final_menu_array)):
@@ -392,8 +505,8 @@ def main_ver2(user_id, user_demand):
 
 if __name__ == '__main__':
     user = {
-        "user_id": 1,
-        "user_demand": "canh bí"
+        "user_id": 1000,
+        "user_demand": "tép khô xào hành"
     }
 
     top_rating = main_ver2(user["user_id"], user["user_demand"])

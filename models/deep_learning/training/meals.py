@@ -64,33 +64,6 @@ ITEM_COLUMNS = [ITEM_COLUMN, ITEM_NAME_COLUMN]
 # Note: Users are indexed [1, k], not [0, k-1]
 NUM_USER_IDS = 1000
 
-# from fse.models import base_s2v
-# from fse import IndexedList
-# model_sen2vec = base_s2v.BaseSentence2VecModel.load('/home/ti1070/HungDo/Meals-RS/models/deep_learning/training/sen2vec_files')
-# MEALS_MENU = []
-# MEALS_MENU_TEMP = []
-# temp_id = []
-# dir_path = '../../../dataset/csv_file/food/meal_information.csv'
-# # dir_path = '/home/hungdo/HungDo/Meals-RS/dataset/csv_file/food/meal_information.csv'
-# with open(dir_path, encoding='utf-8') as mealFile:
-#         lines = csv.reader(mealFile)
-#         for line in lines:
-#           if line[2] != 'recipes':
-#             # s = IndexedList([line[2]])
-#             # embbeding_meal = model_sen2vec.sv[0]
-#             # MEALS_MENU.append(embbeding_meal)
-#             temp_id.append(int(line[0]))
-#             MEALS_MENU.append(line[2])
-
-# # s = IndexedList(MEALS_MENU_TEMP)
-# # for i in range(len(MEALS_MENU_TEMP)):
-# #     embbeding_meal = model_sen2vec.sv[i]
-# #     MEALS_MENU.append(embbeding_meal)
-
-# meal_df = pd.DataFrame(list(zip(temp_id, MEALS_MENU)),
-#                         columns=['meal_id', 'recipes'])
-# print(meal_df)
-
 #988
 NUM_MEALS_MENU = 988
 NUM_ITEM_IDS = 3354
@@ -100,11 +73,9 @@ MAX_RATING = 5
 
 def csv_to_joint_dataframe(data_dir, dataset):
   users = pd.read_csv(os.path.join(data_dir, dataset, USERS_FILE))
-  meal_df = pd.read_csv(os.path.join(data_dir, dataset, MEALS_FILE))
   recipes = pd.read_csv(os.path.join(data_dir, dataset, RECIPES_FILE))
 
   df = users.merge(recipes, on=ITEM_NAME_COLUMN)
-  df = df.merge(meal_df, on=TOP0_COLUMN)
   df[RATING_COLUMN] = df[RATING_COLUMN].astype(np.float32)
 
   return df
