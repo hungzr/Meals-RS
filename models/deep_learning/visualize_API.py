@@ -97,9 +97,15 @@ def do_logout():
 def do_register():
     _, user_id, _, _, _, _ = get_user_infor()
 
-    user_account = request.forms.get('register_user_account')
-    user_password = request.forms.get('register_user_password')
-    user_name = request.forms.get('register_user_name')
+    user_account = request.forms.register_user_account
+    user_password = request.forms.register_user_password
+    user_name = request.forms.register_user_name
+    user_gender = request.forms.register_user_gender
+    if user_gender == '':
+        user_gender = '0'
+    user_age = request.forms.register_user_age
+    if user_age == '':
+        user_age = 'người lớn'
 
     # Find next ID to init
     user_id.sort()
@@ -108,8 +114,8 @@ def do_register():
     new_user_id = str(new_user_id)
 
     dic = {'user_account': user_account, 'user_password': user_password, 
-            'user_id': new_user_id, 'user_name': user_name, 'user_gender': '',
-            'user_age': '','user_hobbies': [], 'user_group': [], 'user_history': []}
+            'user_id': new_user_id, 'user_name': user_name, 'user_gender': user_gender,
+            'user_age': user_age,'user_hobbies': [], 'user_group': [], 'user_history': []}
 
     x = collection_test.insert_one(dic)
     print('register: ', dic)

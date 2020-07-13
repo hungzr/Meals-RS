@@ -38,7 +38,6 @@ ITEM_NAME_COLUMN = "recipe_name"
 RATING_COLUMN = 'rating'
 
 TOP0_COLUMN = "meal_id"
-MENU = "recipes"
 
 HOBBIES = [
     'gà', 'bò', 'lợn', 'cá', 'tôm',

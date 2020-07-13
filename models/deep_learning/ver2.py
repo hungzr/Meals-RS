@@ -46,7 +46,7 @@ def get_similarity(model_dir_path, category, input_txt):
                           ('__label__khac', 'model_khac.bin')]
 
     model_name = next(model for (label, model) in category_label_arr if label == category)
-    # print(model_name)
+    print("Loaded model: ", model_name)
     # Load the corresponding model and find nearest neighbor recipe
     model = fasttext.load_model(os.path.join(model_dir_path, model_name))
     final_result = model.get_nearest_neighbors(input_txt.replace(' ', '_'), k=2)
@@ -366,8 +366,8 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score,meal_menu, user_infor)
         except:
             hobbies_arr = []
         print(hobbies_arr)
-        for index, meals in enumerate(meal_menu):
-            for meal in meals:
+        for index, menu in enumerate(meal_menu):
+            for meal in menu:
                 if (meal_id[index] not in meal_id_found) and any(check in meal for check in hobbies_arr):
                     temp_meal_id_found.append(meal_id[index])
                     break
@@ -411,11 +411,11 @@ def main_ver2(user_id, user_demand):
     # For debug
     csv_dir_path = '/home/hungdo/HungDo/Meals-RS/dataset/csv_file/food/'
 
-    # # For running
-    # csv_dir_path = '../../dataset/csv_file/food/'
+    # For running
+    csv_dir_path = '../../dataset/csv_file/food/'
 
     bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
-    # # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
     meal_id, _, meal_menu, _, _, _, meal_score = get_meal_infor(csv_dir_path)
@@ -480,7 +480,7 @@ def main_ver2(user_id, user_demand):
             category = category[0]
             similarity_result = get_similarity(bin_dir_path, category, user_demand)
             user_demand = similarity_result[0]
-            print('Món ăn có sự tương đồng:', user_demand)
+            print('Món ăn có sự tương đồng:', similarity_result)
 
             df['recipe_name'] = user_demand
             df['recipe_id'] = recipe_name.index(user_demand)
@@ -505,8 +505,8 @@ def main_ver2(user_id, user_demand):
 
 if __name__ == '__main__':
     user = {
-        "user_id": 1000,
-        "user_demand": "tép khô xào hành"
+        "user_id": '',
+        "user_demand": "haha"
     }
 
     top_rating = main_ver2(user["user_id"], user["user_demand"])

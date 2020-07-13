@@ -27,7 +27,7 @@ _FEATURE_MAP = {
     meals.HOBBIES_COLUMN: tf.compat.v1.FixedLenFeature([meals.N_HOBBY], dtype=tf.int64),
     meals.HEALTH_COLUMN: tf.compat.v1.FixedLenFeature([meals.N_HEALTH], dtype=tf.int64),
     meals.ITEM_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.int64),
-    meals.MENU: tf.compat.v1.FixedLenFeature([1], dtype=tf.float32),
+    meals.TOP0_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.int64),
     meals.RATING_COLUMN: tf.compat.v1.FixedLenFeature([1], dtype=tf.float32),
 }
 
@@ -97,7 +97,7 @@ def build_model_columns(dataset):
               item_id, _ITEM_EMBEDDING_DIM, max_norm=np.sqrt(_ITEM_EMBEDDING_DIM))
 
     meals_id = tf.feature_column.categorical_column_with_vocabulary_list(
-              meals.MENU, meals.MEALS_MENU)
+              meals.TOP0_COLUMN, range(meals.NUM_MEALS_MENU))
     meals_embedding = tf.feature_column.embedding_column(
               meals_id, _MEALS_EMBEDDING_DIM, max_norm=np.sqrt(_MEALS_EMBEDDING_DIM))
 

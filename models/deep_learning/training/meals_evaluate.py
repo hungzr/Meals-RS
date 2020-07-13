@@ -43,7 +43,7 @@ def find_meal(df):
     # Label for mapping
     meals_label = []
     meal_label_id = []
-    dir_path = '../../dataset/csv_file/food/'
+    dir_path = '../../../dataset/csv_file/food/'
     with open(dir_path + 'meal_information.csv', encoding='utf-8') as mealFile:
         lines = csv.reader(mealFile)
         for line in lines:
@@ -93,7 +93,7 @@ def find_meal(df):
 def pred_meal(df, input_meal_arr):
     # Load saved_model
     model = tf.saved_model.load(
-        '../deep_learning/tmp/1590133554_wide_deep_update/')
+        './tmp/1594609434_500epochs/')
 
     # Prepare data columns
     rating = []
@@ -372,7 +372,7 @@ def cal_acc(class_probs, labels, top_k):
     return top1/len(labels), top2/len(labels), top3/len(labels)
 
 def evaluate_model1(rating_arr, df_label):
-    top_k = 1
+    top_k = 2
 
     # Label
     label_arr = []
@@ -489,7 +489,7 @@ def pred_meal_baseline(input_meal_arr, file_path):
     return rating_arr
 
 def main():
-    file_path = '../../dataset/csv_file/food/'
+    file_path = '../../../dataset/csv_file/food/'
 
     df, df_label = load_data(file_path)
     input_meal_arr = find_meal(df)
@@ -500,10 +500,10 @@ def main():
     rating_model = pred_meal(df, input_meal_arr)
     evaluate_model1(rating_model, df_label)
 
-    # Evaluate baseline
-    print('---------------------Results of baseline model----------------')
-    rating_baseline = pred_meal_baseline(input_meal_arr, file_path)
-    evaluate_model1(rating_baseline, df_label)
+    # # Evaluate baseline
+    # print('---------------------Results of baseline model----------------')
+    # rating_baseline = pred_meal_baseline(input_meal_arr, file_path)
+    # evaluate_model1(rating_baseline, df_label)
 
 if __name__ == '__main__':
     main()

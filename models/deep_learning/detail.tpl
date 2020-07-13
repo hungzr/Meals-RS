@@ -178,6 +178,12 @@
       padding:0;
     }
 
+    .my-register-option {
+      border:none;
+      border-bottom: 1px solid #ced4da;
+
+    }
+
   </style>
 </head>
 
@@ -254,25 +260,41 @@
           </div>
           <div class="modal-body mx-3">
             <!--User Account-->
-            <div class="md-form mb-5">
-              <i class="fas fa-envelope prefix grey-text"></i>
+            <div class="md-form mb-2">
               <input name="register_user_account" type="text" id="user_account" class="form-control validate" required>
               <div class="invalid-feedback">Trường này không được bỏ trống.</div>
               <label data-error="wrong" data-success="right" for="user_account">Tài khoản</label>
             </div>
             <!--User Password-->
-            <div class="md-form mb-4">
-              <i class="fas fa-lock prefix grey-text"></i>
+            <div class="md-form mb-2">
               <input name="register_user_password" type="password" id="user_password" class="form-control validate" required>
               <div class="invalid-feedback">Trường này không được bỏ trống.</div>
               <label data-error="wrong" data-success="right" for="user_password">Mật khẩu</label>
             </div>
             
             <!--User Name-->
-            <div class="md-form mb-3">
-              <i class="fas fa-user prefix grey-text"></i>
-              <input name="register_user_name" type="text" id="user_name" class="form-control validate" >
+            <div class="md-form mb-2">
+              <input name="register_user_name" type="text" id="user_name" class="form-control validate" required>
               <label data-error="wrong" data-success="right" for="user_name">Tên người dùng</label>
+            </div>
+
+            <!--User Gender-->
+            <div class="md-form mb-2">
+              <select class="form-control validate my-register-option" name="register_user_gender" id="register_user_gender" required>
+                <option selected value="0" disabled hidden>Giới tính</option>
+                <option value="0">Nam</option>
+                <option value="1">Nữ</option>
+              </select>
+              
+            </div>
+            <!--User Age-->
+            <div class="md-form mb-2">
+              <select class="form-control validate my-register-option" name="register_user_age" id="register_user_age" required>
+                <option selected value="trẻ em" disabled hidden>Độ tuổi</option>
+                <option value="trẻ em">0-16 tuổi: Trẻ em</option>
+                <option value="người lớn">17-50 tuổi: Người lớn</option>
+                <option value="người già">> 50 tuổi: Người già</option>
+              </select>
             </div>
             
           </div>

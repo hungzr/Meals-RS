@@ -62,7 +62,9 @@ def build_estimator(model_dir, model_type, model_column_fn, inter_op, intra_op):
         return tf.estimator.DNNLinearCombinedRegressor(
           model_dir=model_dir,
           linear_feature_columns= wide_columns,
+          linear_optimizer='Adam',
           dnn_feature_columns= deep_columns,
+          dnn_optimizer='Adam',
           dnn_hidden_units= hidden_units)
 
 
@@ -106,10 +108,10 @@ def run_meal(flags_obj):
         tensors_to_log=tensors_to_log,
         early_stop=False)
 
-    # print('average: ', average_loss_arr)
-    # print('label: ', label_mean_arr)
-    # print('loss: ', loss_arr)
-    # print('prediction: ', prediction_mean_arr)
+    print('average: ', average_loss_arr)
+    print('label: ', label_mean_arr)
+    print('loss: ', loss_arr)
+    print('prediction: ', prediction_mean_arr)
 
     # Display Loss
     line_average_loss = plt.plot(average_loss_arr, label='Average Loss')
