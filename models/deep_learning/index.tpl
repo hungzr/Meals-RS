@@ -756,7 +756,7 @@
     }
     var check_id = document.getElementById("user_id").value
     if (check_id != "" ) {
-      if (parseInt(check_id) > 0 ){
+      if (parseInt(check_id) >= 0 ){
         $("#user_infor_sidenav").css("pointer-events", "auto");
         document.getElementById("logined").style.visibility = "visible";
         document.getElementById("advance-search").style.display = "none";

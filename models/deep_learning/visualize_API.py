@@ -236,6 +236,7 @@ def get_recommeded_meals():
     else:
         # Clean user infor
         get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
+        get_user_id = int(get_user_id)
 
     print('user_id: ', get_user_id)
     if '' in list_user_group:
@@ -243,7 +244,6 @@ def get_recommeded_meals():
     if '' in list_hobbies:
         list_hobbies.remove("")
 
-    
     top_rating = ver2.main_ver2(get_user_id, recipe_input)
 
     # Get detail recommended meals

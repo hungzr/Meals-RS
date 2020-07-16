@@ -62,5 +62,8 @@
 
 # run(host='localhost', port=8085, reloader=True)
 
-a = str('phá»¥ ná»¯ mang thai')
-print(a.decode('utf-8','strict'))
+a= ['abc', '123']
+b = ['a']
+for i in a:
+    if any(check in i for check in b):
+        print('ok')

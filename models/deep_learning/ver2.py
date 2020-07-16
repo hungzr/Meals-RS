@@ -13,6 +13,17 @@ client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongod
 db = client['user']
 collection = db['user_info']
 collection_test = db['user_info1']
+collection_group = db['user_group']
+
+def load_user_group():
+    list_user_group = []
+    list_diet_food = []
+    for detail in collection_group.find():
+        list_user_group.append(detail['group_name'])
+        list_diet_food.append(detail['diet_food'])
+    
+    print(list_diet_food)
+    return list_user_group, list_diet_food
 
 def load_model_category(dir_path):
     model_category = fasttext.load_model(os.path.join(dir_path, 'label_model_training.bin'))
@@ -123,10 +134,6 @@ def load_data(file_path, user_infor):
 
     # Load it into df and preprocessing
     df = meals.integerize_ages(dataframe=df)
-    df = meals.integerize_healths(dataframe=df)
-    df = meals.integerize_hobbies(dataframe=df)
-
-    # df = df.drop(columns=[meals.ITEM_NAME_COLUMN])
 
     print(df.T)
     print('------------------------------------------')
@@ -201,17 +208,28 @@ def find_meal(meal_id_arr, meal_menu_arr,df):
     :param meal_menu_arr: Array of all meal menu
     :return (list): Max 15 may suitable meals
     '''
-
+    # Load group
+    list_user_group, list_diet_food = load_user_group()
     
+    # Load hobbies
+    group_arr = []
     for index, row in df.iterrows():
         user_demand = row['recipe_name']
 
-        temp = row['user_hobbies']
+        temp_hobbies = row['user_hobbies']
         try:
-            temp = temp.split('|')
+            temp_hobbies = temp_hobbies.split('|')
         except:
-            temp = []
-        hobbies_arr = temp
+            temp_hobbies = []
+        hobbies_arr = temp_hobbies
+
+        temp_group = row['user_health']
+        for i in temp_group:
+            j = list_diet_food[list_user_group.index(i)]
+            group_arr.extend(j)
+    group_arr = list(dict.fromkeys(group_arr)) 
+
+    
 
     # Mapping for each user demand
     user_meal_arr = []
@@ -219,7 +237,7 @@ def find_meal(meal_id_arr, meal_menu_arr,df):
     for index, meals in enumerate(meal_menu_arr):
         if temp == count_label: break
         for meal in meals:
-            if (user_demand in meal) and any(check in meal for check in hobbies_arr):
+            if (user_demand in meal) and any(check in meal for check in hobbies_arr) and not any(check in meal for check in group_arr):
                 # print('meal_hobbies - {0}: {1}'.format(meal_id_arr[index], meals))
                 user_meal_arr.append(meal_id_arr[index])
                 temp += 1
@@ -228,24 +246,36 @@ def find_meal(meal_id_arr, meal_menu_arr,df):
     current = count_label - temp
 
     temp1 = 0
-    for i in range(current):
+    if current > 0 :
         for index, meals in enumerate(meal_menu_arr):
             if temp1 == current: break
             for meal in meals:
-                if (user_demand in meal) and (meal_id_arr[index] not in user_meal_arr):
+                if (user_demand in meal) and (meal_id_arr[index] not in user_meal_arr) :
+
                     # print('more meals - {0}: {1}'.format(meal_id_arr[index], meals))
                     user_meal_arr.append(meal_id_arr[index])
                     temp1 += 1
                     break
-    
-    for i in range(current - temp1):
+
+    current1 = current - temp1
+    temp2 = 0
+    if current1 > 0 and hobbies_arr != ['']:
         for index, meals in enumerate(meal_menu_arr):
+            if temp2 == current1: break
             for meal in meals:
-                if any(check in meal for check in hobbies_arr) and (meal_id_arr[index] not in user_meal_arr):
+                if any(check in meal for check in hobbies_arr) and (meal_id_arr[index] not in user_meal_arr) and not any(check in meal for check in group_arr):
                     # print('more meals - {0}: {1}'.format(meal_id_arr[index], meals))
                     user_meal_arr.append(meal_id_arr[index])
+                    temp2 += 1
                     break
-    
+
+    user_meal_arr_copy = user_meal_arr
+    if len(user_meal_arr) > 5 and group_arr != []:
+        for index in user_meal_arr_copy:
+            for meal in meal_menu_arr[index]:
+                if any(check in meal for check in group_arr):
+                    user_meal_arr.remove(index)
+                    break
 
     user_meal_arr = [int(i) for i in user_meal_arr]
     print('user_meal found : ', user_meal_arr)
@@ -401,6 +431,7 @@ def find_best_meal(meal_id_found, df, meal_id, meal_score,meal_menu, user_infor)
         
         else: # ranking by DW
             df = meals.integerize_hobbies(dataframe=df)
+            df = meals.integerize_healths(dataframe=df)
 
             top_rating = ranking_meals(df, meal_id_found)
             print('User information score: ', top_rating)
@@ -412,10 +443,10 @@ def main_ver2(user_id, user_demand):
     csv_dir_path = '/home/hungdo/HungDo/Meals-RS/dataset/csv_file/food/'
 
     # For running
-    csv_dir_path = '../../dataset/csv_file/food/'
+    # csv_dir_path = '../../dataset/csv_file/food/'
 
     bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
-    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
     meal_id, _, meal_menu, _, _, _, meal_score = get_meal_infor(csv_dir_path)
@@ -505,8 +536,8 @@ def main_ver2(user_id, user_demand):
 
 if __name__ == '__main__':
     user = {
-        "user_id": '',
-        "user_demand": "haha"
+        "user_id": 0,
+        "user_demand": "gà chiên"
     }
 
     top_rating = main_ver2(user["user_id"], user["user_demand"])
