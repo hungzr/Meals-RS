@@ -64,7 +64,7 @@ def recommendation(model_dir_path, category, input_txt):
 
 def main_ver1(input_txt):
     model_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
-    # model_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
+    model_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
     #
     # Train model
     train_dir_path = '../../dataset/txt_file/txt_recipe/'
@@ -102,7 +102,7 @@ def main_ver1(input_txt):
 if __name__ == '__main__':
     tic = time.time()
     # main_ver1('cháo')
-    a = recommendation('/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/', '__label__man', 'gà rang nước mắm')
+    a = recommendation('/media/hungdo/DATA/AI/Final_Project/bin_file/', '__label__man', 'đậu hũ sốt cà')
     print(a)
     toc = time.time()
     print('Thời gian tìm kiếm: ', toc-tic)

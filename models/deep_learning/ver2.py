@@ -233,11 +233,12 @@ def find_meal(meal_id_arr, meal_menu_arr,df):
 
     # Mapping for each user demand
     user_meal_arr = []
+    ## Demand and hobbies
     temp = 0; count_label = 15
     for index, meals in enumerate(meal_menu_arr):
         if temp == count_label: break
         for meal in meals:
-            if (user_demand in meal) and any(check in meal for check in hobbies_arr) and not any(check in meal for check in group_arr):
+            if (user_demand in meal) and any(check in meal for check in hobbies_arr) :
                 # print('meal_hobbies - {0}: {1}'.format(meal_id_arr[index], meals))
                 user_meal_arr.append(meal_id_arr[index])
                 temp += 1
@@ -246,6 +247,7 @@ def find_meal(meal_id_arr, meal_menu_arr,df):
     current = count_label - temp
 
     temp1 = 0
+    ## Demand
     if current > 0 :
         for index, meals in enumerate(meal_menu_arr):
             if temp1 == current: break
@@ -258,19 +260,22 @@ def find_meal(meal_id_arr, meal_menu_arr,df):
                     break
 
     current1 = current - temp1
+    user_meal_arr_copy = user_meal_arr
     temp2 = 0
-    if current1 > 0 and hobbies_arr != ['']:
+    ## Hobbies
+    if current1 > 0 and temp1 >= 3 and hobbies_arr != ['']:
         for index, meals in enumerate(meal_menu_arr):
-            if temp2 == current1: break
+            if temp2/len(user_meal_arr_copy) >= 1/3: break
             for meal in meals:
-                if any(check in meal for check in hobbies_arr) and (meal_id_arr[index] not in user_meal_arr) and not any(check in meal for check in group_arr):
+                if any(check in meal for check in hobbies_arr) and (meal_id_arr[index] not in user_meal_arr):
                     # print('more meals - {0}: {1}'.format(meal_id_arr[index], meals))
                     user_meal_arr.append(meal_id_arr[index])
                     temp2 += 1
                     break
-
+    
+    ## User group
     user_meal_arr_copy = user_meal_arr
-    if len(user_meal_arr) > 5 and group_arr != []:
+    if len(user_meal_arr) > 0 and group_arr != []:
         for index in user_meal_arr_copy:
             for meal in meal_menu_arr[index]:
                 if any(check in meal for check in group_arr):
@@ -467,7 +472,8 @@ def main_ver2(user_id, user_demand):
             print('Non-user infor and None-search score: ', top_rating)
 
         # Recommend by hobbies, health
-        else: 
+        else:
+            list_user_group, list_diet_food = load_user_group()
             meal_id_found = []
             user_infor = check_user_infor(csv_dir_path, user_id, user_demand)
             try:
@@ -475,12 +481,29 @@ def main_ver2(user_id, user_demand):
                 hobbies_arr = hobbies_arr.split('|')
             except:
                 hobbies_arr = []
-            print(hobbies_arr)
+
+            group_arr = []
+            temp_group = user_infor['user_health'].item()
+            for i in temp_group:
+                j = list_diet_food[list_user_group.index(i)]
+                group_arr.extend(j)
+            group_arr = list(dict.fromkeys(group_arr))
+
+            print(hobbies_arr, group_arr)
             for index, meals in enumerate(meal_menu):
                 for meal in meals:
                     if any(check in meal for check in hobbies_arr):
                         meal_id_found.append(meal_id[index])
                         break
+
+            
+            meal_id_found_copy = meal_id_found
+            if len(meal_id_found) > 5 and group_arr != []:
+                for index in meal_id_found_copy:
+                    for meal in meal_menu[index]:
+                        if any(check in meal for check in group_arr):
+                            meal_id_found.remove(index)
+                            break
             # print('Meals found by hobbies: ', meal_id_found)
 
             meal_score_found = [meal_score[meal_id.index(meal)] for meal in meal_id_found]
@@ -537,7 +560,7 @@ def main_ver2(user_id, user_demand):
 if __name__ == '__main__':
     user = {
         "user_id": 0,
-        "user_demand": "gà chiên"
+        "user_demand": "su su luộc"
     }
 
     top_rating = main_ver2(user["user_id"], user["user_demand"])
