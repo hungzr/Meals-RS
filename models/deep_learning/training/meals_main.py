@@ -42,7 +42,7 @@ def define_meal_flags():
 def build_estimator(model_dir, model_type, model_column_fn, inter_op, intra_op):
     """Build an estimator appropriate for the given model type."""
     wide_columns, deep_columns = model_column_fn()
-    hidden_units = [256, 256, 256, 128]
+    hidden_units = [1024, 512, 512, 256]
 
     run_config = tf.estimator.RunConfig().replace(
       session_config=tf.ConfigProto(device_count={'GPU': 0},
@@ -62,9 +62,7 @@ def build_estimator(model_dir, model_type, model_column_fn, inter_op, intra_op):
         return tf.estimator.DNNLinearCombinedRegressor(
           model_dir=model_dir,
           linear_feature_columns= wide_columns,
-          linear_optimizer='Adam',
           dnn_feature_columns= deep_columns,
-          dnn_optimizer='Adam',
           dnn_hidden_units= hidden_units)
 
 

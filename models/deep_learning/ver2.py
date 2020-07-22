@@ -448,10 +448,10 @@ def main_ver2(user_id, user_demand):
     csv_dir_path = '/home/hungdo/HungDo/Meals-RS/dataset/csv_file/food/'
 
     # For running
-    # csv_dir_path = '../../dataset/csv_file/food/'
+    csv_dir_path = '../../dataset/csv_file/food/'
 
     bin_dir_path = '/media/hungdo/DATA/AI/Final_Project/bin_file/'
-    # bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
+    bin_dir_path = '/home/ti1070/HungDo/Other_Project/Final-Project/dataset/bin_file/'
 
     tic = time.time()
     meal_id, _, meal_menu, _, _, _, meal_score = get_meal_infor(csv_dir_path)

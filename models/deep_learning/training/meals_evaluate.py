@@ -93,7 +93,7 @@ def find_meal(df):
 def pred_meal(df, input_meal_arr):
     # Load saved_model
     model = tf.saved_model.load(
-        './tmp/1594609434_500epochs/')
+        './tmp/1587121355_deep/')
 
     # Prepare data columns
     rating = []
@@ -372,7 +372,7 @@ def cal_acc(class_probs, labels, top_k):
     return top1/len(labels), top2/len(labels), top3/len(labels)
 
 def evaluate_model1(rating_arr, df_label):
-    top_k = 2
+    top_k = 1
 
     # Label
     label_arr = []
