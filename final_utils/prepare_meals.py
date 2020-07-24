@@ -50,7 +50,7 @@ def get_meals(db_name, average_rating_arr):
         meal_id_arr.append(count)
         actual_id_arr.append(dic['_id'])
         title = dic['title']
-        print("title: ", title)
+        # print("title: ", title)
         image_arr.append(dic['image'])
 
         temp_recipes = ''

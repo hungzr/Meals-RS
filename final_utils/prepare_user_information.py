@@ -147,7 +147,13 @@ def generate_normal_user(number_user = 1000):
                     train_history_arr.append([])
 
                     top0_arr.append(menu)
-                    rating_arr.append(5 - index)
+                    if len(meal_arr)>=3:
+                        rate = 5 - index
+                    elif len(meal_arr)>=2:
+                        rate = 4 - index
+                    else:
+                        rate = 3 - index
+                    rating_arr.append(rate)
 
                 # try: #In case meal_arr exist
                 #     temp = random.choice(meal_arr)
@@ -177,7 +183,7 @@ def generate_normal_user(number_user = 1000):
                               'top4_meals': top4_arr, 'top5_meals': top5_arr}
 
 
-    print(user_information_class)
+    # print(user_information_class)
     return user_information_re, user_information_class
 
 
