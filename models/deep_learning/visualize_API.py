@@ -13,7 +13,16 @@ collection_hobbies = db['recipe_groups']
 collection_group = db['user_group']
 
 meal_id_arr, meal_actual_id, meal_menu, meal_ingre, meal_methods,meal_image, meal_score = ver2.get_meal_infor('../../dataset/csv_file/food/')
-default_image = 'https://deptuoi30.com/wp-content/uploads/2019/04/thuc-don-bua-com-gia-dinh-9-600x400.jpg'
+default_image = ['http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-50k-mam-com-118.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-mam-com-124.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-50k-mam-116.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-50k-mam-com-120.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-mam-com-121.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-mam-com-126.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-mam-com-128.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-mam-com-122.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-50k-mam-com-117.jpg',
+                'http://elinerfood.com/wp-content/uploads/2016/06/mam-com-gia-dinh-50k-mam-com-119.jpg']
 
 #get recipe_group
 list_hobbies = []
@@ -248,13 +257,13 @@ def get_recommeded_meals():
 
     # Get detail recommended meals
     menu_array, image_array, rating_array = get_detail(top_rating)
-    image_array = [element or default_image for element in image_array]
+    image_array = [element or random.choice(default_image) for element in image_array]
     # print('new_image: ', image_array)
 
     # Might care
     top_rating_more = get_topk_rating(3)
     menu_array_more, image_array_more, rating_array_more = get_detail(top_rating_more)
-    image_array_more = [element or default_image for element in image_array_more]
+    image_array_more = [element or random.choice(default_image) for element in image_array_more]
     # print('new_image: ', image_array_more)
     
     return template('index', recipe_input=recipe_input, user_login_id = get_user_id,select_group = list_user_group, select_hobbies = list_hobbies,
@@ -280,18 +289,18 @@ def meal_detail(meal_id):
     # Get image
     detail_image = meal_image[meal_id_arr.index(int(meal_id))]
     if detail_image == "":
-        detail_image = default_image
+        detail_image = random.choice(default_image)
 
     # Get all recipes in menu
     detail_recipes = meal_menu[meal_id_arr.index(int(meal_id))]
     detail_recipes = [str(i + 1) + '. ' + j.capitalize() for i, j in enumerate(detail_recipes)]
-    # print('recipe: ', detail_recipes)
+    print('recipe: ', detail_recipes)
 
     # Get all ingredients
     detail_ingre = meal_ingre[meal_id_arr.index(int(meal_id))]
     detail_ingre = detail_ingre.split('|')
     # detail_ingre = ['_ Nguyên liệu: ' + i for i in detail_ingre if i != '']
-    # print('ingre: ', detail_ingre)
+    print('ingre: ', detail_ingre)
 
     # Get all methods
     temp_detail_method = meal_methods[meal_id_arr.index(int(meal_id))]
@@ -392,7 +401,7 @@ def find_menu_form():
     top_rating = get_topk_rating(6)
 
     menu_array, image_array, rating_array = get_detail(top_rating)
-    image_array = [element or default_image for element in image_array]
+    image_array = [element or random.choice(default_image) for element in image_array]
     # print('new_image: ', image_array)
     if '' in list_user_group:
         list_user_group.remove('')
