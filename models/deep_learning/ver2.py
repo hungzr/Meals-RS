@@ -26,7 +26,7 @@ def load_user_group():
     return list_user_group, list_diet_food
 
 def load_model_category(dir_path):
-    model_category = fasttext.load_model(os.path.join(dir_path, 'label_model_training.bin'))
+    model_category = fasttext.load_model('../../dataset/bin_file/label_model_training.bin')
     return model_category
 
 def classify_meal(input_recipe, model_category):

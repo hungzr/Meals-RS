@@ -37,7 +37,7 @@ for detail in collection_group.find():
     list_user_group.append(detail['group_name'])
 
 def check_relate_input(input_recipe):
-    model = fasttext.load_model("/media/hungdo/DATA/AI/Final_Project/bin_file/label_check_input.bin")
+    model = fasttext.load_model("../../dataset/bin_file/label_check_input.bin")
 
     result = model.predict(input_recipe)
     print(result)
