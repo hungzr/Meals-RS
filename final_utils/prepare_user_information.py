@@ -4,7 +4,7 @@ import pandas as pd
 
 # User information
 demand = []
-dir_path = '/home/ti1070/HungDo/Final-Project/dataset/csv_file/food/'
+dir_path = '../dataset/csv_file/food/'
 with open(dir_path + 'recipe_information.csv', encoding = 'utf-8') as recipesFile:
     lines = csv.reader(recipesFile)
     for line in lines:
@@ -81,7 +81,7 @@ def generate_normal_user(number_user = 1000):
             user_health = 'phụ nữ mang thai'
 
         # Each user has 50 demands for training, 2 demands for testing
-        for j in range(52):
+        for j in range(70):
             user_demand = random.choice(demand)
             print('demand: ', user_demand)
 
@@ -112,11 +112,11 @@ def generate_normal_user(number_user = 1000):
                         check = True
                         break
                 if check == False:
-                    meal_arr.append(-1)
+                    meal_arr.append('')
 
 
             # For testing
-            if j < 2:
+            if j < 20:
                 test_id_arr.append(user_id)
                 test_demand_arr.append(user_demand)
                 test_gender_arr.append(user_gender)
@@ -147,7 +147,13 @@ def generate_normal_user(number_user = 1000):
                     train_history_arr.append([])
 
                     top0_arr.append(menu)
-                    rating_arr.append(5 - index)
+                    if len(meal_arr)>=3:
+                        rate = 5 - index
+                    elif len(meal_arr)>=2:
+                        rate = 4 - index
+                    else:
+                        rate = 3 - index
+                    rating_arr.append(rate)
 
                 # try: #In case meal_arr exist
                 #     temp = random.choice(meal_arr)
@@ -177,7 +183,7 @@ def generate_normal_user(number_user = 1000):
                               'top4_meals': top4_arr, 'top5_meals': top5_arr}
 
 
-    print(user_information_class)
+    # print(user_information_class)
     return user_information_re, user_information_class
 
 
@@ -190,7 +196,7 @@ def convert_to_csv(user_information_re, user_information_class):
                       columns=['user_id', 'recipe_name', 'user_gender', 'user_age', 'user_hobbies', 'user_health',
                                 'top1_meals', 'top2_meals', 'top3_meals', 'top4_meals', 'top5_meals'])
 
-    # dir_path = "/media/hungdo/SYSTEM/Users/HungDo/Documents/GitHub/FinalProject_RecommendationSys/dataset/csv_file/food/"
+    dir_path = "../dataset/csv_file/food/"
 
     export = df_re.to_csv(dir_path +  "user_information_re.csv", index=None , encoding="utf8")
     export1 = df_class.to_csv(dir_path + "user_information_class.csv", index=None, encoding="utf8")

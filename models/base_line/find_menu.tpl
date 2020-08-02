@@ -86,7 +86,7 @@
           </div>
         </div>
         <div class="col-sm-2 text-center">
-            <button type="submit" class="btn btn-primary">Tìm kiếm</button
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
         </div>
        </div>
 
@@ -106,7 +106,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-          <button type="button" action="/rating" class="btn btn-success" id="btn-accept" data-dismiss="modal" onclick="acceptData()">Đồng ý</button>
+          <button type="button"  class="btn btn-success" id="btn-accept" data-dismiss="modal" onclick="acceptData()">Đồng ý</button>
         </div>
       </div>
 

@@ -1,0 +1,4 @@
+models/deep_learning/training/sen2vec_files
+models/deep_learning/model_saved_ckp
+*.png
+__pycache__/
