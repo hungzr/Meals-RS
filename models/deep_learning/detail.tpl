@@ -417,6 +417,10 @@
             <a id="advance-search" class="text-info align-self-center ml-2 auth-modal-toggle" data-toggle="modal" data-target="#modal-advance-search">
               Tìm kiếm nâng cao
             </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSct5_9JuMe6ZMpJ3R0MxR1Rs2AeGl7EpM7TXxuEToqk2QoOlA/viewform?usp=pp_url" 
+            class="btn btn-info btn-rounded btn-sm waves-effect waves-light my-btn" style="margin-left:50px;">
+              Báo lỗi
+            </a>
           </div>
 
         </div>
