@@ -38,7 +38,8 @@ def train_model(train_dir_path, file_name_txt, saved_path):
     print(file_name_bin)
 
     model = fasttext.train_unsupervised(file_path,"skipgram", minCount = 1, dim= 200)
-    model.save_model(os.path.join(saved_path, file_name_bin))
+    model.quantize("100M")
+    model.save_model(os.path.join("/media/hungdo/DATA/AI/Final_Project/views", file_name_bin))
 
 def load_model_category(dir_path):
     model_category = fasttext.load_model(os.path.join(dir_path, 'label_model_training.bin'))
@@ -101,8 +102,8 @@ def main_ver1(input_txt):
 
 if __name__ == '__main__':
     tic = time.time()
-    # main_ver1('cháo')
-    a = recommendation('/media/hungdo/DATA/AI/Final_Project/bin_file/', '__label__man', 'đậu hũ sốt cà')
-    print(a)
+    main_ver1('cháo')
+    # a = recommendation('/media/hungdo/DATA/AI/Final_Project/bin_file/', '__label__man', 'đậu hũ sốt cà')
+    # print(a)
     toc = time.time()
     print('Thời gian tìm kiếm: ', toc-tic)

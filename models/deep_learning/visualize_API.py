@@ -4,6 +4,7 @@ from pymongo import MongoClient
 import ver2
 import json
 import random
+import fasttext
 
 client = MongoClient('mongodb+srv://hungdo:Hung1598@newscluster-imhry.gcp.mongodb.net/test?retryWrites=true&w=majority')
 db = client['user']
@@ -35,7 +36,13 @@ list_user_group = []
 for detail in collection_group.find():
     list_user_group.append(detail['group_name'])
 
+def check_relate_input(input_recipe):
+    model = fasttext.load_model("/media/hungdo/DATA/AI/Final_Project/bin_file/label_check_input.bin")
 
+    result = model.predict(input_recipe)
+    print(result)
+
+    return result[0][0]
 
 def get_user_infor():
     user_account_pass = []
@@ -238,40 +245,45 @@ def get_recommeded_meals():
     recipe_input = request.forms.recipe_name
     print('input: ', recipe_input)
 
-    get_user_id = request.get_cookie("user_id", secret='some-secret-key')
-    if get_user_id is None: 
-        get_user_id = ''
-        get_user_gender, get_user_age, get_user_group, get_user_hobbies = '', '', '', ''
+    type_input = check_relate_input(recipe_input)
+    # Unrelated input -> refresh web
+    if type_input == "__label__other":
+        redirect('/')
     else:
-        # Clean user infor
-        get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
-        get_user_id = int(get_user_id)
+        get_user_id = request.get_cookie("user_id", secret='some-secret-key')
+        if get_user_id is None: 
+            get_user_id = ''
+            get_user_gender, get_user_age, get_user_group, get_user_hobbies = '', '', '', ''
+        else:
+            # Clean user infor
+            get_user_gender, get_user_age, get_user_group, get_user_hobbies = clean_user_infor(get_user_id)
+            get_user_id = int(get_user_id)
 
-    print('user_id: ', get_user_id)
-    if '' in list_user_group:
-        list_user_group.remove('')
-    if '' in list_hobbies:
-        list_hobbies.remove("")
+        print('user_id: ', get_user_id)
+        if '' in list_user_group:
+            list_user_group.remove('')
+        if '' in list_hobbies:
+            list_hobbies.remove("")
 
-    top_rating = ver2.main_ver2(get_user_id, recipe_input)
+        top_rating = ver2.main_ver2(get_user_id, recipe_input)
 
-    # Get detail recommended meals
-    menu_array, image_array, rating_array = get_detail(top_rating)
-    image_array = [element or random.choice(default_image) for element in image_array]
-    # print('new_image: ', image_array)
+        # Get detail recommended meals
+        menu_array, image_array, rating_array = get_detail(top_rating)
+        image_array = [element or random.choice(default_image) for element in image_array]
+        # print('new_image: ', image_array)
 
-    # Might care
-    top_rating_more = get_topk_rating(3)
-    menu_array_more, image_array_more, rating_array_more = get_detail(top_rating_more)
-    image_array_more = [element or random.choice(default_image) for element in image_array_more]
-    # print('new_image: ', image_array_more)
-    
-    return template('index', recipe_input=recipe_input, user_login_id = get_user_id,select_group = list_user_group, select_hobbies = list_hobbies,
-    user_gender = get_user_gender, user_age = get_user_age, 
-    user_group = get_user_group, user_hobbies = get_user_hobbies,
-    meal_id = top_rating, recom_image = image_array, recom_rating = rating_array, recom_menu= menu_array,
-    more_meal_id = top_rating_more,more_image = image_array_more, more_rating = rating_array_more, more_menu= menu_array_more
-    )
+        # Might care
+        top_rating_more = get_topk_rating(3)
+        menu_array_more, image_array_more, rating_array_more = get_detail(top_rating_more)
+        image_array_more = [element or random.choice(default_image) for element in image_array_more]
+        # print('new_image: ', image_array_more)
+        
+        return template('index', recipe_input=recipe_input, user_login_id = get_user_id,select_group = list_user_group, select_hobbies = list_hobbies,
+        user_gender = get_user_gender, user_age = get_user_age, 
+        user_group = get_user_group, user_hobbies = get_user_hobbies,
+        meal_id = top_rating, recom_image = image_array, recom_rating = rating_array, recom_menu= menu_array,
+        more_meal_id = top_rating_more,more_image = image_array_more, more_rating = rating_array_more, more_menu= menu_array_more
+        )
 
 @route('/detail/:meal_id')
 def meal_detail(meal_id):
