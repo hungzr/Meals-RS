@@ -457,6 +457,7 @@ def main_ver2(user_id, user_demand):
     meal_id, _, meal_menu, _, _, _, meal_score = get_meal_infor(csv_dir_path)
 
     top_rating = []
+    recipe_similarity = ""
     # Check if input is Null
     if user_demand == '':
         # Most general
@@ -533,11 +534,11 @@ def main_ver2(user_id, user_demand):
 
             category = category[0]
             similarity_result = get_similarity(bin_dir_path, category, user_demand)
-            user_demand = similarity_result[0]
+            recipe_similarity = similarity_result[0]
             print('Món ăn có sự tương đồng:', similarity_result)
 
-            df['recipe_name'] = user_demand
-            df['recipe_id'] = recipe_name.index(user_demand)
+            df['recipe_name'] = recipe_similarity
+            df['recipe_id'] = recipe_name.index(recipe_similarity)
             print(df.T)
             meal_id_found = find_meal(meal_id, meal_menu, df)
         else:
@@ -555,7 +556,7 @@ def main_ver2(user_id, user_demand):
     toc = time.time()
     print('The process end in :', toc - tic)
 
-    return top_rating
+    return recipe_similarity, top_rating
 
 if __name__ == '__main__':
     user = {

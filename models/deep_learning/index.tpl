@@ -420,10 +420,7 @@
             <a id="advance-search" class="text-info align-self-center ml-2 auth-modal-toggle" data-toggle="modal" data-target="#modal-advance-search">
               Tìm kiếm nâng cao
             </a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSct5_9JuMe6ZMpJ3R0MxR1Rs2AeGl7EpM7TXxuEToqk2QoOlA/viewform?usp=pp_url" 
-            class="btn btn-info btn-rounded btn-sm waves-effect waves-light my-btn" style="margin-left:50px;">
-              Báo lỗi
-            </a>
+            
           </div>
 
         </div>
@@ -477,6 +474,9 @@
   <!--Main Navigation-->
 
   <br><br>
+  <h5  style="margin-left:130px;color:blue;" id= "show_similarity">
+    <p><span style="color:red;">Có phải bạn muốn tìm:</span> <span id="similarity" style="font-style:italic;">{{recipe_similarity}}</span></p>
+  </h5>
   <!--Main layout-->
   <main class="mt-5 pt-5 my-scroll">
     <!-- Sidebar navigation -->
@@ -758,6 +758,11 @@
     if (document.getElementById("recipe_name").value == "") {
       document.getElementById("show_more").style.visibility = "hidden";
     }
+
+    if ($("#similarity").text() == "") {
+      document.getElementById("show_similarity").style.visibility = "hidden";
+    }
+
     var check_id = document.getElementById("user_id").value
     if (check_id != "" ) {
       if (parseInt(check_id) >= 0 ){

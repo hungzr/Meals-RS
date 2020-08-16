@@ -151,6 +151,7 @@ def get_detail(top_rating):
 
     # Ratings
     rating_array = [meal_score[meal_id_arr.index(i)] for i in top_rating]
+    rating_array = [round(val - (inx+1)*0.05, 2) for inx, val in enumerate(rating_array)]
     # print('rating: ', rating_array)
 
     return menu_array, image_array, rating_array
@@ -158,6 +159,7 @@ def get_detail(top_rating):
 def get_topk_rating(k):
     # Top most general meals
     meal_dict = dict(zip(meal_id_arr, meal_score))
+    meal_dict = {key:val for key, val in meal_dict.items() if val < 4.9}
 
     # Shuffle dictionary
     temp = list(meal_dict.items())
@@ -265,7 +267,7 @@ def get_recommeded_meals():
         if '' in list_hobbies:
             list_hobbies.remove("")
 
-        top_rating = ver2.main_ver2(get_user_id, recipe_input)
+        recipe_similarity, top_rating = ver2.main_ver2(get_user_id, recipe_input)
 
         # Get detail recommended meals
         menu_array, image_array, rating_array = get_detail(top_rating)
@@ -279,7 +281,7 @@ def get_recommeded_meals():
         # print('new_image: ', image_array_more)
         
         return template('index', recipe_input=recipe_input, user_login_id = get_user_id,select_group = list_user_group, select_hobbies = list_hobbies,
-        user_gender = get_user_gender, user_age = get_user_age, 
+        user_gender = get_user_gender, user_age = get_user_age, recipe_similarity = recipe_similarity,
         user_group = get_user_group, user_hobbies = get_user_hobbies,
         meal_id = top_rating, recom_image = image_array, recom_rating = rating_array, recom_menu= menu_array,
         more_meal_id = top_rating_more,more_image = image_array_more, more_rating = rating_array_more, more_menu= menu_array_more
@@ -420,7 +422,7 @@ def find_menu_form():
     if '' in list_hobbies:
         list_hobbies.remove("")
     return template('index', recipe_input='',user_login_id = get_user_id, select_group = list_user_group, select_hobbies = list_hobbies,
-    user_gender = get_user_gender, user_age = get_user_age, 
+    user_gender = get_user_gender, user_age = get_user_age, recipe_similarity = "",
     user_group = get_user_group, user_hobbies = get_user_hobbies,
     meal_id = top_rating[:3], recom_image = image_array[:3], recom_rating = rating_array[:3], recom_menu= menu_array[:3],
     more_meal_id = top_rating[3:],more_image = image_array[3:], more_rating = rating_array[3:], more_menu= menu_array[3:]
